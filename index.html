@@ -296,8 +296,8 @@
 
     .thermo-scale {
       position: relative;
-      height: 280px;
-      width: 90px;
+      height: 500px;
+      width: 110px;
       margin-bottom: 56px;
       flex-shrink: 0;
     }
@@ -338,13 +338,13 @@
 
     .thermo-tube-wrapper {
       position: relative;
-      width: 44px;
-      height: 280px;
+      width: 52px;
+      height: 500px;
     }
 
     .thermo-tube-outer {
       position: absolute;
-      left: 6px;
+      left: 10px;
       width: 32px;
       height: 100%;
       background: rgba(244, 232, 193, 0.85);
@@ -382,17 +382,21 @@
       right: 2px;
       height: 3px;
       background: var(--forest);
-      bottom: 73.71%;
+      bottom: 10.32%;
       z-index: 2;
       border-radius: 1px;
     }
 
     .thermo-be-marker::after {
-      content: '🎯';
+      content: '🎯 258 €';
       position: absolute;
-      left: calc(100% + 5px);
+      left: calc(100% + 6px);
       top: -10px;
-      font-size: 15px;
+      font-size: 12px;
+      font-family: 'Special Elite', monospace;
+      color: var(--forest);
+      white-space: nowrap;
+      font-weight: bold;
     }
 
     .thermo-tick {
@@ -558,6 +562,44 @@
     }
 
     .visit-detail .detail-icon { font-size: 16px; }
+
+    .visit-info {
+      margin: 10px 0 14px;
+      padding: 12px 14px;
+      background: rgba(44,24,16,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-size: 15px;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+    .visit-info .vi-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+    .visit-info .vi-row:last-child { margin-bottom: 0; }
+    .visit-info .vi-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .visit-info .vi-desc {
+      font-style: italic;
+      font-size: 14px;
+    }
+    .visit-info a {
+      color: var(--forest);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--forest);
+      word-break: break-all;
+    }
+    .visit-info a:hover { color: var(--forest-light); }
 
     .visit-savings-row {
       display: flex;
@@ -960,11 +1002,152 @@
     .note-box {
       background: rgba(45,74,45,0.08);
       border-left: 4px solid var(--forest);
-      padding: 12px 16px;
+      padding: 14px 18px;
       border-radius: 0 3px 3px 0;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--ink-light);
       margin-top: 15px;
+    }
+
+    /* ═══════════════════════════════════
+       MOBILE-FIRST FONT & SIZE OVERRIDES
+    ═══════════════════════════════════ */
+    body { font-size: 18px; }
+
+    .header-meta-item .label { font-size: 13px; letter-spacing: 2px; }
+    .header-meta-item .value { font-size: 22px; }
+
+    .stat-card .stat-icon { font-size: 34px; }
+    .stat-card .stat-label { font-size: 13px; letter-spacing: 1.5px; }
+    .stat-card .stat-value { font-size: clamp(28px, 4vw, 38px); }
+    .stat-card .stat-sub { font-size: 15px; }
+
+    .section-title { font-size: clamp(24px, 3.5vw, 34px); }
+    .section-title .icon { font-size: 32px; }
+
+    .visit-museum-name { font-size: clamp(20px, 2.5vw, 26px) !important; }
+    .visit-detail span { font-size: 16px; }
+    .visit-savings-row { font-size: 16px; }
+    .savings-highlight { font-size: 20px !important; }
+
+    .museum-name { font-size: 15px; }
+    .museum-city { font-size: 14px; }
+
+    .timeline-date { font-size: 14px; letter-spacing: 2px; }
+    .timeline-text { font-size: 17px; }
+    .timeline-savings { font-size: 18px; }
+
+    .info-card h3 { font-size: 18px; }
+    .info-card li { font-size: 16px; line-height: 1.7; }
+
+    .thermo-title { font-size: 22px; }
+    .thermo-pct { font-size: 28px; }
+    .thermo-scale-label { font-size: 13px; }
+    .thermo-scale-label.be-label { font-size: 14px; }
+    .thermo-info-row { font-size: 17px; }
+    .thermo-info-val { font-size: 16px; }
+    .thermo-legend { font-size: 15px; }
+    .thermo-bulb-label { font-size: 10px; }
+    .thermo-bulb { width: 60px; height: 60px; }
+
+    .pass-holder-name { font-size: clamp(28px, 4vw, 38px) !important; }
+    .pass-details span { font-size: 15px !important; }
+
+    /* Map section */
+    .map-section {
+      background: linear-gradient(145deg, #f0e4c0, #e8d5a3);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      padding: 20px 25px;
+      margin-bottom: 30px;
+      box-shadow: 3px 3px 0 rgba(184,134,11,0.3);
+    }
+    .map-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 15px;
+    }
+    .map-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    .map-wrapper svg {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border: 2px solid var(--leather);
+      border-radius: 4px;
+      box-shadow: 3px 3px 0 rgba(107,58,42,0.2);
+    }
+
+    /* Improved info-cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .info-card {
+      background: linear-gradient(145deg, #faf3de, #f2e5be);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      padding: 22px 24px;
+      box-shadow: 3px 3px 0 rgba(184,134,11,0.25);
+    }
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(184,134,11,0.4);
+    }
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .info-card li {
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(44,24,16,0.07);
+      color: var(--ink-light);
+    }
+    .info-card li:last-child { border-bottom: none; }
+    .info-card li::before {
+      content: '›';
+      color: var(--gold);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    /* Museum count badge */
+    .museum-count {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      background: rgba(184,134,11,0.2);
+      color: var(--leather);
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: 10px;
+      font-weight: normal;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 6px; font-size: 17px; }
+      .section { padding: 20px 16px 10px; }
+      .page-header { padding: 30px 16px 25px; }
+      .page-footer { padding: 18px; margin: 0 16px; }
+      .compass-svg, .compass-svg-left { display: none; }
+      .thermo-layout { flex-direction: column; align-items: center; gap: 20px; }
+      .thermo-scale { width: 100%; height: auto; margin-bottom: 0;
+        display: flex; justify-content: space-between; flex-direction: row; }
+      .thermo-scale-label { position: static; transform: none; font-size: 12px; }
+      .thermo-tube-wrapper { height: 360px; }
+      .thermo-info-panel { padding-bottom: 0; padding-left: 0; flex-direction: row; flex-wrap: wrap; gap: 8px; }
+      .thermo-info-row { min-width: 45%; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .header-meta { gap: 20px; }
     }
   </style>
 </head>
@@ -1076,13 +1259,6 @@
     <h2 class="section-title"><span class="icon">📊</span> Expeditions-Bilanz</h2>
 
     <div class="stats-grid">
-      <div class="stat-card highlight-red">
-        <span class="stat-icon">💸</span>
-        <div class="stat-label">Investition</div>
-        <div class="stat-value">258 €</div>
-        <div class="stat-sub">2 Pässe à 129 €</div>
-      </div>
-
       <div class="stat-card highlight-green">
         <span class="stat-icon">🏛️</span>
         <div class="stat-label">Bisher gespart</div>
@@ -1119,6 +1295,89 @@
       </div>
     </div>
 
+    <!-- KARTE: BESUCHTE ORTE -->
+    <div class="map-section">
+      <h3>📍 Besuchte Orte — Dreiländereck</h3>
+      <div class="map-wrapper">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Hintergrund -->
+          <rect width="420" height="300" fill="#f4e8c1" rx="3"/>
+
+          <!-- Länderzonen -->
+          <!-- Schweiz (Süd, unterhalb der West-Ost-Rheinstrecke) -->
+          <polygon points="0,218 420,218 420,300 0,300" fill="#e8b4b4" opacity="0.45"/>
+          <!-- Frankreich / Elsass (links des Rheins, Nord) -->
+          <polygon points="0,0 218,0 213,68 205,118 196,163 185,218 0,218" fill="#b4b4e8" opacity="0.38"/>
+          <!-- Deutschland / Baden (rechts des Rheins, Nord) -->
+          <polygon points="218,0 420,0 420,218 185,218 196,163 205,118 213,68" fill="#b4e8b4" opacity="0.38"/>
+
+          <!-- Rhein -->
+          <polyline points="420,218 185,218 196,163 205,118 213,68 218,0"
+            fill="none" stroke="#4a7fb5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="420,218 185,218 196,163 205,118 213,68 218,0"
+            fill="none" stroke="rgba(200,230,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+
+          <!-- Rhein-Beschriftung -->
+          <text x="198" y="145" fill="#4a7fb5" font-family="Georgia,serif" font-size="11" font-style="italic" transform="rotate(-78,198,145)" opacity="0.85">Rhein</text>
+
+          <!-- Ländernamen -->
+          <text x="68" y="52" fill="#2a2a9a" font-family="Georgia,serif" font-size="15" font-style="italic" font-weight="bold" opacity="0.75">Frankreich</text>
+          <text x="74" y="70" fill="#2a2a9a" font-family="Georgia,serif" font-size="11" font-style="italic" opacity="0.6">Elsass / Alsace</text>
+
+          <text x="262" y="52" fill="#1a5a1a" font-family="Georgia,serif" font-size="14" font-style="italic" font-weight="bold" opacity="0.75">Deutschland</text>
+          <text x="266" y="70" fill="#1a5a1a" font-family="Georgia,serif" font-size="11" font-style="italic" opacity="0.6">Baden-Württemberg</text>
+
+          <text x="100" y="262" fill="#8b1a1a" font-family="Georgia,serif" font-size="15" font-style="italic" font-weight="bold" opacity="0.72">Schweiz</text>
+
+          <!-- Bergsilhouetten (Vogesen & Schwarzwald, schematisch) -->
+          <polygon points="62,148 78,118 94,148" fill="none" stroke="#8888aa" stroke-width="1.2" opacity="0.5"/>
+          <polygon points="82,158 99,128 116,158" fill="none" stroke="#8888aa" stroke-width="1.2" opacity="0.5"/>
+          <polygon points="48,162 66,134 84,162" fill="none" stroke="#8888aa" stroke-width="1" opacity="0.35"/>
+          <polygon points="300,98 316,70 332,98" fill="none" stroke="#88aa88" stroke-width="1.2" opacity="0.5"/>
+          <polygon points="318,116 335,86 352,116" fill="none" stroke="#88aa88" stroke-width="1.2" opacity="0.5"/>
+          <polygon points="286,128 304,98 322,128" fill="none" stroke="#88aa88" stroke-width="1" opacity="0.35"/>
+
+          <!-- BESUCHTE ORTE -->
+
+          <!-- Château du Haut-Kœnigsbourg (x=138, y=75) -->
+          <circle cx="138" cy="75" r="12" fill="#c0392b" stroke="#2c1810" stroke-width="2.5"/>
+          <circle cx="138" cy="75" r="18" fill="none" stroke="#c0392b" stroke-width="1.5" opacity="0.45"/>
+          <text x="162" y="70" fill="#2c1810" font-family="Georgia,serif" font-size="12" font-weight="bold">Château HK</text>
+          <text x="162" y="84" fill="#6b3a2a" font-family="Georgia,serif" font-size="10">07.03.2026 · 28 €</text>
+
+          <!-- Basler Papiermühle (Basel, x=175, y=230) -->
+          <circle cx="175" cy="230" r="12" fill="#c0392b" stroke="#2c1810" stroke-width="2.5"/>
+          <circle cx="175" cy="230" r="18" fill="none" stroke="#c0392b" stroke-width="1.5" opacity="0.45"/>
+          <text x="25" y="240" fill="#2c1810" font-family="Georgia,serif" font-size="12" font-weight="bold">Papiermühle</text>
+          <text x="25" y="253" fill="#6b3a2a" font-family="Georgia,serif" font-size="10">Basel · 22.03.2026 · 59 €</text>
+          <!-- Connector line -->
+          <line x1="157" y1="234" x2="125" y2="241" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+
+          <!-- HEIMATBASIS: Rheinfelden (x=210, y=212) -->
+          <polygon points="210,202 215,212 210,220 205,212" fill="#b8860b" stroke="#2c1810" stroke-width="2"/>
+          <circle cx="210" cy="215" r="4" fill="#b8860b" stroke="#2c1810" stroke-width="1"/>
+          <text x="220" y="210" fill="#5a3a00" font-family="Georgia,serif" font-size="10" font-weight="bold">Heimatbasis</text>
+          <text x="220" y="222" fill="#5a3a00" font-family="Georgia,serif" font-size="9">Rheinfelden (DE)</text>
+
+          <!-- Referenzstädte -->
+          <circle cx="140" cy="108" r="4" fill="#666" opacity="0.55"/>
+          <text x="148" y="112" fill="#444" font-family="Georgia,serif" font-size="10" opacity="0.8">Colmar</text>
+
+          <circle cx="240" cy="128" r="4" fill="#666" opacity="0.55"/>
+          <text x="248" y="132" fill="#444" font-family="Georgia,serif" font-size="10" opacity="0.8">Freiburg i.B.</text>
+
+          <!-- Legende -->
+          <rect x="0" y="274" width="420" height="26" fill="rgba(244,232,193,0.9)"/>
+          <circle cx="14" cy="287" r="6" fill="#c0392b" stroke="#2c1810" stroke-width="1.5"/>
+          <text x="25" y="291" fill="#2c1810" font-family="Georgia,serif" font-size="11">Besucht</text>
+          <polygon points="106,284 110,278 114,284 110,290" fill="#b8860b" stroke="#2c1810" stroke-width="1.5"/>
+          <text x="120" y="291" fill="#2c1810" font-family="Georgia,serif" font-size="11">Heimatbasis Rheinfelden</text>
+          <line x1="268" y1="284" x2="285" y2="284" stroke="#4a7fb5" stroke-width="4" stroke-linecap="round"/>
+          <text x="290" y="291" fill="#2c1810" font-family="Georgia,serif" font-size="11">Rhein</text>
+        </svg>
+      </div>
+    </div>
+
     <!-- THERMOMETER -->
     <div class="thermo-section">
       <div class="thermo-header">
@@ -1126,28 +1385,27 @@
         <span class="thermo-pct">~33,7%</span>
       </div>
       <div class="thermo-layout">
-        <!-- Skala links -->
+        <!-- Skala links: 0–2500€ -->
         <div class="thermo-scale">
-          <div class="thermo-scale-label be-label" style="bottom: 73.71%">258 € Ziel</div>
-          <div class="thermo-scale-label" style="bottom: 57.14%">200 €</div>
-          <div class="thermo-scale-label" style="bottom: 42.86%">150 €</div>
-          <div class="thermo-scale-label" style="bottom: 28.57%">100 €</div>
-          <div class="thermo-scale-label" style="bottom: 14.29%">50 €</div>
+          <div class="thermo-scale-label" style="bottom: 100%">2.500 €</div>
+          <div class="thermo-scale-label" style="bottom: 80%">2.000 €</div>
+          <div class="thermo-scale-label" style="bottom: 60%">1.500 €</div>
+          <div class="thermo-scale-label" style="bottom: 40%">1.000 €</div>
+          <div class="thermo-scale-label" style="bottom: 20%">500 €</div>
+          <div class="thermo-scale-label be-label" style="bottom: 10.32%">Break-Even</div>
           <div class="thermo-scale-label" style="bottom: 0">0 €</div>
         </div>
         <!-- Thermometer -->
         <div class="thermo-container">
           <div class="thermo-tube-wrapper">
             <div class="thermo-tube-outer">
-              <div class="thermo-mercury" style="height: 24.86%"></div>
+              <div class="thermo-mercury" style="height: 3.48%"></div>
             </div>
             <div class="thermo-be-marker"></div>
-            <div class="thermo-tick" style="bottom: 14.29%"></div>
-            <div class="thermo-tick" style="bottom: 28.57%"></div>
-            <div class="thermo-tick" style="bottom: 42.86%"></div>
-            <div class="thermo-tick" style="bottom: 57.14%"></div>
-            <div class="thermo-tick" style="bottom: 71.43%"></div>
-            <div class="thermo-tick" style="bottom: 85.71%"></div>
+            <div class="thermo-tick" style="bottom: 20%"></div>
+            <div class="thermo-tick" style="bottom: 40%"></div>
+            <div class="thermo-tick" style="bottom: 60%"></div>
+            <div class="thermo-tick" style="bottom: 80%"></div>
           </div>
           <div class="thermo-bulb">
             <div class="thermo-bulb-label">~87€<br>gespart</div>
@@ -1155,22 +1413,23 @@
         </div>
         <!-- Info-Panel rechts -->
         <div class="thermo-info-panel">
-          <div class="thermo-info-row">💸 Investiert: <span class="thermo-info-val red">258 €</span></div>
           <div class="thermo-info-row">🏛️ Gespart: <span class="thermo-info-val">~87 €</span></div>
-          <div class="thermo-info-row">🎯 Noch nötig: <span class="thermo-info-val red">~171 €</span></div>
+          <div class="thermo-info-row">🎯 Break-Even: <span class="thermo-info-val red">258 €</span></div>
+          <div class="thermo-info-row">📈 Noch nötig: <span class="thermo-info-val red">~171 €</span></div>
           <div class="thermo-info-row">🗺️ Besuche: <span class="thermo-info-val">2</span></div>
           <div class="thermo-info-row">⏱️ Ø/Besuch: <span class="thermo-info-val">~44 €</span></div>
+          <div class="thermo-info-row">🚀 Max. möglich: <span class="thermo-info-val">~2.500 €</span></div>
         </div>
       </div>
       <div class="thermo-legend">
-        <span>Start: 0 €</span>
-        <span>Break-Even: 258 € ← noch ~171 € nötig</span>
-        <span>Gespart: ~87 €</span>
+        <span>0 €</span>
+        <span>Break-Even bei 258 € (33,7% erreicht)</span>
+        <span>Max. ~2.500 €</span>
       </div>
     </div>
 
     <div class="currency-note">
-      💱 <strong>Währungshinweis:</strong> Die Ersparnis im Papiermuseum Basel betrug 56 CHF ≈ 59 € (Kurs ~0,95 CHF/€, d.h. 1 € ≈ 0,95 CHF). Für die Gesamtbilanz wird mit diesem Näherungswert gerechnet. Offizielle Kurse täglich aktuell.
+      💱 <strong>Währungshinweis:</strong> Die Ersparnis in der Basler Papiermühle betrug 56 CHF ≈ 59 € (Kurs ~0,95 CHF/€, d.h. 1 € ≈ 0,95 CHF). Für die Gesamtbilanz wird mit diesem Näherungswert gerechnet. Offizielle Kurse täglich aktuell.
     </div>
   </section>
 
@@ -1183,19 +1442,19 @@
     <h2 class="section-title"><span class="icon">📖</span> Expeditions-Tagebuch</h2>
     <div class="visit-log">
 
-      <!-- EINTRAG 1: Papiermuseum Basel -->
+      <!-- EINTRAG 1: Basler Papiermühle -->
       <div class="visit-card swiss">
         <div class="visit-card-header">
           <div>
             <div class="visit-museum-name">
-              Papiermuseum Basel
+              📜🖨️ Basler Papiermühle
             </div>
             <div style="font-size:14px; color:var(--leather); margin-top:4px; font-style:italic;">
-              St. Alban-Tal 37, Basel — Schweiz
+              St. Alban-Tal 37, 4052 Basel — Kanton Basel-Stadt, Schweiz
             </div>
           </div>
           <div class="visit-badge">
-            🇨🇭 &nbsp;56 CHF gespart
+            🇨🇭 &nbsp;56 CHF ≈ 59 € gespart
           </div>
         </div>
 
@@ -1209,18 +1468,32 @@
             <span>Anon 1, Anon 2, Kind 1 &amp; Kind 2</span>
           </div>
           <div class="visit-detail">
-            <span class="detail-icon">🏛️</span>
-            <span>Papier- und Schriftmuseum</span>
+            <span class="detail-icon">🗺️</span>
+            <span>Nordwestschweiz · Basel-Stadt</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">📊</span>
+            <span>~100.000 Besucher/Jahr</span>
+          </div>
+        </div>
+
+        <div class="visit-info">
+          <div class="vi-row">
+            <span class="vi-label">Über das Museum</span>
+          </div>
+          <div class="vi-row">
+            <span class="vi-desc">Die Basler Papiermühle ist das einzige lebendige Papier-, Schrift- und Druckmuseum der Schweiz. Im historischen Gebäude am St. Alban-Kanal können Besucher die Herstellung von Papier, Büchern und Druckerzeugnissen von Hand erleben. Authentische Maschinen aus dem 15. bis 20. Jahrhundert zeigen die Geschichte der Kommunikation. Kinder und Erwachsene dürfen selbst Papier schöpfen und Texte auf alten Druckpressen setzen.</span>
+          </div>
+          <div class="vi-row" style="margin-top:8px;">
+            <span class="vi-label">Web</span>
+            <a href="https://www.papiermuseum.ch" target="_blank" rel="noopener">www.papiermuseum.ch</a>
           </div>
         </div>
 
         <div class="visit-savings-row">
-          <span class="savings-item">Regulärer Eintrittspreis:</span>
+          <span class="savings-item">Regulärer Eintritt: 2 Erw. + 2 Kinder = 56 CHF (Kinder ab ~5 J. zahlen)</span>
           <span class="savings-item">Ersparnis mit Pass:</span>
           <span class="savings-highlight">56 CHF ≈ 59 €</span>
-          <span class="savings-item" style="margin-left:auto; font-size:13px; font-style:italic; color:var(--leather);">
-            Anon 1 &amp; Anon 2 hätten ohne Pass gezahlt, Kinder frei
-          </span>
         </div>
 
         <!-- decorative stamp -->
@@ -1234,10 +1507,10 @@
         <div class="visit-card-header">
           <div>
             <div class="visit-museum-name">
-              Château du Haut-Kœnigsbourg
+              🏰🏔️ Château du Haut-Kœnigsbourg
             </div>
             <div style="font-size:14px; color:var(--leather); margin-top:4px; font-style:italic;">
-              Orschwiller, Elsass — Frankreich
+              67600 Orschwiller, Bas-Rhin, Grand Est — Frankreich
             </div>
           </div>
           <div class="visit-badge france-badge">
@@ -1248,25 +1521,39 @@
         <div class="visit-details">
           <div class="visit-detail">
             <span class="detail-icon">📅</span>
-            <span>07. März 2026</span>
+            <span>07. März 2026 · Expeditionsstart</span>
           </div>
           <div class="visit-detail">
             <span class="detail-icon">👥</span>
             <span>Anon 1, Anon 2, Kind 1 &amp; Kind 2</span>
           </div>
           <div class="visit-detail">
-            <span class="detail-icon">🏰</span>
-            <span>Mittelalterliche Burganlage, Elsass</span>
+            <span class="detail-icon">🗺️</span>
+            <span>Elsass · Département Bas-Rhin (67)</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">📊</span>
+            <span>~400.000 Besucher/Jahr</span>
+          </div>
+        </div>
+
+        <div class="visit-info">
+          <div class="vi-row">
+            <span class="vi-label">Über die Burg</span>
+          </div>
+          <div class="vi-row">
+            <span class="vi-desc">Das Château du Haut-Kœnigsbourg thront auf einem 757 m hohen Sandsteinfelsen über der Oberrheinebene im Elsass. Die mittelalterliche Burganlage wurde zwischen 1900 und 1908 unter Kaiser Wilhelm II. aufwändig restauriert und gilt heute als eines der meistbesuchten Denkmäler Frankreichs. Mit rund 400.000 Besuchern jährlich ist sie die bedeutendste Sehenswürdigkeit des Elsass. Von der Burg genießt man bei klarem Wetter einen Panoramablick bis zum Schwarzwald und zu den Alpen.</span>
+          </div>
+          <div class="vi-row" style="margin-top:8px;">
+            <span class="vi-label">Web</span>
+            <a href="https://www.haut-koenigsbourg.fr" target="_blank" rel="noopener">www.haut-koenigsbourg.fr</a>
           </div>
         </div>
 
         <div class="visit-savings-row">
-          <span class="savings-item">Regulärer Eintritt: 14 € Erw. / Kinder frei (unter 18)</span>
+          <span class="savings-item">Regulärer Eintritt: 14 € / Erw. · Kinder unter 18 frei</span>
           <span class="savings-item">Ersparnis mit Pass:</span>
-          <span class="savings-highlight">28 €</span>
-          <span class="savings-item" style="margin-left:auto; font-size:13px; font-style:italic; color:var(--leather);">
-            Hohkönigsburg im Haut-Rhin, Vosges
-          </span>
+          <span class="savings-highlight">2 × 14 € = 28 €</span>
         </div>
 
         <!-- decorative stamp -->
@@ -1292,29 +1579,20 @@
     <div class="timeline">
 
       <div class="timeline-event">
-        <div class="timeline-date">07. MÄRZ 2026</div>
+        <div class="timeline-date">07. MÄRZ 2026 · EXPEDITIONSSTART &amp; 1. ABENTEUER</div>
         <div class="timeline-text">
-          <strong>Expeditionsstart!</strong> Zwei Museums-PASS-Musées erworben.
-          Investition gesamt: <strong>258 €</strong> (2 × 129 €). Gültig 1 Jahr ab Erstbenutzung.
-          Zugang zu über 350 Museen, Schlössern und Gärten in der Schweiz, Deutschland und Frankreich.
+          <strong>Pass erworben &amp; sofort losgelegt!</strong> Zwei Museums-PASS-Musées erworben (2 × 129 €, gültig 1 Jahr ab Erstbenutzung). Noch am selben Tag: Erster Besuch im
+          <strong>Château du Haut-Kœnigsbourg 🏰🇫🇷</strong> — die mittelalterliche Burganlage hoch über dem Elsass. Ersparnis:
+          <span class="timeline-savings">28 €</span>
         </div>
       </div>
 
       <div class="timeline-event">
-        <div class="timeline-date">22. MÄRZ 2026 · ZWEITES ABENTEUER</div>
+        <div class="timeline-date">22. MÄRZ 2026 · 2. ABENTEUER</div>
         <div class="timeline-text">
-          <strong>Papiermuseum Basel 🇨🇭</strong> — Zweites Museum erkundet!
+          <strong>Basler Papiermühle 📜🇨🇭</strong> — Das Schweizer Museum für Papier, Schrift und Druck in Basel erkundet.
           Mit Anon 1, Anon 2 und den Kindern. Ersparnis:
           <span class="timeline-savings">56 CHF ≈ 59 €</span>
-        </div>
-      </div>
-
-      <div class="timeline-event">
-        <div class="timeline-date">07. MÄRZ 2026 · ERSTES ABENTEUER</div>
-        <div class="timeline-text">
-          <strong>Château du Haut-Kœnigsbourg 🇫🇷</strong> — Ins Elsass! Die mittelalterliche Burganlage
-          hoch über dem Rheintal. Ersparnis:
-          <span class="timeline-savings">28 €</span>
         </div>
       </div>
 
@@ -1363,7 +1641,7 @@
       <div class="info-card">
         <h3>📌 Wichtige Regeln</h3>
         <ul>
-          <li>Pass ist <strong>nicht übertragbar</strong> (personengebunden)</li>
+          <li>Pass ist nicht übertragbar (Pass ist personengebunden)</li>
           <li>Gültigkeit: <strong>1 Jahr ab Erstbenutzung</strong></li>
           <li>Passfoto aufkleben und Namen eintragen</li>
           <li>Registrierung empfohlen (Ersatz bei Verlust)</li>
@@ -1410,7 +1688,7 @@
       </div>
 
       <!-- ══ SCHWEIZ ══ -->
-      <div class="museum-section-header">🇨🇭 Schweiz</div>
+      <div class="museum-section-header">🇨🇭 Schweiz <span class="museum-count">40 gelistet</span></div>
 
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Aargauer Kunsthaus</div>
@@ -1574,7 +1852,7 @@
       </div>
 
       <!-- ══ DEUTSCHLAND ══ -->
-      <div class="museum-section-header">🇩🇪 Deutschland</div>
+      <div class="museum-section-header">🇩🇪 Deutschland <span class="museum-count">62 gelistet</span></div>
 
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reichsburg Trifels</div>
@@ -1826,7 +2104,7 @@
       </div>
 
       <!-- ══ FRANKREICH ══ -->
-      <div class="museum-section-header">🇫🇷 Frankreich</div>
+      <div class="museum-section-header">🇫🇷 Frankreich <span class="museum-count">26 gelistet · wird erweitert</span></div>
 
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle — Parcours Découverte</div>
