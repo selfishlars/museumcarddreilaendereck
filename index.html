@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museums-PASS Expedition — Familie Müller</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap');
+
+    :root {
+      --parchment: #f4e8c1;
+      --parchment-dark: #e8d5a3;
+      --ink: #2c1810;
+      --ink-light: #4a2c1a;
+      --gold: #b8860b;
+      --gold-light: #daa520;
+      --rust: #8b3a2a;
+      --forest: #2d4a2d;
+      --forest-light: #3d6b3d;
+      --leather: #6b3a2a;
+      --shadow: rgba(44, 24, 16, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #1a1008;
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(90,50,20,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(30,60,30,0.3) 0%, transparent 60%);
+      font-family: 'Crimson Text', Georgia, serif;
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* ═══════════════════════════════════════════
+       COMPASS ROSE SVG (decorative background)
+    ═══════════════════════════════════════════ */
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--parchment);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400' opacity='0.04'%3E%3Cg transform='translate(200,200)'%3E%3Cpolygon points='0,-180 15,-20 0,-10 -15,-20' fill='%232c1810'/%3E%3Cpolygon points='0,180 15,20 0,10 -15,20' fill='%232c1810'/%3E%3Cpolygon points='-180,0 -20,15 -10,0 -20,-15' fill='%232c1810'/%3E%3Cpolygon points='180,0 20,15 10,0 20,-15' fill='%232c1810'/%3E%3Cpolygon points='-127,127 -10,10 0,20 -20,0' fill='%232c1810' opacity='0.5'/%3E%3Cpolygon points='127,-127 10,-10 0,-20 20,0' fill='%232c1810' opacity='0.5'/%3E%3Cpolygon points='127,127 10,10 20,0 0,20' fill='%232c1810' opacity='0.5'/%3E%3Cpolygon points='-127,-127 -10,-10 -20,0 0,-20' fill='%232c1810' opacity='0.5'/%3E%3Ccircle r='30' fill='none' stroke='%232c1810' stroke-width='2'/%3E%3Ccircle r='60' fill='none' stroke='%232c1810' stroke-width='1'/%3E%3Ccircle r='100' fill='none' stroke='%232c1810' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E"),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 40px,
+          rgba(44,24,16,0.03) 40px,
+          rgba(44,24,16,0.03) 41px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 40px,
+          rgba(44,24,16,0.03) 40px,
+          rgba(44,24,16,0.03) 41px
+        );
+      border: 3px solid var(--leather);
+      box-shadow:
+        0 0 0 6px #1a1008,
+        0 0 0 10px var(--gold),
+        0 0 0 14px #1a1008,
+        0 20px 60px rgba(0,0,0,0.8);
+      padding: 0 0 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ═══════════════════════════════════
+       HEADER
+    ═══════════════════════════════════ */
+    .page-header {
+      background: linear-gradient(135deg, #1a0f06 0%, #2c1810 40%, #1a2010 100%);
+      padding: 50px 40px 40px;
+      text-align: center;
+      position: relative;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .header-ornament {
+      font-size: 14px;
+      letter-spacing: 8px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-family: 'Special Elite', monospace;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 900;
+      color: var(--parchment);
+      line-height: 1.1;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      margin-bottom: 8px;
+    }
+
+    .page-title span {
+      color: var(--gold-light);
+    }
+
+    .page-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(16px, 2.5vw, 22px);
+      color: #c9a96e;
+      margin-bottom: 20px;
+    }
+
+    .header-meta {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .header-meta-item {
+      text-align: center;
+      color: var(--parchment-dark);
+    }
+
+    .header-meta-item .label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'Special Elite', monospace;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .header-meta-item .value {
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--parchment);
+    }
+
+    /* compass in header */
+    .compass-svg {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      width: 80px;
+      opacity: 0.3;
+    }
+
+    .compass-svg-left {
+      position: absolute;
+      top: 15px;
+      left: 30px;
+      width: 80px;
+      opacity: 0.3;
+      transform: scaleX(-1);
+    }
+
+    /* ═══════════════════════════════════
+       SECTION STYLING
+    ═══════════════════════════════════ */
+    .section {
+      padding: 40px 40px 20px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--ink);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title .icon {
+      font-size: 28px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 10px 0 30px;
+    }
+
+    /* ═══════════════════════════════════
+       EXPEDITION STATS — MAIN DASHBOARD
+    ═══════════════════════════════════ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, #f9f0d8, var(--parchment-dark));
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      padding: 22px 18px;
+      text-align: center;
+      position: relative;
+      box-shadow: 3px 3px 0 rgba(184,134,11,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 4px; left: 4px; right: 4px; bottom: 4px;
+      border: 1px solid rgba(184,134,11,0.3);
+      pointer-events: none;
+    }
+
+    .stat-card .stat-icon {
+      font-size: 28px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .stat-card .stat-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--leather);
+      margin-bottom: 8px;
+    }
+
+    .stat-card .stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .stat-card .stat-sub {
+      font-size: 13px;
+      color: var(--ink-light);
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    .stat-card.highlight-green .stat-value { color: var(--forest); }
+    .stat-card.highlight-red .stat-value { color: var(--rust); }
+    .stat-card.highlight-gold .stat-value { color: var(--gold); }
+
+    /* ═══════════════════════════════════
+       PROGRESS BAR
+    ═══════════════════════════════════ */
+    .progress-section {
+      background: linear-gradient(145deg, #f0e4c0, #e8d5a3);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      box-shadow: 3px 3px 0 rgba(184,134,11,0.3);
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .progress-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .progress-pct {
+      font-family: 'Special Elite', monospace;
+      font-size: 22px;
+      color: var(--forest);
+      font-weight: bold;
+    }
+
+    .progress-track {
+      background: rgba(44,24,16,0.15);
+      border-radius: 100px;
+      height: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(44,24,16,0.2);
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--forest) 0%, var(--forest-light) 60%, #5a9a5a 100%);
+      border-radius: 100px;
+      transition: width 1s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+    }
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 4px; left: 10px; right: 10px;
+      height: 6px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 100px;
+    }
+
+    .progress-label-inside {
+      color: white;
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      z-index: 1;
+    }
+
+    .progress-legend {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--ink-light);
+      font-style: italic;
+    }
+
+    /* ═══════════════════════════════════
+       EXPLORER LOG — VISITS
+    ═══════════════════════════════════ */
+    .visit-log {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .visit-card {
+      background: linear-gradient(145deg, #faf3de, #f2e5be);
+      border: 2px solid var(--leather);
+      border-radius: 3px;
+      padding: 22px 25px;
+      position: relative;
+      box-shadow: 4px 4px 0 rgba(107,58,42,0.25);
+      overflow: hidden;
+    }
+
+    .visit-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: var(--forest);
+    }
+
+    .visit-card.france::before { background: #002395; }
+    .visit-card.germany::before { background: #cc0000; }
+    .visit-card.swiss::before { background: #ff0000; }
+
+    .visit-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .visit-museum-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .visit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--forest);
+      color: var(--parchment);
+      border-radius: 3px;
+      padding: 6px 14px;
+      font-family: 'Special Elite', monospace;
+      font-size: 14px;
+      font-weight: bold;
+      white-space: nowrap;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    }
+
+    .visit-badge.france-badge { background: #002395; }
+    .visit-badge.germany-badge { background: #cc0000; }
+
+    .visit-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--ink-light);
+    }
+
+    .visit-detail {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .visit-detail .detail-icon { font-size: 16px; }
+
+    .visit-savings-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      border-top: 1px dashed rgba(44,24,16,0.3);
+      padding-top: 12px;
+      margin-top: 4px;
+    }
+
+    .savings-item {
+      font-size: 15px;
+      color: var(--ink-light);
+    }
+
+    .savings-highlight {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .visit-stamp {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      width: 65px;
+      height: 65px;
+      border: 3px solid var(--forest);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.18;
+      transform: rotate(-12deg);
+      pointer-events: none;
+    }
+
+    .visit-stamp-text {
+      font-family: 'Special Elite', monospace;
+      font-size: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--forest);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════
+       PASS INFO CARDS
+    ═══════════════════════════════════ */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .info-card {
+      background: linear-gradient(145deg, #faf3de, #f0e4c0);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      padding: 22px;
+      box-shadow: 3px 3px 0 rgba(184,134,11,0.2);
+    }
+
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-card ul li {
+      padding: 5px 0;
+      font-size: 15px;
+      color: var(--ink-light);
+      border-bottom: 1px dotted rgba(44,24,16,0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .info-card ul li:last-child { border-bottom: none; }
+
+    .info-card ul li::before {
+      content: '›';
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════
+       MUSEUM EXPLORER LIST
+    ═══════════════════════════════════ */
+    .museum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .museum-item {
+      background: linear-gradient(145deg, #faf3de, #f2e5be);
+      border: 1px solid rgba(184,134,11,0.5);
+      border-radius: 3px;
+      padding: 14px 16px;
+      cursor: default;
+      transition: all 0.2s;
+      position: relative;
+      box-shadow: 2px 2px 0 rgba(107,58,42,0.15);
+    }
+
+    .museum-item:hover {
+      border-color: var(--gold);
+      box-shadow: 3px 3px 0 rgba(107,58,42,0.3);
+      transform: translate(-1px, -1px);
+    }
+
+    .museum-item.visited {
+      border-color: var(--forest);
+      background: linear-gradient(145deg, #eaf4ea, #d8ecd8);
+    }
+
+    .museum-item.visited::after {
+      content: '✓ Besucht';
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-family: 'Special Elite', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--forest);
+      font-weight: bold;
+    }
+
+    .museum-flag {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+
+    .museum-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 4px;
+      padding-right: 55px;
+    }
+
+    .museum-item.visited .museum-name { padding-right: 65px; }
+
+    .museum-city {
+      font-size: 13px;
+      color: var(--leather);
+      font-style: italic;
+    }
+
+    /* country filter tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .filter-tab {
+      padding: 8px 18px;
+      border: 2px solid var(--gold);
+      border-radius: 3px;
+      background: transparent;
+      font-family: 'Special Elite', monospace;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-tab:hover, .filter-tab.active {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    /* ═══════════════════════════════════
+       PASS HOLDER CARDS
+    ═══════════════════════════════════ */
+    .pass-holders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .pass-card {
+      background: linear-gradient(135deg, #1a0f06, #2c1810);
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 22px;
+      color: var(--parchment);
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(218,165,32,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pass-card::before {
+      content: 'MUSEUMS-PASS';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-25deg);
+      font-family: 'Special Elite', monospace;
+      font-size: 40px;
+      letter-spacing: 4px;
+      color: rgba(218,165,32,0.05);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .pass-logo {
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .pass-holder-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--parchment);
+      margin-bottom: 6px;
+    }
+
+    .pass-details {
+      font-size: 13px;
+      color: #c9a96e;
+      margin-top: 12px;
+      border-top: 1px solid rgba(218,165,32,0.3);
+      padding-top: 10px;
+    }
+
+    .pass-details span {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pass-chip {
+      width: 40px;
+      height: 28px;
+      background: linear-gradient(135deg, #daa520, #b8860b);
+      border-radius: 4px;
+      margin-bottom: 14px;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* ═══════════════════════════════════
+       TIMELINE / FOOTER
+    ═══════════════════════════════════ */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .timeline-event {
+      position: relative;
+      margin-bottom: 20px;
+      padding: 15px 18px;
+      background: linear-gradient(145deg, #faf3de, #f2e5be);
+      border: 1px solid rgba(184,134,11,0.4);
+      border-radius: 3px;
+    }
+
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--parchment);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .timeline-date {
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--leather);
+      margin-bottom: 4px;
+    }
+
+    .timeline-text {
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .timeline-savings {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    /* ═══════════════════════════════════
+       CURRENCY NOTE
+    ═══════════════════════════════════ */
+    .currency-note {
+      background: rgba(184,134,11,0.1);
+      border: 1px dashed var(--gold);
+      border-radius: 3px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-top: 15px;
+    }
+
+    /* ═══════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════ */
+    .page-footer {
+      text-align: center;
+      padding: 30px 40px 10px;
+      color: var(--ink-light);
+      font-size: 13px;
+      font-style: italic;
+      border-top: 1px solid rgba(184,134,11,0.3);
+      margin: 0 40px;
+    }
+
+    .footer-ornament {
+      font-size: 22px;
+      margin-bottom: 8px;
+      display: block;
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════ */
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      .section { padding: 25px 20px 10px; }
+      .page-header { padding: 35px 20px 30px; }
+      .page-footer { padding: 20px; margin: 0 20px; }
+      .compass-svg, .compass-svg-left { display: none; }
+    }
+
+    /* Animated sparkle on savings */
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .savings-highlight { animation: shimmer 2.5s ease-in-out infinite; }
+
+    /* Tag für Länder */
+    .country-tag {
+      display: inline-block;
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .tag-ch { background: #cc0000; color: white; }
+    .tag-fr { background: #002395; color: white; }
+    .tag-de { background: #2c2c2c; color: white; }
+
+    .note-box {
+      background: rgba(45,74,45,0.08);
+      border-left: 4px solid var(--forest);
+      padding: 12px 16px;
+      border-radius: 0 3px 3px 0;
+      font-size: 15px;
+      color: var(--ink-light);
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- ═══════════════════════════════════
+       HEADER
+  ═══════════════════════════════════ -->
+  <header class="page-header">
+    <!-- Compass left -->
+    <svg class="compass-svg-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#daa520" stroke-width="2"/>
+      <circle cx="50" cy="50" r="35" fill="none" stroke="#daa520" stroke-width="1" stroke-dasharray="4,4"/>
+      <polygon points="50,8 55,48 50,52 45,48" fill="#daa520"/>
+      <polygon points="50,92 55,52 50,48 45,52" fill="#888"/>
+      <polygon points="8,50 48,45 52,50 48,55" fill="#888"/>
+      <polygon points="92,50 52,45 48,50 52,55" fill="#daa520"/>
+      <text x="50" y="6" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">N</text>
+      <text x="50" y="97" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">S</text>
+      <text x="4" y="53" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">W</text>
+      <text x="97" y="53" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">O</text>
+    </svg>
+
+    <div class="header-ornament">✦ Expedition Logbuch ✦</div>
+    <h1 class="page-title">Museums<span>PASS</span><br>Dreiländereck</h1>
+    <p class="page-subtitle">Die Abenteuer von Lars &amp; Kristina Müller</p>
+    <p style="font-size:14px; color:#9a7a5a; font-family:'Special Elite',monospace; letter-spacing:2px;">
+      SCHWEIZ · DEUTSCHLAND · FRANKREICH
+    </p>
+
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="label">Expeditionsbeginn</span>
+        <span class="value">07. März 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="label">Gültig bis</span>
+        <span class="value">07. März 2027</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="label">Expediteure</span>
+        <span class="value">Lars &amp; Kristina</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="label">Entdeckte Museen</span>
+        <span class="value">2 von 350+</span>
+      </div>
+    </div>
+
+    <!-- Compass right -->
+    <svg class="compass-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#daa520" stroke-width="2"/>
+      <circle cx="50" cy="50" r="35" fill="none" stroke="#daa520" stroke-width="1" stroke-dasharray="4,4"/>
+      <polygon points="50,8 55,48 50,52 45,48" fill="#daa520"/>
+      <polygon points="50,92 55,52 50,48 45,52" fill="#888"/>
+      <polygon points="8,50 48,45 52,50 48,55" fill="#888"/>
+      <polygon points="92,50 52,45 48,50 52,55" fill="#daa520"/>
+      <text x="50" y="6" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">N</text>
+      <text x="50" y="97" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">S</text>
+      <text x="4" y="53" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">W</text>
+      <text x="97" y="53" text-anchor="middle" font-size="8" fill="#daa520" font-family="serif">O</text>
+    </svg>
+  </header>
+
+  <div class="divider" style="margin:0;"></div>
+
+  <!-- ═══════════════════════════════════
+       PASS-INHABER KARTEN
+  ═══════════════════════════════════ -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🪪</span> Expeditions-Pässe</h2>
+    <div class="pass-holders">
+      <div class="pass-card">
+        <div class="pass-logo">Museums-PASS-Musées · 2026</div>
+        <div class="pass-chip"></div>
+        <div class="pass-holder-name">Lars Müller</div>
+        <div class="pass-details">
+          <span>📅 Gekauft: 07.03.2026</span>
+          <span>💶 Preis: 129,00 €</span>
+          <span>👨‍👧‍👦 + bis zu 5 Kinder unter 18</span>
+          <span>🗓️ Gültig bis: 07.03.2027</span>
+        </div>
+      </div>
+      <div class="pass-card">
+        <div class="pass-logo">Museums-PASS-Musées · 2026</div>
+        <div class="pass-chip"></div>
+        <div class="pass-holder-name">Kristina Müller</div>
+        <div class="pass-details">
+          <span>📅 Gekauft: 07.03.2026</span>
+          <span>💶 Preis: 129,00 €</span>
+          <span>👨‍👧‍👦 + bis zu 5 Kinder unter 18</span>
+          <span>🗓️ Gültig bis: 07.03.2027</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>Wichtig:</strong> Jeder Pass ist personengebunden und nicht übertragbar. Beide Pässe wurden am 07.03.2026 gekauft und aktivieren sich beim ersten Museumsbesuch für genau 1 Jahr. Kinder müssen nicht verwandt sein — jeder von uns kann bis zu 5 Kinder unter 18 Jahren kostenlos mitnehmen.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════
+       EXPEDITION STATS
+  ═══════════════════════════════════ -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">📊</span> Expeditions-Bilanz</h2>
+
+    <div class="stats-grid">
+      <div class="stat-card highlight-red">
+        <span class="stat-icon">💸</span>
+        <div class="stat-label">Investition</div>
+        <div class="stat-value">258 €</div>
+        <div class="stat-sub">2 Pässe à 129 €</div>
+      </div>
+
+      <div class="stat-card highlight-green">
+        <span class="stat-icon">🏛️</span>
+        <div class="stat-label">Bisher gespart</div>
+        <div class="stat-value">~89 €</div>
+        <div class="stat-sub">56 CHF + 30 € (gerundet)</div>
+      </div>
+
+      <div class="stat-card highlight-red">
+        <span class="stat-icon">🎯</span>
+        <div class="stat-label">Noch zu holen</div>
+        <div class="stat-value">~169 €</div>
+        <div class="stat-sub">bis Break-Even</div>
+      </div>
+
+      <div class="stat-card highlight-gold">
+        <span class="stat-icon">🗺️</span>
+        <div class="stat-label">Museen besucht</div>
+        <div class="stat-value">2</div>
+        <div class="stat-sub">von 350+ möglich</div>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-icon">📅</span>
+        <div class="stat-label">Verbleibende Tage</div>
+        <div class="stat-value" id="days-remaining">—</div>
+        <div class="stat-sub">bis 07.03.2027</div>
+      </div>
+
+      <div class="stat-card highlight-gold">
+        <span class="stat-icon">⏱️</span>
+        <div class="stat-label">Ø Ersparnis/Besuch</div>
+        <div class="stat-value">~44 €</div>
+        <div class="stat-sub">2 Besuche bisher</div>
+      </div>
+    </div>
+
+    <!-- FORTSCHRITTSBALKEN -->
+    <div class="progress-section">
+      <div class="progress-header">
+        <span class="progress-title">Break-Even Fortschritt</span>
+        <span class="progress-pct">~34,5%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width: 34.5%">
+          <span class="progress-label-inside">~89 € von 258 €</span>
+        </div>
+      </div>
+      <div class="progress-legend">
+        <span>Start: 0 €</span>
+        <span>Break-Even: 258 € ← noch ~169 € nötig</span>
+        <span>258 € gespart</span>
+      </div>
+    </div>
+
+    <div class="currency-note">
+      💱 <strong>Währungshinweis:</strong> Die Ersparnis im Papiermuseum Basel betrug 56 CHF ≈ 58,80 € (Kurs ~1,05 CHF/€). Für die Gesamtbilanz wird mit diesem Näherungswert gerechnet. Offizielle Kurse täglich aktuell.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════
+       EXPEDITIONS-TAGEBUCH
+  ═══════════════════════════════════ -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">📖</span> Expeditions-Tagebuch</h2>
+    <div class="visit-log">
+
+      <!-- EINTRAG 1: Papiermuseum Basel -->
+      <div class="visit-card swiss">
+        <div class="visit-card-header">
+          <div>
+            <div class="visit-museum-name">
+              Papiermuseum Basel
+            </div>
+            <div style="font-size:14px; color:var(--leather); margin-top:4px; font-style:italic;">
+              St. Alban-Tal 37, Basel — Schweiz
+            </div>
+          </div>
+          <div class="visit-badge">
+            🇨🇭 &nbsp;56 CHF gespart
+          </div>
+        </div>
+
+        <div class="visit-details">
+          <div class="visit-detail">
+            <span class="detail-icon">📅</span>
+            <span>2026 (genaues Datum nachtragen)</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">👥</span>
+            <span>2 Erwachsene + 2 Kinder</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">🏛️</span>
+            <span>Papier- und Schriftmuseum</span>
+          </div>
+        </div>
+
+        <div class="visit-savings-row">
+          <span class="savings-item">Regulärer Eintrittspreis:</span>
+          <span class="savings-item">Ersparnis mit Pass:</span>
+          <span class="savings-highlight">56 CHF ≈ 58,80 €</span>
+          <span class="savings-item" style="margin-left:auto; font-size:13px; font-style:italic; color:var(--leather);">
+            2 Erw. + 2 Kinder hätten ohne Pass gezahlt
+          </span>
+        </div>
+
+        <!-- decorative stamp -->
+        <div class="visit-stamp">
+          <div class="visit-stamp-text">BESUCHT<br>BASEL<br>🇨🇭</div>
+        </div>
+      </div>
+
+      <!-- EINTRAG 2: Château du Haut-Kœnigsbourg -->
+      <div class="visit-card france">
+        <div class="visit-card-header">
+          <div>
+            <div class="visit-museum-name">
+              Château du Haut-Kœnigsbourg
+            </div>
+            <div style="font-size:14px; color:var(--leather); margin-top:4px; font-style:italic;">
+              Orschwiller, Elsass — Frankreich
+            </div>
+          </div>
+          <div class="visit-badge france-badge">
+            🇫🇷 &nbsp;~30 € gespart
+          </div>
+        </div>
+
+        <div class="visit-details">
+          <div class="visit-detail">
+            <span class="detail-icon">📅</span>
+            <span>2026 (genaues Datum nachtragen)</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">👥</span>
+            <span>Besucher (Details nachtragen)</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">🏰</span>
+            <span>Mittelalterliche Burganlage, Elsass</span>
+          </div>
+        </div>
+
+        <div class="visit-savings-row">
+          <span class="savings-item">Regulärer Eintritt: 14 € Erw. / Kinder frei (unter 18)</span>
+          <span class="savings-item">Ersparnis mit Pass:</span>
+          <span class="savings-highlight">~30 €</span>
+          <span class="savings-item" style="margin-left:auto; font-size:13px; font-style:italic; color:var(--leather);">
+            Hohkönigsburg im Haut-Rhin, Vosges
+          </span>
+        </div>
+
+        <!-- decorative stamp -->
+        <div class="visit-stamp">
+          <div class="visit-stamp-text">BESUCHT<br>ELSASS<br>🇫🇷</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note-box" style="margin-top:20px;">
+      ✏️ <strong>Hinweis:</strong> Die genauen Daten und Personenanzahlen der Besuche können oben im HTML-Code direkt ergänzt werden. Neue Besuche einfach als weiteres <code>&lt;div class="visit-card"&gt;</code> hinzufügen.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════
+       CHRONIK
+  ═══════════════════════════════════ -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🗓️</span> Chronik der Expedition</h2>
+    <div class="timeline">
+
+      <div class="timeline-event">
+        <div class="timeline-date">07. MÄRZ 2026</div>
+        <div class="timeline-text">
+          <strong>Expeditionsstart!</strong> Lars und Kristina Müller erwerben je einen Museums-PASS-Musées.
+          Investition gesamt: <strong>258 €</strong> (2 × 129 €). Gültig 1 Jahr ab Erstbenutzung.
+          Zugang zu über 350 Museen, Schlössern und Gärten in der Schweiz, Deutschland und Frankreich.
+        </div>
+      </div>
+
+      <div class="timeline-event">
+        <div class="timeline-date">2026 · ERSTES ABENTEUER</div>
+        <div class="timeline-text">
+          <strong>Papiermuseum Basel 🇨🇭</strong> — Erstes Museum erkundet!
+          Mit 2 Erwachsenen und 2 Kindern. Ersparnis:
+          <span class="timeline-savings">56 CHF ≈ 58,80 €</span>
+        </div>
+      </div>
+
+      <div class="timeline-event">
+        <div class="timeline-date">2026 · ZWEITES ABENTEUER</div>
+        <div class="timeline-text">
+          <strong>Château du Haut-Kœnigsbourg 🇫🇷</strong> — Ins Elsass! Die mittelalterliche Burganlage
+          hoch über dem Rheintal. Ersparnis:
+          <span class="timeline-savings">~30 €</span>
+        </div>
+      </div>
+
+      <div class="timeline-event" style="border-style: dashed; opacity: 0.6;">
+        <div class="timeline-date">NÄCHSTE ABENTEUER · 2026</div>
+        <div class="timeline-text">
+          Noch ~169 € zu holen bis Break-Even. Welches Museum kommt als nächstes?<br>
+          <em>Ideen: Musée Unterlinden Colmar · Museum Tinguely Basel · Augustinermuseum Freiburg · Augusta Raurica …</em>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════
+       PASS-INFORMATIONEN
+  ═══════════════════════════════════ -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">📋</span> Pass-Informationen</h2>
+    <div class="info-grid">
+
+      <div class="info-card">
+        <h3>🎟️ Was ist inbegriffen</h3>
+        <ul>
+          <li>Alle Dauer- und Wechselausstellungen</li>
+          <li>Über 350 Museen, Schlösser, Gärten</li>
+          <li>Über 1.000 Wechselausstellungen</li>
+          <li>Schweiz, Deutschland, Frankreich</li>
+          <li>Pro Pass: 1 Erwachsener + bis zu 5 Kinder unter 18</li>
+          <li>Kinder müssen nicht verwandt sein</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>⚠️ Nicht inbegriffen</h3>
+        <ul>
+          <li>Sonderveranstaltungen außerhalb des normalen Betriebs</li>
+          <li>Führungen und Audioguides</li>
+          <li>Einzelne Ausnahmen bei Sonderausstellungen</li>
+          <li>Gastronomie und Museumsshops</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>📌 Wichtige Regeln</h3>
+        <ul>
+          <li>Pass ist <strong>nicht übertragbar</strong> (personengebunden)</li>
+          <li>Gültigkeit: <strong>1 Jahr ab Erstbenutzung</strong></li>
+          <li>Passfoto aufkleben und Namen eintragen</li>
+          <li>Registrierung empfohlen (Ersatz bei Verlust)</li>
+          <li>Verlängerung vor Ablauf = 1 Monat gratis extra</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>💰 Preise (ab 01.01.2026)</h3>
+        <ul>
+          <li>Normaltarif: <strong>129 € / 153 CHF</strong></li>
+          <li>Ermäßigt: <strong>119 € / 141 CHF</strong></li>
+          <li>Schüler, Azubis, Lehrer, Behinderte, Arbeitslose</li>
+          <li>Mitglieder von Museumsfördervereinen</li>
+          <li>Nachweis erforderlich bei Ermäßigung</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════
+       MUSEEN-ENTDECKER
+  ═══════════════════════════════════ -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🗺️</span> Museen-Entdecker — Auswahl Dreiländereck</h2>
+    <p style="font-size:15px; color:var(--ink-light); margin-bottom:20px; font-style:italic;">
+      Eine Auswahl aus den 350+ teilnehmenden Häusern — besonders interessant für die Region Basel / Oberrhein / Elsass / Schwarzwald
+    </p>
+
+    <div class="museum-grid">
+
+      <!-- BESUCHT -->
+      <div class="museum-item visited">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Papiermuseum Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item visited">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château du Haut-Kœnigsbourg</div>
+        <div class="museum-city">Orschwiller, Elsass</div>
+      </div>
+
+      <!-- SCHWEIZ -->
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Tinguely</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum der Kulturen</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Antikenmuseum Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Pharmaziemuseum Universität Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Spielzeug Welten Museum</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Hafenmuseum Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Augusta Raurica</div>
+        <div class="museum-city">Augst, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>S AM Architekturmuseum</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunsthalle Basel</div>
+        <div class="museum-city">Basel, Schweiz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Schloss Lenzburg</div>
+        <div class="museum-city">Lenzburg, Schweiz</div>
+      </div>
+
+      <!-- FRANKREICH / ELSASS -->
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Unterlinden</div>
+        <div class="museum-city">Colmar, Elsass</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Bartholdi-Museum</div>
+        <div class="museum-city">Colmar, Elsass</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Jouet (Spielzeugmuseum)</div>
+        <div class="museum-city">Colmar, Elsass</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire Naturelle Colmar</div>
+        <div class="museum-city">Colmar, Elsass</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Écomusée Textile Wesserling</div>
+        <div class="museum-city">Husseren-Wesserling, Elsass</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Fleckenstein</div>
+        <div class="museum-city">Lembach, Elsass</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Würth</div>
+        <div class="museum-city">Erstein, Elsass</div>
+      </div>
+
+      <!-- DEUTSCHLAND -->
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Augustinermuseum Freiburg</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Archäologisches Museum Freiburg</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Uhrenmuseum</div>
+        <div class="museum-city">Furtwangen, Schwarzwald</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Freilichtmuseum</div>
+        <div class="museum-city">Gutach, Schwarzwald</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Baden-Baden</div>
+        <div class="museum-city">Baden-Baden</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Frieder Burda</div>
+        <div class="museum-city">Baden-Baden</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>ZKM | Kunst und Medien</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badisches Landesmuseum</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+
+    </div>
+
+    <div class="note-box" style="margin-top:20px;">
+      🌐 Die vollständige Liste aller 350+ Museen findet sich unter
+      <strong>museumspass.com/de/liste</strong> mit Filtermöglichkeiten nach Land, Stadt und Thema.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <span class="footer-ornament">⚜</span>
+    Expedition der Familie Müller · Museums-PASS-Musées Dreiländereck<br>
+    Schweiz · Deutschland · Frankreich · Gültig 07.03.2026 – 07.03.2027<br><br>
+    <span style="font-size:12px; opacity:0.6;">
+      Zuletzt aktualisiert: März 2026 · museumspass.com/de
+    </span>
+  </footer>
+
+</div>
+
+<script>
+  // Berechne verbleibende Tage bis zum Pass-Ablauf
+  function updateCountdown() {
+    const expiry = new Date('2027-03-07');
+    const now = new Date();
+    const diff = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
+    const el = document.getElementById('days-remaining');
+    if (el) {
+      if (diff > 0) {
+        el.textContent = diff + ' Tage';
+      } else {
+        el.textContent = 'Abgelaufen';
+        el.style.color = 'var(--rust)';
+      }
+    }
+  }
+  updateCountdown();
+</script>
+
+</body>
+</html>
