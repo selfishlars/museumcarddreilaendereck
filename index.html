@@ -253,9 +253,9 @@
     .stat-card.highlight-gold .stat-value { color: var(--gold); }
 
     /* ═══════════════════════════════════
-       PROGRESS BAR
+       THERMOMETER (Break-Even)
     ═══════════════════════════════════ */
-    .progress-section {
+    .thermo-section {
       background: linear-gradient(145deg, #f0e4c0, #e8d5a3);
       border: 2px solid var(--gold);
       border-radius: 4px;
@@ -264,74 +264,216 @@
       box-shadow: 3px 3px 0 rgba(184,134,11,0.3);
     }
 
-    .progress-header {
+    .thermo-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 12px;
+      margin-bottom: 25px;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .progress-title {
+    .thermo-title {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       font-weight: 700;
       color: var(--ink);
     }
 
-    .progress-pct {
+    .thermo-pct {
       font-family: 'Special Elite', monospace;
       font-size: 22px;
       color: var(--forest);
       font-weight: bold;
     }
 
-    .progress-track {
-      background: rgba(44,24,16,0.15);
-      border-radius: 100px;
-      height: 28px;
-      overflow: hidden;
-      border: 1px solid rgba(44,24,16,0.2);
-      position: relative;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--forest) 0%, var(--forest-light) 60%, #5a9a5a 100%);
-      border-radius: 100px;
-      transition: width 1s ease;
-      position: relative;
+    .thermo-layout {
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 10px;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
     }
 
-    .progress-fill::after {
+    .thermo-scale {
+      position: relative;
+      height: 280px;
+      width: 90px;
+      margin-bottom: 56px;
+      flex-shrink: 0;
+    }
+
+    .thermo-scale-label {
+      position: absolute;
+      right: 10px;
+      transform: translateY(50%);
+      font-family: 'Special Elite', monospace;
+      font-size: 11px;
+      color: var(--ink-light);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .thermo-scale-label::after {
+      content: ' —';
+      opacity: 0.4;
+    }
+
+    .thermo-scale-label.be-label {
+      color: var(--forest);
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .thermo-scale-label.be-label::after {
+      opacity: 1;
+      color: var(--forest);
+    }
+
+    .thermo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .thermo-tube-wrapper {
+      position: relative;
+      width: 44px;
+      height: 280px;
+    }
+
+    .thermo-tube-outer {
+      position: absolute;
+      left: 6px;
+      width: 32px;
+      height: 100%;
+      background: rgba(244, 232, 193, 0.85);
+      border: 2px solid var(--leather);
+      border-radius: 12px 12px 0 0;
+      border-bottom: none;
+      overflow: hidden;
+      box-shadow: inset 2px 0 5px rgba(0,0,0,0.1), inset -2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .thermo-mercury {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, #922b21 0%, #c0392b 40%, #e74c3c 70%, #ff7675 100%);
+      transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 3px;
+    }
+
+    .thermo-mercury::after {
       content: '';
       position: absolute;
-      top: 4px; left: 10px; right: 10px;
-      height: 6px;
-      background: rgba(255,255,255,0.25);
-      border-radius: 100px;
+      top: 0; left: 4px;
+      width: 5px;
+      bottom: 0;
+      background: rgba(255,255,255,0.22);
+      border-radius: 2px;
     }
 
-    .progress-label-inside {
-      color: white;
-      font-family: 'Special Elite', monospace;
-      font-size: 12px;
-      letter-spacing: 1px;
+    /* Break-even marker line across the tube */
+    .thermo-be-marker {
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      height: 3px;
+      background: var(--forest);
+      bottom: 73.71%;
+      z-index: 2;
+      border-radius: 1px;
+    }
+
+    .thermo-be-marker::after {
+      content: '🎯';
+      position: absolute;
+      left: calc(100% + 5px);
+      top: -10px;
+      font-size: 15px;
+    }
+
+    .thermo-tick {
+      position: absolute;
+      right: 0;
+      width: 7px;
+      height: 2px;
+      background: var(--leather);
+      opacity: 0.45;
+    }
+
+    .thermo-bulb {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 35%, #ff8a80, #c0392b 50%, #7b241c 100%);
+      border: 3px solid var(--leather);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35), inset 0 -3px 6px rgba(0,0,0,0.25);
+      margin-top: -3px;
+      position: relative;
       z-index: 1;
     }
 
-    .progress-legend {
+    .thermo-bulb-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 9px;
+      color: rgba(255,255,255,0.92);
+      text-align: center;
+      line-height: 1.3;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+    .thermo-info-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-bottom: 56px;
+      padding-left: 24px;
+      min-width: 140px;
+    }
+
+    .thermo-info-row {
+      font-family: 'Crimson Text', serif;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .thermo-info-val {
+      font-family: 'Special Elite', monospace;
+      font-size: 14px;
+      color: var(--forest);
+    }
+
+    .thermo-info-val.red { color: var(--rust); }
+
+    .thermo-legend {
       display: flex;
       justify-content: space-between;
-      margin-top: 8px;
+      margin-top: 16px;
       font-size: 13px;
       color: var(--ink-light);
       font-style: italic;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    /* Museum section headers inside grid */
+    .museum-section-header {
+      grid-column: 1 / -1;
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 10px 0 4px;
+      border-bottom: 2px solid var(--gold);
+      margin-top: 6px;
+      letter-spacing: 1px;
     }
 
     /* ═══════════════════════════════════
@@ -849,7 +991,7 @@
 
     <div class="header-ornament">✦ Expedition Logbuch ✦</div>
     <h1 class="page-title">Museums<span>PASS</span><br>Dreiländereck</h1>
-    <p class="page-subtitle">Die Abenteuer von Lars &amp; Kristina</p>
+    <p class="page-subtitle">Unsere Abenteuer im Dreiländereck</p>
     <p style="font-size:14px; color:#9a7a5a; font-family:'Special Elite',monospace; letter-spacing:2px;">
       SCHWEIZ · DEUTSCHLAND · FRANKREICH
     </p>
@@ -865,7 +1007,7 @@
       </div>
       <div class="header-meta-item">
         <span class="label">Expediteure</span>
-        <span class="value">Lars &amp; Kristina</span>
+        <span class="value">Anon 1, Anon 2, Kind 1 &amp; Kind 2</span>
       </div>
       <div class="header-meta-item">
         <span class="label">Entdeckte Museen</span>
@@ -899,7 +1041,7 @@
       <div class="pass-card">
         <div class="pass-logo">Museums-PASS-Musées · 2026</div>
         <div class="pass-chip"></div>
-        <div class="pass-holder-name">Lars</div>
+        <div class="pass-holder-name">Anon 1</div>
         <div class="pass-details">
           <span>📅 Gekauft: 07.03.2026</span>
           <span>💶 Preis: 129,00 €</span>
@@ -910,7 +1052,7 @@
       <div class="pass-card">
         <div class="pass-logo">Museums-PASS-Musées · 2026</div>
         <div class="pass-chip"></div>
-        <div class="pass-holder-name">Kristina</div>
+        <div class="pass-holder-name">Anon 2</div>
         <div class="pass-details">
           <span>📅 Gekauft: 07.03.2026</span>
           <span>💶 Preis: 129,00 €</span>
@@ -944,14 +1086,14 @@
       <div class="stat-card highlight-green">
         <span class="stat-icon">🏛️</span>
         <div class="stat-label">Bisher gespart</div>
-        <div class="stat-value">~89 €</div>
-        <div class="stat-sub">56 CHF + 30 € (gerundet)</div>
+        <div class="stat-value">~87 €</div>
+        <div class="stat-sub">56 CHF (≈59 €) + 28 €</div>
       </div>
 
       <div class="stat-card highlight-red">
         <span class="stat-icon">🎯</span>
         <div class="stat-label">Noch zu holen</div>
-        <div class="stat-value">~169 €</div>
+        <div class="stat-value">~171 €</div>
         <div class="stat-sub">bis Break-Even</div>
       </div>
 
@@ -977,26 +1119,58 @@
       </div>
     </div>
 
-    <!-- FORTSCHRITTSBALKEN -->
-    <div class="progress-section">
-      <div class="progress-header">
-        <span class="progress-title">Break-Even Fortschritt</span>
-        <span class="progress-pct">~34,5%</span>
+    <!-- THERMOMETER -->
+    <div class="thermo-section">
+      <div class="thermo-header">
+        <span class="thermo-title">Break-Even Thermometer</span>
+        <span class="thermo-pct">~33,7%</span>
       </div>
-      <div class="progress-track">
-        <div class="progress-fill" style="width: 34.5%">
-          <span class="progress-label-inside">~89 € von 258 €</span>
+      <div class="thermo-layout">
+        <!-- Skala links -->
+        <div class="thermo-scale">
+          <div class="thermo-scale-label be-label" style="bottom: 73.71%">258 € Ziel</div>
+          <div class="thermo-scale-label" style="bottom: 57.14%">200 €</div>
+          <div class="thermo-scale-label" style="bottom: 42.86%">150 €</div>
+          <div class="thermo-scale-label" style="bottom: 28.57%">100 €</div>
+          <div class="thermo-scale-label" style="bottom: 14.29%">50 €</div>
+          <div class="thermo-scale-label" style="bottom: 0">0 €</div>
+        </div>
+        <!-- Thermometer -->
+        <div class="thermo-container">
+          <div class="thermo-tube-wrapper">
+            <div class="thermo-tube-outer">
+              <div class="thermo-mercury" style="height: 24.86%"></div>
+            </div>
+            <div class="thermo-be-marker"></div>
+            <div class="thermo-tick" style="bottom: 14.29%"></div>
+            <div class="thermo-tick" style="bottom: 28.57%"></div>
+            <div class="thermo-tick" style="bottom: 42.86%"></div>
+            <div class="thermo-tick" style="bottom: 57.14%"></div>
+            <div class="thermo-tick" style="bottom: 71.43%"></div>
+            <div class="thermo-tick" style="bottom: 85.71%"></div>
+          </div>
+          <div class="thermo-bulb">
+            <div class="thermo-bulb-label">~87€<br>gespart</div>
+          </div>
+        </div>
+        <!-- Info-Panel rechts -->
+        <div class="thermo-info-panel">
+          <div class="thermo-info-row">💸 Investiert: <span class="thermo-info-val red">258 €</span></div>
+          <div class="thermo-info-row">🏛️ Gespart: <span class="thermo-info-val">~87 €</span></div>
+          <div class="thermo-info-row">🎯 Noch nötig: <span class="thermo-info-val red">~171 €</span></div>
+          <div class="thermo-info-row">🗺️ Besuche: <span class="thermo-info-val">2</span></div>
+          <div class="thermo-info-row">⏱️ Ø/Besuch: <span class="thermo-info-val">~44 €</span></div>
         </div>
       </div>
-      <div class="progress-legend">
+      <div class="thermo-legend">
         <span>Start: 0 €</span>
-        <span>Break-Even: 258 € ← noch ~169 € nötig</span>
-        <span>258 € gespart</span>
+        <span>Break-Even: 258 € ← noch ~171 € nötig</span>
+        <span>Gespart: ~87 €</span>
       </div>
     </div>
 
     <div class="currency-note">
-      💱 <strong>Währungshinweis:</strong> Die Ersparnis im Papiermuseum Basel betrug 56 CHF ≈ 58,80 € (Kurs ~1,05 CHF/€). Für die Gesamtbilanz wird mit diesem Näherungswert gerechnet. Offizielle Kurse täglich aktuell.
+      💱 <strong>Währungshinweis:</strong> Die Ersparnis im Papiermuseum Basel betrug 56 CHF ≈ 59 € (Kurs ~0,95 CHF/€, d.h. 1 € ≈ 0,95 CHF). Für die Gesamtbilanz wird mit diesem Näherungswert gerechnet. Offizielle Kurse täglich aktuell.
     </div>
   </section>
 
@@ -1028,11 +1202,11 @@
         <div class="visit-details">
           <div class="visit-detail">
             <span class="detail-icon">📅</span>
-            <span>2026 (genaues Datum nachtragen)</span>
+            <span>22. März 2026</span>
           </div>
           <div class="visit-detail">
             <span class="detail-icon">👥</span>
-            <span>2 Erwachsene + 2 Kinder</span>
+            <span>Anon 1, Anon 2, Kind 1 &amp; Kind 2</span>
           </div>
           <div class="visit-detail">
             <span class="detail-icon">🏛️</span>
@@ -1043,9 +1217,9 @@
         <div class="visit-savings-row">
           <span class="savings-item">Regulärer Eintrittspreis:</span>
           <span class="savings-item">Ersparnis mit Pass:</span>
-          <span class="savings-highlight">56 CHF ≈ 58,80 €</span>
+          <span class="savings-highlight">56 CHF ≈ 59 €</span>
           <span class="savings-item" style="margin-left:auto; font-size:13px; font-style:italic; color:var(--leather);">
-            2 Erw. + 2 Kinder hätten ohne Pass gezahlt
+            Anon 1 &amp; Anon 2 hätten ohne Pass gezahlt, Kinder frei
           </span>
         </div>
 
@@ -1067,18 +1241,18 @@
             </div>
           </div>
           <div class="visit-badge france-badge">
-            🇫🇷 &nbsp;~30 € gespart
+            🇫🇷 &nbsp;28 € gespart
           </div>
         </div>
 
         <div class="visit-details">
           <div class="visit-detail">
             <span class="detail-icon">📅</span>
-            <span>2026 (genaues Datum nachtragen)</span>
+            <span>07. März 2026</span>
           </div>
           <div class="visit-detail">
             <span class="detail-icon">👥</span>
-            <span>Besucher (Details nachtragen)</span>
+            <span>Anon 1, Anon 2, Kind 1 &amp; Kind 2</span>
           </div>
           <div class="visit-detail">
             <span class="detail-icon">🏰</span>
@@ -1089,7 +1263,7 @@
         <div class="visit-savings-row">
           <span class="savings-item">Regulärer Eintritt: 14 € Erw. / Kinder frei (unter 18)</span>
           <span class="savings-item">Ersparnis mit Pass:</span>
-          <span class="savings-highlight">~30 €</span>
+          <span class="savings-highlight">28 €</span>
           <span class="savings-item" style="margin-left:auto; font-size:13px; font-style:italic; color:var(--leather);">
             Hohkönigsburg im Haut-Rhin, Vosges
           </span>
@@ -1104,7 +1278,7 @@
     </div>
 
     <div class="note-box" style="margin-top:20px;">
-      ✏️ <strong>Hinweis:</strong> Die genauen Daten und Personenanzahlen der Besuche können oben im HTML-Code direkt ergänzt werden. Neue Besuche einfach als weiteres <code>&lt;div class="visit-card"&gt;</code> hinzufügen.
+      ➕ <strong>Neuen Besuch hinzufügen:</strong> Einfach ein weiteres <code>&lt;div class="visit-card swiss/france/germany"&gt;</code> einfügen und Thermometer-Prozent anpassen.
     </div>
   </section>
 
@@ -1120,34 +1294,34 @@
       <div class="timeline-event">
         <div class="timeline-date">07. MÄRZ 2026</div>
         <div class="timeline-text">
-          <strong>Expeditionsstart!</strong> Lars und Kristina erwerben je einen Museums-PASS-Musées.
+          <strong>Expeditionsstart!</strong> Zwei Museums-PASS-Musées erworben.
           Investition gesamt: <strong>258 €</strong> (2 × 129 €). Gültig 1 Jahr ab Erstbenutzung.
           Zugang zu über 350 Museen, Schlössern und Gärten in der Schweiz, Deutschland und Frankreich.
         </div>
       </div>
 
       <div class="timeline-event">
-        <div class="timeline-date">2026 · ERSTES ABENTEUER</div>
+        <div class="timeline-date">22. MÄRZ 2026 · ZWEITES ABENTEUER</div>
         <div class="timeline-text">
-          <strong>Papiermuseum Basel 🇨🇭</strong> — Erstes Museum erkundet!
-          Mit 2 Erwachsenen und 2 Kindern. Ersparnis:
-          <span class="timeline-savings">56 CHF ≈ 58,80 €</span>
+          <strong>Papiermuseum Basel 🇨🇭</strong> — Zweites Museum erkundet!
+          Mit Anon 1, Anon 2 und den Kindern. Ersparnis:
+          <span class="timeline-savings">56 CHF ≈ 59 €</span>
         </div>
       </div>
 
       <div class="timeline-event">
-        <div class="timeline-date">2026 · ZWEITES ABENTEUER</div>
+        <div class="timeline-date">07. MÄRZ 2026 · ERSTES ABENTEUER</div>
         <div class="timeline-text">
           <strong>Château du Haut-Kœnigsbourg 🇫🇷</strong> — Ins Elsass! Die mittelalterliche Burganlage
           hoch über dem Rheintal. Ersparnis:
-          <span class="timeline-savings">~30 €</span>
+          <span class="timeline-savings">28 €</span>
         </div>
       </div>
 
       <div class="timeline-event" style="border-style: dashed; opacity: 0.6;">
         <div class="timeline-date">NÄCHSTE ABENTEUER · 2026</div>
         <div class="timeline-text">
-          Noch ~169 € zu holen bis Break-Even. Welches Museum kommt als nächstes?<br>
+          Noch ~171 € zu holen bis Break-Even. Welches Museum kommt als nächstes?<br>
           <em>Ideen: Musée Unterlinden Colmar · Museum Tinguely Basel · Augustinermuseum Freiburg · Augusta Raurica …</em>
         </div>
       </div>
@@ -1217,16 +1391,17 @@
        MUSEEN-ENTDECKER
   ═══════════════════════════════════ -->
   <section class="section">
-    <h2 class="section-title"><span class="icon">🗺️</span> Museen-Entdecker — Auswahl Dreiländereck</h2>
+    <h2 class="section-title"><span class="icon">🗺️</span> Alle Museums-PASS Museen</h2>
     <p style="font-size:15px; color:var(--ink-light); margin-bottom:20px; font-style:italic;">
-      Eine Auswahl aus den 350+ teilnehmenden Häusern — besonders interessant für die Region Basel / Oberrhein / Elsass / Schwarzwald
+      350+ teilnehmende Häuser in der Schweiz, Deutschland und Frankreich — ✓ Besucht markiert
     </p>
 
     <div class="museum-grid">
 
-      <!-- BESUCHT -->
+      <!-- ══ BESUCHT ══ -->
+      <div class="museum-section-header">✓ Bereits besucht</div>
       <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Papiermuseum Basel</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Basler Papiermühle</div>
         <div class="museum-city">Basel, Schweiz</div>
       </div>
       <div class="museum-item visited">
@@ -1234,109 +1409,203 @@
         <div class="museum-city">Orschwiller, Elsass</div>
       </div>
 
-      <!-- SCHWEIZ -->
+      <!-- ══ SCHWEIZ ══ -->
+      <div class="museum-section-header">🇨🇭 Schweiz</div>
+
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Aargauer Kunsthaus</div>
+        <div class="museum-city">Aarau</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Tinguely</div>
-        <div class="museum-city">Basel, Schweiz</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Stadtmuseum Aarau</div>
+        <div class="museum-city">Aarau</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum der Kulturen</div>
-        <div class="museum-city">Basel, Schweiz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Antikenmuseum Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Pharmaziemuseum Universität Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Spielzeug Welten Museum</div>
-        <div class="museum-city">Basel, Schweiz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Hafenmuseum Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Forum Würth Arlesheim</div>
+        <div class="museum-city">Arlesheim</div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Augusta Raurica</div>
-        <div class="museum-city">Augst, Schweiz</div>
+        <div class="museum-city">Augst</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>S AM Architekturmuseum</div>
-        <div class="museum-city">Basel, Schweiz</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Langmatt</div>
+        <div class="museum-city">Baden</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Anatomisches Museum Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Antikenmuseum Basel und Sammlung Ludwig</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Brasilea Stiftung</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Cartoonmuseum Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Fondation Herzog</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Hafenmuseum Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Barfüsserkirche</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Haus zum Kirschgarten</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Musikmuseum</div>
+        <div class="museum-city">Basel</div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunsthalle Basel</div>
-        <div class="museum-city">Basel, Schweiz</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum der Kulturen Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Kleines Klingental</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Tinguely</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Pharmaziemuseum der Universität Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>S AM Schweizerisches Architekturmuseum</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Spielzeug Welten Museum Basel</div>
+        <div class="museum-city">Basel</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>ALPS Alpines Museum der Schweiz</div>
+        <div class="museum-city">Bern</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Bernisches Historisches Museum / Einstein Museum</div>
+        <div class="museum-city">Bern</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Bern</div>
+        <div class="museum-city">Bern</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum für Kommunikation</div>
+        <div class="museum-city">Bern</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Bern</div>
+        <div class="museum-city">Bern</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Zentrum Paul Klee</div>
+        <div class="museum-city">Bern</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Vindonissa Museum</div>
+        <div class="museum-city">Brugg</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Franz Gertsch</div>
+        <div class="museum-city">Burgdorf</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Musée Jurassien d'Art et d'Histoire</div>
+        <div class="museum-city">Delémont</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Ballenberg, Freilichtmuseum der Schweiz</div>
+        <div class="museum-city">Hofstetten bei Brienz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Rehmann-Museum</div>
+        <div class="museum-city">Laufenburg</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Burghalde</div>
+        <div class="museum-city">Lenzburg</div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Schloss Lenzburg</div>
-        <div class="museum-city">Lenzburg, Schweiz</div>
+        <div class="museum-city">Lenzburg</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Dichter:innen- und Stadtmuseum Liestal</div>
+        <div class="museum-city">Liestal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunsthalle Palazzo</div>
+        <div class="museum-city">Liestal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum.BL</div>
+        <div class="museum-city">Liestal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Abegg-Stiftung</div>
+        <div class="museum-city">Riggisberg</div>
       </div>
 
-      <!-- FRANKREICH / ELSASS -->
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Unterlinden</div>
-        <div class="museum-city">Colmar, Elsass</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Bartholdi-Museum</div>
-        <div class="museum-city">Colmar, Elsass</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Jouet (Spielzeugmuseum)</div>
-        <div class="museum-city">Colmar, Elsass</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire Naturelle Colmar</div>
-        <div class="museum-city">Colmar, Elsass</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Écomusée Textile Wesserling</div>
-        <div class="museum-city">Husseren-Wesserling, Elsass</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Fleckenstein</div>
-        <div class="museum-city">Lembach, Elsass</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Würth</div>
-        <div class="museum-city">Erstein, Elsass</div>
-      </div>
+      <!-- ══ DEUTSCHLAND ══ -->
+      <div class="museum-section-header">🇩🇪 Deutschland</div>
 
-      <!-- DEUTSCHLAND -->
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Augustinermuseum Freiburg</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reichsburg Trifels</div>
+        <div class="museum-city">Annweiler am Trifels</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Archäologisches Museum Freiburg</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Oberrheinisches Bäder- und Heimatmuseum</div>
+        <div class="museum-city">Bad Bellingen-Bamlach</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Uhrenmuseum</div>
-        <div class="museum-city">Furtwangen, Schwarzwald</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss- und Festungsruine Hardenburg</div>
+        <div class="museum-city">Bad Dürkheim</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Freilichtmuseum</div>
-        <div class="museum-city">Gutach, Schwarzwald</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Bad Krozingen</div>
+        <div class="museum-city">Bad Krozingen</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Baden-Baden</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hochrheinmuseum Schloss Schönau</div>
+        <div class="museum-city">Bad Säckingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Mineralienmuseum Bad Säckingen</div>
+        <div class="museum-city">Bad Säckingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Wildlife-Naturkundemuseum</div>
+        <div class="museum-city">Bad Säckingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Fabergé Museum</div>
         <div class="museum-city">Baden-Baden</div>
       </div>
       <div class="museum-item">
@@ -1344,19 +1613,434 @@
         <div class="museum-city">Baden-Baden</div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>ZKM | Kunst und Medien</div>
-        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum LA8</div>
+        <div class="museum-city">Baden-Baden</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Baden-Baden</div>
+        <div class="museum-city">Baden-Baden</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Baden-Baden</div>
+        <div class="museum-city">Baden-Baden</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badenweiler Spa Museum</div>
+        <div class="museum-city">Badenweiler</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Römische Badruine Badenweiler</div>
+        <div class="museum-city">Badenweiler</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hans-Thoma-Kunstmuseum</div>
+        <div class="museum-city">Bernau im Schwarzwald</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kulturzentrum Schloss Bonndorf</div>
+        <div class="museum-city">Bonndorf</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum für Stadtgeschichte Breisach</div>
+        <div class="museum-city">Breisach am Rhein</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss Bruchsal</div>
+        <div class="museum-city">Bruchsal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Welt der Kristalle</div>
+        <div class="museum-city">Dietingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Art.Plus</div>
+        <div class="museum-city">Donaueschingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss Villa Ludwigshöhe</div>
+        <div class="museum-city">Edenkoben</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Ettlingen</div>
+        <div class="museum-city">Ettlingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Archäologisches Museum Colombischlössle</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Augustinermuseum Freiburg</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kunstverein Freiburg</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum für Neue Kunst</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Natur und Mensch</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Uhrenmuseum</div>
+        <div class="museum-city">Furtwangen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Unimog-Museum</div>
+        <div class="museum-city">Gaggenau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Haus Löwenberg</div>
+        <div class="museum-city">Gengenbach</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Volkskundemuseum „Hüsli"</div>
+        <div class="museum-city">Grafenhausen-Rothaus</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Freilichtmuseum Vogtsbauernhof</div>
+        <div class="museum-city">Gutach (Schwarzwaldbahn)</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hansjakob-Museum im Freihof</div>
+        <div class="museum-city">Haslach</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Trachtenmuseum</div>
+        <div class="museum-city">Haslach</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Schuhmuseum</div>
+        <div class="museum-city">Hauenstein</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kurpfälzisches Museum Heidelberg</div>
+        <div class="museum-city">Heidelberg</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Textilsammlung Max Berk</div>
+        <div class="museum-city">Heidelberg</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Freilichtmuseum Klausenhof</div>
+        <div class="museum-city">Herrischried</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Skimuseum</div>
+        <div class="museum-city">Hinterzarten</div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badisches Landesmuseum</div>
         <div class="museum-city">Karlsruhe</div>
       </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badischer Kunstverein</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliches Museum für Naturkunde Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Städtische Galerie Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Verkehrsmuseum Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>ZKM | Zentrum für Kunst und Medien</div>
+        <div class="museum-city">Karlsruhe</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Faust-Museum</div>
+        <div class="museum-city">Knittlingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hirschwirtscheuer</div>
+        <div class="museum-city">Künzelsau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Würth</div>
+        <div class="museum-city">Künzelsau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Lahr</div>
+        <div class="museum-city">Lahr</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Dreiländermuseum</div>
+        <div class="museum-city">Lörrach</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Barockschloss Mannheim</div>
+        <div class="museum-city">Mannheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kunsthalle Mannheim</div>
+        <div class="museum-city">Mannheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reiss-Engelhorn-Museen</div>
+        <div class="museum-city">Mannheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Technoseum</div>
+        <div class="museum-city">Mannheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kloster Maulbronn</div>
+        <div class="museum-city">Maulbronn</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Oberrheinische Narrenschau</div>
+        <div class="museum-city">Kenzingen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Alamannen-Museum Vörstetten</div>
+        <div class="museum-city">Vörstetten</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hebelhaus Hausen</div>
+        <div class="museum-city">Hausen im Wiesental</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Wilhelm-Hack-Museum</div>
+        <div class="museum-city">Ludwigshafen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Städtische Galerie Villa Streccius</div>
+        <div class="museum-city">Landau in der Pfalz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Römermuseum Güglingen</div>
+        <div class="museum-city">Güglingen</div>
+      </div>
+
+      <!-- ══ FRANKREICH ══ -->
+      <div class="museum-section-header">🇫🇷 Frankreich</div>
+
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle — Parcours Découverte</div>
+        <div class="museum-city">Belfort</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Lion de Bartholdi</div>
+        <div class="museum-city">Belfort</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire de Belfort</div>
+        <div class="museum-city">Belfort</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle de Besançon</div>
+        <div class="museum-city">Besançon</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>FRAC Franche-Comté</div>
+        <div class="museum-city">Besançon</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des Beaux-Arts et d'Archéologie</div>
+        <div class="museum-city">Besançon</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Temps</div>
+        <div class="museum-city">Besançon</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Gallo-Romain</div>
+        <div class="museum-city">Biesheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc archéologique de Bliesbruck-Reinheim</div>
+        <div class="museum-city">Bliesbruck</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Pays de Hanau</div>
+        <div class="museum-city">Bouxwiller</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Judéo-Alsacien</div>
+        <div class="museum-city">Bouxwiller</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Maison du Distillateur</div>
+        <div class="museum-city">Châtenois</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Bartholdi-Museum</div>
+        <div class="museum-city">Colmar</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Le Village Hansi et son Musée</div>
+        <div class="museum-city">Colmar</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire Naturelle et d'Ethnographie</div>
+        <div class="museum-city">Colmar</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Jouet</div>
+        <div class="museum-city">Colmar</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Unterlinden</div>
+        <div class="museum-city">Colmar</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Régence</div>
+        <div class="museum-city">Ensisheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Würth Erstein</div>
+        <div class="museum-city">Erstein</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des Beaux-Arts Épinal</div>
+        <div class="museum-city">Épinal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée départemental art ancien et contemporain</div>
+        <div class="museum-city">Épinal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Maison Albert Schweitzer</div>
+        <div class="museum-city">Gunsbach</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Théodore Deck &amp; des Pays du Florival</div>
+        <div class="museum-city">Guebwiller</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Alsacien de Haguenau</div>
+        <div class="museum-city">Haguenau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Historique de Haguenau</div>
+        <div class="museum-city">Haguenau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc de Wesserling — Écomusée textile</div>
+        <div class="museum-city">Husseren-Wesserling</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Les Secrets du Chocolat par Schaal</div>
+        <div class="museum-city">Geispolsheim-Illkirch</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Maison de la Manufacture d'armes blanches</div>
+        <div class="museum-city">Klingenthal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des métiers du bois</div>
+        <div class="museum-city">Labaroche</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Jardin Fruitiers de Laquenexy</div>
+        <div class="museum-city">Laquenexy</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château Fort de Fleckenstein</div>
+        <div class="museum-city">Lembach</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Lichtenberg</div>
+        <div class="museum-city">Lichtenberg</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Lunéville</div>
+        <div class="museum-city">Lunéville</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Malbrouck</div>
+        <div class="museum-city">Manderen</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée départemental du Sel de Marsal</div>
+        <div class="museum-city">Marsal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Site verrier de Meisenthal</div>
+        <div class="museum-city">Meisenthal</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Centre Pompidou-Metz</div>
+        <div class="museum-city">Metz</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée français de la Lutherie</div>
+        <div class="museum-city">Mirecourt</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Chartreuse et Fondation Bugatti</div>
+        <div class="museum-city">Molsheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Art et d'Histoire Montbéliard</div>
+        <div class="museum-city">Montbéliard</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Château des ducs de Wurtemberg</div>
+        <div class="museum-city">Montbéliard</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Cité du Train — Patrimoine SNCF</div>
+        <div class="museum-city">Mulhouse</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée National de l'Automobile — Collection Schlumpf</div>
+        <div class="museum-city">Mulhouse</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Saline Royale</div>
+        <div class="museum-city">Arc-et-Senans</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la vigne et du vin du Jura</div>
+        <div class="museum-city">Arbois</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Grange à bécanes</div>
+        <div class="museum-city">Bantzenheim</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Folie Marco</div>
+        <div class="museum-city">Barr</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Baron Martin</div>
+        <div class="museum-city">Gray</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Ecomusée du pays de la cerise</div>
+        <div class="museum-city">Fougerolles</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Guerre de 1870 et de l'Annexion</div>
+        <div class="museum-city">Gravelotte</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Seigneurie d'Andlau</div>
+        <div class="museum-city">Andlau</div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Vivarium du Moulin</div>
+        <div class="museum-city">Lautenbach-Zell</div>
+      </div>
 
     </div>
 
     <div class="note-box" style="margin-top:20px;">
-      🌐 Die vollständige Liste aller 350+ Museen findet sich unter
-      <strong>museumspass.com/de/liste</strong> mit Filtermöglichkeiten nach Land, Stadt und Thema.
+      🌐 Vollständige aktuelle Liste unter <strong>museumspass.com/de/liste</strong> — über 350 Häuser mit Filteroptionen nach Land, Stadt und Thema.
     </div>
   </section>
 
