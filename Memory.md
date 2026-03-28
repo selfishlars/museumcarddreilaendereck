@@ -60,7 +60,7 @@ Eine einzelne statische HTML-Seite (`index.html`) — kein Framework, kein Build
 - **Regulärer Eintritt:** 14 € / Erw., Kinder unter 18 frei
 - **Ersparnis:** 2 × 14 € = **28 €**
 - **Homepage:** https://www.haut-koenigsbourg.fr
-- **Jährliche Besucher:** ~400.000
+- **Jährliche Besucher:** ~500.000
 
 ### Besuch 2: Basler Papiermühle
 - **Datum:** 22.03.2026
