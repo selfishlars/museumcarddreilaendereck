@@ -173,7 +173,7 @@ Nur ein kleines Snippet am Ende: berechnet `days-remaining` bis 07.03.2027.
 ### Eintrittspreise-Logik:
 - Kinder unter 18 oft frei (CH, FR)
 - Familienticket wenn verfügbar vorziehen
-- CHF → EUR: Betrag ÷ 0,95 (1 EUR ≈ 0,95 CHF)
+- CHF → EUR: Betrag × 1,10 (1 CHF = 1,10 EUR)
 - Ersparnis = was wir ohne Pass bezahlt hätten
 
 ---
