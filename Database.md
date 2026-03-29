@@ -1,0 +1,315 @@
+# Database.md — Museums-PASS Dreiländereck
+
+Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Projekts.
+
+---
+
+## TABELLE: passes
+
+| id | holder    | purchase_date | expiry_date | price_eur |
+|----|-----------|---------------|-------------|-----------|
+| 1  | Anon 1    | 2026-03-07    | 2027-03-07  | 129.00    |
+| 2  | Anon 2    | 2026-03-07    | 2027-03-07  | 129.00    |
+
+**Gesamt-Investment:** 258,00 €
+**Break-Even-Ziel:** 258,00 € Ersparnis
+
+---
+
+## TABELLE: travelers
+
+| id | alias  | type     | birth_year_approx | notes               |
+|----|--------|----------|--------------------|---------------------|
+| 1  | Anon 1 | adult    | —                  | Pass-Inhaber        |
+| 2  | Anon 2 | adult    | —                  | Pass-Inhaber        |
+| 3  | Kind 1 | child    | ~2015              | älteres Kind        |
+| 4  | Kind 2 | child    | ~2017              | jüngeres Kind (7 J.)|
+
+---
+
+## TABELLE: home_base
+
+| field          | value                                           |
+|----------------|-------------------------------------------------|
+| name           | Heimatbasis                                     |
+| street         | Eggbergstr. 52                                  |
+| city           | Rheinfelden (Baden)                             |
+| postal_code    | 79618                                           |
+| country        | Deutschland                                     |
+| lat            | 47.5551                                         |
+| lon            | 7.7677                                          |
+
+---
+
+## TABELLE: visits
+
+| id | museum_id | date       | travelers             | savings_local | currency | savings_eur | notes                        |
+|----|-----------|------------|-----------------------|---------------|----------|-------------|------------------------------|
+| 1  | FR-001    | 2026-03-07 | Anon1, Anon2, K1, K2  | 28.00         | EUR      | 28.00       | Kinder unter 18 frei         |
+| 2  | CH-001    | 2026-03-22 | Anon1, Anon2, K1, K2  | 56.00         | CHF      | 58.95       | 56 CHF ÷ 0.95 ≈ 58.95 €      |
+
+**Gesamtersparnis:** ~87 € (28 + 59)
+**Thermometer:** 87 / 2500 × 100 = 3,48%
+**Break-Even-Fortschritt:** 87 / 258 × 100 = 33,7%
+
+---
+
+## TABELLE: museums
+
+### Besucht
+
+| id     | name                        | city         | country | lat     | lon    | dist_km | website                        | price_eur | price_note                            | visited    |
+|--------|-----------------------------|--------------|---------|---------|--------|---------|-------------------------------|-----------|---------------------------------------|------------|
+| FR-001 | Château du Haut-Kœnigsbourg | Orschwiller  | FR      | 48.249  | 7.343  | 75      | haut-koenigsbourg.fr          | 28.00     | 2×14€, Kinder unter 18 frei           | 2026-03-07 |
+| CH-001 | Basler Papiermühle           | Basel        | CH      | 47.554  | 7.605  | 13      | papiermuseum.ch               | 58.95     | 56 CHF (2 Erw. + 2 Ki.) ÷ 0.95       | 2026-03-22 |
+
+---
+
+### Schweiz — Top 5 (recherchierte Preise)
+
+| id     | name                      | city       | dist_km | price_chf | price_eur | price_basis                                | website                      |
+|--------|---------------------------|------------|---------|-----------|-----------|--------------------------------------------|------------------------------|
+| CH-002 | Ballenberg Freilichtmuseum| Hofstetten | 85      | ~98       | ~103      | 2×32 + 2×17 CHF (Kinder 6–15)             | ballenberg.ch                |
+| CH-003 | Zentrum Paul Klee          | Bern       | 105     | ~68       | ~72       | 2×20 + 2×14 CHF (Kinder bis 16 frei/red.) | zpk.org                      |
+| CH-004 | Kunstmuseum Basel          | Basel      | 13      | ~52       | ~55       | 2×26 CHF, Kinder unter 16 frei (Sonntag)  | kunstmuseumbasel.ch          |
+| CH-005 | Museum Tinguely            | Basel      | 13      | ~36       | ~38       | 2×18 CHF, Kinder unter 16 frei            | tinguely.ch                  |
+| CH-006 | Bernisches Historisches M. | Bern       | 105     | ~32       | ~34       | 2×13 + Kinder (Familienkarte ~32 CHF)     | bhm.ch                       |
+
+### Schweiz — Weitere (Distanz sortiert, Preise ausstehend)
+
+| id     | name                              | city             | dist_km | website                          |
+|--------|-----------------------------------|------------------|---------|----------------------------------|
+| CH-007 | Augusta Raurica                   | Augst            | 10      | augustaraurica.ch                |
+| CH-008 | Museum.BL                         | Liestal          | 20      | museumbl.ch                      |
+| CH-009 | Historisches Museum Basel         | Basel            | 13      | hmb.ch                           |
+| CH-010 | Museum der Kulturen Basel         | Basel            | 13      | mkb.ch                           |
+| CH-011 | Naturhistorisches Museum Basel    | Basel            | 13      | nmbs.ch                          |
+| CH-012 | Museum für Gegenwartskunst Basel  | Basel            | 13      | kunstmuseumbasel.ch               |
+| CH-013 | Cartoonmuseum Basel               | Basel            | 13      | cartoonmuseum.ch                  |
+| CH-014 | Jüdisches Museum der Schweiz      | Basel            | 13      | juedisches-museum.ch              |
+| CH-015 | Spielzeug Welten Museum Basel     | Basel            | 13      | spielzeug-welten-museum-basel.ch  |
+| CH-016 | Haus der Elektronischen Künste    | Münchenbuchsee   | 15      | hek.ch                            |
+| CH-017 | Fondation Beyeler               | Riehen           | 17      | fondationbeyeler.ch               |
+| CH-018 | Dreiländermuseum                  | Lörrach          | 18      | dreilaendermuseum.eu              |
+| CH-019 | Vitra Design Museum               | Weil am Rhein    | 22      | design-museum.de                  |
+| CH-020 | Museum Burghalde                  | Lenzburg         | 42      | museum-burghalde.ch               |
+| CH-021 | Historisches Museum Olten         | Olten            | 48      | museum.olten.ch                   |
+| CH-022 | Kunstmuseum Solothurn             | Solothurn        | 62      | kunstmuseum-so.ch                 |
+| CH-023 | Naturmuseum Solothurn             | Solothurn        | 62      | naturmuseum.ch                    |
+| CH-024 | Kunsthaus Zug                     | Zug              | 75      | kunsthauszug.ch                   |
+| CH-025 | Forum Schweizer Geschichte        | Schwyz           | 85      | nationalmuseum.ch                 |
+| CH-026 | Kunstmuseum Bern                  | Bern             | 105     | kunstmuseumbern.ch                |
+| CH-027 | Museum für Kommunikation          | Bern             | 105     | mfk.ch                            |
+| CH-028 | Schweizerisches Alpines Museum    | Bern             | 105     | alpinesmuseum.ch                  |
+| CH-029 | Naturhistorisches Museum Bern     | Bern             | 105     | nmbe.ch                           |
+| CH-030 | Kunstmuseum Thun                  | Thun             | 115     | kunstmuseumthun.ch                |
+| CH-031 | Schloss Thun                      | Thun             | 115     | schlossthun.ch                    |
+| CH-032 | Freilichtmuseum Stans             | Stans            | 120     | nidwaldner-museum.ch              |
+| CH-033 | Swiss Open Air Museum Ballenberg  | Brienz           | 125     | ballenberg.ch                     |
+| CH-034 | Kunstmuseum Luzern                | Luzern           | 95      | kunstmuseumluzern.ch              |
+| CH-035 | Historisches Museum Luzern        | Luzern           | 95      | historischesmuseum.lu.ch          |
+| CH-036 | Natur-Museum Luzern               | Luzern           | 95      | natur-museum.ch                   |
+| CH-037 | Swiss Museum of Transport         | Luzern           | 95      | verkehrshaus.ch                   |
+| CH-038 | Kunstmuseum Winterthur            | Winterthur       | 105     | kmw.ch                            |
+| CH-039 | Technorama                        | Winterthur       | 105     | technorama.ch                     |
+| CH-040 | Museum Oskar Reinhart             | Winterthur       | 105     | museumoskarreinhart.ch            |
+| CH-041 | Kunsthaus Zürich                  | Zürich           | 110     | kunsthaus.ch                      |
+
+---
+
+### Deutschland — Top 5 (recherchierte Preise, bestätigt via NotebookLM 2026-03-29)
+
+| id     | name                       | city          | dist_km | price_eur | price_basis                                       | website                    |
+|--------|----------------------------|---------------|---------|-----------|---------------------------------------------------|----------------------------|
+| DE-001 | Fabergé Museum             | Baden-Baden   | 80      | ~38       | Familienkarte 38€ (Kinder unter 12 frei)          | faberge-museum.de          |
+| DE-002 | Technoseum                 | Mannheim      | 155     | ~42       | 2×12 + 2×9€, kein Familientarif                  | technoseum.de              |
+| DE-003 | Freilichtmuseum Vogtsbauernhof | Gutach   | 75      | ~34       | ca.-Wert (Preisseite nicht auslesbar)             | vogtsbauernhof.de          |
+| DE-004 | Museum Frieder Burda       | Baden-Baden   | 80      | ~28       | ca.-Wert (Preisseite nicht auslesbar)             | museum-frieder-burda.de    |
+| DE-005 | Badisches Landesmuseum     | Karlsruhe     | 125     | ~10       | Schloss bis 2026 geschlossen! Museum beim Markt: 2×5€ | landesmuseum.de        |
+
+### Deutschland — Weitere (Distanz sortiert, Preise 2026-03-29 recherchiert)
+
+| id     | name                          | city             | dist_km | price_eur | price_basis                               | website                             |
+|--------|-------------------------------|------------------|---------|-----------|-------------------------------------------|-------------------------------------|
+| DE-006 | Hochrheinmuseum Schloss Schönau | Bad Säckingen  | 15      | ~10       | 2×5€, Kinder bis 16 frei                 | badsaeckingen.de                    |
+| DE-007 | Mineralienmuseum Bad Säckingen | Bad Säckingen  | 15      | —         | Preis ausstehend                          | mineralienfreunde-hochrhein.de      |
+| DE-008 | Wildlife-Naturkundemuseum     | Bad Säckingen    | 15      | ~22       | 2×7 + 2×4€                               | wildkids-hochrhein.de               |
+| DE-009 | Dreiländermuseum              | Lörrach          | 20      | ~6        | Familientarif 6€ (!!), Erw. 5€, Ki. 2€   | dreilaendermuseum.eu                |
+| DE-010 | Freilichtmuseum Klausenhof    | Herrischried     | 30      | —         | Preis ausstehend                          | freilichtmuseum-klausenhof.de       |
+
+### Deutschland — Weitere (Distanz sortiert, Preise ausstehend)
+
+| id     | name                                    | city              | dist_km | website                              |
+|--------|-----------------------------------------|-------------------|---------|--------------------------------------|
+| DE-006 | Museum am Burghof                       | Lörrach           | 15      | museum-am-burghof.de                 |
+| DE-007 | Stadtmuseum Freiburg                    | Freiburg          | 30      | freiburg.de/museen                   |
+| DE-008 | Augustinermuseum                        | Freiburg          | 30      | augustinermuseum.de                  |
+| DE-009 | Museum für Neue Kunst Freiburg          | Freiburg          | 30      | freiburg.de/museen                   |
+| DE-010 | Naturmuseum Freiburg                    | Freiburg          | 30      | naturmuseum-freiburg.de              |
+| DE-011 | Archäologisches Museum Freiburg         | Freiburg          | 30      | archaeologie.uni-freiburg.de         |
+| DE-012 | Museum für Stadtgeschichte              | Freiburg          | 30      | —                                    |
+| DE-013 | Münster Freiburg (Museum)               | Freiburg          | 30      | —                                    |
+| DE-014 | Schwarzwälder Freilichtmuseum Vogtsbauernhof | Gutach    | 75      | vogtsbauernhof.de                    |
+| DE-015 | Römermuseum Augst                       | Augst/Bad Säckingen| 10     | augustaraurica.ch                    |
+| DE-016 | Vitra Design Museum                     | Weil am Rhein     | 22      | design-museum.de                     |
+| DE-017 | Museum Weißes Haus                      | Staufen           | 35      | —                                    |
+| DE-018 | Dreiländermuseum                        | Lörrach           | 18      | dreilaendermuseum.eu                 |
+| DE-019 | Museum Ettlingen                        | Ettlingen         | 90      | —                                    |
+| DE-020 | ZKM Museum für Kunst und Medientechnologie | Karlsruhe     | 125     | zkm.de                               |
+| DE-021 | Staatliche Kunsthalle Karlsruhe         | Karlsruhe         | 125     | kunsthalle-karlsruhe.de              |
+| DE-022 | Stadtmuseum Karlsruhe                   | Karlsruhe         | 125     | stadtmuseum-karlsruhe.de             |
+| DE-023 | Pfalzgalerie Kaiserslautern             | Kaiserslautern    | 160     | pfalzgalerie.de                      |
+| DE-024 | Historisches Museum der Pfalz           | Speyer            | 150     | museum.speyer.de                     |
+| DE-025 | Technik Museum Speyer                   | Speyer            | 150     | technik-museum.de                    |
+| DE-026 | Museum Wiesbaden                        | Wiesbaden         | 200     | museum-wiesbaden.de                  |
+| DE-027 | Städel Museum                           | Frankfurt         | 190     | staedelmuseum.de                     |
+| DE-028 | Senckenberg Naturmuseum                 | Frankfurt         | 190     | senckenberg.de                       |
+| DE-029 | Historisches Museum Frankfurt           | Frankfurt         | 190     | historisches-museum-frankfurt.de     |
+| DE-030 | Schirn Kunsthalle Frankfurt             | Frankfurt         | 190     | schirn.de                            |
+| DE-031 | Liebieghaus                             | Frankfurt         | 190     | liebieghaus.de                       |
+| DE-032 | Museum für Angewandte Kunst             | Frankfurt         | 190     | museumsuferfest.de                   |
+| DE-033 | Kunstmuseum Stuttgart                   | Stuttgart         | 170     | kunstmuseum-stuttgart.de             |
+| DE-034 | Staatsgalerie Stuttgart                 | Stuttgart         | 170     | staatsgalerie.de                     |
+| DE-035 | Württembergisches Landesmuseum          | Stuttgart         | 170     | landesmuseum-stuttgart.de            |
+| DE-036 | Mercedes-Benz Museum                    | Stuttgart         | 170     | mercedes-benz.com/museum             |
+| DE-037 | Porsche Museum                          | Stuttgart         | 170     | porsche.com/museum                   |
+| DE-038 | Naturkundemuseum Stuttgart              | Stuttgart         | 170     | naturkundemuseum-bw.de               |
+| DE-039 | Kunsthalle Mannheim                     | Mannheim          | 155     | kunsthalle-mannheim.de               |
+| DE-040 | Reiss-Engelhorn-Museen                  | Mannheim          | 155     | rem-mannheim.de                      |
+| DE-041 | Stadtgeschichtliches Museum Mannheim    | Mannheim          | 155     | stadtmuseum-mannheim.de              |
+| DE-042 | Kurpfälzisches Museum                   | Heidelberg        | 140     | museum-heidelberg.de                 |
+| DE-043 | Völkerkundemuseum Heidelberg            | Heidelberg        | 140     | voelkerkundemuseum-hd.de             |
+| DE-044 | Schlossmuseum Heidelberg                | Heidelberg        | 140     | schloss-heidelberg.de                |
+| DE-045 | Kunsthalle Tübingen                     | Tübingen          | 155     | kunsthalle-tuebingen.de              |
+| DE-046 | Stadtmuseum Tübingen                    | Tübingen          | 155     | tuebingen.de/museen                  |
+| DE-047 | Museum Haigerloch                       | Haigerloch        | 120     | —                                    |
+| DE-048 | Donaueschingen Fürstenberg              | Donaueschingen    | 85      | fuerstenberg-sammlungen.de           |
+| DE-049 | Franziskanermuseum Villingen            | Villingen-Schwenningen | 65 | franziskanermuseum.de               |
+| DE-050 | Schwarzwaldmuseum Triberg               | Triberg           | 80      | schwarzwaldmuseum.com                |
+| DE-051 | Museum Rottweil                         | Rottweil          | 100     | museum.rottweil.de                   |
+| DE-052 | Stadtmuseum Überlingen                  | Überlingen        | 85      | ueberlingen.de/museum                |
+| DE-053 | Rosgartenmuseum Konstanz                | Konstanz          | 80      | rosgartenmuseum.de                   |
+| DE-054 | Kunstmuseum Singen                      | Singen            | 65      | kunstmuseum-singen.de                |
+| DE-055 | Hegau Museum                            | Singen            | 65      | hegau-museum.de                      |
+| DE-056 | Museum des Landkreises Waldshut         | Bad Säckingen     | 25      | —                                    |
+| DE-057 | Kloster Maulbronn                       | Maulbronn         | 115     | kloster-maulbronn.de                 |
+| DE-058 | Badisches Landesmuseum Karlsruhe        | Karlsruhe         | 125     | landesmuseum.de                      |
+| DE-059 | Kunsthalle Baden-Baden                  | Baden-Baden       | 80      | kunsthalle-baden-baden.de            |
+| DE-060 | Museum la8                              | Baden-Baden       | 80      | museum-la8.de                        |
+| DE-061 | Stadtmuseum Baden-Baden                 | Baden-Baden       | 80      | —                                    |
+| DE-062 | Haus der Geschichte Baden-Württemberg   | Stuttgart         | 170     | hdgbw.de                             |
+
+---
+
+### Frankreich — Top 5 (recherchierte Preise)
+
+| id     | name                        | city         | dist_km | price_eur | price_basis                               | website                        |
+|--------|-----------------------------|--------------|---------|-----------|-------------------------------------------|-------------------------------|
+| FR-002 | Cité de l'Automobile (Schlumpf) | Mulhouse | 35      | ~48       | Familienticket 2 Erw. + 2 Ki.            | citedelautomobile.com         |
+| FR-003 | Cité du Train               | Mulhouse     | 35      | ~46       | 2×13 + 2×10 = 46€                        | citedutrain.com               |
+| FR-004 | Saline Royale               | Arc-et-Senans| 120     | ~38       | 2×12 + 2×7 = 38€                         | salineroyale.com              |
+| FR-005 | Citadelle de Besançon       | Besançon     | 120     | ~36       | Familienticket ~36€                       | citadelle.com                 |
+| FR-006 | Centre Pompidou-Metz        | Metz         | 200     | ~24       | 2×12€, Kinder unter 18 frei              | centrepompidou-metz.fr        |
+
+### Frankreich — Weitere (Distanz sortiert, Preise ausstehend)
+
+| id     | name                                    | city              | dist_km | website                                |
+|--------|-----------------------------------------|-------------------|---------|----------------------------------------|
+| FR-007 | Musée de l'Impression sur Étoffes       | Mulhouse          | 35      | musee-impression.com                   |
+| FR-008 | Musée des Beaux-Arts de Mulhouse        | Mulhouse          | 35      | —                                      |
+| FR-009 | Musée Historique de Mulhouse            | Mulhouse          | 35      | —                                      |
+| FR-010 | Électropolis                            | Mulhouse          | 35      | electropolis.fr                        |
+| FR-011 | Zoo de Mulhouse                         | Mulhouse          | 35      | zoo-mulhouse.com                       |
+| FR-012 | Musée d'Unterlinden                     | Colmar            | 45      | musee-unterlinden.com                  |
+| FR-013 | Musée Bartholdi                         | Colmar            | 45      | musee-bartholdi.fr                     |
+| FR-014 | Musée du Jouet                          | Colmar            | 45      | —                                      |
+| FR-015 | Écomusée d'Alsace                       | Ungersheim        | 42      | ecomusee-alsace.fr                     |
+| FR-016 | Musée Würth                             | Erstein           | 55      | musee-wurth.fr                         |
+| FR-017 | Château de Fleckenstein                 | Lembach           | 80      | chateau-fleckenstein.fr                |
+| FR-018 | Château d'Andlau                        | Andlau            | 60      | —                                      |
+| FR-019 | Musée Alsacien de Strasbourg            | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-020 | Musée des Beaux-Arts de Strasbourg      | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-021 | Musée Archéologique de Strasbourg       | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-022 | Musée d'Art Moderne de Strasbourg       | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-023 | Musée Historique de Strasbourg          | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-024 | Palais Rohan Strasbourg                 | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-025 | Musée de l'Œuvre Notre-Dame             | Strasbourg        | 70      | musees.strasbourg.eu                   |
+| FR-026 | Planetarium Strasbourg                  | Strasbourg        | 70      | planetarium-strasbourg.fr              |
+| FR-027 | Mémorial Alsace-Moselle                 | Schirmeck         | 85      | memorial-alsace-moselle.com            |
+| FR-028 | Musée de la Mine de Ronchamp            | Ronchamp          | 105     | mine-ronchamp.fr                       |
+| FR-029 | Chapelle Notre-Dame du Haut             | Ronchamp          | 105     | collinenotredameduhaut.com             |
+| FR-030 | Citadelle de Neuf-Brisach               | Neuf-Brisach      | 40      | —                                      |
+| FR-031 | Musée Lalique                           | Wingen-sur-Moder  | 90      | musee-lalique.com                      |
+| FR-032 | Château du Haut-Barr                    | Saverne           | 90      | —                                      |
+| FR-033 | Mémorial de la ligne Maginot (Schoenenbourg) | Hunspach    | 100     | lignemaginot.com                       |
+| FR-034 | Musée de la Poterie de Betschdorf       | Betschdorf        | 100     | —                                      |
+| FR-035 | Hagondange — Clouange                   | Hagondange        | 185     | —                                      |
+| FR-036 | Musée de la Cour d'Or                   | Metz              | 200     | musee.metz.fr                          |
+| FR-037 | Fort de Guentrange                      | Thionville        | 210     | —                                      |
+| FR-038 | Musée de la Sidérurgie                  | Uckange           | 200     | —                                      |
+| FR-039 | Musée de Bliesbruck-Reinheim            | Bliesbruck        | 200     | bliesbruck-reinheim.eu                 |
+| FR-040 | Château de Malbrouck                    | Manderen          | 200     | chateau-malbrouck.com                  |
+| FR-041 | Musée de la Résistance                  | Besançon          | 120     | —                                      |
+| FR-042 | Musée des Beaux-Arts de Besançon        | Besançon          | 120     | mba.besancon.fr                        |
+| FR-043 | Musée du Temps                          | Besançon          | 120     | musee-du-temps.fr                      |
+| FR-044 | Musée des Maisons Comtoises             | Nancray           | 115     | maisons-comtoises.org                  |
+| FR-045 | Musée de Vesoul                         | Vesoul            | 105     | —                                      |
+| FR-046 | Musée des Beaux-Arts de Colmar (Unterlinden) | Colmar    | 45      | musee-unterlinden.com                  |
+| FR-047 | Musée de la Chartreuse               | Molsheim          | 65      | —                                      |
+| FR-048 | Chemin de la Mémoire des Carrières     | Vieux-Thann       | 38      | —                                      |
+| FR-049 | Musée du Sundgau                        | Altkirch          | 28      | musee-sundgau.fr                       |
+| FR-050 | Château de la Hunerbourg               | Obersteinbach     | 90      | —                                      |
+| FR-051 | Musée de la Poterie                     | Soufflenheim      | 100     | —                                      |
+| FR-052 | Musée d'Art et d'Histoire de Belfort    | Belfort           | 65      | belfort.fr/musee                       |
+
+---
+
+## TABELLE: savings_summary
+
+| field                  | value    | unit |
+|------------------------|----------|------|
+| total_savings          | 87.00    | EUR  |
+| pass_cost              | 258.00   | EUR  |
+| break_even_remaining   | 171.00   | EUR  |
+| visits_count           | 2        |      |
+| avg_savings_per_visit  | 43.50    | EUR  |
+| thermometer_pct        | 3.48     | %    |
+| break_even_pct         | 33.72    | %    |
+| thermometer_scale_max  | 2500.00  | EUR  |
+| break_even_marker_pct  | 10.32    | %    |
+
+---
+
+## TABELLE: currency_rates
+
+| from | to  | rate   | notes                        |
+|------|-----|--------|------------------------------|
+| CHF  | EUR | ÷ 0.95 | 1 CHF ≈ 1.053 EUR (2026-03) |
+
+*Hinweis: Kurs variiert. Für alle Berechnungen wird CHF ÷ 0.95 verwendet.*
+
+---
+
+## Konventionen & Berechnungsregeln
+
+### Preis-Ermittlung
+- **Familienticket bevorzugen**, wenn 2 Erw. + 2 Kinder abgedeckt
+- Kinder unter 18 oft frei (Schweiz, Frankreich)
+- Kinder unter 12 oft frei (Deutschland)
+- Preise mit `~` und `*` markiert = ca.-Wert aus Training-Daten
+- Aktualisierung nötig: für alle Museen ohne Preis
+
+### Distanz-Berechnung
+- Von: Rheinfelden (Baden), Eggbergstr. 52 (47.5551°N, 7.7677°E)
+- Straßendistanz (nicht Luftlinie)
+- Werte gerundet auf ~5 km
+
+### Ersparnis-Berechnung
+- Ersparnis = Regulärer Eintritt ohne Pass
+- CHF → EUR: Betrag ÷ 0.95
+- Kinder-Freieintritte werden als 0 gerechnet (keine Ersparnis gelistet wenn Kinder ohnehin frei sind — außer wenn der Pass die Elterntickets ersetzt)
+
+---
+
+*Zuletzt aktualisiert: 2026-03-28*
+*Datenstand Besuche: 2 (Stand 2026-03-22)*

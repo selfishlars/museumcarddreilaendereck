@@ -772,6 +772,30 @@
       font-style: italic;
     }
 
+    .museum-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 5px;
+      font-size: 12px;
+      font-family: 'Special Elite', monospace;
+      align-items: center;
+    }
+    .museum-price { color: var(--forest); font-weight: 600; }
+    .museum-dist { color: var(--leather); }
+    .museum-web { color: var(--gold); text-decoration: none; }
+    .museum-web:hover { color: var(--gold-light); text-decoration: underline; }
+    .museum-price-note {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      font-style: italic;
+      color: var(--leather);
+      margin-bottom: 6px;
+      padding: 4px 8px;
+      background: rgba(44,24,16,0.04);
+      border-radius: 3px;
+    }
+
     /* country filter tabs */
     .filter-tabs {
       display: flex;
@@ -1012,46 +1036,53 @@
     /* ═══════════════════════════════════
        MOBILE-FIRST FONT & SIZE OVERRIDES
     ═══════════════════════════════════ */
-    body { font-size: 18px; }
+    body { font-size: 20px; }
 
-    .header-meta-item .label { font-size: 13px; letter-spacing: 2px; }
-    .header-meta-item .value { font-size: 22px; }
+    .header-meta-item .label { font-size: 15px; letter-spacing: 2px; }
+    .header-meta-item .value { font-size: 24px; }
 
-    .stat-card .stat-icon { font-size: 34px; }
-    .stat-card .stat-label { font-size: 13px; letter-spacing: 1.5px; }
-    .stat-card .stat-value { font-size: clamp(28px, 4vw, 38px); }
-    .stat-card .stat-sub { font-size: 15px; }
+    .stat-card .stat-icon { font-size: 36px; }
+    .stat-card .stat-label { font-size: 15px; letter-spacing: 1.5px; }
+    .stat-card .stat-value { font-size: clamp(30px, 4vw, 40px); }
+    .stat-card .stat-sub { font-size: 17px; }
 
-    .section-title { font-size: clamp(24px, 3.5vw, 34px); }
-    .section-title .icon { font-size: 32px; }
+    .section-title { font-size: clamp(26px, 3.5vw, 36px); }
+    .section-title .icon { font-size: 36px; }
 
-    .visit-museum-name { font-size: clamp(20px, 2.5vw, 26px) !important; }
-    .visit-detail span { font-size: 16px; }
-    .visit-savings-row { font-size: 16px; }
-    .savings-highlight { font-size: 20px !important; }
+    .visit-museum-name { font-size: clamp(22px, 2.5vw, 28px) !important; }
+    .visit-detail span { font-size: 18px; }
+    .visit-savings-row { font-size: 18px; }
+    .savings-highlight { font-size: 24px !important; }
 
-    .museum-name { font-size: 15px; }
-    .museum-city { font-size: 14px; }
+    .museum-name { font-size: 17px; }
+    .museum-city { font-size: 15px; }
+    .museum-meta { font-size: 14px; }
+    .museum-price-note { font-size: 13px; }
 
-    .timeline-date { font-size: 14px; letter-spacing: 2px; }
-    .timeline-text { font-size: 17px; }
-    .timeline-savings { font-size: 18px; }
+    .timeline-date { font-size: 16px; letter-spacing: 2px; }
+    .timeline-text { font-size: 19px; }
+    .timeline-savings { font-size: 20px; }
 
-    .info-card h3 { font-size: 18px; }
-    .info-card li { font-size: 16px; line-height: 1.7; }
+    .info-card h3 { font-size: 20px; }
+    .info-card li { font-size: 18px; line-height: 1.7; }
 
-    .thermo-title { font-size: 22px; }
-    .thermo-pct { font-size: 28px; }
-    .thermo-scale-label { font-size: 13px; }
-    .thermo-scale-label.be-label { font-size: 14px; }
-    .thermo-info-row { font-size: 17px; }
-    .thermo-info-val { font-size: 16px; }
-    .thermo-legend { font-size: 15px; }
-    .thermo-bulb-label { font-size: 10px; }
-    .thermo-bulb { width: 60px; height: 60px; }
+    .thermo-title { font-size: 24px; }
+    .thermo-pct { font-size: 32px; }
+    .thermo-scale-label { font-size: 15px; }
+    .thermo-scale-label.be-label { font-size: 16px; }
+    .thermo-info-row { font-size: 19px; }
+    .thermo-info-val { font-size: 18px; }
+    .thermo-legend { font-size: 17px; }
+    .thermo-bulb-label { font-size: 13px; }
+    .thermo-bulb { width: 64px; height: 64px; }
 
-    .pass-holder-name { font-size: clamp(28px, 4vw, 38px) !important; }
-    .pass-details span { font-size: 15px !important; }
+    .pass-holder-name { font-size: clamp(30px, 4vw, 40px) !important; }
+    .pass-details span { font-size: 17px !important; }
+
+    .vi-desc { font-size: 16px !important; }
+    .vi-label { font-size: 13px !important; }
+    .visit-info a { font-size: 16px !important; }
+    .savings-item { font-size: 17px !important; }
 
     /* Map section */
     .map-section {
@@ -1428,9 +1459,6 @@
       </div>
     </div>
 
-    <div class="currency-note">
-      💱 <strong>Währungshinweis:</strong> Die Ersparnis in der Basler Papiermühle betrug 56 CHF ≈ 59 € (Kurs ~0,95 CHF/€, d.h. 1 € ≈ 0,95 CHF). Für die Gesamtbilanz wird mit diesem Näherungswert gerechnet. Offizielle Kurse täglich aktuell.
-    </div>
   </section>
 
   <div class="divider"></div>
@@ -1681,638 +1709,797 @@
       <div class="museum-item visited">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Basler Papiermühle</div>
         <div class="museum-city">Basel, Schweiz</div>
+        <div class="museum-meta"><span class="museum-price">💶 59 €</span><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.papiermuseum.ch" target="_blank" rel="noopener">🌐 papiermuseum.ch</a></div>
       </div>
       <div class="museum-item visited">
         <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château du Haut-Kœnigsbourg</div>
         <div class="museum-city">Orschwiller, Elsass</div>
+        <div class="museum-meta"><span class="museum-price">💶 28 €</span><span class="museum-dist">📍 75km</span><a class="museum-web" href="https://www.haut-koenigsbourg.fr" target="_blank" rel="noopener">🌐 haut-koenigsbourg.fr</a></div>
       </div>
 
       <!-- ══ SCHWEIZ ══ -->
       <div class="museum-section-header">🇨🇭 Schweiz <span class="museum-count">40 gelistet</span></div>
+      <div class="museum-price-note">* Regelpreise ohne Museums-PASS · 2 Erw. + 2 Kinder (7 &amp; 9 J.) · Familienticket wo verfügbar · Angaben ca.</div>
 
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Aargauer Kunsthaus</div>
-        <div class="museum-city">Aarau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Stadtmuseum Aarau</div>
-        <div class="museum-city">Aarau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Forum Würth Arlesheim</div>
-        <div class="museum-city">Arlesheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Augusta Raurica</div>
-        <div class="museum-city">Augst</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Langmatt</div>
-        <div class="museum-city">Baden</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Anatomisches Museum Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Antikenmuseum Basel und Sammlung Ludwig</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Brasilea Stiftung</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Cartoonmuseum Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Fondation Herzog</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Hafenmuseum Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Barfüsserkirche</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Haus zum Kirschgarten</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Musikmuseum</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunsthalle Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum der Kulturen Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Kleines Klingental</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Tinguely</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Pharmaziemuseum der Universität Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>S AM Schweizerisches Architekturmuseum</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Spielzeug Welten Museum Basel</div>
-        <div class="museum-city">Basel</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>ALPS Alpines Museum der Schweiz</div>
-        <div class="museum-city">Bern</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Bernisches Historisches Museum / Einstein Museum</div>
-        <div class="museum-city">Bern</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Bern</div>
-        <div class="museum-city">Bern</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum für Kommunikation</div>
-        <div class="museum-city">Bern</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Bern</div>
-        <div class="museum-city">Bern</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Ballenberg, Freilichtmuseum der Schweiz</div>
+        <div class="museum-city">Hofstetten bei Brienz</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~103 €* (Familienticket ~95 CHF)</span><span class="museum-dist">📍 85km</span><a class="museum-web" href="https://www.ballenberg.ch" target="_blank" rel="noopener">🌐 ballenberg.ch</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Zentrum Paul Klee</div>
         <div class="museum-city">Bern</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~72 €* (Familienticket ~68 CHF)</span><span class="museum-dist">📍 105km</span><a class="museum-web" href="https://www.zpk.org" target="_blank" rel="noopener">🌐 zpk.org</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Vindonissa Museum</div>
-        <div class="museum-city">Brugg</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~55 €* (2×26 CHF, Kinder frei)</span><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.kunstmuseumbasel.ch" target="_blank" rel="noopener">🌐 kunstmuseumbasel.ch</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Franz Gertsch</div>
-        <div class="museum-city">Burgdorf</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Tinguely</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~38 €* (Familienticket ~36 CHF)</span><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.tinguely.ch" target="_blank" rel="noopener">🌐 tinguely.ch</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Musée Jurassien d'Art et d'Histoire</div>
-        <div class="museum-city">Delémont</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Bernisches Historisches Museum / Einstein Museum</div>
+        <div class="museum-city">Bern</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~34 €* (2×16 CHF, Kinder frei)</span><span class="museum-dist">📍 105km</span><a class="museum-web" href="https://www.bhm.ch" target="_blank" rel="noopener">🌐 bhm.ch</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Ballenberg, Freilichtmuseum der Schweiz</div>
-        <div class="museum-city">Hofstetten bei Brienz</div>
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Forum Würth Arlesheim</div>
+        <div class="museum-city">Arlesheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 10km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Augusta Raurica</div>
+        <div class="museum-city">Augst</div>
+        <div class="museum-meta"><span class="museum-dist">📍 10km</span><a class="museum-web" href="https://www.augustaraurica.ch" target="_blank" rel="noopener">🌐 augustaraurica.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Anatomisches Museum Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Antikenmuseum Basel und Sammlung Ludwig</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.antikenmuseumbasel.ch" target="_blank" rel="noopener">🌐 antikenmuseumbasel.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Brasilea Stiftung</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Cartoonmuseum Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.cartoonmuseum.ch" target="_blank" rel="noopener">🌐 cartoonmuseum.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Fondation Herzog</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Hafenmuseum Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 14km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Barfüsserkirche</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.hmb.ch" target="_blank" rel="noopener">🌐 hmb.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Haus zum Kirschgarten</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.hmb.ch" target="_blank" rel="noopener">🌐 hmb.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Historisches Museum Basel – Musikmuseum</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.hmb.ch" target="_blank" rel="noopener">🌐 hmb.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunsthalle Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.kunsthallebasel.ch" target="_blank" rel="noopener">🌐 kunsthallebasel.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum der Kulturen Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.mkb.ch" target="_blank" rel="noopener">🌐 mkb.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Kleines Klingental</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.nmbs.ch" target="_blank" rel="noopener">🌐 nmbs.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Pharmaziemuseum der Universität Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>S AM Schweizerisches Architekturmuseum</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Spielzeug Welten Museum Basel</div>
+        <div class="museum-city">Basel</div>
+        <div class="museum-meta"><span class="museum-dist">📍 13km</span></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Rehmann-Museum</div>
         <div class="museum-city">Laufenburg</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Burghalde</div>
-        <div class="museum-city">Lenzburg</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Schloss Lenzburg</div>
-        <div class="museum-city">Lenzburg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 15km</span></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Dichter:innen- und Stadtmuseum Liestal</div>
         <div class="museum-city">Liestal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 18km</span></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunsthalle Palazzo</div>
         <div class="museum-city">Liestal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 18km</span></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum.BL</div>
         <div class="museum-city">Liestal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 18km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Musée Jurassien d'Art et d'Histoire</div>
+        <div class="museum-city">Delémont</div>
+        <div class="museum-meta"><span class="museum-dist">📍 35km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Aargauer Kunsthaus</div>
+        <div class="museum-city">Aarau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span><a class="museum-web" href="https://www.aargauerkunsthaus.ch" target="_blank" rel="noopener">🌐 aargauerkunsthaus.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Stadtmuseum Aarau</div>
+        <div class="museum-city">Aarau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Vindonissa Museum</div>
+        <div class="museum-city">Brugg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Langmatt</div>
+        <div class="museum-city">Baden</div>
+        <div class="museum-meta"><span class="museum-dist">📍 58km</span><a class="museum-web" href="https://www.langmatt.ch" target="_blank" rel="noopener">🌐 langmatt.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Burghalde</div>
+        <div class="museum-city">Lenzburg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 65km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Schloss Lenzburg</div>
+        <div class="museum-city">Lenzburg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 65km</span><a class="museum-web" href="https://www.schloss-lenzburg.ch" target="_blank" rel="noopener">🌐 schloss-lenzburg.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum Franz Gertsch</div>
+        <div class="museum-city">Burgdorf</div>
+        <div class="museum-meta"><span class="museum-dist">📍 95km</span><a class="museum-web" href="https://www.museumfranzgertsch.ch" target="_blank" rel="noopener">🌐 museumfranzgertsch.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>ALPS Alpines Museum der Schweiz</div>
+        <div class="museum-city">Bern</div>
+        <div class="museum-meta"><span class="museum-dist">📍 105km</span><a class="museum-web" href="https://www.alpinesmuseum.ch" target="_blank" rel="noopener">🌐 alpinesmuseum.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Kunstmuseum Bern</div>
+        <div class="museum-city">Bern</div>
+        <div class="museum-meta"><span class="museum-dist">📍 105km</span><a class="museum-web" href="https://www.kunstmuseumbern.ch" target="_blank" rel="noopener">🌐 kunstmuseumbern.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum für Kommunikation</div>
+        <div class="museum-city">Bern</div>
+        <div class="museum-meta"><span class="museum-dist">📍 105km</span><a class="museum-web" href="https://www.mfk.ch" target="_blank" rel="noopener">🌐 mfk.ch</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Naturhistorisches Museum Bern</div>
+        <div class="museum-city">Bern</div>
+        <div class="museum-meta"><span class="museum-dist">📍 105km</span><a class="museum-web" href="https://www.nmbe.ch" target="_blank" rel="noopener">🌐 nmbe.ch</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Abegg-Stiftung</div>
         <div class="museum-city">Riggisberg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 110km</span><a class="museum-web" href="https://www.abegg-stiftung.ch" target="_blank" rel="noopener">🌐 abegg-stiftung.ch</a></div>
       </div>
 
       <!-- ══ DEUTSCHLAND ══ -->
       <div class="museum-section-header">🇩🇪 Deutschland <span class="museum-count">62 gelistet</span></div>
+      <div class="museum-price-note">* Regelpreise ohne Museums-PASS · 2 Erw. + 2 Kinder (7 &amp; 9 J.) · Familienticket wo verfügbar · Angaben ca.</div>
 
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reichsburg Trifels</div>
-        <div class="museum-city">Annweiler am Trifels</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Oberrheinisches Bäder- und Heimatmuseum</div>
-        <div class="museum-city">Bad Bellingen-Bamlach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss- und Festungsruine Hardenburg</div>
-        <div class="museum-city">Bad Dürkheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Bad Krozingen</div>
-        <div class="museum-city">Bad Krozingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hochrheinmuseum Schloss Schönau</div>
-        <div class="museum-city">Bad Säckingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Mineralienmuseum Bad Säckingen</div>
-        <div class="museum-city">Bad Säckingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Wildlife-Naturkundemuseum</div>
-        <div class="museum-city">Bad Säckingen</div>
-      </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇩🇪</span>Fabergé Museum</div>
         <div class="museum-city">Baden-Baden</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Frieder Burda</div>
-        <div class="museum-city">Baden-Baden</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum LA8</div>
-        <div class="museum-city">Baden-Baden</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Baden-Baden</div>
-        <div class="museum-city">Baden-Baden</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Baden-Baden</div>
-        <div class="museum-city">Baden-Baden</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badenweiler Spa Museum</div>
-        <div class="museum-city">Badenweiler</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Römische Badruine Badenweiler</div>
-        <div class="museum-city">Badenweiler</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hans-Thoma-Kunstmuseum</div>
-        <div class="museum-city">Bernau im Schwarzwald</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kulturzentrum Schloss Bonndorf</div>
-        <div class="museum-city">Bonndorf</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum für Stadtgeschichte Breisach</div>
-        <div class="museum-city">Breisach am Rhein</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss Bruchsal</div>
-        <div class="museum-city">Bruchsal</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Welt der Kristalle</div>
-        <div class="museum-city">Dietingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Art.Plus</div>
-        <div class="museum-city">Donaueschingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss Villa Ludwigshöhe</div>
-        <div class="museum-city">Edenkoben</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Ettlingen</div>
-        <div class="museum-city">Ettlingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Archäologisches Museum Colombischlössle</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Augustinermuseum Freiburg</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kunstverein Freiburg</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum für Neue Kunst</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Natur und Mensch</div>
-        <div class="museum-city">Freiburg im Breisgau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Uhrenmuseum</div>
-        <div class="museum-city">Furtwangen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Unimog-Museum</div>
-        <div class="museum-city">Gaggenau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Haus Löwenberg</div>
-        <div class="museum-city">Gengenbach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Volkskundemuseum „Hüsli"</div>
-        <div class="museum-city">Grafenhausen-Rothaus</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Freilichtmuseum Vogtsbauernhof</div>
-        <div class="museum-city">Gutach (Schwarzwaldbahn)</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hansjakob-Museum im Freihof</div>
-        <div class="museum-city">Haslach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Trachtenmuseum</div>
-        <div class="museum-city">Haslach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Schuhmuseum</div>
-        <div class="museum-city">Hauenstein</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kurpfälzisches Museum Heidelberg</div>
-        <div class="museum-city">Heidelberg</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Textilsammlung Max Berk</div>
-        <div class="museum-city">Heidelberg</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Freilichtmuseum Klausenhof</div>
-        <div class="museum-city">Herrischried</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Skimuseum</div>
-        <div class="museum-city">Hinterzarten</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badisches Landesmuseum</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badischer Kunstverein</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Karlsruhe</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliches Museum für Naturkunde Karlsruhe</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Städtische Galerie Karlsruhe</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Verkehrsmuseum Karlsruhe</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>ZKM | Zentrum für Kunst und Medien</div>
-        <div class="museum-city">Karlsruhe</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Faust-Museum</div>
-        <div class="museum-city">Knittlingen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hirschwirtscheuer</div>
-        <div class="museum-city">Künzelsau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Würth</div>
-        <div class="museum-city">Künzelsau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Lahr</div>
-        <div class="museum-city">Lahr</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Dreiländermuseum</div>
-        <div class="museum-city">Lörrach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Barockschloss Mannheim</div>
-        <div class="museum-city">Mannheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kunsthalle Mannheim</div>
-        <div class="museum-city">Mannheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reiss-Engelhorn-Museen</div>
-        <div class="museum-city">Mannheim</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~38 €* (Familienkarte, Kinder unter 12 frei)</span><span class="museum-dist">📍 80km</span><a class="museum-web" href="https://www.faberge-museum.de" target="_blank" rel="noopener">🌐 faberge-museum.de</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇩🇪</span>Technoseum</div>
         <div class="museum-city">Mannheim</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~42 €* (2×12 €, Kinder 9 €)</span><span class="museum-dist">📍 155km</span><a class="museum-web" href="https://www.technoseum.de" target="_blank" rel="noopener">🌐 technoseum.de</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kloster Maulbronn</div>
-        <div class="museum-city">Maulbronn</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Freilichtmuseum Vogtsbauernhof</div>
+        <div class="museum-city">Gutach (Schwarzwaldbahn)</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~34 €* (2×11 € + 2×6 €)</span><span class="museum-dist">📍 75km</span><a class="museum-web" href="https://www.vogtsbauernhof.de" target="_blank" rel="noopener">🌐 vogtsbauernhof.de</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Oberrheinische Narrenschau</div>
-        <div class="museum-city">Kenzingen</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Frieder Burda</div>
+        <div class="museum-city">Baden-Baden</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~28 €* (2×14 €, Kinder frei)</span><span class="museum-dist">📍 80km</span><a class="museum-web" href="https://www.museum-frieder-burda.de" target="_blank" rel="noopener">🌐 museum-frieder-burda.de</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Alamannen-Museum Vörstetten</div>
-        <div class="museum-city">Vörstetten</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badisches Landesmuseum</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~10 €* (2×5 €, Schloss bis 2026 geschlossen → Museum beim Markt)</span><span class="museum-dist">📍 125km</span><a class="museum-web" href="https://www.landesmuseum.de" target="_blank" rel="noopener">🌐 landesmuseum.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hochrheinmuseum Schloss Schönau</div>
+        <div class="museum-city">Bad Säckingen</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~10 €* (2×5 €, Kinder bis 16 frei)</span><span class="museum-dist">📍 15km</span><a class="museum-web" href="https://www.badsaeckingen.de" target="_blank" rel="noopener">🌐 badsaeckingen.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Mineralienmuseum Bad Säckingen</div>
+        <div class="museum-city">Bad Säckingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 15km</span><a class="museum-web" href="https://www.mineralienfreunde-hochrhein.de/museum/" target="_blank" rel="noopener">🌐 mineralienfreunde-hochrhein.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Wildlife-Naturkundemuseum</div>
+        <div class="museum-city">Bad Säckingen</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~22 €* (2×7 €, Kinder 4 €)</span><span class="museum-dist">📍 15km</span><a class="museum-web" href="https://www.wildkids-hochrhein.de" target="_blank" rel="noopener">🌐 wildkids-hochrhein.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Dreiländermuseum</div>
+        <div class="museum-city">Lörrach</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~6 €* (Familientarif)</span><span class="museum-dist">📍 20km</span><a class="museum-web" href="https://www.dreilaendermuseum.eu" target="_blank" rel="noopener">🌐 dreilaendermuseum.eu</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Freilichtmuseum Klausenhof</div>
+        <div class="museum-city">Herrischried</div>
+        <div class="museum-meta"><span class="museum-dist">📍 30km</span><a class="museum-web" href="https://www.freilichtmuseum-klausenhof.de" target="_blank" rel="noopener">🌐 freilichtmuseum-klausenhof.de</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hebelhaus Hausen</div>
         <div class="museum-city">Hausen im Wiesental</div>
+        <div class="museum-meta"><span class="museum-dist">📍 30km</span></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Wilhelm-Hack-Museum</div>
-        <div class="museum-city">Ludwigshafen</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Archäologisches Museum Colombischlössle</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 35km</span></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Städtische Galerie Villa Streccius</div>
-        <div class="museum-city">Landau in der Pfalz</div>
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Augustinermuseum Freiburg</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 35km</span><a class="museum-web" href="https://www.augustinermuseum.de" target="_blank" rel="noopener">🌐 augustinermuseum.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kunstverein Freiburg</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 35km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum für Neue Kunst</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 35km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Natur und Mensch</div>
+        <div class="museum-city">Freiburg im Breisgau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 35km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Alamannen-Museum Vörstetten</div>
+        <div class="museum-city">Vörstetten</div>
+        <div class="museum-meta"><span class="museum-dist">📍 40km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Bad Krozingen</div>
+        <div class="museum-city">Bad Krozingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 40km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Oberrheinisches Bäder- und Heimatmuseum</div>
+        <div class="museum-city">Bad Bellingen-Bamlach</div>
+        <div class="museum-meta"><span class="museum-dist">📍 45km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Schuhmuseum</div>
+        <div class="museum-city">Hauenstein</div>
+        <div class="museum-meta"><span class="museum-dist">📍 45km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badenweiler Spa Museum</div>
+        <div class="museum-city">Badenweiler</div>
+        <div class="museum-meta"><span class="museum-dist">📍 50km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Römische Badruine Badenweiler</div>
+        <div class="museum-city">Badenweiler</div>
+        <div class="museum-meta"><span class="museum-dist">📍 50km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum für Stadtgeschichte Breisach</div>
+        <div class="museum-city">Breisach am Rhein</div>
+        <div class="museum-meta"><span class="museum-dist">📍 50km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kulturzentrum Schloss Bonndorf</div>
+        <div class="museum-city">Bonndorf</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Oberrheinische Narrenschau</div>
+        <div class="museum-city">Kenzingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Skimuseum</div>
+        <div class="museum-city">Hinterzarten</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hans-Thoma-Kunstmuseum</div>
+        <div class="museum-city">Bernau im Schwarzwald</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Lahr</div>
+        <div class="museum-city">Lahr</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Volkskundemuseum „Hüsli"</div>
+        <div class="museum-city">Grafenhausen-Rothaus</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Deutsches Uhrenmuseum</div>
+        <div class="museum-city">Furtwangen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 70km</span><a class="museum-web" href="https://www.deutsches-uhrenmuseum.de" target="_blank" rel="noopener">🌐 deutsches-uhrenmuseum.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Haus Löwenberg</div>
+        <div class="museum-city">Gengenbach</div>
+        <div class="museum-meta"><span class="museum-dist">📍 70km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hansjakob-Museum im Freihof</div>
+        <div class="museum-city">Haslach</div>
+        <div class="museum-meta"><span class="museum-dist">📍 70km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schwarzwälder Trachtenmuseum</div>
+        <div class="museum-city">Haslach</div>
+        <div class="museum-meta"><span class="museum-dist">📍 70km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Art.Plus</div>
+        <div class="museum-city">Donaueschingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 80km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum LA8</div>
+        <div class="museum-city">Baden-Baden</div>
+        <div class="museum-meta"><span class="museum-dist">📍 80km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Baden-Baden</div>
+        <div class="museum-city">Baden-Baden</div>
+        <div class="museum-meta"><span class="museum-dist">📍 80km</span><a class="museum-web" href="https://www.kunsthalle-badenbaden.de" target="_blank" rel="noopener">🌐 kunsthalle-badenbaden.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Stadtmuseum Baden-Baden</div>
+        <div class="museum-city">Baden-Baden</div>
+        <div class="museum-meta"><span class="museum-dist">📍 80km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Welt der Kristalle</div>
+        <div class="museum-city">Dietingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 90km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reichsburg Trifels</div>
+        <div class="museum-city">Annweiler am Trifels</div>
+        <div class="museum-meta"><span class="museum-dist">📍 95km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Unimog-Museum</div>
+        <div class="museum-city">Gaggenau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 95km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Ettlingen</div>
+        <div class="museum-city">Ettlingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 115km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Badischer Kunstverein</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-dist">📍 125km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliche Kunsthalle Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-dist">📍 125km</span><a class="museum-web" href="https://www.kunsthalle-karlsruhe.de" target="_blank" rel="noopener">🌐 kunsthalle-karlsruhe.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Staatliches Museum für Naturkunde Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-dist">📍 125km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Städtische Galerie Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-dist">📍 125km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Verkehrsmuseum Karlsruhe</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-dist">📍 125km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>ZKM | Zentrum für Kunst und Medien</div>
+        <div class="museum-city">Karlsruhe</div>
+        <div class="museum-meta"><span class="museum-dist">📍 125km</span><a class="museum-web" href="https://www.zkm.de" target="_blank" rel="noopener">🌐 zkm.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss- und Festungsruine Hardenburg</div>
+        <div class="museum-city">Bad Dürkheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 130km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss Bruchsal</div>
+        <div class="museum-city">Bruchsal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 135km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kurpfälzisches Museum Heidelberg</div>
+        <div class="museum-city">Heidelberg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 145km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Textilsammlung Max Berk</div>
+        <div class="museum-city">Heidelberg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 145km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kloster Maulbronn</div>
+        <div class="museum-city">Maulbronn</div>
+        <div class="museum-meta"><span class="museum-dist">📍 150km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Barockschloss Mannheim</div>
+        <div class="museum-city">Mannheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 155km</span><a class="museum-web" href="https://www.schloss-mannheim.de" target="_blank" rel="noopener">🌐 schloss-mannheim.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Kunsthalle Mannheim</div>
+        <div class="museum-city">Mannheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 155km</span><a class="museum-web" href="https://www.kunsthalle-mannheim.de" target="_blank" rel="noopener">🌐 kunsthalle-mannheim.de</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Reiss-Engelhorn-Museen</div>
+        <div class="museum-city">Mannheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 155km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Faust-Museum</div>
+        <div class="museum-city">Knittlingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 155km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Schloss Villa Ludwigshöhe</div>
+        <div class="museum-city">Edenkoben</div>
+        <div class="museum-meta"><span class="museum-dist">📍 155km</span></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇩🇪</span>Römermuseum Güglingen</div>
         <div class="museum-city">Güglingen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 155km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Wilhelm-Hack-Museum</div>
+        <div class="museum-city">Ludwigshafen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 160km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Städtische Galerie Villa Streccius</div>
+        <div class="museum-city">Landau in der Pfalz</div>
+        <div class="museum-meta"><span class="museum-dist">📍 165km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Hirschwirtscheuer</div>
+        <div class="museum-city">Künzelsau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 175km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇩🇪</span>Museum Würth</div>
+        <div class="museum-city">Künzelsau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 175km</span><a class="museum-web" href="https://www.museum-wuerth.com" target="_blank" rel="noopener">🌐 museum-wuerth.com</a></div>
       </div>
 
       <!-- ══ FRANKREICH ══ -->
-      <div class="museum-section-header">🇫🇷 Frankreich <span class="museum-count">26 gelistet · wird erweitert</span></div>
+      <div class="museum-section-header">🇫🇷 Frankreich <span class="museum-count">52 gelistet</span></div>
+      <div class="museum-price-note">* Regelpreise ohne Museums-PASS · 2 Erw. + 2 Kinder (7 &amp; 9 J.) · Familienticket wo verfügbar · Angaben ca.</div>
 
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle — Parcours Découverte</div>
-        <div class="museum-city">Belfort</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Lion de Bartholdi</div>
-        <div class="museum-city">Belfort</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire de Belfort</div>
-        <div class="museum-city">Belfort</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle de Besançon</div>
-        <div class="museum-city">Besançon</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>FRAC Franche-Comté</div>
-        <div class="museum-city">Besançon</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des Beaux-Arts et d'Archéologie</div>
-        <div class="museum-city">Besançon</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Temps</div>
-        <div class="museum-city">Besançon</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Gallo-Romain</div>
-        <div class="museum-city">Biesheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc archéologique de Bliesbruck-Reinheim</div>
-        <div class="museum-city">Bliesbruck</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Pays de Hanau</div>
-        <div class="museum-city">Bouxwiller</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Judéo-Alsacien</div>
-        <div class="museum-city">Bouxwiller</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Maison du Distillateur</div>
-        <div class="museum-city">Châtenois</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Bartholdi-Museum</div>
-        <div class="museum-city">Colmar</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Le Village Hansi et son Musée</div>
-        <div class="museum-city">Colmar</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire Naturelle et d'Ethnographie</div>
-        <div class="museum-city">Colmar</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Jouet</div>
-        <div class="museum-city">Colmar</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Unterlinden</div>
-        <div class="museum-city">Colmar</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Régence</div>
-        <div class="museum-city">Ensisheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Würth Erstein</div>
-        <div class="museum-city">Erstein</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des Beaux-Arts Épinal</div>
-        <div class="museum-city">Épinal</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée départemental art ancien et contemporain</div>
-        <div class="museum-city">Épinal</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Maison Albert Schweitzer</div>
-        <div class="museum-city">Gunsbach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Théodore Deck &amp; des Pays du Florival</div>
-        <div class="museum-city">Guebwiller</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Alsacien de Haguenau</div>
-        <div class="museum-city">Haguenau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Historique de Haguenau</div>
-        <div class="museum-city">Haguenau</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc de Wesserling — Écomusée textile</div>
-        <div class="museum-city">Husseren-Wesserling</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Les Secrets du Chocolat par Schaal</div>
-        <div class="museum-city">Geispolsheim-Illkirch</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Maison de la Manufacture d'armes blanches</div>
-        <div class="museum-city">Klingenthal</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des métiers du bois</div>
-        <div class="museum-city">Labaroche</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Jardin Fruitiers de Laquenexy</div>
-        <div class="museum-city">Laquenexy</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château Fort de Fleckenstein</div>
-        <div class="museum-city">Lembach</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Lichtenberg</div>
-        <div class="museum-city">Lichtenberg</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Lunéville</div>
-        <div class="museum-city">Lunéville</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Malbrouck</div>
-        <div class="museum-city">Manderen</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée départemental du Sel de Marsal</div>
-        <div class="museum-city">Marsal</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Site verrier de Meisenthal</div>
-        <div class="museum-city">Meisenthal</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Centre Pompidou-Metz</div>
-        <div class="museum-city">Metz</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée français de la Lutherie</div>
-        <div class="museum-city">Mirecourt</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Chartreuse et Fondation Bugatti</div>
-        <div class="museum-city">Molsheim</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Art et d'Histoire Montbéliard</div>
-        <div class="museum-city">Montbéliard</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Château des ducs de Wurtemberg</div>
-        <div class="museum-city">Montbéliard</div>
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée National de l'Automobile — Collection Schlumpf</div>
+        <div class="museum-city">Mulhouse</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~48 €* (Familienticket ~44 €)</span><span class="museum-dist">📍 35km</span><a class="museum-web" href="https://www.citedelauto.fr" target="_blank" rel="noopener">🌐 citedelauto.fr</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇫🇷</span>Cité du Train — Patrimoine SNCF</div>
         <div class="museum-city">Mulhouse</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée National de l'Automobile — Collection Schlumpf</div>
-        <div class="museum-city">Mulhouse</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~46 €* (Familienticket ~42 €)</span><span class="museum-dist">📍 35km</span><a class="museum-web" href="https://www.citedutrain.com" target="_blank" rel="noopener">🌐 citedutrain.com</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇫🇷</span>Saline Royale</div>
         <div class="museum-city">Arc-et-Senans</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~38 €* (2×12 € + 2×7 €)</span><span class="museum-dist">📍 120km</span><a class="museum-web" href="https://www.salineroyale.com" target="_blank" rel="noopener">🌐 salineroyale.com</a></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la vigne et du vin du Jura</div>
-        <div class="museum-city">Arbois</div>
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle de Besançon</div>
+        <div class="museum-city">Besançon</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~36 €* (2×12 € + 2×6 €)</span><span class="museum-dist">📍 120km</span><a class="museum-web" href="https://www.citadelle.com" target="_blank" rel="noopener">🌐 citadelle.com</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Centre Pompidou-Metz</div>
+        <div class="museum-city">Metz</div>
+        <div class="museum-meta"><span class="museum-price">💶 ~24 €* (2×12 €, Kinder frei)</span><span class="museum-dist">📍 200km</span><a class="museum-web" href="https://www.centrepompidou-metz.fr" target="_blank" rel="noopener">🌐 centrepompidou-metz.fr</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Grange à bécanes</div>
         <div class="museum-city">Bantzenheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 30km</span></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Folie Marco</div>
-        <div class="museum-city">Barr</div>
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Régence</div>
+        <div class="museum-city">Ensisheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 40km</span></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Baron Martin</div>
-        <div class="museum-city">Gray</div>
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Gallo-Romain</div>
+        <div class="museum-city">Biesheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 50km</span></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Ecomusée du pays de la cerise</div>
-        <div class="museum-city">Fougerolles</div>
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Théodore Deck &amp; des Pays du Florival</div>
+        <div class="museum-city">Guebwiller</div>
+        <div class="museum-meta"><span class="museum-dist">📍 50km</span></div>
       </div>
       <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Guerre de 1870 et de l'Annexion</div>
-        <div class="museum-city">Gravelotte</div>
-      </div>
-      <div class="museum-item">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Seigneurie d'Andlau</div>
-        <div class="museum-city">Andlau</div>
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc de Wesserling — Écomusée textile</div>
+        <div class="museum-city">Husseren-Wesserling</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇫🇷</span>Vivarium du Moulin</div>
         <div class="museum-city">Lautenbach-Zell</div>
+        <div class="museum-meta"><span class="museum-dist">📍 55km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Bartholdi-Museum</div>
+        <div class="museum-city">Colmar</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Le Village Hansi et son Musée</div>
+        <div class="museum-city">Colmar</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire Naturelle et d'Ethnographie</div>
+        <div class="museum-city">Colmar</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Jouet</div>
+        <div class="museum-city">Colmar</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Unterlinden</div>
+        <div class="museum-city">Colmar</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span><a class="museum-web" href="https://www.musee-unterlinden.com" target="_blank" rel="noopener">🌐 musee-unterlinden.com</a></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Maison Albert Schweitzer</div>
+        <div class="museum-city">Gunsbach</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des métiers du bois</div>
+        <div class="museum-city">Labaroche</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Citadelle — Parcours Découverte</div>
+        <div class="museum-city">Belfort</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Lion de Bartholdi</div>
+        <div class="museum-city">Belfort</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Histoire de Belfort</div>
+        <div class="museum-city">Belfort</div>
+        <div class="museum-meta"><span class="museum-dist">📍 60km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée d'Art et d'Histoire Montbéliard</div>
+        <div class="museum-city">Montbéliard</div>
+        <div class="museum-meta"><span class="museum-dist">📍 70km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Château des ducs de Wurtemberg</div>
+        <div class="museum-city">Montbéliard</div>
+        <div class="museum-meta"><span class="museum-dist">📍 70km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Maison du Distillateur</div>
+        <div class="museum-city">Châtenois</div>
+        <div class="museum-meta"><span class="museum-dist">📍 85km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Ecomusée du pays de la cerise</div>
+        <div class="museum-city">Fougerolles</div>
+        <div class="museum-meta"><span class="museum-dist">📍 90km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Würth Erstein</div>
+        <div class="museum-city">Erstein</div>
+        <div class="museum-meta"><span class="museum-dist">📍 90km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Pays de Hanau</div>
+        <div class="museum-city">Bouxwiller</div>
+        <div class="museum-meta"><span class="museum-dist">📍 90km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Judéo-Alsacien</div>
+        <div class="museum-city">Bouxwiller</div>
+        <div class="museum-meta"><span class="museum-dist">📍 90km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Alsacien de Haguenau</div>
+        <div class="museum-city">Haguenau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 95km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Historique de Haguenau</div>
+        <div class="museum-city">Haguenau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 95km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Folie Marco</div>
+        <div class="museum-city">Barr</div>
+        <div class="museum-meta"><span class="museum-dist">📍 100km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château Fort de Fleckenstein</div>
+        <div class="museum-city">Lembach</div>
+        <div class="museum-meta"><span class="museum-dist">📍 100km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la vigne et du vin du Jura</div>
+        <div class="museum-city">Arbois</div>
+        <div class="museum-meta"><span class="museum-dist">📍 100km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Chartreuse et Fondation Bugatti</div>
+        <div class="museum-city">Molsheim</div>
+        <div class="museum-meta"><span class="museum-dist">📍 100km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>La Seigneurie d'Andlau</div>
+        <div class="museum-city">Andlau</div>
+        <div class="museum-meta"><span class="museum-dist">📍 105km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Les Secrets du Chocolat par Schaal</div>
+        <div class="museum-city">Geispolsheim-Illkirch</div>
+        <div class="museum-meta"><span class="museum-dist">📍 105km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Maison de la Manufacture d'armes blanches</div>
+        <div class="museum-city">Klingenthal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 110km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Lichtenberg</div>
+        <div class="museum-city">Lichtenberg</div>
+        <div class="museum-meta"><span class="museum-dist">📍 115km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Site verrier de Meisenthal</div>
+        <div class="museum-city">Meisenthal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 115km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>FRAC Franche-Comté</div>
+        <div class="museum-city">Besançon</div>
+        <div class="museum-meta"><span class="museum-dist">📍 120km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des Beaux-Arts et d'Archéologie</div>
+        <div class="museum-city">Besançon</div>
+        <div class="museum-meta"><span class="museum-dist">📍 120km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée du Temps</div>
+        <div class="museum-city">Besançon</div>
+        <div class="museum-meta"><span class="museum-dist">📍 120km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée des Beaux-Arts Épinal</div>
+        <div class="museum-city">Épinal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 140km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée départemental art ancien et contemporain</div>
+        <div class="museum-city">Épinal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 140km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée Baron Martin</div>
+        <div class="museum-city">Gray</div>
+        <div class="museum-meta"><span class="museum-dist">📍 145km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée français de la Lutherie</div>
+        <div class="museum-city">Mirecourt</div>
+        <div class="museum-meta"><span class="museum-dist">📍 160km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Lunéville</div>
+        <div class="museum-city">Lunéville</div>
+        <div class="museum-meta"><span class="museum-dist">📍 165km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée départemental du Sel de Marsal</div>
+        <div class="museum-city">Marsal</div>
+        <div class="museum-meta"><span class="museum-dist">📍 190km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc archéologique de Bliesbruck-Reinheim</div>
+        <div class="museum-city">Bliesbruck</div>
+        <div class="museum-meta"><span class="museum-dist">📍 200km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château de Malbrouck</div>
+        <div class="museum-city">Manderen</div>
+        <div class="museum-meta"><span class="museum-dist">📍 200km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Musée de la Guerre de 1870 et de l'Annexion</div>
+        <div class="museum-city">Gravelotte</div>
+        <div class="museum-meta"><span class="museum-dist">📍 200km</span></div>
+      </div>
+      <div class="museum-item">
+        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Jardin Fruitiers de Laquenexy</div>
+        <div class="museum-city">Laquenexy</div>
+        <div class="museum-meta"><span class="museum-dist">📍 200km</span></div>
       </div>
 
     </div>

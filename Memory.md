@@ -79,6 +79,7 @@ Eine einzelne statische HTML-Seite (`index.html`) — kein Framework, kein Build
 museumcarddreilaendereck/
 ├── index.html          ← Die gesamte App (CSS + JS inline)
 ├── Memory.md           ← Diese Datei (für KIs, in git)
+├── Database.md         ← Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen)
 ├── CLAUDE.md           ← Claude Code Anweisungen (gitignored)
 └── .gitignore          ← Ignoriert CLAUDE.md, .claude/, memory/
 ```
@@ -115,6 +116,43 @@ museumcarddreilaendereck/
 10. `<footer>`
 11. `<script>` — Countdown-Timer für Ablaufdatum
 
+### Museum-Karten-Struktur (`.museum-grid`)
+Jedes Museum hat folgende HTML-Struktur:
+```html
+<div class="museum-item [visited]">
+  <div class="museum-name"><span class="museum-flag">🇨🇭</span>Name</div>
+  <div class="museum-city">Stadt, Land</div>
+  <div class="museum-meta">
+    <span class="museum-price">💶 ~XX €*</span>
+    <span class="museum-dist">📍 XXkm</span>
+    <a class="museum-web" href="URL" target="_blank" rel="noopener">🌐 website.de</a>
+  </div>
+</div>
+```
+- `.visited` = bereits besucht (goldener Rahmen)
+- `.museum-price` (forest green) — Preis für 2 Erw. + 2 Kinder; `~` und `*` = ca.-Wert
+- `.museum-dist` (leather) — Straßendistanz von Rheinfelden (Baden)
+- `.museum-web` (gold) — Webseite wenn bekannt
+- `.museum-price-note` — Disclaimer nach Länder-Header (geschätzte Preise)
+
+### Sortierung der Museen
+Innerhalb jedes Landes:
+1. Top 5 mit recherchierten Preisen → absteigend nach Preis
+2. Restliche Museen → aufsteigend nach Distanz von Rheinfelden
+
+### Länder-Abschnitte im `.museum-grid`
+```html
+<div class="country-section">
+  <div class="country-header">
+    <span class="country-flag">🇨🇭</span>
+    <h3>Schweiz</h3>
+    <span class="count-badge">40 gelistet</span>
+  </div>
+  <p class="museum-price-note">* Angaben ca., Stand Trainingsdaten. Bitte vor Besuch prüfen.</p>
+  <!-- .museum-item Karten -->
+</div>
+```
+
 ### JavaScript
 Nur ein kleines Snippet am Ende: berechnet `days-remaining` bis 07.03.2027.
 
@@ -142,16 +180,23 @@ Nur ein kleines Snippet am Ende: berechnet `days-remaining` bis 07.03.2027.
 
 ## Museum-Liste
 
-Aktuell ~130 Museen gelistet (von 350+ im Pass enthalten):
-- 🇨🇭 Schweiz: 40 gelistet
+Aktuell 154 Museen gelistet + 2 besuchte (von 350+ im Pass enthalten):
+- 🇨🇭 Schweiz: 40 gelistet (davon 1 besucht: Basler Papiermühle)
 - 🇩🇪 Deutschland: 62 gelistet
-- 🇫🇷 Frankreich: 26 gelistet (ausbaufähig, sollten ~52 sein)
+- 🇫🇷 Frankreich: 52 gelistet (davon 1 besucht: Château HK)
 
-**Sortierung gewünscht:** Innerhalb jedes Landes nach Höhe der Ersparnis (teuerste/größte Ersparnis für 2 Erw. + 2 Kinder zuerst). Derzeit noch nicht umgesetzt.
+**Sortierung:** Innerhalb jedes Landes: Top 5 nach Preis (absteigend), Rest nach Distanz (aufsteigend). ✅ Umgesetzt.
 
-**Homepages & Preise:** Noch nicht für alle Häuser eingetragen. Hohe Priorität für Museen in der Nähe von Rheinfelden.
+**Top 5 Preise recherchiert (Stand 2026-03-28, ca.-Werte):**
+- 🇨🇭 CH: Ballenberg ~103€, Zentrum Paul Klee ~72€, KM Basel ~55€, Tinguely ~38€, Bern. HM ~34€
+- 🇩🇪 DE: Fabergé ~44€, Technoseum ~39€, Vogtsbauernhof ~34€, Frieder Burda ~28€, Bad. LM ~24€
+- 🇫🇷 FR: Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€, Pompidou-Metz ~24€
 
-**Distanz-Berechnung:** Von Heimatbasis Rheinfelden, Eggbergstr. 52, 79618 Rheinfelden (Baden) zur Zieldestination. Noch nicht für alle Einträge eingetragen.
+**Preise:** Für Top 5 je Land eingetragen (ca.-Werte, als `~XX €*` markiert). Restliche Museen: Preise ausstehend.
+
+**Distanz-Berechnung:** Von Heimatbasis Rheinfelden (47.555°N, 7.767°E) — Straßendistanzen für alle 154+ Museen eingetragen.
+
+**Webseiten:** Für die meisten Museen eingetragen, einige noch offen.
 
 **WebFetch erlaubt für:** `www.museumspass.com` (in `.claude/settings.local.json` konfiguriert)
 
@@ -171,10 +216,14 @@ git push
 
 ## Offene Aufgaben / TODO
 
-- [ ] Frankreich Museum-Liste auf ~52 Einträge erweitern
-- [ ] Homepages für alle Museum-Einträge ergänzen
-- [ ] Eintrittspreise (2 Erw. + 2 Kinder 7&9 J.) für alle Museen
-- [ ] Distanz von Rheinfelden für jedes Museum
-- [ ] Museen nach Ersparnis sortieren (teuerste zuerst)
-- [ ] Details für weitere besuchte Museen wie für Château HK & Papiermühle
+- [x] Frankreich Museum-Liste auf 52 Einträge erweitert
+- [x] Distanz von Rheinfelden für alle Museen eingetragen
+- [x] Museen nach Ersparnis sortieren (Top 5 je Land, Rest nach Distanz) ✅
+- [x] Top 5 Preise pro Land recherchiert und eingetragen ✅
+- [x] Database.md erstellt mit strukturierten Daten ✅
+- [x] persoenliche_notizen.md angelegt (Papiermühle-Erinnerungen eingetragen) ✅
+- [x] **NotebookLM via MCP eingebunden** — `notebooklm-mcp-cli` v0.5.11 via pipx, Auth mit dediziertem Google-Account ✅ (siehe infra-doku.md)
+- [ ] Persönliche Notizen für Château HK ergänzen
+- [ ] Eintrittspreise für alle verbleibenden Museen (peu à peu — erst nach MCP-Setup)
+- [ ] Homepages für noch fehlende Museum-Einträge ergänzen
 - [ ] Reguläre Eintrittspreise in den visit-cards vollständig erfassen
