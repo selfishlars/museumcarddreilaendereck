@@ -182,6 +182,34 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
 | DE-009 | Dreiländermuseum              | Lörrach          | 20      | ~6        | Familientarif 6€ (!!), Erw. 5€, Ki. 2€   | dreilaendermuseum.eu                |
 | DE-010 | Freilichtmuseum Klausenhof    | Herrischried     | 30      | —         | Preis ausstehend                          | freilichtmuseum-klausenhof.de       |
 
+### Schweiz — Batch 3 (recherchierte Preise, via NotebookLM 2026-03-30)
+
+Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
+
+| id     | name                  | city      | dist_km | price_chf | price_eur | price_basis                                                  | website                  |
+|--------|-----------------------|-----------|---------|-----------|-----------|--------------------------------------------------------------|--------------------------|
+| CH-061 | Vindonissa Museum     | Brugg     | 55      | 20        | 22        | Familienticket 20 CHF (2 Erw. + max. 5 Ki.)                  | museumaargau.ch          |
+| CH-062 | Museum Langmatt       | Baden     | 58      | 24        | 26        | 2×12 CHF, Kinder bis 18 frei; Wiedereröffnung 9./10.5.2026  | langmatt.ch              |
+| CH-063 | Museum Burghalde      | Lenzburg  | 65      | 20        | 22        | Familienticket 20 CHF; Ikonenmuseum inklusive               | museumburghalde.ch       |
+| CH-064 | Museum Franz Gertsch  | Burgdorf  | 95      | 36        | 40        | 2×18 CHF, Kinder bis 10 frei; Sa. reduzierter Eintritt      | museum-franzgertsch.ch   |
+
+### Deutschland — Batch 3 (recherchierte Preise, via NotebookLM 2026-03-30)
+
+Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
+
+| id     | name                                        | city              | dist_km | price_eur | price_basis                                                        | website                       |
+|--------|---------------------------------------------|-------------------|---------|-----------|--------------------------------------------------------------------|-------------------------------|
+| DE-015 | Mineralienmuseum Bad Säckingen              | Bad Säckingen     | 15      | 17,50     | Familienkarte 17,50 €, alle Ki bis 15 inklusive                    | deutsches-mineralienmuseum.de |
+| DE-016 | Hebelhaus Hausen                            | Hausen im Wiesental | 30    | 9,00      | 2×3 + 2×1,50 €; Literaturmuseum J. P. Hebel                      | hebelhaus-hausen.de           |
+| DE-017 | Archäologisches Museum Colombischlössle     | Freiburg          | 35      | 10,00     | 2×5 €, Kinder unter 27 frei (Dauerpolitik Freiburg)               | museen-freiburg.de            |
+| DE-018 | Augustinermuseum Freiburg                   | Freiburg          | 35      | 24,00     | 2×12 €, Ki unter 27 frei; Ticket = Tageskarte für alle Freiburger Museen | museen-freiburg.de      |
+| DE-019 | Kunstverein Freiburg                        | Freiburg          | 35      | 4,00      | 2×2 €, Kinder bis 12 frei; Do. Eintritt frei                      | kunstvereinfreiburg.de        |
+| DE-020 | Museum für Neue Kunst                       | Freiburg          | 35      | 14,00     | 2×7 €, Kinder unter 27 frei                                        | museen-freiburg.de            |
+| DE-021 | Museum Natur und Mensch                     | Freiburg          | 35      | 10,00     | 2×5 €, Kinder unter 27 frei                                        | museen-freiburg.de            |
+| DE-022 | Alamannen-Museum Vörstetten                 | Vörstetten        | 40      | 14,00     | 2×5 + 2×2 €; Schüler 2 €, Ki unter 6 frei                        | alamannen-museum.de           |
+| DE-023 | Stadtmuseum Bad Krozingen (Litschgihaus)    | Bad Krozingen     | 40      | —         | Preis unbekannt; Do+Di 15–17 Uhr, 1.+3. So. im Monat             | bad-krozingen.de              |
+| DE-024 | Oberrheinisches Bäder- und Heimatmuseum     | Bad Bellingen     | 45      | 0         | KOSTENLOS; So. 14–17 Uhr                                           | bad-bellingen.de              |
+
 ### Deutschland — Weitere (Distanz sortiert, Preise ausstehend)
 
 | id     | name                                    | city              | dist_km | website                              |
