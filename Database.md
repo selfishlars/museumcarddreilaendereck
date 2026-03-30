@@ -128,13 +128,37 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
 | CH-044 | Antikenmuseum Basel und Sammlung Ludwig | Basel     | 13      | 24        | 26        | 2×12 CHF, Kinder unter 13 frei; Sa/So ganztags gratis | antikenmuseumbasel.ch           |
 | CH-045 | Brasilea Stiftung                       | Basel     | 13      | 20        | 22        | 2×10 CHF, Kinder unter 12 frei                      | brasilea.com                       |
 | CH-013 | Cartoonmuseum Basel                     | Basel     | 13      | 28        | 31        | 2×14 CHF, Kinder unter 10 frei                      | cartoonmuseum.ch                   |
-| CH-046 | Fondation Herzog                        | Basel     | 13      | —         | —         | Preis unbekannt (nicht recherchierbar)              | fondation-herzog.ch                |
+| CH-046 | Fondation Herzog                        | Basel     | 13      | —         | —         | Nur nach Vereinbarung / Sonderausstellungen; kein Regeleintrittspreis | fondation-herzog.ch |
 | CH-009 | Historisches Museum Basel – Barfüsserkirche | Basel | 13    | 36        | 40        | 2×18 CHF Kombiticket (3 Häuser, 7 Tage), Ki<13 frei | hmb.ch                           |
 | CH-047 | Historisches Museum Basel – Haus zum Kirschgarten | Basel | 13 | 36     | 40        | Kombiticket (s. Barfüsserkirche)                    | hmb.ch                             |
 | CH-048 | Historisches Museum Basel – Musikmuseum | Basel    | 13      | 36        | 40        | Kombiticket (s. Barfüsserkirche)                    | hmb.ch                             |
 | CH-049 | Hafenmuseum Basel                       | Basel     | 14      | 46        | 51        | 2×14 + 2×9 CHF, schulpflichtige Ki zahlen          | hafenmuseum.ch                     |
 | CH-050 | Kunsthalle Basel                        | Basel     | 13      | 24        | 26        | 2×12 CHF, Kinder unter 18 frei                      | kunsthallebasel.ch                 |
 | CH-010 | Museum der Kulturen Basel               | Basel     | 13      | 32        | 35        | 2×16 CHF, Kinder unter 12 frei                      | mkb.ch                             |
+
+### Schweiz — Weitere Museen Batch 2 (recherchierte Preise, via NotebookLM 2026-03-30)
+
+Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
+
+| id     | name                                        | city       | dist_km | price_chf | price_eur | price_basis                                              | website                   |
+|--------|---------------------------------------------|------------|---------|-----------|-----------|----------------------------------------------------------|---------------------------|
+| CH-011 | Naturhistorisches Museum Basel              | Basel      | 13      | 14        | 15        | 2×7 CHF, Kinder bis 13 frei; 1. So./letzte Stunde gratis | nmbs.ch                  |
+| CH-051 | Museum Kleines Klingental                   | Basel      | 13      | 16        | 18        | 2×8 CHF, Kinder bis 13 frei                              | mkk.ch                    |
+| CH-052 | Pharmaziemuseum der Universität Basel       | Basel      | 13      | 20        | 22        | 2×10 CHF, Kinder bis 11 frei; Ticket gilt auch für Anatomisches Museum | pharmaziemuseum.ch |
+| CH-053 | S AM Schweizerisches Architekturmuseum      | Basel      | 13      | 24        | 26        | 2×12 CHF, Kinder bis 18 frei; Ticket gilt auch für Kunsthalle Basel | sam-basel.org |
+| CH-015 | Spielzeug Welten Museum Basel               | Basel      | 13      | 14        | 15        | 2×7 CHF, Kinder bis 16 frei; weltgrösste Teddybärensammlung | swmb.museum          |
+| CH-054 | Rehmann-Museum                              | Laufenburg | 15      | 10        | 11        | 2×5 CHF, Kinder bis 25 frei; Skulpturengarten            | rehmann-museum.ch         |
+| CH-055 | Dichter:innen- und Stadtmuseum Liestal (DISTL) | Liestal | 18      | 10        | 11        | 2×5 CHF, Kinder bis 16 frei; 1. So. gratis              | distl.ch                  |
+| CH-056 | Kunsthalle Palazzo                          | Liestal    | 18      | 10        | 11        | 2×5 CHF, Kinder bis 25 frei; kein Rollstuhlzugang       | palazzo.ch                |
+| CH-008 | Museum.BL                                   | Liestal    | 18      | 16        | 18        | 2×8 CHF, Kinder bis 13 frei; 1. So. gratis              | museum.bl.ch              |
+| CH-057 | Aargauer Kunsthaus                          | Aarau      | 55      | 34        | 37        | 2×17 CHF, Kinder bis 16 frei; Do 17–20 Uhr gratis       | aargauerkunsthaus.ch      |
+| CH-058 | Stadtmuseum Aarau                           | Aarau      | 55      | 16        | 18        | 2×8 CHF, Kinder bis 16 frei                              | stadtmuseum.ch            |
+| CH-028 | ALPS Alpines Museum der Schweiz             | Bern       | 105     | 40        | 44        | Familienkarte 40 CHF (2 Erw. + max. 3 Ki. bis 16 J.)   | alps.museum               |
+| CH-027 | Museum für Kommunikation                    | Bern       | 105     | 48        | 53        | 2×18 + 2×6 CHF; ab 15:30 Uhr 30% Rabatt                | mfk.ch                    |
+| CH-026 | Kunstmuseum Bern                            | Bern       | 105     | 48        | 53        | 2×24 CHF, Kinder bis 16 frei; Klee, Picasso, Hodler     | kunstmuseumbern.ch        |
+| CH-029 | Naturhistorisches Museum Bern               | Bern       | 105     | 24        | 26        | 2×12 CHF, Kinder bis 16 frei; sehr familienfreundlich   | nmbe.ch                   |
+| CH-059 | Abegg-Stiftung                              | Riggisberg | 110     | 20        | 22        | 2×10 CHF, Kinder bis 16 frei; Saison ab 26. April       | abegg-stiftung.ch         |
+| CH-060 | Schloss Lenzburg                            | Lenzburg   | 65      | 35        | 39        | Familienkarte 35 CHF (2 Erw. + 2 Ki.); Kindermuseum     | schloss-lenzburg.ch       |
 
 ---
 
