@@ -1176,6 +1176,81 @@
       .filter-tabs { gap: 8px; }
       .filter-tab { padding: 10px 14px; font-size: 18px; }
     }
+    /* ═══════════════════════════════════
+       TOP 20 NÄCHSTE ZIELE
+    ═══════════════════════════════════ */
+    .top20-note {
+      font-size: 17px;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .top20-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .top20-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(184,134,11,0.07);
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      padding: 10px 14px;
+    }
+
+    .top20-rank {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 28px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .top20-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .top20-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .top20-meta {
+      font-size: 15px;
+      color: var(--ink-light);
+      margin-top: 2px;
+    }
+
+    .top20-meta strong {
+      color: var(--forest);
+    }
+
+    .top20-link {
+      font-size: 14px;
+      color: var(--forest);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 3px;
+    }
+
+    .top20-link:hover { text-decoration: underline; }
+
+    .top20-free {
+      color: var(--forest);
+      font-weight: 600;
+    }
+
   </style>
 </head>
 <body>
@@ -2516,6 +2591,17 @@
 
   <div class="divider"></div>
 
+  <!-- TOP 20 NÄCHSTE ZIELE -->
+  <section class="section" id="top20-section">
+    <h2 class="section-title"><span class="icon">⭐</span> Top 20 nächste Ziele</h2>
+    <p class="top20-note">Noch nicht besuchte Museen · sortiert nach Entfernung · max. 10 aus Basel · alle Länder gemischt · Ersparnis = Regelpreis ohne Pass</p>
+    <div class="top20-list" id="top20-list">
+      <p style="color:var(--ink-light);font-style:italic;">Wird geladen…</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- FOOTER -->
   <footer class="page-footer">
     <span class="footer-ornament">⚜</span>
@@ -2529,6 +2615,111 @@
 </div>
 
 <script>
+  // ═══ TOP 20 NÄCHSTE ZIELE ════════════════════════════════════════════
+  // Logik: alle museum-item:not(.visited) aus DOM lesen,
+  // nach Distanz sortieren, Ersparnis in EUR parsen,
+  // max. 10 Einträge aus Basel-City, Top 20 ausgeben.
+  function buildTop20() {
+    const items = [];
+    document.querySelectorAll('.museum-item:not(.visited)').forEach(el => {
+      const flagEl = el.querySelector('.museum-flag');
+      const nameEl = el.querySelector('.museum-name');
+      const cityEl = el.querySelector('.museum-city');
+      const distEl = el.querySelector('.museum-dist');
+      const priceEl = el.querySelector('.museum-price');
+      const webEl  = el.querySelector('.museum-web');
+
+      if (!distEl) return;
+      const distMatch = distEl.textContent.match(/(\d+)\s*km/);
+      if (!distMatch) return;
+      const dist = parseInt(distMatch[1]);
+
+      const flag = flagEl ? flagEl.textContent : '';
+      const name = nameEl ? nameEl.textContent.replace(flag, '').trim() : '';
+      const city = cityEl ? cityEl.textContent.trim() : '';
+
+      // Ersparnis in EUR parsen
+      let savings = null; // null = kein Preis bekannt
+      if (priceEl) {
+        const t = priceEl.textContent.trim();
+        if (t === 'kostenlos') {
+          savings = 0;
+        } else {
+          // CHF XX · YY € Format
+          const m1 = t.match(/·\s*([\d,.]+)\s*€/);
+          // 💶 XX[,XX] € Format
+          const m2 = t.match(/💶\s*([\d,.]+)/);
+          if (m1) savings = parseFloat(m1[1].replace(',', '.'));
+          else if (m2) savings = parseFloat(m2[1].replace(',', '.'));
+        }
+      }
+
+      items.push({
+        name, city, dist, savings, flag,
+        href: webEl ? webEl.href : '',
+        webText: webEl ? webEl.textContent.trim() : ''
+      });
+    });
+
+    // Sortierung: Distanz aufsteigend, dann Ersparnis absteigend
+    items.sort((a, b) => {
+      if (a.dist !== b.dist) return a.dist - b.dist;
+      const sa = a.savings ?? -1;
+      const sb = b.savings ?? -1;
+      return sb - sa;
+    });
+
+    // Basel-Cap: max 10 aus Basel-City
+    const top20 = [];
+    let baselCount = 0;
+    for (const item of items) {
+      if (item.city === 'Basel') {
+        if (baselCount >= 10) continue;
+        baselCount++;
+      }
+      top20.push(item);
+      if (top20.length >= 20) break;
+    }
+    return top20;
+  }
+
+  function renderTop20() {
+    const list = document.getElementById('top20-list');
+    if (!list) return;
+    const items = buildTop20();
+    if (!items.length) {
+      list.innerHTML = '<p style="font-style:italic;color:var(--ink-light)">Keine Daten.</p>';
+      return;
+    }
+
+    function esc(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    list.innerHTML = items.map((item, i) => {
+      let savingsHtml = '';
+      if (item.savings === 0) {
+        savingsHtml = ' · <span class="top20-free">kostenlos</span>';
+      } else if (item.savings !== null) {
+        savingsHtml = ` · <strong>${Math.round(item.savings)} € Ersparnis</strong>`;
+      }
+      const linkHtml = item.href
+        ? `<a class="top20-link" href="${esc(item.href)}" target="_blank" rel="noopener">${esc(item.webText)}</a>`
+        : '';
+      return `<div class="top20-item">
+        <span class="top20-rank">${i + 1}</span>
+        <div class="top20-info">
+          <div class="top20-name">${esc(item.flag)}${esc(item.name)}</div>
+          <div class="top20-meta">${esc(item.city)} · 📍 ${item.dist} km${savingsHtml}</div>
+          ${linkHtml}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  renderTop20();
+
+  // ═══════════════════════════════════════════════════════════════════════
   // Berechne verbleibende Tage bis zum Pass-Ablauf
   function updateCountdown() {
     const expiry = new Date('2027-03-07');
