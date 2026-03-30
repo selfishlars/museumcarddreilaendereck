@@ -114,6 +114,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-039 | Technorama                        | Winterthur       | 105     | technorama.ch                     |
 | CH-040 | Museum Oskar Reinhart             | Winterthur       | 105     | museumoskarreinhart.ch            |
 | CH-041 | Kunsthaus Zürich                  | Zürich           | 110     | kunsthaus.ch                      |
+| CH-042 | Forum Würth Arlesheim             | Arlesheim        | 10      | kunst.wuerth-ag.ch/de/wuerth_forum/forum |
 
 ---
 

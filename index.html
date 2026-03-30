@@ -1027,6 +1027,41 @@
     .tag-fr { background: #002395; color: white; }
     .tag-de { background: #2c2c2c; color: white; }
 
+    .personal-highlights {
+      background: rgba(184,134,11,0.08);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 3px 3px 0;
+      padding: 12px 16px;
+      margin: 12px 0;
+    }
+    .personal-highlights .ph-title {
+      font-family: 'Special Elite', monospace;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .personal-highlights ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .personal-highlights ul li {
+      font-size: 19px;
+      color: var(--ink);
+      font-style: italic;
+      padding: 3px 0;
+      display: flex;
+      gap: 8px;
+    }
+    .personal-highlights ul li::before {
+      content: '✦';
+      color: var(--gold);
+      font-style: normal;
+      flex-shrink: 0;
+    }
+
     .note-box {
       background: rgba(45,74,45,0.08);
       border-left: 4px solid var(--forest);
@@ -1479,6 +1514,15 @@
           </div>
         </div>
 
+        <div class="personal-highlights">
+          <div class="ph-title">✦ Persönliche Highlights</div>
+          <ul>
+            <li>Jeder durfte selbst ein Blatt Papier herstellen und mitnehmen</li>
+            <li>Buntgefärbtes Papier nach Lust und Laune gemacht</li>
+            <li>Handschriften mit Bambus und Feder ausprobiert und versiegelt</li>
+          </ul>
+        </div>
+
         <div class="visit-savings-row">
           <span class="savings-item">Regulärer Eintritt: 2 Erw. + 2 Kinder = 56 CHF (Kinder ab ~5 J. zahlen)</span>
           <span class="savings-item">Ersparnis mit Pass:</span>
@@ -1710,7 +1754,7 @@
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Forum Würth Arlesheim</div>
         <div class="museum-city">Arlesheim</div>
-        <div class="museum-meta"><span class="museum-dist">📍 10km</span></div>
+        <div class="museum-meta"><span class="museum-dist">📍 10km</span><a class="museum-web" href="https://kunst.wuerth-ag.ch/de/wuerth_forum/forum" target="_blank" rel="noopener">🌐 kunst.wuerth-ag.ch</a></div>
       </div>
       <div class="museum-item">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Augusta Raurica</div>
