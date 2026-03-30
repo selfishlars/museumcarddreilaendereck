@@ -999,17 +999,6 @@
       color: var(--gold);
     }
 
-    /* ═══════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════ */
-    @media (max-width: 600px) {
-      body { padding: 8px; }
-      .section { padding: 25px 20px 10px; }
-      .page-header { padding: 35px 20px 30px; }
-      .page-footer { padding: 20px; margin: 0 20px; }
-      .compass-svg, .compass-svg-left { display: none; }
-    }
-
     /* Animated sparkle on savings */
     @keyframes shimmer {
       0%, 100% { opacity: 1; }
@@ -1044,7 +1033,7 @@
     }
 
     /* ═══════════════════════════════════
-       MOBILE-FIRST FONT & SIZE OVERRIDES
+       GLOBALE SCHRIFTGRÖSSEN (LESBARKEIT)
     ═══════════════════════════════════ */
     body { font-size: 23px; }
 
@@ -1059,10 +1048,10 @@
     .section-title { font-size: clamp(29px, 3.5vw, 39px); }
     .section-title .icon { font-size: 39px; }
 
-    .visit-museum-name { font-size: clamp(25px, 2.5vw, 31px) !important; }
+    .visit-museum-name { font-size: clamp(25px, 2.5vw, 31px); }
     .visit-detail span { font-size: 21px; }
     .visit-savings-row { font-size: 21px; }
-    .savings-highlight { font-size: 27px !important; }
+    .savings-highlight { font-size: 27px; }
 
     .museum-name { font-size: 20px; }
     .museum-city { font-size: 18px; }
@@ -1086,13 +1075,13 @@
     .thermo-bulb-label { font-size: 16px; }
     .thermo-bulb { width: 64px; height: 64px; }
 
-    .pass-holder-name { font-size: clamp(33px, 4vw, 43px) !important; }
-    .pass-details span { font-size: 20px !important; }
+    .pass-holder-name { font-size: clamp(33px, 4vw, 43px); }
+    .pass-details span { font-size: 20px; }
 
-    .vi-desc { font-size: 19px !important; }
-    .vi-label { font-size: 16px !important; }
-    .visit-info a { font-size: 19px !important; }
-    .savings-item { font-size: 20px !important; }
+    .vi-desc { font-size: 19px; }
+    .vi-label { font-size: 16px; }
+    .visit-info a { font-size: 19px; }
+    .savings-item { font-size: 20px; }
 
     /* Map section */
     .map-section {
