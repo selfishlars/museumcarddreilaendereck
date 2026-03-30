@@ -116,6 +116,26 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-041 | Kunsthaus Zürich                  | Zürich           | 110     | kunsthaus.ch                      |
 | CH-042 | Forum Würth Arlesheim             | Arlesheim        | 10      | kunst.wuerth-ag.ch/de/wuerth_forum/forum |
 
+### Schweiz — Basel-Museen (recherchierte Preise, via NotebookLM 2026-03-30)
+
+Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
+
+| id     | name                                    | city      | dist_km | price_chf | price_eur | price_basis                                         | website                            |
+|--------|-----------------------------------------|-----------|---------|-----------|-----------|-----------------------------------------------------|------------------------------------|
+| CH-043 | Anatomisches Museum Basel               | Basel     | 13      | 20        | 22        | 2×10 CHF, Kinder unter 11 frei                      | anatomisches-museum.unibas.ch      |
+| CH-042 | Forum Würth Arlesheim                   | Arlesheim | 10      | 0         | 0         | KOSTENLOS                                           | kunst.wuerth-ag.ch                 |
+| CH-007 | Augusta Raurica                         | Augst     | 10      | 28        | 31        | 2×8 + 2×6 CHF, Freilichtgelände gratis             | augustaraurica.ch                  |
+| CH-044 | Antikenmuseum Basel und Sammlung Ludwig | Basel     | 13      | 24        | 26        | 2×12 CHF, Kinder unter 13 frei; Sa/So ganztags gratis | antikenmuseumbasel.ch           |
+| CH-045 | Brasilea Stiftung                       | Basel     | 13      | 20        | 22        | 2×10 CHF, Kinder unter 12 frei                      | brasilea.com                       |
+| CH-013 | Cartoonmuseum Basel                     | Basel     | 13      | 28        | 31        | 2×14 CHF, Kinder unter 10 frei                      | cartoonmuseum.ch                   |
+| CH-046 | Fondation Herzog                        | Basel     | 13      | —         | —         | Preis unbekannt (nicht recherchierbar)              | fondation-herzog.ch                |
+| CH-009 | Historisches Museum Basel – Barfüsserkirche | Basel | 13    | 36        | 40        | 2×18 CHF Kombiticket (3 Häuser, 7 Tage), Ki<13 frei | hmb.ch                           |
+| CH-047 | Historisches Museum Basel – Haus zum Kirschgarten | Basel | 13 | 36     | 40        | Kombiticket (s. Barfüsserkirche)                    | hmb.ch                             |
+| CH-048 | Historisches Museum Basel – Musikmuseum | Basel    | 13      | 36        | 40        | Kombiticket (s. Barfüsserkirche)                    | hmb.ch                             |
+| CH-049 | Hafenmuseum Basel                       | Basel     | 14      | 46        | 51        | 2×14 + 2×9 CHF, schulpflichtige Ki zahlen          | hafenmuseum.ch                     |
+| CH-050 | Kunsthalle Basel                        | Basel     | 13      | 24        | 26        | 2×12 CHF, Kinder unter 18 frei                      | kunsthallebasel.ch                 |
+| CH-010 | Museum der Kulturen Basel               | Basel     | 13      | 32        | 35        | 2×16 CHF, Kinder unter 12 frei                      | mkb.ch                             |
+
 ---
 
 ### Deutschland — Top 5 (recherchierte Preise, bestätigt via NotebookLM 2026-03-29)
