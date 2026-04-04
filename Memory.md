@@ -79,6 +79,7 @@ Eine einzelne statische HTML-Seite (`index.html`) — kein Framework, kein Build
 museumcarddreilaendereck/
 ├── index.html          ← Die gesamte App (CSS + JS inline)
 ├── Memory.md           ← Diese Datei (für KIs, in git)
+├── AGENTS.md           ← Coding-Conventions für Agenten
 ├── Database.md         ← Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen)
 ├── CLAUDE.md           ← Claude Code Anweisungen (gitignored)
 └── .gitignore          ← Ignoriert CLAUDE.md, .claude/, memory/
