@@ -366,11 +366,11 @@
       width: 100%;
       background: linear-gradient(0deg,
         #7b241c 0%,
-        #922b21 15%,
-        #c0392b 35%,
-        #d35400 55%,
-        #e74c3c 75%,
-        #f1948a 90%,
+        #922b21 20%,
+        #c0392b 40%,
+        #d35400 60%,
+        #e74c3c 80%,
+        #f1948a 95%,
         #f8c471 100%
       );
       transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2735,14 +2735,12 @@
     const breakEven = 258;
     const maxSavings = 2500;
     const tubeHeight = 500;
-    const bulbOverlap = 32;
-    const breakEvenPx = (breakEven / maxSavings) * tubeHeight;
-    const fillPx = (savings / breakEven) * breakEvenPx;
+    const fillPct = savings / maxSavings * 100;
     const mercury = document.querySelector('.thermo-mercury');
     if (!mercury) return;
 
     if (savings >= breakEven) {
-      mercury.style.height = `calc(${savings / maxSavings * 100}% + ${bulbOverlap}px)`;
+      mercury.style.height = fillPct + '%';
       mercury.style.background = `linear-gradient(0deg,
         #58d68d 0%,
         #2ecc71 25%,
@@ -2751,14 +2749,14 @@
         #145a32 100%
       )`;
     } else {
-      mercury.style.height = `calc(${fillPx / tubeHeight * 100}% + ${bulbOverlap}px)`;
+      mercury.style.height = fillPct + '%';
       mercury.style.background = `linear-gradient(0deg,
         #7b241c 0%,
-        #922b21 15%,
-        #c0392b 35%,
-        #d35400 55%,
-        #e74c3c 75%,
-        #f1948a 90%,
+        #922b21 20%,
+        #c0392b 40%,
+        #d35400 60%,
+        #e74c3c 80%,
+        #f1948a 95%,
         #f8c471 100%
       )`;
     }
