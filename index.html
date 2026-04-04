@@ -350,18 +350,17 @@
       position: absolute;
       left: 10px;
       width: 32px;
-      height: calc(100% - 32px);
+      height: 100%;
       background: rgba(244, 232, 193, 0.85);
       border: 2px solid var(--leather);
       border-radius: 12px 12px 0 0;
       border-bottom: none;
-      overflow: hidden;
       box-shadow: inset 2px 0 5px rgba(0,0,0,0.1), inset -2px 0 5px rgba(0,0,0,0.1);
     }
 
     .thermo-mercury {
       position: absolute;
-      bottom: -32px;
+      bottom: 0;
       left: 0;
       right: 0;
       background: linear-gradient(0deg,
@@ -402,7 +401,7 @@
       right: 2px;
       height: 3px;
       background: var(--forest);
-      bottom: calc(10.32% * 0.936 + 32px);
+      bottom: 10.32%;
       z-index: 2;
       border-radius: 1px;
     }
@@ -1517,7 +1516,7 @@
         <div class="thermo-container">
           <div class="thermo-tube-wrapper">
             <div class="thermo-tube-outer">
-              <div class="thermo-mercury" style="height: 3.48%"></div>
+              <div class="thermo-mercury" style="height: calc(3.48% + 32px)"></div>
             </div>
             <div class="thermo-be-marker"></div>
             <div class="thermo-tick" style="bottom: 20%"></div>
