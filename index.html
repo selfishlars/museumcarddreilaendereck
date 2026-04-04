@@ -355,25 +355,27 @@
       border: 2px solid var(--leather);
       border-radius: 12px 12px 0 0;
       border-bottom: none;
+      overflow: hidden;
       box-shadow: inset 2px 0 5px rgba(0,0,0,0.1), inset -2px 0 5px rgba(0,0,0,0.1);
     }
 
     .thermo-mercury {
       position: absolute;
       bottom: 0;
-      left: -16px;
-      width: calc(100% + 32px);
+      left: 0;
+      width: 100%;
       background: linear-gradient(0deg,
-        #922b21 0%,
-        #c0392b 20%,
-        #d35400 40%,
-        #e74c3c 60%,
-        #f1948a 80%,
-        #82e0aa 100%
+        #7b241c 0%,
+        #922b21 15%,
+        #c0392b 35%,
+        #d35400 55%,
+        #e74c3c 75%,
+        #f1948a 90%,
+        #f8c471 100%
       );
       transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       min-height: 3px;
-      border-radius: 0 0 32px 32px;
+      border-radius: 0;
     }
 
     .thermo-mercury::after {
@@ -423,7 +425,7 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: #922b21;
+      background: linear-gradient(135deg, #922b21 0%, #7b241c 100%);
       border: 3px solid var(--leather);
       display: flex;
       align-items: center;
@@ -1508,7 +1510,7 @@
         <div class="thermo-container">
           <div class="thermo-tube-wrapper">
             <div class="thermo-tube-outer">
-              <div class="thermo-mercury" style="height: calc(3.48% + 32px)"></div>
+              <div class="thermo-mercury"></div>
             </div>
             <div class="thermo-be-marker"></div>
             <div class="thermo-tick" style="bottom: 20%"></div>
@@ -2727,36 +2729,41 @@
   renderTop20();
 
   // ═══════════════════════════════════════════════════════════════════════
-  // Thermometer Gradient dynamisch berechnen
-  function updateThermometerGradient() {
+  // Thermometer Füllung und Farbverlauf dynamisch berechnen
+  function updateThermometer() {
     const savings = 87;
     const breakEven = 258;
     const maxSavings = 2500;
-    const breakEvenPct = breakEven / maxSavings * 100;
-    const savingsPct = savings / maxSavings * 100;
+    const tubeHeight = 500;
+    const bulbOverlap = 32;
+    const breakEvenPx = (breakEven / maxSavings) * tubeHeight;
+    const fillPx = (savings / breakEven) * breakEvenPx;
     const mercury = document.querySelector('.thermo-mercury');
     if (!mercury) return;
 
     if (savings >= breakEven) {
+      mercury.style.height = `calc(${savings / maxSavings * 100}% + ${bulbOverlap}px)`;
       mercury.style.background = `linear-gradient(0deg,
-        #82e0aa 0%,
-        #2ecc71 20%,
+        #58d68d 0%,
+        #2ecc71 25%,
         #27ae60 50%,
-        #1e8449 80%,
+        #1e8449 75%,
         #145a32 100%
       )`;
     } else {
+      mercury.style.height = `calc(${fillPx / tubeHeight * 100}% + ${bulbOverlap}px)`;
       mercury.style.background = `linear-gradient(0deg,
-        #922b21 0%,
-        #c0392b ${Math.round(savingsPct / 2)}%,
-        #d35400 ${Math.round(savingsPct * 0.8)}%,
-        #e74c3c ${Math.round(savingsPct * 0.9)}%,
-        #f1948a ${Math.round(savingsPct * 0.98)}%,
-        #82e0aa 100%
+        #7b241c 0%,
+        #922b21 15%,
+        #c0392b 35%,
+        #d35400 55%,
+        #e74c3c 75%,
+        #f1948a 90%,
+        #f8c471 100%
       )`;
     }
   }
-  updateThermometerGradient();
+  updateThermometer();
 
   // ═══════════════════════════════════════════════════════════════════════
   // Berechne verbleibende Tage bis zum Pass-Ablauf
