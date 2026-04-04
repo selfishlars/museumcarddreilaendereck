@@ -35,7 +35,9 @@ Eine einzelne statische HTML-Seite (`index.html`) — kein Framework, kein Build
 | Reisende | Anon 1, Anon 2, Kind 1 (älter), Kind 2 (jünger: 7 & 9 Jahre) |
 | Heimatbasis | Rheinfelden (Baden), Eggbergstr. 52, 79618 Rheinfelden (Baden), Deutschland |
 | GitHub Repo | https://github.com/selfishlars/museumcarddreilaendereck |
-| Live-URL | https://selfishlars.github.io/museumcarddreilaendereck/ |
+| Live-URL | https://museum.hertenbw.de (CNAME → GitHub Pages) |
+| GitHub Pages | https://selfishlars.github.io/museumcarddreilaendereck/ (Fallback-URL) |
+| **DNS-Probleme?** | Im Repo → Settings → Pages → Custom Domain prüfen/ändern |
 
 **Datenschutz:** Echte Namen wurden entfernt. "Anon 1" und "Anon 2" sind die Erwachsenen, "Kind 1" und "Kind 2" sind die Kinder. Nie echte Namen in den Code schreiben.
 

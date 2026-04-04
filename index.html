@@ -365,21 +365,11 @@
       width: calc(100% + 32px);
       background: linear-gradient(0deg,
         #922b21 0%,
-        #c0392b 1%,
-        #d35400 2%,
-        #e74c3c 3%,
-        #ec7063 4%,
-        #f1948a 5%,
-        #f8c471 6%,
-        #82e0aa 7%,
-        #58d68d 8%,
-        #2ecc71 9%,
-        #28b463 10%,
-        #52be80 11%,
-        #27ae60 20%,
-        #229954 40%,
-        #1e8449 70%,
-        #145a32 100%
+        #c0392b 20%,
+        #d35400 40%,
+        #e74c3c 60%,
+        #f1948a 80%,
+        #82e0aa 100%
       );
       transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       min-height: 3px;
@@ -2735,6 +2725,38 @@
   }
 
   renderTop20();
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // Thermometer Gradient dynamisch berechnen
+  function updateThermometerGradient() {
+    const savings = 87;
+    const breakEven = 258;
+    const maxSavings = 2500;
+    const breakEvenPct = breakEven / maxSavings * 100;
+    const savingsPct = savings / maxSavings * 100;
+    const mercury = document.querySelector('.thermo-mercury');
+    if (!mercury) return;
+
+    if (savings >= breakEven) {
+      mercury.style.background = `linear-gradient(0deg,
+        #82e0aa 0%,
+        #2ecc71 20%,
+        #27ae60 50%,
+        #1e8449 80%,
+        #145a32 100%
+      )`;
+    } else {
+      mercury.style.background = `linear-gradient(0deg,
+        #922b21 0%,
+        #c0392b ${Math.round(savingsPct / 2)}%,
+        #d35400 ${Math.round(savingsPct * 0.8)}%,
+        #e74c3c ${Math.round(savingsPct * 0.9)}%,
+        #f1948a ${Math.round(savingsPct * 0.98)}%,
+        #82e0aa 100%
+      )`;
+    }
+  }
+  updateThermometerGradient();
 
   // ═══════════════════════════════════════════════════════════════════════
   // Berechne verbleibende Tage bis zum Pass-Ablauf

@@ -9,7 +9,8 @@ Memory.md ist der Informationshub dieses Projekts. Dort findest du: Kernregeln, 
 ## Projekt-Übersicht
 
 - **Single File:** `index.html` — kein Build, kein Framework, keine Dependencies
-- **Live:** https://selfishlars.github.io/museumcarddreilaendereck/
+- **Live:** https://museum.hertenbw.de (CNAME → GitHub Pages)
+- **GitHub Pages:** https://selfishlars.github.io/museumcarddreilaendereck/
 - **Deploy:** `git push` → GitHub Pages (~60s Verzögerung)
 - **Sprache:** Deutsch für UI/Labels, Englisch für Code
 
