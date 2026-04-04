@@ -361,8 +361,8 @@
     .thermo-mercury {
       position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
+      left: -16px;
+      width: calc(100% + 32px);
       background: linear-gradient(0deg,
         #922b21 0%,
         #c0392b 1%,
@@ -383,6 +383,7 @@
       );
       transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       min-height: 3px;
+      border-radius: 0 0 32px 32px;
     }
 
     .thermo-mercury::after {
@@ -432,7 +433,7 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #e74c3c 0%, #c0392b 45%, #922b21 70%, #7b241c 100%);
+      background: #922b21;
       border: 3px solid var(--leather);
       display: flex;
       align-items: center;
@@ -440,7 +441,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.35), inset 0 -3px 6px rgba(0,0,0,0.25);
       margin-top: -3px;
       position: relative;
-      z-index: 1;
+      z-index: 0;
     }
 
     .thermo-bulb-label {
