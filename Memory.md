@@ -55,10 +55,22 @@ Eine einzelne statische HTML-Seite (`index.html`) — kein Framework, kein Build
 | Ø Ersparnis/Besuch | ~44 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
-**Thermometer-Berechnung:**
+**⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
+
+**Thermometer-Aufbau:**
+- Kugel (Bulb) = dekorative Basis (0 €)
+- Röhrchen (Tube) = 500px Höhe, Skala von 0€ (unten) bis 2500€ (oben)
+- Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
+
+**Füllstandsberechnung:**
 - `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 87/2500 = 3,48%)
-- `break-even marker bottom` = `258/2500*100` = 10,32% (fest)
-- Break-Even-Fortschritt (für Header) = `Gesamtersparnis / 258 * 100`
+- `mercury height px` = 3,48% * 500px = 17,4px (Füllung im Röhrchen)
+- Break-Even-Marker: `bottom: 10,32%` (CSS, fest)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100`
+
+**Farbverlauf (dynamisch via JavaScript):**
+- Unter Break-Even (0€–258€): Gradient dunkelrot → rot → orange → hellrot
+- Über Break-Even (258€–2500€): Gradient hellgrün → grün → dunkelgrün
 
 ---
 
@@ -166,21 +178,33 @@ Innerhalb jedes Landes:
 ```
 
 ### JavaScript
-Nur ein kleines Snippet am Ende: berechnet `days-remaining` bis 07.03.2027.
+Befindet sich am Ende der Datei. Wichtigste Funktionen:
+- `updateThermometer()` — berechnet Füllhöhe und Farbverlauf dynamisch
+- `updateCountdown()` — zeigt verbleibende Tage bis Pass-Ablauf
+- `renderTop20()` — zeigt nächste 20 Ziele
+
+**Thermometer-Werte in JavaScript (ganz unten):**
+```javascript
+const savings = 87;  // ← NACH JEDEM BESUCH HIER ANPASSEN!
+```
+Die Funktion berechnet dann automatisch:
+- Füllhöhe: `savings / 2500 * 100` %
+- Farbverlauf: rot (unter 258€) oder grün (über 258€)
 
 ---
 
 ## Daten aktualisieren
 
 ### Neuen Besuch hinzufügen:
-1. Neues `<div class="visit-card swiss/france/germany">` in `.visit-log` einfügen
+1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log` einfügen
 2. Ersparnisbetrag in Euro berechnen (CHF÷0,95 für Schweiz)
-3. Gesamtersparnis im `.stats-grid` aktualisieren
-4. Thermometer anpassen: `height: X%` = `neue_gesamtersparnis/2500*100`
+3. **JavaScript:** `const savings = XXX;` in `updateThermometer()` aktualisieren
+4. Gesamtersparnis im `.stats-grid` aktualisieren
 5. Thermometer-Bulb-Label und Info-Panel anpassen
-6. `thermo-pct` = `neue_gesamtersparnis/258*100`
+6. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 7. Chronik-Eintrag hinzufügen (chronologisch!)
 8. Museum in `.museum-grid` als `.visited` markieren
+9. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (fest, nicht ändern!)
 
 ### Eintrittspreise-Logik:
 - Kinder unter 18 oft frei (CH, FR)
