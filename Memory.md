@@ -4,6 +4,15 @@ Dieses Dokument enthält alle projektrelevanten Informationen für KI-Assistente
 
 ---
 
+## ZWINGENDE VORGABEN
+
+**Sprache:** IMMER Deutsch für Ausgaben und "Thinking"-Prozess-Beschreibungen verwenden.
+- Alle Antworten an den Benutzer auf Deutsch
+- Alle Denkprozesse / Erklärungen was ich tue auf Deutsch
+- Das gilt auch für neue Sessions und alle Agenten
+
+---
+
 ## Projekt-Überblick
 
 **Was ist das?**

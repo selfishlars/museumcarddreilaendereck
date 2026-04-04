@@ -350,7 +350,7 @@
       position: absolute;
       left: 10px;
       width: 32px;
-      height: 100%;
+      height: calc(100% - 32px);
       background: rgba(244, 232, 193, 0.85);
       border: 2px solid var(--leather);
       border-radius: 12px 12px 0 0;
@@ -361,17 +361,25 @@
 
     .thermo-mercury {
       position: absolute;
-      bottom: 0;
+      bottom: -32px;
       left: 0;
       right: 0;
       background: linear-gradient(0deg,
-        #922b21 0%,
-        #c0392b 7%,
-        #e74c3c 12%,
-        #58d68d 18%,
-        #2ecc71 40%,
-        #27ae60 70%,
-        #1e8449 100%
+        #641e16 0%,
+        #7b241c 3%,
+        #922b21 6%,
+        #a93226 9%,
+        #c0392b 12%,
+        #d35400 14%,
+        #e74c3c 16%,
+        #ec7063 17%,
+        #f1948a 18%,
+        #58d68d 20%,
+        #2ecc71 25%,
+        #27ae60 35%,
+        #229954 50%,
+        #1e8449 70%,
+        #196f3d 100%
       );
       transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       min-height: 3px;
@@ -394,7 +402,7 @@
       right: 2px;
       height: 3px;
       background: var(--forest);
-      bottom: 10.32%;
+      bottom: calc(10.32% * 0.936 + 32px);
       z-index: 2;
       border-radius: 1px;
     }
@@ -424,7 +432,7 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: radial-gradient(circle at 38% 35%, #ff8a80, #c0392b 50%, #7b241c 100%);
+      background: radial-gradient(circle at 35% 30%, #e74c3c 0%, #c0392b 45%, #922b21 70%, #7b241c 100%);
       border: 3px solid var(--leather);
       display: flex;
       align-items: center;
