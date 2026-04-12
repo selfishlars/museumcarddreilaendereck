@@ -46,6 +46,18 @@ Vollständige Checkliste (auch in MEMORY.MD):
 
 ---
 
+## MUSEUM ALS UNINTERESSANT MARKIEREN
+
+Wenn ein Museum nach Recherche oder Besuch bewusst als uninteressant eingestuft wird:
+
+1. `class="museum-item"` → `class="museum-item uninteressant"` setzen
+2. Darstellung: ausgegraut + Badge "— Uninteressant" oben rechts
+3. Signalisiert: bewertet, kein weiterer Handlungsbedarf
+
+> Hinweis: `visited` und `uninteressant` schließen sich aus — nie kombinieren.
+
+---
+
 ## NEUES MUSEUM HINZUFÜGEN
 
 1. In `index.html` im richtigen Länder-Abschnitt einfügen

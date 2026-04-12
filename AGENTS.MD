@@ -82,7 +82,7 @@ npx html-validate index.html   # via npm
 
 **Museum-Karten-Struktur:**
 ```html
-<div class="museum-item [visited]">
+<div class="museum-item [visited|uninteressant]">
   <div class="museum-name"><span class="museum-flag">🇨🇭</span>Name</div>
   <div class="museum-city">Stadt, Land</div>
   <div class="museum-meta">
@@ -92,6 +92,16 @@ npx html-validate index.html   # via npm
   </div>
 </div>
 ```
+
+**Museum-Item Zustands-Klassen:**
+
+| Klasse | Badge | Bedeutung |
+|--------|-------|-----------|
+| *(keine)* | — | Nicht besucht, noch nicht bewertet |
+| `visited` | `✓ Besucht` (grün) | Besucht mit Museums-PASS |
+| `uninteressant` | `— Uninteressant` (grau) | Bewusst als uninteressant eingestuft — wird ausgegraut dargestellt |
+
+Nur eine Klasse pro Item. `visited` und `uninteressant` schließen sich gegenseitig aus.
 
 **Besuchs-Karten:**
 ```html
