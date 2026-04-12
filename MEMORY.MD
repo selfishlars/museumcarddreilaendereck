@@ -142,12 +142,13 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~90 € |
+| Bisher gespart | ~108 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
-| Noch bis Break-Even | ~168 € |
-| Besuche | 2 |
-| Ø Ersparnis/Besuch | ~45 € |
+| Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
+| Noch bis Break-Even | ~150 € |
+| Besuche | 3 |
+| Ø Ersparnis/Besuch | ~36 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -160,9 +161,9 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 90/2500 = 3,60%)
-- `mercury height px` = 3,60% * 500px = 18px
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100`
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 108/2500 = 4,32%)
+- `mercury height px` = 4,32% * 500px = 21,6px
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 108/258 = 41,9%)
 
 **Farbverlauf (dynamisch via JavaScript):**
 - Unter Break-Even: Gradient dunkelrot → rot → orange → hellrot
@@ -188,12 +189,20 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Ersparnis:** **56 CHF ≈ 62 €**
 - **Homepage:** https://www.papiermuseum.ch
 
+#### Besuch 3: Museum.BL
+- **Datum:** 12.04.2026
+- **Ort:** Museum.BL, Zeughausplatz 28, 4410 Liestal, Schweiz
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt:** 2 Erw. = 16 CHF, Kinder frei
+- **Ersparnis:** **16 CHF ≈ 18 €**
+- **Homepage:** https://museum.bl.ch
+
 ---
 
 ### Museum-Liste (Übersicht)
 
-154 Museen gelistet + 2 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 40 gelistet (1 besucht: Basler Papiermühle)
+154 Museen gelistet + 3 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 40 gelistet (2 besucht: Basler Papiermühle, Museum.BL)
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 52 gelistet (1 besucht: Château HK)
 

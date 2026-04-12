@@ -32,7 +32,7 @@ Stand: 2026-04-12
 Vollständige Checkliste (auch in MEMORY.MD):
 
 1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log`
-2. Ersparnisbetrag berechnen (CHF ÷ 0,95 = EUR)
+2. Ersparnisbetrag berechnen (CHF × 1,10 = EUR)
 3. `const savings = XXX;` in `updateThermometer()` anpassen
 4. Gesamtersparnis im `.stats-grid` aktualisieren
 5. Thermometer-Bulb-Label und Info-Panel anpassen
@@ -70,7 +70,7 @@ git push
 
 - Kinder unter 18 oft frei (CH, FR) — vor Eintrag prüfen
 - Familienticket wenn verfügbar vorziehen
-- CHF → EUR: Betrag ÷ 0,95
+- CHF → EUR: Betrag × 1,10 (Kurs: 1 CHF = 1,10 EUR / 1 EUR = 0,91 CHF)
 - Ersparnis = was ohne Pass bezahlt worden wäre
 - ca.-Werte mit `~XX €*` markieren
 

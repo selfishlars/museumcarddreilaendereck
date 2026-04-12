@@ -181,4 +181,4 @@ function esc(s) {
 - **Google Fonts** können offline fehlen (Design-Approximation nötig)
 - **SVG-Decorators** inline als data-URI (keine externen Dateien)
 - **Break-Even Marker**: `258/2500*100` = 10.32% (fest)
-- **CHF-Wechselkurs**: ~0.95 CHF/EUR (in Memory.md dokumentiert)
+- **CHF-Wechselkurs**: 1 CHF = 1,10 EUR / 1 EUR = 0,91 CHF (in MEMORY.MD dokumentiert)

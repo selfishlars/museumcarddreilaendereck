@@ -80,7 +80,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | id     | name                              | city             | dist_km | website                          |
 |--------|-----------------------------------|------------------|---------|----------------------------------|
 | CH-007 | Augusta Raurica                   | Augst            | 10      | augustaraurica.ch                |
-| CH-008 | Museum.BL                         | Liestal          | 20      | museumbl.ch                      |
+| CH-008 | Museum.BL ✓                       | Liestal          | 18      | museum.bl.ch                     |
 | CH-009 | Historisches Museum Basel         | Basel            | 13      | hmb.ch                           |
 | CH-010 | Museum der Kulturen Basel         | Basel            | 13      | mkb.ch                           |
 | CH-011 | Naturhistorisches Museum Basel    | Basel            | 13      | nmbs.ch                          |
@@ -150,7 +150,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
 | CH-054 | Rehmann-Museum                              | Laufenburg | 15      | 10        | 11        | 2×5 CHF, Kinder bis 25 frei; Skulpturengarten            | rehmann-museum.ch         |
 | CH-055 | Dichter:innen- und Stadtmuseum Liestal (DISTL) | Liestal | 18      | 10        | 11        | 2×5 CHF, Kinder bis 16 frei; 1. So. gratis              | distl.ch                  |
 | CH-056 | Kunsthalle Palazzo                          | Liestal    | 18      | 10        | 11        | 2×5 CHF, Kinder bis 25 frei; kein Rollstuhlzugang       | palazzo.ch                |
-| CH-008 | Museum.BL                                   | Liestal    | 18      | 16        | 18        | 2×8 CHF, Kinder bis 13 frei; 1. So. gratis              | museum.bl.ch              |
+| CH-008 | Museum.BL ✓ besucht 12.04.2026              | Liestal    | 18      | 16        | 18        | 2×8 CHF, Kinder bis 13 frei; 1. So. gratis              | museum.bl.ch              |
 | CH-057 | Aargauer Kunsthaus                          | Aarau      | 55      | 34        | 37        | 2×17 CHF, Kinder bis 16 frei; Do 17–20 Uhr gratis       | aargauerkunsthaus.ch      |
 | CH-058 | Stadtmuseum Aarau                           | Aarau      | 55      | 16        | 18        | 2×8 CHF, Kinder bis 16 frei                              | stadtmuseum.ch            |
 | CH-028 | ALPS Alpines Museum der Schweiz             | Bern       | 105     | 40        | 44        | Familienkarte 40 CHF (2 Erw. + max. 3 Ki. bis 16 J.)   | alps.museum               |
