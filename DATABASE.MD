@@ -1,4 +1,4 @@
-# Database.md — Museums-PASS Dreiländereck
+# DATABASE.MD — Museums-PASS Dreiländereck
 
 Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Projekts.
 

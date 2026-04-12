@@ -8,7 +8,7 @@ beschreibung: Verbindliche Ausführungsregeln für KI-Agenten im Projekt, inklus
 
 **WICHTIG: LIES ZUERST [MEMORY.MD](./MEMORY.MD)!**
 
-MEMORY.MD ist der Orchestrierungs-Hub dieses Projekts. Dort findest du: Kernregeln, SSOT-Verfahren, Doku-Routing, Pass-Daten und Thermometer-Berechnung.
+MEMORY.MD ist der Orchestrierungs-Hub dieses Projekts. Dort findest du: Kernregeln, Issue-Tracking-Verfahren, Doku-Routing, Pass-Daten und Thermometer-Berechnung.
 
 ---
 
@@ -168,9 +168,9 @@ function esc(s) {
 | Datei | Zweck | In git? |
 |-------|-------|---------|
 | `index.html` | Die gesamte App | ✅ |
-| `Memory.md` | KI-Dokumentation | ✅ |
-| `Database.md` | Strukturierte Daten | ✅ |
-| `CLAUDE.md` | Claude Code Regeln | ❌ (gitignored) |
+| `MEMORY.MD` | KI-Dokumentation | ✅ |
+| `DATABASE.MD` | Strukturierte Daten | ✅ |
+| `CLAUDE.MD` | Claude Code Regeln | ❌ (gitignored) |
 | `.claude/` | Claude Code Config | ❌ (gitignored) |
 
 ---

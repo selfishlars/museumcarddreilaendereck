@@ -14,7 +14,7 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 
 ## ARCHITEKTURPRINZIP
 
-- **SSOT B (GitHub Issues):** Aktives Issue-Tracking via GitHub Issues. `MEMORY.MD` ist die kanonische Routing-Zentrale.
+- **Verfahren B (GitHub Issues):** Aktives Issue-Tracking via GitHub Issues. `MEMORY.MD` ist die kanonische Routing-Zentrale.
 - **Routing:** Jedes Thema hat genau eine zuständige Datei. Querverweise statt Duplizierung.
 - **Sicherheit:** Secrets niemals in git-versionierten Dateien.
 
@@ -26,14 +26,14 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 
 | Datei | Typ | Zweck | In git |
 |-------|-----|-------|--------|
-| `MEMORY.MD` | SSOT-Hub | Orchestrierung, Routing, Kernregeln, Projektdaten | ✅ |
+| `MEMORY.MD` | Routing-Hub | Orchestrierung, Routing, Kernregeln, Projektdaten | ✅ |
 | `DOKU-ARCHITEKTUR.MD` | Doku | Diese Datei — Doku-Überblick | ✅ |
 | `DOKU-PROTOKOLL.MD` | Doku | Update-Protokoll für KI-Agenten | ✅ |
-| `SSOT-VERFAHREN.MD` | Doku | SSOT B Prozessregeln | ✅ |
+| `ISSUE-TRACKING-VERFAHREN.MD` | Doku | Issue-Tracking B Prozessregeln | ✅ |
 | `AGENTS.MD` | Doku | Coding-Conventions, Agent-Regeln | ✅ |
 | `CLAUDE.MD` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
 | `GEMINI.MD` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
-| `Database.md` | Daten | Strukturierte Museen/Preise/Distanzen | ✅ |
+| `DATABASE.MD` | Daten | Strukturierte Museen/Preise/Distanzen | ✅ |
 
 ### Root-Ebene (App)
 
@@ -64,7 +64,7 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 
 ```
 MEMORY.MD (Zentrale)
-├── SSOT-VERFAHREN.MD   → GitHub Issues Prozess
+├── ISSUE-TRACKING-VERFAHREN.MD → GitHub Issues Prozess
 ├── DOKU-PROTOKOLL.MD   → Wann was updaten
 ├── AGENTS.MD           → Wie Code schreiben
 ├── docs/adm/

@@ -16,7 +16,7 @@ Operative Wartungsregeln für KI-Agenten. Verhindert Abweichungen zwischen Imple
 
 ## AKTUELLER STAND
 
-Erstellt: 2026-04-12 (INIT_V4_0 repair)
+Erstellt: 2026-04-12 (INIT_V4_0 repair); Reconcile: 2026-04-12 (INIT_V5_0)
 
 ---
 
@@ -24,15 +24,15 @@ Erstellt: 2026-04-12 (INIT_V4_0 repair)
 
 | Datei | Update-Pflicht | Trigger |
 |-------|---------------|---------|
-| `MEMORY.MD` | IMMER bei größeren Änderungen | Neuer Besuch, Bilanz-Update, SSOT-Änderung |
+| `MEMORY.MD` | IMMER bei größeren Änderungen | Neuer Besuch, Bilanz-Update, Issue-Tracking-Änderung |
 | `AGENTS.MD` | Bei Änderung von Coding-Konventionen | Tech-Stack-Änderung, neue Regeln |
 | `docs/adm/ARCHITEKTUR.MD` | Bei Architektur-Änderungen | Neue Sektionen in index.html, JS-Änderungen |
 | `docs/adm/INFRASTRUKTUR.MD` | Bei Infra-/MCP-Änderungen | Neuer MCP-Server, Deploy-Änderung |
 | `docs/adm/MCP-INFOS.MD` | Bei MCP-Status-Änderungen | Install/Remove/Update eines MCP |
 | `docs/usr/APP-NAVIGATION.MD` | Bei UI-Änderungen | Neue Sektion, Layout-Änderung |
 | `docs/usr/ADMIN-BEREICH.MD` | Bei Pflege-Prozess-Änderungen | Neue Checklisten-Schritte |
-| `Database.md` | Bei neuen Museen/Preisen | Recherche, neue Einträge |
-| `SSOT-VERFAHREN.MD` | Nur bei SSOT-Modell-Änderung | Wechsel A↔B (selten) |
+| `DATABASE.MD` | Bei neuen Museen/Preisen | Recherche, neue Einträge |
+| `ISSUE-TRACKING-VERFAHREN.MD` | Nur bei Issue-Tracking-Modell-Änderung | Wechsel A↔B (selten) |
 | `DOKU-ARCHITEKTUR.MD` | Bei Struktur-Änderungen | Neue Dateien hinzugefügt |
 
 ---
@@ -41,12 +41,12 @@ Erstellt: 2026-04-12 (INIT_V4_0 repair)
 
 | Wenn X geändert wird… | …dann diese Dateien aktualisieren |
 |-----------------------|----------------------------------|
-| Neuer Museum-Besuch | MEMORY.MD (Bilanz, Protokoll), index.html, Database.md |
-| Neues Museum zur Liste | index.html, Database.md |
+| Neuer Museum-Besuch | MEMORY.MD (Bilanz, Protokoll), index.html, DATABASE.MD |
+| Neues Museum zur Liste | index.html, DATABASE.MD |
 | Thermometer-Wert | index.html (savings = XXX), MEMORY.MD (Bilanz) |
 | MCP-Server | docs/adm/INFRASTRUKTUR.MD, docs/adm/MCP-INFOS.MD, MEMORY.MD (MCP-Status) |
 | Neue Doku-Datei | DOKU-ARCHITEKTUR.MD, MEMORY.MD (Routing-Tabelle) |
-| SSOT-Wechsel | MEMORY.MD, SSOT-VERFAHREN.MD, DOKU-ARCHITEKTUR.MD |
+| Issue-Tracking-Wechsel | MEMORY.MD, ISSUE-TRACKING-VERFAHREN.MD, DOKU-ARCHITEKTUR.MD |
 
 ---
 
@@ -59,13 +59,13 @@ Vor jedem `git commit` bzw. `git push`:
 - [ ] Keine Secrets / Credentials in versionierten Dateien
 - [ ] `docs/adm/SECRETS.MD` ist in `.gitignore` (nie committen)
 - [ ] Geänderte Doku-Dateien sind in DOKU-ARCHITEKTUR.MD referenziert
-- [ ] Issue in GitHub mit `ergebnis:erledigt` geschlossen (bei SSOT B)
+- [ ] Issue in GitHub mit `ergebnis:erledigt` geschlossen (bei Verfahren B)
 
 ---
 
 ## GROSSE vs. KLEINE ÄNDERUNG
 
-**Groß** (SSOT-Verfahren, Pflichtstruktur, Sicherheitsregeln, Infra-Prozess ändern sich):
+**Groß** (Issue-Tracking-Verfahren, Pflichtstruktur, Sicherheitsregeln, Infra-Prozess ändern sich):
 → MEMORY.MD + DOKU-PROTOKOLL.MD lesen, danach alle betroffenen Dateien updaten.
 
 **Klein** (einzelner Besuch, Preis, Museum):

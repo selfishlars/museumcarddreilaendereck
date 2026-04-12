@@ -7,6 +7,6 @@ Lies zuerst diese Dateien (in dieser Reihenfolge):
 3. [DOKU-ARCHITEKTUR.MD](./DOKU-ARCHITEKTUR.MD) — Welche Datei wofür zuständig ist
 4. [AGENTS.MD](./AGENTS.MD) — Coding-Standards und Agent-Ausführungsregeln
 
-Aktives SSOT: **B (GitHub Issues)** — Details in [SSOT-VERFAHREN.MD](./SSOT-VERFAHREN.MD)
+Aktives Issue-Tracking: **B (GitHub Issues)** — Details in [ISSUE-TRACKING-VERFAHREN.MD](./ISSUE-TRACKING-VERFAHREN.MD)
 
 ISSUE_PREFIX: `MUSEUM` → `MUSEUM-ISSUE-0001`

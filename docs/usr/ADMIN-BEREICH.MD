@@ -51,7 +51,7 @@ Vollständige Checkliste (auch in MEMORY.MD):
 3. Sortierung beachten: Top 5 nach Preis, Rest nach Distanz
 4. `count-badge` im Länder-Header anpassen
 5. MEMORY.MD Museum-Liste-Zähler aktualisieren
-6. Database.md ergänzen
+6. DATABASE.MD ergänzen
 
 ---
 

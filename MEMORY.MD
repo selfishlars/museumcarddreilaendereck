@@ -1,19 +1,20 @@
 ---
 name: MEMORY.MD
-description: Central orchestration and routing hub for the entire project documentation. Defines the active SSOT method (GitHub Issues), project goal, document-routing entry points, and mandatory operating rules for AI sessions.
-beschreibung: Zentrale Orchestrierungs- und Routing-Datei der gesamten Projektdokumentation. Definiert das aktive SSOT-Verfahren (GitHub Issues), das Projekt-Zielbild, Doku-Routing-Einstiegspunkte und verbindliche Betriebsregeln für KI-Sessions.
+description: Central orchestration and routing hub for the entire project documentation. Defines the active issue-tracking method (GitHub Issues), project goal, document-routing entry points, and mandatory operating rules for AI sessions.
+beschreibung: Zentrale Orchestrierungs- und Routing-Datei der gesamten Projektdokumentation. Definiert das aktive Issue-Tracking-Verfahren (GitHub Issues), das Projekt-Zielbild, Doku-Routing-Einstiegspunkte und verbindliche Betriebsregeln für KI-Sessions.
 ---
 
 # MEMORY.MD — Museums-PASS Dreiländereck Logbuch
 
 > **PFLICHTLEKTÜRE:** Bei Initialisierung, vor/nach größeren Änderungen, vor Commit/Push und wiederholt während längerer Umsetzungsphasen.
-> **Konsolidierte Regel:** Vor jedem Commit/Push `DOKU-PROTOKOLL.MD` und `SSOT-VERFAHREN.MD` lesen und beachten.
+> **Konsolidierte Regel:** Vor jedem Commit/Push `DOKU-PROTOKOLL.MD` und `ISSUE-TRACKING-VERFAHREN.MD` lesen und beachten.
 
 ---
 
 ## INIT-MODUS
 
 `repair` — angewendet: 2026-04-12 (INIT_V4_0)
+`reconcile` — angewendet: 2026-04-12 (INIT_V5_0)
 
 ---
 
@@ -23,9 +24,9 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 
 ---
 
-## AKTIVES SSOT-VERFAHREN
+## AKTIVES ISSUE-TRACKING-VERFAHREN
 
-**B: GitHub Issues** — Details in [SSOT-VERFAHREN.MD](./SSOT-VERFAHREN.MD)
+**B: GitHub Issues** — Details in [ISSUE-TRACKING-VERFAHREN.MD](./ISSUE-TRACKING-VERFAHREN.MD)
 
 ---
 
@@ -33,7 +34,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 
 | Feld | Wert |
 |------|------|
-| Verfahren | GitHub Issues (SSOT B) |
+| Verfahren | GitHub Issues (Verfahren B) |
 | ISSUE_PREFIX | `MUSEUM` |
 | Tracking-ID-Schema | `MUSEUM-ISSUE-0001`, `MUSEUM-ISSUE-0002`, … |
 | GitHub Repo | https://github.com/selfishlars/museumcarddreilaendereck |
@@ -48,7 +49,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 | `MEMORY.MD` | Diese Datei — Orchestrierung, Routing, Kernregeln |
 | `DOKU-ARCHITEKTUR.MD` | Übersicht aller Doku-Dateien und deren Zusammenspiel |
 | `DOKU-PROTOKOLL.MD` | Wann und wie Doku aktualisieren — vor Commit/Push lesen |
-| `SSOT-VERFAHREN.MD` | SSOT B (GitHub Issues) — Prozessregeln |
+| `ISSUE-TRACKING-VERFAHREN.MD` | Issue-Tracking B (GitHub Issues) — Prozessregeln |
 | `AGENTS.MD` | Coding-Conventions und Agent-Ausführungsregeln |
 | `docs/adm/ARCHITEKTUR.MD` | Technische Architektur der index.html |
 | `docs/adm/INFRASTRUKTUR.MD` | Infrastruktur, Deployment, MCP-Setup |
@@ -56,7 +57,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 | `docs/adm/SECRETS.MD` | Lokale Secrets — **NICHT in git!** |
 | `docs/usr/APP-NAVIGATION.MD` | Nutzerorientierte Navigation und Seitenaufbau |
 | `docs/usr/ADMIN-BEREICH.MD` | Admin-Aktionen und Pflegeanleitung |
-| `Database.md` | Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen) |
+| `DATABASE.MD` | Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen) |
 
 ---
 

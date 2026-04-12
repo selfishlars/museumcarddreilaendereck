@@ -1,10 +1,10 @@
 ---
-name: SSOT-VERFAHREN.MD
-description: Canonical specification of the active single-source-of-truth workflow. Defines GitHub-based tracking mode (SSOT B), decision criteria, and strict rules to ensure only one active method.
-beschreibung: Kanonische Spezifikation des aktiven SSOT-Verfahrens (B: GitHub Issues). Definiert den GitHub-basierten Tracking-Modus, Entscheidungskriterien und strikte Regeln.
+name: ISSUE-TRACKING-VERFAHREN.MD
+description: Canonical specification of all supported issue-tracking workflows. Defines markdown-based and GitHub-based tracking modes, decision criteria, migration steps, and strict rules to ensure only one active method at a time.
+beschreibung: Kanonische Spezifikation aller unterstützten Issue-Tracking-Verfahren. Definiert den markdown-basierten und GitHub-basierten Tracking-Modus, Entscheidungskriterien, Migrationsschritte und strikte Regeln, damit immer nur ein Verfahren gleichzeitig aktiv ist.
 ---
 
-# SSOT-VERFAHREN.MD — Museums-PASS Dreiländereck
+# ISSUE-TRACKING-VERFAHREN.MD — Museums-PASS Dreiländereck
 
 ## ZWECK UND BESCHREIBUNG DIESER DATEI
 
