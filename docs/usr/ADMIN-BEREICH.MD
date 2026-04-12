@@ -39,10 +39,12 @@ Vollständige Checkliste (auch in MEMORY.MD):
 6. Thermometer-Bulb-Label und Info-Panel anpassen
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 8. Chronik-Eintrag hinzufügen (chronologisch!)
-9. Museum in `.museum-grid` als `.visited` markieren
-10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
-11. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
-12. GitHub Issue mit `ergebnis:erledigt` schließen
+9. Museum in **„Bereits besucht"**-Sektion eintragen (Struktur wie bestehende Einträge)
+10. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + Sektions-Zähler −1
+11. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
+12. **Header:** `Letzte Expedition` auf das aktuelle Besuchsdatum setzen
+13. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
+14. GitHub Issue mit `ergebnis:erledigt` schließen
 
 ---
 

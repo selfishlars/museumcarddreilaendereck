@@ -103,6 +103,12 @@ npx html-validate index.html   # via npm
 
 Nur eine Klasse pro Item. `visited` und `uninteressant` schließen sich gegenseitig aus.
 
+**Regel: Besuchte Museen gehören NUR in „Bereits besucht"**
+- Nach einem Besuch: Museum in die `<!-- ══ BESUCHT ══ -->`-Sektion eintragen.
+- Das Museum **vollständig** aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) entfernen.
+- Sektions-Zähler der betroffenen Ländersektion um 1 reduzieren.
+- Kein Museum darf gleichzeitig in „Bereits besucht" UND in einer Ländersektion stehen.
+
 **Besuchs-Karten:**
 ```html
 <div class="visit-card swiss|france|germany">
