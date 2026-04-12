@@ -85,7 +85,4 @@ Zweck: Dediziertes Konto für KI-Automation & MCP-Dienste (NotebookLM).
 
 ## GEPLANTE ERWEITERUNGEN
 
-| Komponente | Zweck | Status |
-|------------|-------|--------|
-| Google Drive MCP | Dokumente aus Drive als NotebookLM-Sources | Offen |
-| Brave Search / Tavily | Fallback-Webrecherche | Offen |
+Aktuell keine offenen Erweiterungen. Tavily und Firecrawl MCP sind aktiv und abdecken den Webrecherche-Bedarf.
