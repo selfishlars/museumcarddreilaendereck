@@ -3,6 +3,9 @@ CLAUDE.md
 .claude/
 memory/
 
+# Secrets (niemals committen!)
+docs/adm/SECRETS.MD
+
 # OS
 .DS_Store
 Thumbs.db

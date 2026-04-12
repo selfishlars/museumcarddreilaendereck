@@ -1,8 +1,14 @@
-# AGENTS.md
+---
+name: AGENTS.MD
+description: Project execution rules for AI agents, including coding standards, validation gates, operational constraints, and project-specific implementation behavior.
+beschreibung: Verbindliche Ausführungsregeln für KI-Agenten im Projekt, inklusive Coding-Standards, Validierungsgates, operativer Einschränkungen und projektspezifischem Umsetzungsverhalten.
+---
 
-**WICHTIG: LIES ZUERST [Memory.md](./Memory.md)!**
+# AGENTS.MD
 
-Memory.md ist der Informationshub dieses Projekts. Dort findest du: Kernregeln, Tech-Stack, Routing-Tabelle, offene Tasks, Pass-Daten und Thermometer-Berechnung.
+**WICHTIG: LIES ZUERST [MEMORY.MD](./MEMORY.MD)!**
+
+MEMORY.MD ist der Orchestrierungs-Hub dieses Projekts. Dort findest du: Kernregeln, SSOT-Verfahren, Doku-Routing, Pass-Daten und Thermometer-Berechnung.
 
 ---
 
