@@ -140,12 +140,12 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~87 € |
+| Bisher gespart | ~90 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
-| Noch bis Break-Even | ~171 € |
+| Noch bis Break-Even | ~168 € |
 | Besuche | 2 |
-| Ø Ersparnis/Besuch | ~44 € |
+| Ø Ersparnis/Besuch | ~45 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -158,8 +158,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 87/2500 = 3,48%)
-- `mercury height px` = 3,48% * 500px = 17,4px
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 90/2500 = 3,60%)
+- `mercury height px` = 3,60% * 500px = 18px
 - Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100`
 
 **Farbverlauf (dynamisch via JavaScript):**
