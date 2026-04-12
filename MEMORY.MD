@@ -142,13 +142,15 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 |--|------|
 | Bisher gespart | ~87 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
-| Papiermühle Basel | 56 CHF ≈ 59 € (Kurs ~0,95 CHF/€) |
+| Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Noch bis Break-Even | ~171 € |
 | Besuche | 2 |
 | Ø Ersparnis/Besuch | ~44 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
+
+**Währungsumrechnung:** 1 CHF = 1,10 EUR / 1 EUR = ~0,91 CHF
 
 **Thermometer-Aufbau:**
 - Kugel (Bulb) = dekorative Basis (0 €)
@@ -180,8 +182,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Datum:** 22.03.2026
 - **Ort:** Basler Papiermühle, St. Alban-Tal 37, 4052 Basel, Schweiz
 - **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
-- **Regulärer Eintritt:** 2 Erw. + 2 Kinder = 56 CHF ≈ 59 €
-- **Ersparnis:** **56 CHF ≈ 59 €**
+- **Regulärer Eintritt:** 2 Erw. + 2 Kinder = 56 CHF ≈ 62 € (1 CHF = 1,10 EUR)
+- **Ersparnis:** **56 CHF ≈ 62 €**
 - **Homepage:** https://www.papiermuseum.ch
 
 ---
@@ -205,7 +207,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 ### Neuen Besuch hinzufügen (Checkliste)
 
 1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log`
-2. Ersparnisbetrag in Euro berechnen (CHF ÷ 0,95 für Schweiz)
+2. Ersparnisbetrag in Euro berechnen (CHF × 1,10 = EUR)
 3. **JavaScript:** `const savings = XXX;` in `updateThermometer()` aktualisieren
 4. Gesamtersparnis im `.stats-grid` aktualisieren
 5. Thermometer-Bulb-Label und Info-Panel anpassen

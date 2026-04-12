@@ -7,7 +7,10 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 ## Besuch 1: Château du Haut-Kœnigsbourg
 **Datum:** 07.03.2026
 
-*(Notizen ausstehend)*
+- Kindertour für 2 € pro Kind: absolut empfehlenswert — kleines Heft zum Rätsellösen entlang der Route.
+- Audio-Guide ist durchaus empfehlenswert.
+- Aussicht kann grandios sein — stark wetterabhängig.
+- **Highlight:** Aussicht vom Kanonenturm (ganz oben) — öffnet nur bei gutem Wetter.
 
 ---
 

@@ -157,8 +157,8 @@ function esc(s) {
 ### Preise
 
 - Kinder unter 18 oft frei (CH, FR)
-- CHF → EUR: Betrag × 1,10
--ca.-Werte mit `~XX €*` markieren
+- Währungsumrechnung: **1 CHF = 1,10 EUR** / **1 EUR = ~0,91 CHF**
+- ca.-Werte mit `~XX €*` markieren
 - Ersparnis = was ohne Pass bezahlt worden wäre
 
 ---
