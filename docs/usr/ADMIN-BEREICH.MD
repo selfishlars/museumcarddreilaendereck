@@ -33,14 +33,15 @@ Vollständige Checkliste (auch in MEMORY.MD):
 
 1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log`
 2. Ersparnisbetrag berechnen (CHF × 1,10 = EUR)
-3. `const savings = XXX;` in `updateThermometer()` anpassen
-4. Gesamtersparnis im `.stats-grid` aktualisieren
-5. Thermometer-Bulb-Label und Info-Panel anpassen
-6. `thermo-pct` = `Gesamtersparnis / 258 * 100`
-7. Chronik-Eintrag hinzufügen (chronologisch!)
-8. Museum in `.museum-grid` als `.visited` markieren
-9. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
-10. GitHub Issue mit `ergebnis:erledigt` schließen
+3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail `<span class="detail-icon">📊</span>` eintragen (Pflichtfeld!)
+4. `const savings = XXX;` in `updateThermometer()` anpassen
+5. Gesamtersparnis im `.stats-grid` aktualisieren
+6. Thermometer-Bulb-Label und Info-Panel anpassen
+7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
+8. Chronik-Eintrag hinzufügen (chronologisch!)
+9. Museum in `.museum-grid` als `.visited` markieren
+10. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
+11. GitHub Issue mit `ergebnis:erledigt` schließen
 
 ---
 
