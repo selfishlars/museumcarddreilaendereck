@@ -500,6 +500,18 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      position: relative;
+      padding-left: 38px;
+    }
+
+    .visit-log::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 26px;
+      bottom: 26px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(184,134,11,0.4), var(--gold) 30%, var(--gold) 70%, rgba(184,134,11,0.4));
     }
 
     .visit-card {
@@ -509,7 +521,35 @@
       padding: 22px 25px;
       position: relative;
       box-shadow: 4px 4px 0 rgba(107,58,42,0.25);
-      overflow: hidden;
+    }
+
+    .visit-card::after {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 22px;
+      width: 14px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 3px solid var(--parchment);
+      box-shadow: 0 0 0 2px var(--gold);
+      z-index: 1;
+    }
+
+    .visit-card-start {
+      border-color: var(--gold);
+      background: linear-gradient(145deg, #fdf8e8, #f8edc8);
+    }
+
+    .visit-card-start::after {
+      width: 18px;
+      height: 18px;
+      left: -33px;
+      top: 20px;
+      background: var(--rust);
+      border: 3px solid var(--parchment);
+      box-shadow: 0 0 0 2px var(--rust);
     }
 
     .visit-card::before {
@@ -938,65 +978,6 @@
       border-radius: 4px;
       margin-bottom: 14px;
       box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    }
-
-    /* ═══════════════════════════════════
-       TIMELINE / FOOTER
-    ═══════════════════════════════════ */
-    .timeline {
-      position: relative;
-      padding-left: 30px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-    }
-
-    .timeline-event {
-      position: relative;
-      margin-bottom: 20px;
-      padding: 15px 18px;
-      background: linear-gradient(145deg, #faf3de, #f2e5be);
-      border: 1px solid rgba(184,134,11,0.4);
-      border-radius: 3px;
-    }
-
-    .timeline-event::before {
-      content: '';
-      position: absolute;
-      left: -25px;
-      top: 18px;
-      width: 12px;
-      height: 12px;
-      background: var(--gold);
-      border-radius: 50%;
-      border: 2px solid var(--parchment);
-      box-shadow: 0 0 0 2px var(--gold);
-    }
-
-    .timeline-date {
-      font-family: 'Special Elite', monospace;
-      font-size: 19px;
-      letter-spacing: 2px;
-      color: var(--leather);
-      margin-bottom: 4px;
-    }
-
-    .timeline-text {
-      font-size: 22px;
-      color: var(--ink);
-    }
-
-    .timeline-savings {
-      font-family: 'Playfair Display', serif;
-      font-size: 23px;
-      font-weight: 700;
-      color: var(--forest);
     }
 
     /* ═══════════════════════════════════
@@ -1793,57 +1774,52 @@
         </div>
       </div>
 
+      <!-- EINTRAG START: Museumspässe erworben -->
+      <div class="visit-card france visit-card-start">
+        <div class="visit-card-header">
+          <div>
+            <div class="visit-museum-name">
+              🏰 Expeditionsstart
+            </div>
+            <div style="font-size:17px; color:var(--leather); margin-top:4px; font-style:italic;">
+              Château du Haut-Kœnigsbourg, Orschwiller — Elsass, Frankreich
+            </div>
+          </div>
+          <div class="visit-badge" style="background: linear-gradient(135deg, #8b6914, var(--gold)); border-color: var(--gold);">
+            🏁 Expedition begonnen
+          </div>
+        </div>
+
+        <div class="visit-details">
+          <div class="visit-detail">
+            <span class="detail-icon">📅</span>
+            <span>07. März 2026</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">🗺️</span>
+            <span>Beginn der Dreiländereck-Expedition</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">🎫</span>
+            <span>2 Museums-PASS Musées erworben · je 129 € · gültig 1 Jahr</span>
+          </div>
+        </div>
+
+        <div class="visit-info">
+          <div class="vi-row">
+            <span class="vi-desc">Museumspässe erworben auf dem Château du Haut-Kœnigsbourg 🏰🇫🇷 — 2 × Erwachsene-Pass à 129 € = 258 € Gesamtinvestition. Ab hier: Break-Even bei 258 € Gesamtersparnis. Die Reise beginnt.</span>
+          </div>
+        </div>
+
+        <div class="visit-stamp">
+          <div class="visit-stamp-text">EXPEDITION<br>GESTARTET<br>🏰</div>
+        </div>
+      </div>
+
     </div>
 
     <div class="note-box" style="margin-top:20px;">
       ➕ <strong>Neuen Besuch hinzufügen:</strong> Einfach ein weiteres <code>&lt;div class="visit-card swiss/france/germany"&gt;</code> einfügen und Thermometer-Prozent anpassen.
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ═══════════════════════════════════
-       CHRONIK
-  ═══════════════════════════════════ -->
-  <section class="section">
-    <h2 class="section-title"><span class="icon">🗓️</span> Chronik der Expedition</h2>
-    <div class="timeline">
-
-      <div class="timeline-event">
-        <div class="timeline-date">07. MÄRZ 2026 · EXPEDITIONSSTART &amp; 1. ABENTEUER</div>
-        <div class="timeline-text">
-          <strong>Pass erworben &amp; sofort losgelegt!</strong> Zwei Museums-PASS-Musées erworben (2 × 129 €, gültig 1 Jahr ab Erstbenutzung). Noch am selben Tag: Erster Besuch im
-          <strong>Château du Haut-Kœnigsbourg 🏰🇫🇷</strong> — die mittelalterliche Burganlage hoch über dem Elsass. Ersparnis:
-          <span class="timeline-savings">28 €</span>
-        </div>
-      </div>
-
-      <div class="timeline-event">
-        <div class="timeline-date">22. MÄRZ 2026 · 2. ABENTEUER</div>
-        <div class="timeline-text">
-          <strong>Basler Papiermühle 📜🇨🇭</strong> — Das Schweizer Museum für Papier, Schrift und Druck in Basel erkundet.
-          Mit Anon 1, Anon 2 und den Kindern. Ersparnis:
-          <span class="timeline-savings">56 CHF ≈ 62 €</span>
-        </div>
-      </div>
-
-      <div class="timeline-event">
-        <div class="timeline-date">12. APRIL 2026 · 3. ABENTEUER</div>
-        <div class="timeline-text">
-          <strong>Museum.BL 🏛️🇨🇭</strong> — Das Kantonalmuseum Basel-Landschaft in der idyllischen Altstadt von Liestal besucht.
-          Mit Anon 1, Anon 2 und den Kindern. Die Fix-It Ausstellung war das Highlight. Ersparnis:
-          <span class="timeline-savings">16 CHF ≈ 18 €</span>
-        </div>
-      </div>
-
-      <div class="timeline-event" style="border-style: dashed; opacity: 0.6;">
-        <div class="timeline-date">NÄCHSTE ABENTEUER · 2026</div>
-        <div class="timeline-text">
-          Noch ~150 € zu holen bis Break-Even. Welches Museum kommt als nächstes?<br>
-          <em>Ideen: Musée Unterlinden Colmar · Museum Tinguely Basel · Augustinermuseum Freiburg · Augusta Raurica …</em>
-        </div>
-      </div>
-
     </div>
   </section>
 
