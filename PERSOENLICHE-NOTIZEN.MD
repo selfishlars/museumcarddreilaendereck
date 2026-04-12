@@ -1,4 +1,4 @@
-# Persönliche Notizen — Museums-PASS Besuche
+# PERSOENLICHE-NOTIZEN.MD — Museums-PASS Besuche
 
 Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 

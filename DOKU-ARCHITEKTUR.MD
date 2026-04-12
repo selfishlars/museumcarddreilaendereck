@@ -34,6 +34,7 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 | `CLAUDE.MD` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
 | `GEMINI.MD` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
 | `DATABASE.MD` | Daten | Strukturierte Museen/Preise/Distanzen | ✅ |
+| `PERSOENLICHE-NOTIZEN.MD` | Tagebuch | Persönliche Erlebnisse/Highlights je Besuch | ✅ |
 
 ### Root-Ebene (App)
 

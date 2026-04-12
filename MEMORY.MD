@@ -58,6 +58,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 | `docs/usr/APP-NAVIGATION.MD` | Nutzerorientierte Navigation und Seitenaufbau |
 | `docs/usr/ADMIN-BEREICH.MD` | Admin-Aktionen und Pflegeanleitung |
 | `DATABASE.MD` | Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen) |
+| `PERSOENLICHE-NOTIZEN.MD` | Tagebuch-Gedächtnis: persönliche Erlebnisse, Highlights und Erinnerungen je Museumsbesuch |
 
 ---
 
