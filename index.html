@@ -783,6 +783,26 @@
 
     .museum-item.visited .museum-name { padding-right: 65px; }
 
+    .museum-item.uninteressant {
+      border-color: #aaa;
+      background: linear-gradient(145deg, #f0f0f0, #e8e8e8);
+      opacity: 0.65;
+    }
+
+    .museum-item.uninteressant::after {
+      content: '— Uninteressant';
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-family: 'Special Elite', monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #777;
+      font-weight: bold;
+    }
+
+    .museum-item.uninteressant .museum-name { padding-right: 110px; }
+
     .museum-city {
       font-size: 18px;
       color: var(--leather);
@@ -1304,8 +1324,8 @@
         <span class="value">Anon 1, Anon 2, Kind 1 &amp; Kind 2</span>
       </div>
       <div class="header-meta-item">
-        <span class="label">Entdeckte Museen</span>
-        <span class="value">2 von 350+</span>
+        <span class="label">Entdeckte Museen/Ausflugsziele</span>
+        <span class="value">3 von 350+</span>
       </div>
     </div>
 
@@ -2029,7 +2049,7 @@
         <div class="museum-city">Laufenburg</div>
         <div class="museum-meta"><span class="museum-price">CHF 10 · 11 €</span><span class="museum-dist">📍 15km</span><a class="museum-web" href="https://www.rehmann-museum.ch" target="_blank" rel="noopener">🌐 rehmann-museum.ch</a></div>
       </div>
-      <div class="museum-item">
+      <div class="museum-item uninteressant">
         <div class="museum-name"><span class="museum-flag">🇨🇭</span>Dichter:innen- und Stadtmuseum Liestal</div>
         <div class="museum-city">Liestal</div>
         <div class="museum-meta"><span class="museum-price">CHF 10 · 11 €</span><span class="museum-dist">📍 18km</span><a class="museum-web" href="https://www.distl.ch" target="_blank" rel="noopener">🌐 distl.ch</a></div>

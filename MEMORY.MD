@@ -226,4 +226,5 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 8. Chronik-Eintrag hinzufügen (chronologisch!)
 9. Museum in `.museum-grid` als `.visited` markieren
-10. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
+10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
+11. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
