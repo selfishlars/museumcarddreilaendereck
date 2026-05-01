@@ -14,23 +14,23 @@ Nutzerorientierter Überblick: Wie ist die Seite aufgebaut, was sieht der Nutzer
 
 ## AKTUELLER STAND
 
-Stand: 2026-04-12 — Single-Page App (index.html)
+Stand: 2026-05-01 — Single-Page App (index.html), Leaflet-Karte seit 01.05.2026
 
 ---
 
 ## SEITENSTRUKTUR (von oben nach unten)
 
-| Abschnitt | CSS-Klasse | Was ist hier |
-|-----------|-----------|--------------|
-| Header | `.page-header` | Titel, Pass-Metadaten, Countdown |
+| Abschnitt | CSS-Klasse / ID | Was ist hier |
+|-----------|----------------|--------------|
+| Header | `.page-header` | Titel, Pass-Metadaten, Kompassrose-Deko |
 | Pass-Karten | `.pass-holders` | Anon 1 & Anon 2 |
 | Bilanz-Dashboard | `.stats-grid` | Gesamtersparnis, Besuche, Break-Even-% |
-| Karte | `.map-section` | SVG-Karte Dreiländereck |
+| Karte | `.map-section` > `#expedition-map` | **Interaktive Leaflet/OSM-Karte** mit klickbaren Pins |
 | Thermometer | `.thermo-section` | Break-Even-Fortschritts-Anzeige (0–2500€) |
-| Besuchslogbuch | `.visit-log` | Karten je Besuch (Farbe nach Land) |
-| Chronik | `.timeline` | Zeitstrahl aller Ereignisse |
+| Besuchslogbuch | `.visit-log` | Karten je Besuch (Farbe nach Land, neueste oben) |
 | Pass-Infos | `.info-grid` | 4 Info-Karten zum Museums-PASS |
-| Museum-Liste | `.museum-grid` | Alle 154+ Museen nach Land sortiert |
+| Museum-Liste | `.museum-grid` | Alle 153+ Museen nach Land sortiert |
+| Top 20 | `#top20-section` | JS-generiert: nächste Ziele nach Distanz |
 | Footer | `<footer>` | Impressum-ähnlich, Links |
 
 ---

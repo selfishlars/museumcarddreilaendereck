@@ -43,14 +43,18 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 
 ## TABELLE: visits
 
-| id | museum_id | date       | travelers             | savings_local | currency | savings_eur | notes                        |
-|----|-----------|------------|-----------------------|---------------|----------|-------------|------------------------------|
-| 1  | FR-001    | 2026-03-07 | Anon1, Anon2, K1, K2  | 28.00         | EUR      | 28.00       | Kinder unter 18 frei         |
-| 2  | CH-001    | 2026-03-22 | Anon1, Anon2, K1, K2  | 56.00         | CHF      | 58.95       | 56 CHF ÷ 0.95 ≈ 58.95 €      |
+| id | museum_id | date       | travelers             | savings_local | currency | savings_eur | notes                                |
+|----|-----------|------------|-----------------------|---------------|----------|-------------|--------------------------------------|
+| 1  | FR-001    | 2026-03-07 | Anon1, Anon2, K1, K2  | 28.00         | EUR      | 28.00       | Kinder unter 18 frei                 |
+| 2  | CH-001    | 2026-03-22 | Anon1, Anon2, K1, K2  | 56.00         | CHF      | 62.00       | 56 CHF × 1,10 ≈ 62 € (Kurs 1:1,10)  |
+| 3  | CH-008    | 2026-04-12 | Anon1, Anon2, K1, K2  | 16.00         | CHF      | 18.00       | 16 CHF × 1,10 ≈ 18 €, Kinder frei   |
+| 4  | CH-044    | 2026-04-26 | Anon1, Anon2, K1, K2  | 24.00         | CHF      | 26.00       | 24 CHF × 1,10 ≈ 26 €, Ki unter 13 f.|
 
-**Gesamtersparnis:** ~87 € (28 + 59)
-**Thermometer:** 87 / 2500 × 100 = 3,48%
-**Break-Even-Fortschritt:** 87 / 258 × 100 = 33,7%
+**Gesamtersparnis:** ~134 € (28 + 62 + 18 + 26)
+**Thermometer:** 134 / 2500 × 100 = 5,36%
+**Break-Even-Fortschritt:** 134 / 258 × 100 = 51,9%
+
+**Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
 
 ---
 
@@ -58,10 +62,12 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 
 ### Besucht
 
-| id     | name                        | city         | country | lat     | lon    | dist_km | website                        | price_eur | price_note                            | visited    |
-|--------|-----------------------------|--------------|---------|---------|--------|---------|-------------------------------|-----------|---------------------------------------|------------|
-| FR-001 | Château du Haut-Kœnigsbourg | Orschwiller  | FR      | 48.249  | 7.343  | 75      | haut-koenigsbourg.fr          | 28.00     | 2×14€, Kinder unter 18 frei           | 2026-03-07 |
-| CH-001 | Basler Papiermühle           | Basel        | CH      | 47.554  | 7.605  | 13      | papiermuseum.ch               | 58.95     | 56 CHF (2 Erw. + 2 Ki.) ÷ 0.95       | 2026-03-22 |
+| id     | name                                    | city        | country | lat     | lon    | dist_km | website                   | price_eur | price_note                              | visited    |
+|--------|-----------------------------------------|-------------|---------|---------|--------|---------|---------------------------|-----------|-----------------------------------------|------------|
+| FR-001 | Château du Haut-Kœnigsbourg             | Orschwiller | FR      | 48.2497 | 7.3430 | 75      | haut-koenigsbourg.fr      | 28.00     | 2×14€, Kinder unter 18 frei             | 2026-03-07 |
+| CH-001 | Basler Papiermühle                       | Basel       | CH      | 47.5502 | 7.6063 | 13      | papiermuseum.ch           | 62.00     | 56 CHF × 1,10 (2 Erw. + 2 Ki.)         | 2026-03-22 |
+| CH-008 | Museum.BL                               | Liestal     | CH      | 47.4842 | 7.7340 | 18      | museum.bl.ch              | 18.00     | 16 CHF × 1,10, Kinder frei             | 2026-04-12 |
+| CH-044 | Antikenmuseum Basel und Sammlung Ludwig | Basel       | CH      | 47.5538 | 7.5917 | 13      | antikenmuseumbasel.ch     | 26.00     | 24 CHF × 1,10, Kinder unter 13 frei    | 2026-04-26 |
 
 ---
 

@@ -72,6 +72,17 @@ Zweck: Dediziertes Konto für KI-Automation & MCP-Dienste (NotebookLM).
 
 ---
 
+## EXTERNE CDN-ABHÄNGIGKEITEN
+
+| Ressource | CDN | Zweck | Fallback |
+|-----------|-----|-------|---------|
+| Leaflet CSS | unpkg.com/leaflet@1.9.4 | Karten-Stylesheet | Karte unsichtbar, Rest der Seite funktioniert |
+| Leaflet JS | unpkg.com/leaflet@1.9.4 | Karten-Logik | Karte leer, Rest der Seite funktioniert |
+| CartoDB Tiles | basemaps.cartocdn.com | Kartenkacheln | Karte grau/leer |
+| Google Fonts | fonts.googleapis.com | Schriftarten | Browser-Fallback (Georgia, serif) |
+
+---
+
 ## RISIKEN & MITIGATIONEN
 
 | Risiko | Mitigation |
@@ -80,9 +91,11 @@ Zweck: Dediziertes Konto für KI-Automation & MCP-Dienste (NotebookLM).
 | NotebookLM-Cookies ablaufen | `nlm login` erneut ausführen |
 | Account-Sperrung | Dediziertes Konto (bereits so) |
 | GitHub Pages DNS-Problem | Repo → Settings → Pages → Custom Domain prüfen |
+| unpkg.com CDN-Ausfall | Leaflet-Karte nicht sichtbar — Rest der Seite intakt |
+| CartoDB Tile-Server-Ausfall | Karte lädt, aber Tiles bleiben grau — Pins noch sichtbar |
 
 ---
 
 ## GEPLANTE ERWEITERUNGEN
 
-Aktuell keine offenen Erweiterungen. Tavily und Firecrawl MCP sind aktiv und abdecken den Webrecherche-Bedarf.
+Aktuell keine offenen Erweiterungen.

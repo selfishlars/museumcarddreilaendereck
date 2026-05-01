@@ -14,7 +14,7 @@ Pflegeanleitung für den Betrieb der Seite. Wer darf was, wie werden Daten aktua
 
 ## AKTUELLER STAND
 
-Stand: 2026-04-12
+Stand: 2026-05-01
 
 ---
 
@@ -31,20 +31,21 @@ Stand: 2026-04-12
 
 Vollständige Checkliste (auch in MEMORY.MD):
 
-1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log`
+1. Neues `<div class="visit-card swiss|france|germany">` als **erstes Kind** in `.visit-log` einfügen (neueste Einträge oben)
 2. Ersparnisbetrag berechnen (CHF × 1,10 = EUR)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail `<span class="detail-icon">📊</span>` eintragen (Pflichtfeld!)
-4. `const savings = XXX;` in `updateThermometer()` anpassen
-5. Gesamtersparnis im `.stats-grid` aktualisieren
+4. `const savings = XXX;` in `updateThermometer()` anpassen (aktueller Wert: 134)
+5. Alle 5 Stat-Cards im `.stats-grid` aktualisieren: Bisher gespart, Noch zu holen, Museen besucht, Ø Ersparnis/Besuch inkl. Sub-Text
 6. Thermometer-Bulb-Label und Info-Panel anpassen
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
-8. Chronik-Eintrag hinzufügen (chronologisch!)
-9. Museum in **„Bereits besucht"**-Sektion eintragen (Struktur wie bestehende Einträge)
-10. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + Sektions-Zähler −1
-11. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
-12. **Header:** `Letzte Expedition` auf das aktuelle Besuchsdatum setzen
-13. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
-14. GitHub Issue mit `ergebnis:erledigt` schließen
+8. Museum in **„Bereits besucht"**-Sektion eintragen (Struktur wie bestehende Einträge)
+9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + Sektions-Zähler −1
+10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
+11. **Header:** `Letzte Expedition` auf das aktuelle Besuchsdatum setzen
+12. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
+13. **Leaflet-Karte:** Neuen Pin in der Leaflet-IIFE am Ende der HTML-Datei eintragen (lat/lng + Popup-Text)
+14. MEMORY.MD Bilanz + Besuchsprotokoll, DATABASE.MD visits-Tabelle, PERSOENLICHE-NOTIZEN.MD aktualisieren
+15. GitHub Issue mit `ergebnis:erledigt` schließen
 
 ---
 

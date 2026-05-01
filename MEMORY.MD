@@ -142,13 +142,14 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~108 € |
+| Bisher gespart | ~134 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
-| Noch bis Break-Even | ~150 € |
-| Besuche | 3 |
-| Ø Ersparnis/Besuch | ~36 € |
+| Antikenmuseum Basel | 24 CHF ≈ 26 € (1 CHF = 1,10 EUR) |
+| Noch bis Break-Even | ~124 € |
+| Besuche | 4 |
+| Ø Ersparnis/Besuch | ~34 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -161,9 +162,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 108/2500 = 4,32%)
-- `mercury height px` = 4,32% * 500px = 21,6px
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 108/258 = 41,9%)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 134/2500 = 5,36%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 134/258 = 51,9%)
 
 **Farbverlauf (dynamisch via JavaScript):**
 - Unter Break-Even: Gradient dunkelrot → rot → orange → hellrot
@@ -197,12 +197,22 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Ersparnis:** **16 CHF ≈ 18 €**
 - **Homepage:** https://museum.bl.ch
 
+#### Besuch 4: Antikenmuseum Basel und Sammlung Ludwig
+- **Datum:** 26.04.2026
+- **Ort:** St. Alban-Graben 5, 4051 Basel, Kanton Basel-Stadt, Schweiz
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt:** 2 Erw. = 24 CHF, Kinder unter 13 frei
+- **Ersparnis:** **24 CHF ≈ 26 €**
+- **Highlight:** Ägypten-Ausstellung (Mumien, Sarkophage)
+- **Einschätzung:** Wenig kindergerecht, kaum Interaktivität — eher für Erwachsene
+- **Homepage:** https://www.antikenmuseumbasel.ch
+
 ---
 
 ### Museum-Liste (Übersicht)
 
-154 Museen gelistet + 3 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 40 gelistet (2 besucht: Basler Papiermühle, Museum.BL)
+153 Museen gelistet + 4 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 38 gelistet (3 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel)
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 52 gelistet (1 besucht: Château HK)
 
@@ -217,16 +227,16 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Neuen Besuch hinzufügen (Checkliste)
 
-1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log`
+1. Neues `<div class="visit-card swiss|france|germany">` als **erstes** Kind in `.visit-log` (neueste Einträge oben)
 2. Ersparnisbetrag in Euro berechnen (CHF × 1,10 = EUR)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail eintragen (Pflichtfeld!)
 4. **JavaScript:** `const savings = XXX;` in `updateThermometer()` aktualisieren
-5. Gesamtersparnis im `.stats-grid` aktualisieren
+5. Gesamtersparnis im `.stats-grid` aktualisieren (Bisher gespart, Noch zu holen, Ø/Besuch, Besuche)
 6. Thermometer-Bulb-Label und Info-Panel anpassen
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
-8. Chronik-Eintrag hinzufügen (chronologisch!)
-9. Museum in **„Bereits besucht"**-Sektion eintragen (NICHT in Ländersektion lassen!)
-10. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1
-11. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
-12. **Header:** `Letzte Expedition` auf das Besuchsdatum setzen
-13. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
+8. Museum in **„Bereits besucht"**-Sektion eintragen (NICHT in Ländersektion lassen!)
+9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1
+10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
+11. **Header:** `Letzte Expedition` auf das Besuchsdatum setzen
+12. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
+13. MEMORY.MD, DATABASE.MD und PERSOENLICHE-NOTIZEN.MD aktualisieren

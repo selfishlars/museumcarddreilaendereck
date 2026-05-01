@@ -45,9 +45,10 @@ npx html-validate index.html   # via npm
 ### Allgemein
 
 - **Kein Framework** — reines HTML/CSS/JS in einer Datei
-- **CSS inline** im `<style>` Block (Zeilen ~7-2615)
-- **JavaScript inline** im `<script>` Block (Zeilen ~2617-2739)
-- **Keine externen JS-Dependencies**
+- **CSS inline** im `<style>` Block
+- **JavaScript inline** im ersten `<script>` Block (`buildTop20`, `renderTop20`, `updateThermometer`, `updateCountdown`)
+- **Leaflet.js 1.9.4** via unpkg CDN — zweiter `<script>` Block am Ende + IIFE für Karten-Init
+- **CartoDB Voyager Tiles** (kein API-Key erforderlich)
 - **Google Fonts** via `@import` in CSS
 
 ### CSS Konventionen
@@ -193,8 +194,10 @@ function esc(s) {
 
 ## Gotchas
 
-- **Keine ES Modules** — alles inline
+- **Keine ES Modules** — alles inline (außer Leaflet via CDN)
 - **Google Fonts** können offline fehlen (Design-Approximation nötig)
-- **SVG-Decorators** inline als data-URI (keine externen Dateien)
-- **Break-Even Marker**: `258/2500*100` = 10.32% (fest)
-- **CHF-Wechselkurs**: 1 CHF = 1,10 EUR / 1 EUR = 0,91 CHF (in MEMORY.MD dokumentiert)
+- **Leaflet-Karte** benötigt Internetzugang (CDN + Tile-Server) — offline nicht verfügbar
+- **SVG-Decorators** (Kompassrose im Header) inline als data-URI im CSS-Hintergrund
+- **Break-Even Marker**: `258/2500*100` = 10.32% (CSS `bottom`-Wert, nie ändern)
+- **CHF-Wechselkurs**: 1 CHF = 1,10 EUR (einheitlich, in MEMORY.MD und DATABASE.MD dokumentiert)
+- **Neue Besuche in Leaflet-Karte**: Koordinaten (WGS84) als neues Array-Element in der IIFE eintragen (Koordinaten aus DATABASE.MD)

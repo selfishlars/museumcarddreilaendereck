@@ -31,3 +31,13 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - **Absolutes Highlight: Fix-It Ausstellung** — selbst Dinge reparieren, enorm viel Auswahl an Reparaturprojekten.
 - Flora & Fauna Baselbiet: sehr kinderfreundlich und unterhaltsam.
 - Besonders toll: der Dunkelraum mit Taschenlampe und Tiergeräuschen.
+
+---
+
+## Besuch 4: Antikenmuseum Basel und Sammlung Ludwig
+**Datum:** 26.04.2026
+
+- Ägypten-Ausstellung war beeindruckend: Mumien, Sarkophage, Alltagsgegenstände aus 4.000 Jahren ägyptischer Geschichte.
+- Ruhige, hochwertige Atmosphäre — klares Konzept, gut kuratiert.
+- Für unsere Kinder (7 & 9 J.) leider wenig geeignet: zu viele Vitrinen, kaum Interaktivität, nichts zum Anfassen.
+- Empfehlung: mit Kindern unter 10 J. lieber auslassen oder nur die Ägypten-Abteilung kurz anschauen.
