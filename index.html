@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museums-PASS Expedition — Dreiländereck</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap');
 
@@ -1414,96 +1415,7 @@
     <!-- KARTE: BESUCHTE ORTE -->
     <div class="map-section">
       <h3>📍 Besuchte Orte — Dreiländereck</h3>
-      <div class="map-wrapper">
-        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
-          <!-- Hintergrund -->
-          <rect width="420" height="300" fill="#f4e8c1" rx="3"/>
-
-          <!-- Länderzonen -->
-          <!-- Schweiz (Süd, unterhalb der West-Ost-Rheinstrecke) -->
-          <polygon points="0,218 420,218 420,300 0,300" fill="#e8b4b4" opacity="0.45"/>
-          <!-- Frankreich / Elsass (links des Rheins, Nord) -->
-          <polygon points="0,0 218,0 213,68 205,118 196,163 185,218 0,218" fill="#b4b4e8" opacity="0.38"/>
-          <!-- Deutschland / Baden (rechts des Rheins, Nord) -->
-          <polygon points="218,0 420,0 420,218 185,218 196,163 205,118 213,68" fill="#b4e8b4" opacity="0.38"/>
-
-          <!-- Rhein -->
-          <polyline points="420,218 185,218 196,163 205,118 213,68 218,0"
-            fill="none" stroke="#4a7fb5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="420,218 185,218 196,163 205,118 213,68 218,0"
-            fill="none" stroke="rgba(200,230,255,0.55)" stroke-width="2" stroke-linecap="round"/>
-
-          <!-- Rhein-Beschriftung -->
-          <text x="198" y="145" fill="#4a7fb5" font-family="Georgia,serif" font-size="11" font-style="italic" transform="rotate(-78,198,145)" opacity="0.85">Rhein</text>
-
-          <!-- Ländernamen -->
-          <text x="68" y="52" fill="#2a2a9a" font-family="Georgia,serif" font-size="15" font-style="italic" font-weight="bold" opacity="0.75">Frankreich</text>
-          <text x="74" y="70" fill="#2a2a9a" font-family="Georgia,serif" font-size="11" font-style="italic" opacity="0.6">Elsass / Alsace</text>
-
-          <text x="262" y="52" fill="#1a5a1a" font-family="Georgia,serif" font-size="14" font-style="italic" font-weight="bold" opacity="0.75">Deutschland</text>
-          <text x="266" y="70" fill="#1a5a1a" font-family="Georgia,serif" font-size="11" font-style="italic" opacity="0.6">Baden-Württemberg</text>
-
-          <text x="100" y="262" fill="#8b1a1a" font-family="Georgia,serif" font-size="15" font-style="italic" font-weight="bold" opacity="0.72">Schweiz</text>
-
-          <!-- Bergsilhouetten (Vogesen & Schwarzwald, schematisch) -->
-          <polygon points="62,148 78,118 94,148" fill="none" stroke="#8888aa" stroke-width="1.2" opacity="0.5"/>
-          <polygon points="82,158 99,128 116,158" fill="none" stroke="#8888aa" stroke-width="1.2" opacity="0.5"/>
-          <polygon points="48,162 66,134 84,162" fill="none" stroke="#8888aa" stroke-width="1" opacity="0.35"/>
-          <polygon points="300,98 316,70 332,98" fill="none" stroke="#88aa88" stroke-width="1.2" opacity="0.5"/>
-          <polygon points="318,116 335,86 352,116" fill="none" stroke="#88aa88" stroke-width="1.2" opacity="0.5"/>
-          <polygon points="286,128 304,98 322,128" fill="none" stroke="#88aa88" stroke-width="1" opacity="0.35"/>
-
-          <!-- BESUCHTE ORTE -->
-
-          <!-- Château du Haut-Kœnigsbourg (x=138, y=75) -->
-          <circle cx="138" cy="75" r="6" fill="#c0392b" stroke="#2c1810" stroke-width="1.5"/>
-          <circle cx="138" cy="75" r="9" fill="none" stroke="#c0392b" stroke-width="1" opacity="0.45"/>
-          <text x="162" y="70" fill="#2c1810" font-family="Georgia,serif" font-size="12" font-weight="bold">Château HK</text>
-          <text x="162" y="84" fill="#6b3a2a" font-family="Georgia,serif" font-size="10">07.03.2026 · 28 €</text>
-
-          <!-- Basler Papiermühle (Basel, x=175, y=230) -->
-          <circle cx="175" cy="230" r="6" fill="#c0392b" stroke="#2c1810" stroke-width="1.5"/>
-          <circle cx="175" cy="230" r="9" fill="none" stroke="#c0392b" stroke-width="1" opacity="0.45"/>
-          <text x="25" y="240" fill="#2c1810" font-family="Georgia,serif" font-size="12" font-weight="bold">Papiermühle</text>
-          <text x="25" y="253" fill="#6b3a2a" font-family="Georgia,serif" font-size="10">Basel · 22.03.2026 · 62 €</text>
-          <!-- Connector line -->
-          <line x1="157" y1="234" x2="125" y2="241" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
-
-          <!-- Museum.BL (Liestal, x=196, y=222) -->
-          <circle cx="196" cy="222" r="6" fill="#c0392b" stroke="#2c1810" stroke-width="1.5"/>
-          <circle cx="196" cy="222" r="9" fill="none" stroke="#c0392b" stroke-width="1" opacity="0.45"/>
-          <text x="216" y="218" fill="#2c1810" font-family="Georgia,serif" font-size="12" font-weight="bold">Museum.BL</text>
-          <text x="216" y="231" fill="#6b3a2a" font-family="Georgia,serif" font-size="10">Liestal · 12.04.2026 · 18 €</text>
-
-          <!-- Antikenmuseum Basel (Basel, x=152, y=248) -->
-          <circle cx="152" cy="248" r="6" fill="#c0392b" stroke="#2c1810" stroke-width="1.5"/>
-          <circle cx="152" cy="248" r="9" fill="none" stroke="#c0392b" stroke-width="1" opacity="0.45"/>
-          <text x="174" y="244" fill="#2c1810" font-family="Georgia,serif" font-size="12" font-weight="bold">Antikenmuseum</text>
-          <text x="174" y="258" fill="#6b3a2a" font-family="Georgia,serif" font-size="10">Basel · 26.04.2026 · 26 €</text>
-
-          <!-- HEIMATBASIS: Rheinfelden (x=210, y=212) -->
-          <polygon points="210,202 215,212 210,220 205,212" fill="#b8860b" stroke="#2c1810" stroke-width="2"/>
-          <circle cx="210" cy="215" r="4" fill="#b8860b" stroke="#2c1810" stroke-width="1"/>
-          <text x="220" y="210" fill="#5a3a00" font-family="Georgia,serif" font-size="10" font-weight="bold">Heimatbasis</text>
-          <text x="220" y="222" fill="#5a3a00" font-family="Georgia,serif" font-size="9">Rheinfelden (DE)</text>
-
-          <!-- Referenzstädte -->
-          <circle cx="140" cy="108" r="4" fill="#666" opacity="0.55"/>
-          <text x="148" y="112" fill="#444" font-family="Georgia,serif" font-size="10" opacity="0.8">Colmar</text>
-
-          <circle cx="240" cy="128" r="4" fill="#666" opacity="0.55"/>
-          <text x="248" y="132" fill="#444" font-family="Georgia,serif" font-size="10" opacity="0.8">Freiburg i.B.</text>
-
-          <!-- Legende -->
-          <rect x="0" y="274" width="420" height="26" fill="rgba(244,232,193,0.9)"/>
-          <circle cx="14" cy="287" r="6" fill="#c0392b" stroke="#2c1810" stroke-width="1.5"/>
-          <text x="25" y="291" fill="#2c1810" font-family="Georgia,serif" font-size="11">Besucht</text>
-          <polygon points="106,284 110,278 114,284 110,290" fill="#b8860b" stroke="#2c1810" stroke-width="1.5"/>
-          <text x="120" y="291" fill="#2c1810" font-family="Georgia,serif" font-size="11">Heimatbasis Rheinfelden</text>
-          <line x1="268" y1="284" x2="285" y2="284" stroke="#4a7fb5" stroke-width="4" stroke-linecap="round"/>
-          <text x="290" y="291" fill="#2c1810" font-family="Georgia,serif" font-size="11">Rhein</text>
-        </svg>
-      </div>
+      <div id="expedition-map" style="height:420px;border-radius:4px;border:2px solid var(--leather);overflow:hidden;"></div>
     </div>
 
     <!-- THERMOMETER -->
@@ -2960,6 +2872,53 @@
     }
   }
   updateCountdown();
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  var map = L.map('expedition-map', {
+    center: [47.95, 7.45],
+    zoom: 9,
+    scrollWheelZoom: false
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  var pinIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:14px;height:14px;border-radius:50%;background:#c0392b;border:2.5px solid #2c1810;box-shadow:0 0 0 4px rgba(192,57,43,0.25);cursor:pointer;"></div>',
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+    popupAnchor: [0, -10]
+  });
+
+  var homeIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:13px;height:13px;background:#b8860b;border:2px solid #2c1810;transform:rotate(45deg);box-shadow:0 0 0 3px rgba(184,134,11,0.3);"></div>',
+    iconSize: [13, 13],
+    iconAnchor: [6, 6],
+    popupAnchor: [0, -8]
+  });
+
+  var visited = [
+    [48.2497, 7.3430, '&#127467;&#127479; Ch&acirc;teau du Haut-K&oelig;nigsbourg', 'Orschwiller &middot; 07.03.2026 &middot; 28 &euro; gespart'],
+    [47.5502, 7.6063, '&#127464;&#127469; Basler Papiermühle',                'Basel &middot; 22.03.2026 &middot; 62 &euro; gespart'],
+    [47.4842, 7.7340, '&#127464;&#127469; Museum.BL',                              'Liestal &middot; 12.04.2026 &middot; 18 &euro; gespart'],
+    [47.5538, 7.5917, '&#127464;&#127469; Antikenmuseum Basel',                    'Basel &middot; 26.04.2026 &middot; 26 &euro; gespart']
+  ];
+
+  visited.forEach(function(m) {
+    L.marker([m[0], m[1]], { icon: pinIcon }).addTo(map)
+      .bindPopup('<div style="font-family:Georgia,serif;font-size:13px;line-height:1.5"><strong>' + m[2] + '</strong><br><span style="color:#555;font-size:11px">' + m[3] + '</span></div>');
+  });
+
+  L.marker([47.5597, 7.7959], { icon: homeIcon }).addTo(map)
+    .bindPopup('<div style="font-family:Georgia,serif;font-size:13px"><strong>&#127968; Heimatbasis</strong><br><span style="color:#555;font-size:11px">Rheinfelden (DE)</span></div>');
+})();
 </script>
 
 </body>
