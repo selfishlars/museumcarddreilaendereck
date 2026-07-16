@@ -49,10 +49,11 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 2  | CH-001    | 2026-03-22 | Anon1, Anon2, K1, K2  | 56.00         | CHF      | 62.00       | 56 CHF × 1,10 ≈ 62 € (Kurs 1:1,10)  |
 | 3  | CH-008    | 2026-04-12 | Anon1, Anon2, K1, K2  | 16.00         | CHF      | 18.00       | 16 CHF × 1,10 ≈ 18 €, Kinder frei   |
 | 4  | CH-044    | 2026-04-26 | Anon1, Anon2, K1, K2  | 24.00         | CHF      | 26.00       | 24 CHF × 1,10 ≈ 26 €, Ki unter 13 f.|
+| 5  | CH-060    | 2026-06-21 | Anon1, Anon2, K1, K2 (+2 Gastkinder gratis) | 35.00 | CHF | 39.00 | Familienticket A; 35 CHF × 1,10 ≈ 39 €; Gastkinder nicht in Ersparnis |
 
-**Gesamtersparnis:** ~134 € (28 + 62 + 18 + 26)
-**Thermometer:** 134 / 2500 × 100 = 5,36%
-**Break-Even-Fortschritt:** 134 / 258 × 100 = 51,9%
+**Gesamtersparnis:** ~173 € (28 + 62 + 18 + 26 + 39)
+**Thermometer:** 173 / 2500 × 100 = 6,92%
+**Break-Even-Fortschritt:** 173 / 258 × 100 = 67,1%
 
 **Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
 
@@ -68,6 +69,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-001 | Basler Papiermühle                       | Basel       | CH      | 47.5502 | 7.6063 | 13      | papiermuseum.ch           | 62.00     | 56 CHF × 1,10 (2 Erw. + 2 Ki.)         | 2026-03-22 |
 | CH-008 | Museum.BL                               | Liestal     | CH      | 47.4842 | 7.7340 | 18      | museum.bl.ch              | 18.00     | 16 CHF × 1,10, Kinder frei             | 2026-04-12 |
 | CH-044 | Antikenmuseum Basel und Sammlung Ludwig | Basel       | CH      | 47.5538 | 7.5917 | 13      | antikenmuseumbasel.ch     | 26.00     | 24 CHF × 1,10, Kinder unter 13 frei    | 2026-04-26 |
+| CH-060 | Schloss Lenzburg                        | Lenzburg    | CH      | 47.3856 | 8.1832 | 65      | schloss-lenzburg.ch       | 39.00     | Familienticket A 35 CHF × 1,10; Erw. 14, Ki (4–16) 8 CHF | 2026-06-21 |
 
 ---
 
@@ -164,7 +166,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
 | CH-026 | Kunstmuseum Bern                            | Bern       | 105     | 48        | 53        | 2×24 CHF, Kinder bis 16 frei; Klee, Picasso, Hodler     | kunstmuseumbern.ch        |
 | CH-029 | Naturhistorisches Museum Bern               | Bern       | 105     | 24        | 26        | 2×12 CHF, Kinder bis 16 frei; sehr familienfreundlich   | nmbe.ch                   |
 | CH-059 | Abegg-Stiftung                              | Riggisberg | 110     | 20        | 22        | 2×10 CHF, Kinder bis 16 frei; Saison ab 26. April       | abegg-stiftung.ch         |
-| CH-060 | Schloss Lenzburg                            | Lenzburg   | 65      | 35        | 39        | Familienkarte 35 CHF (2 Erw. + 2 Ki.); Kindermuseum     | schloss-lenzburg.ch       |
+| CH-060 | Schloss Lenzburg ✓ besucht 21.06.2026       | Lenzburg   | 65      | 35        | 39        | Familienkarte 35 CHF (2 Erw. + 2 Ki.); Kindermuseum     | schloss-lenzburg.ch       |
 
 ---
 
@@ -347,13 +349,13 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | field                  | value    | unit |
 |------------------------|----------|------|
-| total_savings          | 87.00    | EUR  |
+| total_savings          | 173.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
-| break_even_remaining   | 171.00   | EUR  |
-| visits_count           | 2        |      |
-| avg_savings_per_visit  | 43.50    | EUR  |
-| thermometer_pct        | 3.48     | %    |
-| break_even_pct         | 33.72    | %    |
+| break_even_remaining   | 85.00    | EUR  |
+| visits_count           | 5        |      |
+| avg_savings_per_visit  | 34.60    | EUR  |
+| thermometer_pct        | 6.92     | %    |
+| break_even_pct         | 67.05    | %    |
 | thermometer_scale_max  | 2500.00  | EUR  |
 | break_even_marker_pct  | 10.32    | %    |
 
@@ -390,5 +392,5 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ---
 
-*Zuletzt aktualisiert: 2026-03-28*
-*Datenstand Besuche: 2 (Stand 2026-03-22)*
+*Zuletzt aktualisiert: 2026-07-16*
+*Datenstand Besuche: 5 (Stand 2026-06-21)*

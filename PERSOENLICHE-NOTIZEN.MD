@@ -41,3 +41,14 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - Ruhige, hochwertige Atmosphäre — klares Konzept, gut kuratiert.
 - Für unsere Kinder (7 & 9 J.) leider wenig geeignet: zu viele Vitrinen, kaum Interaktivität, nichts zum Anfassen.
 - Empfehlung: mit Kindern unter 10 J. lieber auslassen oder nur die Ägypten-Abteilung kurz anschauen.
+
+---
+
+## Besuch 5: Schloss Lenzburg
+**Datum:** 21.06.2026
+
+- Gemeinsamer Ausflug mit einer befreundeten Familie — deren 2 Kinder kamen dank unserer Pässe gratis mit aufs Schloss (bis zu 5 Kinder pro Pass, müssen nicht verwandt sein).
+- **Highlight:** Wunderschöner Ausblick von der Schlossanlage übers Mittelland.
+- Die Schlossanlage selbst ist toll — weitläufig, viel zu entdecken.
+- Die interaktive Anlage hat allen richtig gut gefallen.
+- **Ärgernis:** Eine penible Mitarbeiterin verbot den Kindern an einem superheißen Sommertag die Wasserspritzpistolen — nicht gerade kinderfreundlich, das war mal gar kein nettes Burgfräulein.

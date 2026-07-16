@@ -142,14 +142,15 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~134 € |
+| Bisher gespart | ~173 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
 | Antikenmuseum Basel | 24 CHF ≈ 26 € (1 CHF = 1,10 EUR) |
-| Noch bis Break-Even | ~124 € |
-| Besuche | 4 |
-| Ø Ersparnis/Besuch | ~34 € |
+| Schloss Lenzburg | 35 CHF ≈ 39 € (Familienticket A, 1 CHF = 1,10 EUR) |
+| Noch bis Break-Even | ~85 € |
+| Besuche | 5 |
+| Ø Ersparnis/Besuch | ~35 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -162,8 +163,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 134/2500 = 5,36%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 134/258 = 51,9%)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 173/2500 = 6,92%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 173/258 = 67,1%)
 
 **Farbverlauf (dynamisch via JavaScript):**
 - Unter Break-Even: Gradient dunkelrot → rot → orange → hellrot
@@ -207,12 +208,22 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Einschätzung:** Wenig kindergerecht, kaum Interaktivität — eher für Erwachsene
 - **Homepage:** https://www.antikenmuseumbasel.ch
 
+#### Besuch 5: Schloss Lenzburg
+- **Datum:** 21.06.2026
+- **Ort:** Schloss Lenzburg, 5600 Lenzburg, Kanton Aargau, Schweiz
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2 + 2 Gastkinder (befreundete Familie, gratis dank Pässen)
+- **Regulärer Eintritt:** Erw. CHF 14, Kind (4–16 J.) CHF 8, Familienticket A (2 Erw. + max. 5 Kinder) CHF 35
+- **Ersparnis:** **35 CHF ≈ 39 €** (nur eigene Familie gerechnet, Familienticket A)
+- **Highlight:** Wunderschöner Ausblick, tolle Schlossanlage, interaktive Anlage
+- **Einschätzung:** Sehr familienfreundlich; Ärgernis: penible Mitarbeiterin verbot Wasserspritzpistolen am superheißen Sommertag
+- **Homepage:** https://www.schloss-lenzburg.ch
+
 ---
 
 ### Museum-Liste (Übersicht)
 
-153 Museen gelistet + 4 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 38 gelistet (3 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel)
+152 Museen gelistet + 5 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 38 gelistet (4 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg)
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 52 gelistet (1 besucht: Château HK)
 
