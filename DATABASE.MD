@@ -368,9 +368,9 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | from | to  | rate   | notes                        |
 |------|-----|--------|------------------------------|
-| CHF  | EUR | ÷ 0.95 | 1 CHF ≈ 1.053 EUR (2026-03) |
+| CHF  | EUR | × 1.10 | 1 CHF = 1,10 EUR (Projektkonvention) |
 
-*Hinweis: Kurs variiert. Für alle Berechnungen wird CHF ÷ 0.95 verwendet.*
+*Hinweis: Für alle Berechnungen wird einheitlich CHF × 1,10 verwendet (siehe MEMORY.MD).*
 
 ---
 
@@ -390,7 +390,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ### Ersparnis-Berechnung
 - Ersparnis = Regulärer Eintritt ohne Pass
-- CHF → EUR: Betrag ÷ 0.95
+- CHF → EUR: Betrag × 1,10
 - Kinder-Freieintritte werden als 0 gerechnet (keine Ersparnis gelistet wenn Kinder ohnehin frei sind — außer wenn der Pass die Elterntickets ersetzt)
 
 ---
