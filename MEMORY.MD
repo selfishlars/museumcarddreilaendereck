@@ -222,8 +222,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-152 Museen gelistet + 5 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 38 gelistet (4 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg)
+153 Museen gelistet + 5 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 39 gelistet (4 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg) — Fondation Beyeler am 17.07.2026 nachgetragen
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 52 gelistet (1 besucht: Château HK)
 
