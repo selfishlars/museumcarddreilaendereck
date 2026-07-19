@@ -36,7 +36,7 @@ Vollständige Checkliste (auch in MEMORY.MD):
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail `<span class="detail-icon">📊</span>` eintragen (Pflichtfeld!)
 4. `const savings = XXX;` in `updateThermometer()` anpassen (aktueller Wert: 259)
 5. Alle 5 Stat-Cards im `.stats-grid` aktualisieren: Bisher gespart, Noch zu holen, Museen besucht, Ø Ersparnis/Besuch inkl. Sub-Text
-6. Thermometer-Bulb-Label und Info-Panel anpassen
+6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 4 variablen Zeilen:** 🏛️ Gespart, 📈 Noch nötig, 🗺️ **Besuche (!)**, ⏱️ Ø/Besuch — plus Fußzeile unter dem Thermometer (Break-Even-Prozent)
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 8. Museum in **„Bereits besucht"**-Sektion eintragen (Struktur wie bestehende Einträge)
 9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + Sektions-Zähler −1

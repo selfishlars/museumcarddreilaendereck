@@ -265,7 +265,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail eintragen (Pflichtfeld!)
 4. **JavaScript:** `const savings = XXX;` in `updateThermometer()` aktualisieren
 5. Gesamtersparnis im `.stats-grid` aktualisieren (Bisher gespart, Noch zu holen, Ø/Besuch, Besuche)
-6. Thermometer-Bulb-Label und Info-Panel anpassen
+6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 4 variablen Zeilen:** Gespart, Noch nötig, **Besuche (!)**, Ø/Besuch — plus Fußzeile unter dem Thermometer
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 8. Museum in **„Bereits besucht"**-Sektion eintragen (NICHT in Ländersektion lassen!)
 9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1
