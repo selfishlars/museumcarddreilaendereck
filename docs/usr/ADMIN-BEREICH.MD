@@ -44,7 +44,7 @@ Vollständige Checkliste (auch in MEMORY.MD):
 11. **Header:** `Letzte Expedition` auf das aktuelle Besuchsdatum setzen
 12. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
 13. **Leaflet-Karte:** Neuen Pin in der Leaflet-IIFE am Ende der HTML-Datei eintragen (lat/lng + Popup-Text)
-14. MEMORY.MD Bilanz + Besuchsprotokoll, DATABASE.MD visits-Tabelle, PERSOENLICHE-NOTIZEN.MD aktualisieren
+14. MEMORY.MD Bilanz + Besuchsprotokoll, DATABASE.MD visits-Tabelle **und** `savings_summary`-Tabelle (total_savings, break_even_remaining, visits_count, avg_savings_per_visit, thermometer_pct, break_even_pct), PERSOENLICHE-NOTIZEN.MD aktualisieren
 15. GitHub Issue mit `ergebnis:erledigt` schließen
 
 ---

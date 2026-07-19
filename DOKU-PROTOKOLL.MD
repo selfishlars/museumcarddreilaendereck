@@ -41,7 +41,7 @@ Erstellt: 2026-04-12 (INIT_V4_0 repair); Reconcile: 2026-04-12 (INIT_V5_0)
 
 | Wenn X geändert wird… | …dann diese Dateien aktualisieren |
 |-----------------------|----------------------------------|
-| Neuer Museum-Besuch | MEMORY.MD (Bilanz, Protokoll), index.html, DATABASE.MD |
+| Neuer Museum-Besuch | MEMORY.MD (Bilanz, Protokoll), index.html, DATABASE.MD (visits + `savings_summary`), PERSOENLICHE-NOTIZEN.MD |
 | Neues Museum zur Liste | index.html, DATABASE.MD |
 | Thermometer-Wert | index.html (savings = XXX), MEMORY.MD (Bilanz) |
 | MCP-Server | docs/adm/INFRASTRUKTUR.MD, docs/adm/MCP-INFOS.MD, MEMORY.MD (MCP-Status) |

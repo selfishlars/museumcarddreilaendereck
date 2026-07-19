@@ -250,4 +250,4 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
 11. **Header:** `Letzte Expedition` auf das Besuchsdatum setzen
 12. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
-13. MEMORY.MD, DATABASE.MD und PERSOENLICHE-NOTIZEN.MD aktualisieren
+13. MEMORY.MD, DATABASE.MD (visits-Tabelle **und** `savings_summary`-Tabelle!) und PERSOENLICHE-NOTIZEN.MD aktualisieren
