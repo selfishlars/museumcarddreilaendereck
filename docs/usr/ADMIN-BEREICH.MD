@@ -14,7 +14,7 @@ Pflegeanleitung für den Betrieb der Seite. Wer darf was, wie werden Daten aktua
 
 ## AKTUELLER STAND
 
-Stand: 2026-05-01
+Stand: 2026-07-19
 
 ---
 
@@ -34,7 +34,7 @@ Vollständige Checkliste (auch in MEMORY.MD):
 1. Neues `<div class="visit-card swiss|france|germany">` als **erstes Kind** in `.visit-log` einfügen (neueste Einträge oben)
 2. Ersparnisbetrag berechnen (CHF × 1,10 = EUR)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail `<span class="detail-icon">📊</span>` eintragen (Pflichtfeld!)
-4. `const savings = XXX;` in `updateThermometer()` anpassen (aktueller Wert: 134)
+4. `const savings = XXX;` in `updateThermometer()` anpassen (aktueller Wert: 173)
 5. Alle 5 Stat-Cards im `.stats-grid` aktualisieren: Bisher gespart, Noch zu holen, Museen besucht, Ø Ersparnis/Besuch inkl. Sub-Text
 6. Thermometer-Bulb-Label und Info-Panel anpassen
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`

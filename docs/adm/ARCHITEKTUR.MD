@@ -14,7 +14,7 @@ Technische Referenz für die Implementierung der `index.html`. Enthält Aufbau, 
 
 ## AKTUELLER STAND
 
-Stand: 2026-05-01 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
+Stand: 2026-07-19 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
 
 ---
 
@@ -125,7 +125,7 @@ Kommentar-Separatoren im CSS:
 
 **Thermometer-Konstante (nach jedem Besuch anpassen):**
 ```javascript
-const savings = 134;  // Gesamtersparnis in EUR — Stand: 26.04.2026
+const savings = 173;  // Gesamtersparnis in EUR — Stand: 21.06.2026
 ```
 
 **Berechnungslogik:**
@@ -170,6 +170,7 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 | Basler Papiermühle | 47.5502 | 7.6063 |
 | Museum.BL (Liestal) | 47.4842 | 7.7340 |
 | Antikenmuseum Basel | 47.5538 | 7.5917 |
+| Schloss Lenzburg | 47.3856 | 8.1832 |
 | Heimatbasis Rheinfelden (DE) | 47.5597 | 7.7959 |
 
 **`scrollWheelZoom: false`** — verhindert, dass die Karte beim Seiten-Scrollen den Zoom übernimmt.
