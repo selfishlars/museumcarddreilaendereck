@@ -204,6 +204,14 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
 | CH-063 | Museum Burghalde      | Lenzburg  | 65      | 20        | 22        | Familienticket 20 CHF; Ikonenmuseum inklusive               | museumburghalde.ch       |
 | CH-064 | Museum Franz Gertsch  | Burgdorf  | 95      | 36        | 40        | 2×18 CHF, Kinder bis 10 frei; Sa. reduzierter Eintritt      | museum-franzgertsch.ch   |
 
+### Schweiz — Nachtrag (recherchiert via NotebookLM 2026-07-19)
+
+| id     | name                                | city    | dist_km | price_chf | price_eur | price_basis                                                        | website  |
+|--------|-------------------------------------|---------|---------|-----------|-----------|--------------------------------------------------------------------|----------|
+| CH-065 | MUKS — Museum Kultur & Spiel Riehen | Riehen  | 17      | 20        | 22        | 2×10 CHF (Erw. ab 16), Kinder bis 16 gratis; 1. So./Monat gratis  | muks.ch  |
+
+**Pass-Mitgliedschaft bestätigt** via museumspass.com (2026-07-19): `/de/museen/muks-museum-kultur-und-spiel-riehen` — Baselstrasse 34, 4125 Riehen. Familienmuseum zum Mitmachen (Spielzeugsammlung, Dorfgeschichte), Mo + Mi–So 11–17 Uhr.
+
 ### Deutschland — Batch 3 (recherchierte Preise, via NotebookLM 2026-03-30)
 
 Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
@@ -285,15 +293,18 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ---
 
-### Frankreich — Top 5 (recherchierte Preise)
+### Frankreich — Recherchierte Preise (absteigend)
 
 | id     | name                        | city         | dist_km | price_eur | price_basis                               | website                        |
 |--------|-----------------------------|--------------|---------|-----------|-------------------------------------------|-------------------------------|
+| FR-011 | Parc Zoologique & Botanique de Mulhouse | Mulhouse | 35 | 66 | Tribu-Ticket (2 Erw. + 2 Ki. unter 16); Hochsaison Einzelpreise: Erw. 20,50 €, Kind 4–16 J. 14,50 € (Nebensaison alle 14,50 €) | zoo-mulhouse.com |
 | FR-002 | Cité de l'Automobile (Schlumpf) | Mulhouse | 35      | ~48       | Familienticket 2 Erw. + 2 Ki.            | citedelautomobile.com         |
 | FR-003 | Cité du Train               | Mulhouse     | 35      | ~46       | 2×13 + 2×10 = 46€                        | citedutrain.com               |
 | FR-004 | Saline Royale               | Arc-et-Senans| 120     | ~38       | 2×12 + 2×7 = 38€                         | salineroyale.com              |
 | FR-005 | Citadelle de Besançon       | Besançon     | 120     | ~36       | Familienticket ~36€                       | citadelle.com                 |
 | FR-006 | Centre Pompidou-Metz        | Metz         | 200     | ~24       | 2×12€, Kinder unter 18 frei              | centrepompidou-metz.fr        |
+
+**Zoo Mulhouse — Pass-Mitgliedschaft bestätigt** via museumspass.com (2026-07-19): `/fr/musee/parc-zoologique-botanique-de-mulhouse` (nur auf der FR-Seite gelistet, deutsche Detailseite existiert nicht). 111 Avenue de la 1ère Division Blindée, 68100 Mulhouse. 25 ha, 2.200+ Tiere. Preise recherchiert via NotebookLM 2026-07-19 (zoo-mulhouse.com, Stand 2026).
 
 ### Frankreich — Weitere (Distanz sortiert, Preise ausstehend)
 
@@ -303,7 +314,6 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 | FR-008 | Musée des Beaux-Arts de Mulhouse        | Mulhouse          | 35      | —                                      |
 | FR-009 | Musée Historique de Mulhouse            | Mulhouse          | 35      | —                                      |
 | FR-010 | Électropolis                            | Mulhouse          | 35      | electropolis.fr                        |
-| FR-011 | Zoo de Mulhouse                         | Mulhouse          | 35      | zoo-mulhouse.com                       |
 | FR-012 | Musée d'Unterlinden                     | Colmar            | 45      | musee-unterlinden.com                  |
 | FR-013 | Musée Bartholdi                         | Colmar            | 45      | musee-bartholdi.fr                     |
 | FR-014 | Musée du Jouet                          | Colmar            | 45      | —                                      |

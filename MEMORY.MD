@@ -222,17 +222,17 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-153 Museen gelistet + 5 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 39 gelistet (4 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg) — Fondation Beyeler am 17.07.2026 nachgetragen
+155 Museen gelistet + 5 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 40 gelistet (4 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg) — Fondation Beyeler am 17.07.2026, MUKS Riehen am 19.07.2026 nachgetragen
 - 🇩🇪 Deutschland: 62 gelistet
-- 🇫🇷 Frankreich: 52 gelistet (1 besucht: Château HK)
+- 🇫🇷 Frankreich: 53 gelistet (1 besucht: Château HK) — Zoo Mulhouse am 19.07.2026 nachgetragen (Pass-Mitgliedschaft via museumspass.com bestätigt)
 
 **Sortierung:** Top 5 je Land nach Preis (absteigend), Rest nach Distanz (aufsteigend).
 
-**Top 5 Preise (ca.-Werte, recherchiert 2026-03-28):**
+**Top 5 Preise (ca.-Werte, recherchiert 2026-03-28, FR aktualisiert 2026-07-19):**
 - 🇨🇭 CH: Ballenberg ~103€, Zentrum Paul Klee ~72€, KM Basel ~55€, Tinguely ~38€, Bern. HM ~34€
 - 🇩🇪 DE: Fabergé ~44€, Technoseum ~39€, Vogtsbauernhof ~34€, Frieder Burda ~28€, Bad. LM ~24€
-- 🇫🇷 FR: Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€, Pompidou-Metz ~24€
+- 🇫🇷 FR: Zoo Mulhouse 66€ (Tribu-Ticket), Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€
 
 ---
 
