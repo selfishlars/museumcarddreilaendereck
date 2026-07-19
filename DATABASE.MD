@@ -51,10 +51,11 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 4  | CH-044    | 2026-04-26 | Anon1, Anon2, K1, K2  | 24.00         | CHF      | 26.00       | 24 CHF × 1,10 ≈ 26 €, Ki unter 13 f.|
 | 5  | CH-060    | 2026-06-21 | Anon1, Anon2, K1, K2 (+2 Gastkinder gratis) | 35.00 | CHF | 39.00 | Familienticket A; 35 CHF × 1,10 ≈ 39 €; Gastkinder nicht in Ersparnis |
 | 6  | CH-065    | 2026-07-19 | Anon1, Anon2, K1, K2  | 28.00         | CHF      | 31.00       | 2×14 CHF, Kinder bis 16 frei; 28 CHF × 1,10 ≈ 31 €; Preis vor Ort bestätigt |
+| 7  | CH-017    | 2026-07-19 | Anon1, Anon2, K1, K2  | 50.00         | CHF      | 55.00       | 2×25 CHF, unter 25 J. frei; 50 CHF × 1,10 = 55 €; 🏆 BREAK-EVEN erreicht |
 
-**Gesamtersparnis:** ~204 € (28 + 62 + 18 + 26 + 39 + 31)
-**Thermometer:** 204 / 2500 × 100 = 8,16%
-**Break-Even-Fortschritt:** 204 / 258 × 100 = 79,1%
+**Gesamtersparnis:** ~259 € (28 + 62 + 18 + 26 + 39 + 31 + 55)
+**Thermometer:** 259 / 2500 × 100 = 10,36%
+**Break-Even-Fortschritt:** 259 / 258 × 100 = 100,4% — **BREAK-EVEN ERREICHT am 19.07.2026**
 
 **Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
 
@@ -72,6 +73,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-044 | Antikenmuseum Basel und Sammlung Ludwig | Basel       | CH      | 47.5538 | 7.5917 | 13      | antikenmuseumbasel.ch     | 26.00     | 24 CHF × 1,10, Kinder unter 13 frei    | 2026-04-26 |
 | CH-060 | Schloss Lenzburg                        | Lenzburg    | CH      | 47.3856 | 8.1832 | 65      | schloss-lenzburg.ch       | 39.00     | Familienticket A 35 CHF × 1,10; Erw. 14, Ki (4–16) 8 CHF | 2026-06-21 |
 | CH-065 | MUKS — Museum Kultur & Spiel Riehen     | Riehen      | CH      | 47.58518 | 7.65079 | 17     | muks.ch                   | 31.00     | 2×14 CHF (Erw. ab 16), Kinder bis 16 frei; vor Ort bestätigt | 2026-07-19 |
+| CH-017 | Fondation Beyeler                       | Riehen      | CH      | 47.5876 | 7.6512 | 17      | fondationbeyeler.ch       | 55.00     | 2×25 CHF, unter 25 J. frei; 🏆 Break-Even-Besuch | 2026-07-19 |
 
 **Besucherzahlen Schloss Lenzburg (Recherche 2026-07-16):** Keine aktuellen Einzelzahlen publiziert. Historisch: 2007 ~48'700, 2008 56'000 Museumseintritte (~61'000 inkl. Schlossanlage); 2018 ca. −10% wegen Sanierung. Museum Aargau gesamt (10 Standorte): 2023 303'220 / 2024 302'019 / 2025 ~293'600. Schätzung Lenzburg: ~50'000–60'000/Jahr.
 
@@ -101,7 +103,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-014 | Jüdisches Museum der Schweiz      | Basel            | 13      | juedisches-museum.ch              |
 | CH-015 | Spielzeug Welten Museum Basel     | Basel            | 13      | spielzeug-welten-museum-basel.ch  |
 | CH-016 | Haus der Elektronischen Künste    | Münchenbuchsee   | 15      | hek.ch                            |
-| CH-017 | Fondation Beyeler (Preis: s. Batch 2)  | Riehen    | 17      | fondationbeyeler.ch               |
+| CH-017 | Fondation Beyeler ✓ besucht 19.07.2026 (Preis: s. Batch 2) | Riehen | 17 | fondationbeyeler.ch    |
 | CH-018 | Dreiländermuseum                  | Lörrach          | 18      | dreilaendermuseum.eu              |
 | CH-019 | Vitra Design Museum               | Weil am Rhein    | 22      | design-museum.de                  |
 | CH-020 | Museum Burghalde                  | Lenzburg         | 42      | museum-burghalde.ch               |
@@ -171,7 +173,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J.). Kurs: 1 CHF = 1.10 EUR.
 | CH-029 | Naturhistorisches Museum Bern               | Bern       | 105     | 24        | 26        | 2×12 CHF, Kinder bis 16 frei; sehr familienfreundlich   | nmbe.ch                   |
 | CH-059 | Abegg-Stiftung                              | Riggisberg | 110     | 20        | 22        | 2×10 CHF, Kinder bis 16 frei; Saison ab 26. April       | abegg-stiftung.ch         |
 | CH-060 | Schloss Lenzburg ✓ besucht 21.06.2026       | Lenzburg   | 65      | 35        | 39        | Familienkarte 35 CHF (2 Erw. + 2 Ki.); Kindermuseum     | schloss-lenzburg.ch       |
-| CH-017 | Fondation Beyeler                           | Riehen     | 17      | 50        | 55        | 2×25 CHF (Di 20 CHF), bis 25 J. gratis; MPM gültig, Zeitfenster-Reservierung empfohlen; 508'870 Besucher 2025 | fondationbeyeler.ch |
+| CH-017 | Fondation Beyeler ✓ besucht 19.07.2026      | Riehen     | 17      | 50        | 55        | 2×25 CHF (Di 20 CHF), bis 25 J. gratis; MPM gültig, Zeitfenster-Reservierung empfohlen; 508'870 Besucher 2025 | fondationbeyeler.ch |
 
 ---
 
@@ -366,13 +368,13 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | field                  | value    | unit |
 |------------------------|----------|------|
-| total_savings          | 204.00   | EUR  |
+| total_savings          | 259.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
-| break_even_remaining   | 54.00    | EUR  |
-| visits_count           | 6        |      |
-| avg_savings_per_visit  | 34.00    | EUR  |
-| thermometer_pct        | 8.16     | %    |
-| break_even_pct         | 79.07    | %    |
+| break_even_remaining   | 0.00 — erreicht 2026-07-19 | EUR  |
+| visits_count           | 7        |      |
+| avg_savings_per_visit  | 37.00    | EUR  |
+| thermometer_pct        | 10.36    | %    |
+| break_even_pct         | 100.39   | %    |
 | thermometer_scale_max  | 2500.00  | EUR  |
 | break_even_marker_pct  | 10.32    | %    |
 

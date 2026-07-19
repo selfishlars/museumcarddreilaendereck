@@ -142,16 +142,17 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~204 € |
+| Bisher gespart | ~259 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
 | Antikenmuseum Basel | 24 CHF ≈ 26 € (1 CHF = 1,10 EUR) |
 | Schloss Lenzburg | 35 CHF ≈ 39 € (Familienticket A, 1 CHF = 1,10 EUR) |
 | MUKS Riehen | 28 CHF ≈ 31 € (2×14 CHF, Kinder bis 16 frei) |
-| Noch bis Break-Even | ~54 € |
-| Besuche | 6 |
-| Ø Ersparnis/Besuch | ~34 € |
+| Fondation Beyeler | 50 CHF ≈ 55 € (2×25 CHF, unter 25 J. frei) |
+| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (259 € > 258 €)** |
+| Besuche | 7 |
+| Ø Ersparnis/Besuch | ~37 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -164,8 +165,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 204/2500 = 8,16%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 204/258 = 79,1%)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 259/2500 = 10,36%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 259/258 = 100,4%)
 
 **Farbverlauf (dynamisch via JavaScript):**
 - Unter Break-Even: Gradient dunkelrot → rot → orange → hellrot
@@ -209,6 +210,16 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Einschätzung:** Wenig kindergerecht, kaum Interaktivität — eher für Erwachsene
 - **Homepage:** https://www.antikenmuseumbasel.ch
 
+#### Besuch 7: Fondation Beyeler 🏆 BREAK-EVEN
+- **Datum:** 19.07.2026 (2. Museum am selben Tag, direkt nach dem MUKS)
+- **Ort:** Fondation Beyeler, Baselstrasse 101, 4125 Riehen, Kanton Basel-Stadt, Schweiz
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt:** 2 Erw. = 50 CHF (25 CHF/Erw.), unter 25 J. frei
+- **Ersparnis:** **50 CHF ≈ 55 €**
+- **Highlight:** Vorgarten, Monet-Bilder, moderne Kunstinstallationen (Kinder!), die hohen ästhetischen Räume
+- **Meilenstein:** 🏆 **Break-Even erreicht — 259 € Gesamtersparnis übersteigt die 258 € Pass-Investition!**
+- **Homepage:** https://www.fondationbeyeler.ch
+
 #### Besuch 6: MUKS — Museum Kultur & Spiel Riehen
 - **Datum:** 19.07.2026
 - **Ort:** MUKS, Baselstrasse 34, 4125 Riehen, Kanton Basel-Stadt, Schweiz
@@ -233,8 +244,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-154 Museen gelistet + 6 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 39 gelistet (5 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen) — Fondation Beyeler am 17.07.2026 nachgetragen
+153 Museen gelistet + 7 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 38 gelistet (6 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler)
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 53 gelistet (1 besucht: Château HK) — Zoo Mulhouse am 19.07.2026 nachgetragen (Pass-Mitgliedschaft via museumspass.com bestätigt)
 

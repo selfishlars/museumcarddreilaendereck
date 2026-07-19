@@ -125,7 +125,7 @@ Kommentar-Separatoren im CSS:
 
 **Thermometer-Konstante (nach jedem Besuch anpassen):**
 ```javascript
-const savings = 204;  // Gesamtersparnis in EUR — Stand: 19.07.2026
+const savings = 259;  // Gesamtersparnis in EUR — Stand: 19.07.2026 (Break-Even erreicht)
 ```
 
 **Berechnungslogik:**
@@ -172,6 +172,7 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 | Antikenmuseum Basel | 47.5538 | 7.5917 |
 | Schloss Lenzburg | 47.3856 | 8.1832 |
 | MUKS Riehen | 47.58518 | 7.65079 |
+| Fondation Beyeler | 47.5876 | 7.6512 |
 | Heimatbasis Rheinfelden (DE) | 47.5597 | 7.7959 |
 
 **`scrollWheelZoom: false`** — verhindert, dass die Karte beim Seiten-Scrollen den Zoom übernimmt.

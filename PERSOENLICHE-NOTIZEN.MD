@@ -63,3 +63,14 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - Viel Interaktivität im kleinen, aber feinen Museum.
 - Gemütliches Picknick und Eis im schattigen Innenhof.
 - Praktisch: Kinder bis 16 J. gratis — Eintritt nur 14 CHF pro Erwachsenen (vor Ort bestätigt).
+
+---
+
+## Besuch 7: Fondation Beyeler 🏆 BREAK-EVEN
+**Datum:** 19.07.2026 — zweites Museum am selben Tag, direkt vom MUKS die Baselstrasse hoch
+
+- **Highlight:** Der wunderschöne Vorgarten vor dem Museum.
+- Die Bilder von Claude Monet.
+- Die Kinder waren begeistert von den modernen Kunstinstallationen.
+- Das Kunstmuseum selbst: wunderschöne hohe, ästhetische, ganz auf die Kunst ausgelegte Räume.
+- 🏆 **Mit diesem Besuch war der Break-Even geschafft — ab jetzt ist jeder Museumsbesuch reiner Gewinn!**
