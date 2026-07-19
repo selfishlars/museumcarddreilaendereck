@@ -130,7 +130,9 @@ const savings = 259;  // Gesamtersparnis in EUR — Stand: 19.07.2026 (Break-Eve
 
 **Berechnungslogik:**
 - Füllhöhe: `savings / 2500 * 100` %
-- Farbverlauf: rot (unter 258€) / grün (über 258€)
+- Farbverlauf: rot (unter 258€) / grün (über 258€) — `updateThermometer()` färbt **Quecksilber UND Bulb** dynamisch (Bulb ist seit 2026-07-19 nicht mehr statisch/dekorativ)
+- **Farbregel:** Quecksilber-Gradient bei 0% (unten) == Bulb-Grundton, damit Bulb + Säule als ein Flüssigkeitskörper wirken (Fix MUSEUM-ISSUE-0018)
+- Weicher Umschlag: `transition: background 0.6s ease` auf `.thermo-bulb` und `.thermo-mercury`
 - Break-Even-Marker: `bottom: 10,32%` (fest, 258/2500*100)
 
 ---

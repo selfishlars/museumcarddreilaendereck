@@ -365,6 +365,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
+      transition: background 0.6s ease;
       background: linear-gradient(0deg,
         #7b241c 0%,
         #922b21 20%,
@@ -427,6 +428,7 @@
       height: 64px;
       border-radius: 50%;
       background: linear-gradient(135deg, #922b21 0%, #7b241c 100%);
+      transition: background 0.6s ease;
       border: 3px solid var(--leather);
       display: flex;
       align-items: center;
@@ -3068,19 +3070,21 @@
     const tubeHeight = 500;
     const fillPct = savings / maxSavings * 100;
     const mercury = document.querySelector('.thermo-mercury');
+    const bulb = document.querySelector('.thermo-bulb');
     if (!mercury) return;
 
+    mercury.style.height = fillPct + '%';
     if (savings >= breakEven) {
-      mercury.style.height = fillPct + '%';
+      // Regel: Farbe bei 0% == Bulb-Grundton, damit Bulb + Säule ein Flüssigkeitskörper bleiben
       mercury.style.background = `linear-gradient(0deg,
-        #58d68d 0%,
-        #2ecc71 25%,
+        #145a32 0%,
+        #1e8449 25%,
         #27ae60 50%,
-        #1e8449 75%,
-        #145a32 100%
+        #2ecc71 75%,
+        #58d68d 100%
       )`;
+      if (bulb) bulb.style.background = 'linear-gradient(135deg, #1e8449 0%, #145a32 100%)';
     } else {
-      mercury.style.height = fillPct + '%';
       mercury.style.background = `linear-gradient(0deg,
         #7b241c 0%,
         #922b21 20%,
@@ -3090,6 +3094,7 @@
         #f1948a 95%,
         #f8c471 100%
       )`;
+      if (bulb) bulb.style.background = 'linear-gradient(135deg, #922b21 0%, #7b241c 100%)';
     }
   }
   updateThermometer();

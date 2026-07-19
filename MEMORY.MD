@@ -160,7 +160,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 **Währungsumrechnung:** 1 CHF = 1,10 EUR / 1 EUR = ~0,91 CHF
 
 **Thermometer-Aufbau:**
-- Kugel (Bulb) = dekorative Basis (0 €)
+- Kugel (Bulb) = Basis (0 €) — wird seit 19.07.2026 via JS dynamisch mit eingefärbt (rot/grün, passend zum Quecksilber)
 - Röhrchen (Tube) = 500px Höhe, Skala 0€ (unten) bis 2500€ (oben)
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
@@ -168,9 +168,10 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 259/2500 = 10,36%)
 - Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 259/258 = 100,4%)
 
-**Farbverlauf (dynamisch via JavaScript):**
-- Unter Break-Even: Gradient dunkelrot → rot → orange → hellrot
-- Über Break-Even: Gradient hellgrün → grün → dunkelgrün
+**Farbverlauf (dynamisch via JavaScript, Bulb + Quecksilber):**
+- Unter Break-Even: Bulb dunkelrot; Quecksilber dunkelrot (unten) → orange → hellrot (oben)
+- Über Break-Even: Bulb dunkelgrün; Quecksilber dunkelgrün (unten) → hellgrün (oben)
+- **Regel:** Quecksilber-Farbe bei 0% == Bulb-Grundton → Bulb und Säule wirken als ein Flüssigkeitskörper
 
 ---
 
