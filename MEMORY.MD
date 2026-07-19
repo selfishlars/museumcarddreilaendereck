@@ -142,15 +142,16 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~173 € |
+| Bisher gespart | ~204 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
 | Antikenmuseum Basel | 24 CHF ≈ 26 € (1 CHF = 1,10 EUR) |
 | Schloss Lenzburg | 35 CHF ≈ 39 € (Familienticket A, 1 CHF = 1,10 EUR) |
-| Noch bis Break-Even | ~85 € |
-| Besuche | 5 |
-| Ø Ersparnis/Besuch | ~35 € |
+| MUKS Riehen | 28 CHF ≈ 31 € (2×14 CHF, Kinder bis 16 frei) |
+| Noch bis Break-Even | ~54 € |
+| Besuche | 6 |
+| Ø Ersparnis/Besuch | ~34 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -163,8 +164,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 173/2500 = 6,92%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 173/258 = 67,1%)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 204/2500 = 8,16%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 204/258 = 79,1%)
 
 **Farbverlauf (dynamisch via JavaScript):**
 - Unter Break-Even: Gradient dunkelrot → rot → orange → hellrot
@@ -208,6 +209,16 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Einschätzung:** Wenig kindergerecht, kaum Interaktivität — eher für Erwachsene
 - **Homepage:** https://www.antikenmuseumbasel.ch
 
+#### Besuch 6: MUKS — Museum Kultur & Spiel Riehen
+- **Datum:** 19.07.2026
+- **Ort:** MUKS, Baselstrasse 34, 4125 Riehen, Kanton Basel-Stadt, Schweiz
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt:** 2 Erw. = 28 CHF (14 CHF/Erw.), Kinder bis 16 frei — Preis vor Ort bestätigt (recherchierte museums.ch-Angabe von 10 CHF war veraltet)
+- **Ersparnis:** **28 CHF ≈ 31 €**
+- **Highlight:** Kamelreiten mit wechselndem Hintergrund, Schatten-Theater-Installation
+- **Einschätzung:** Klein aber fein, sehr interaktiv; schattiger Innenhof ideal für Picknick
+- **Homepage:** https://www.muks.ch
+
 #### Besuch 5: Schloss Lenzburg
 - **Datum:** 21.06.2026
 - **Ort:** Schloss Lenzburg, 5600 Lenzburg, Kanton Aargau, Schweiz
@@ -222,8 +233,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-155 Museen gelistet + 5 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 40 gelistet (4 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg) — Fondation Beyeler am 17.07.2026, MUKS Riehen am 19.07.2026 nachgetragen
+154 Museen gelistet + 6 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 39 gelistet (5 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen) — Fondation Beyeler am 17.07.2026 nachgetragen
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 53 gelistet (1 besucht: Château HK) — Zoo Mulhouse am 19.07.2026 nachgetragen (Pass-Mitgliedschaft via museumspass.com bestätigt)
 

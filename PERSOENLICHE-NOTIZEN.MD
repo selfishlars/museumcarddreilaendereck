@@ -52,3 +52,14 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - Die Schlossanlage selbst ist toll — weitläufig, viel zu entdecken.
 - Die interaktive Anlage hat allen richtig gut gefallen.
 - **Ärgernis:** Eine penible Mitarbeiterin verbot den Kindern an einem superheißen Sommertag die Wasserspritzpistolen — nicht gerade kinderfreundlich, das war mal gar kein nettes Burgfräulein.
+
+---
+
+## Besuch 6: MUKS — Museum Kultur & Spiel Riehen
+**Datum:** 19.07.2026
+
+- **Highlight:** Kamelreiten — während sich der Hintergrund veränderte.
+- Die Schatten-Theater-Installation war sehr verspielt und interessant.
+- Viel Interaktivität im kleinen, aber feinen Museum.
+- Gemütliches Picknick und Eis im schattigen Innenhof.
+- Praktisch: Kinder bis 16 J. gratis — Eintritt nur 14 CHF pro Erwachsenen (vor Ort bestätigt).
