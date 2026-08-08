@@ -35,7 +35,7 @@ MCP-Katalog und Betriebsstatus. Referenz für alle MCP-Server im Projekt.
 
 ### notebooklm-mcp
 - **Kurzbeschreibung:** NotebookLM-Zugriff für notebook-basierte Recherche und Q&A (35+ Tools).
-- **Installiert:** v0.5.11 via pipx (`jacob-bd/notebooklm-mcp-cli`)
+- **Installiert:** v0.9.6 via pipx (`jacob-bd/notebooklm-mcp-cli`)
 - **Installation:**
   ```bash
   pipx install notebooklm-mcp-cli

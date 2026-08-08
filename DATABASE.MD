@@ -31,13 +31,13 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 
 | field          | value                                           |
 |----------------|-------------------------------------------------|
-| name           | Heimatbasis                                     |
-| street         | Eggbergstr. 52                                  |
+| name           | Heimatbasis (Dummy)                             |
+| street         | Eggbergstr. 30 (Dummy-Adresse)                  |
 | city           | Rheinfelden (Baden)                             |
 | postal_code    | 79618                                           |
 | country        | Deutschland                                     |
-| lat            | 47.5551                                         |
-| lon            | 7.7677                                          |
+| lat            | — (aus Datenschutzgründen nicht gespeichert)   |
+| lon            | — (aus Datenschutzgründen nicht gespeichert)   |
 
 ---
 
@@ -52,10 +52,11 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 5  | CH-060    | 2026-06-21 | Anon1, Anon2, K1, K2 (+2 Gastkinder gratis) | 35.00 | CHF | 39.00 | Familienticket A; 35 CHF × 1,10 ≈ 39 €; Gastkinder nicht in Ersparnis |
 | 6  | CH-065    | 2026-07-19 | Anon1, Anon2, K1, K2  | 28.00         | CHF      | 31.00       | 2×14 CHF, Kinder bis 16 frei; 28 CHF × 1,10 ≈ 31 €; Preis vor Ort bestätigt |
 | 7  | CH-017    | 2026-07-19 | Anon1, Anon2, K1, K2  | 50.00         | CHF      | 55.00       | 2×25 CHF, unter 25 J. frei; 50 CHF × 1,10 = 55 €; 🏆 BREAK-EVEN erreicht |
+| 8  | FR-011    | 2026-08-08 | Anon1, Anon2, K1, K2  | 66.00         | EUR      | 66.00       | Tribu-Ticket für 2 Erw. + 2 Ki. unter 16; Highlights und Einschätzung folgen |
 
-**Gesamtersparnis:** ~259 € (28 + 62 + 18 + 26 + 39 + 31 + 55)
-**Thermometer:** 259 / 2500 × 100 = 10,36%
-**Break-Even-Fortschritt:** 259 / 258 × 100 = 100,4% — **BREAK-EVEN ERREICHT am 19.07.2026**
+**Gesamtersparnis:** ~325 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66)
+**Thermometer:** 325 / 2500 × 100 = 13,00%
+**Break-Even-Fortschritt:** 325 / 258 × 100 = 125,97% — **BREAK-EVEN ERREICHT am 19.07.2026**
 
 **Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
 
@@ -74,6 +75,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-060 | Schloss Lenzburg                        | Lenzburg    | CH      | 47.3856 | 8.1832 | 65      | schloss-lenzburg.ch       | 39.00     | Familienticket A 35 CHF × 1,10; Erw. 14, Ki (4–16) 8 CHF | 2026-06-21 |
 | CH-065 | MUKS — Museum Kultur & Spiel Riehen     | Riehen      | CH      | 47.58518 | 7.65079 | 17     | muks.ch                   | 31.00     | 2×14 CHF (Erw. ab 16), Kinder bis 16 frei; vor Ort bestätigt | 2026-07-19 |
 | CH-017 | Fondation Beyeler                       | Riehen      | CH      | 47.5876 | 7.6512 | 17      | fondationbeyeler.ch       | 55.00     | 2×25 CHF, unter 25 J. frei; 🏆 Break-Even-Besuch | 2026-07-19 |
+| FR-011 | Parc Zoologique & Botanique de Mulhouse | Mulhouse    | FR      | 47.7346522 | 7.3504869 | 35   | zoo-mulhouse.com          | 66.00     | Tribu-Ticket für 2 Erw. + 2 Ki. unter 16 | 2026-08-08 |
 
 **Besucherzahlen Schloss Lenzburg (Recherche 2026-07-16):** Keine aktuellen Einzelzahlen publiziert. Historisch: 2007 ~48'700, 2008 56'000 Museumseintritte (~61'000 inkl. Schlossanlage); 2018 ca. −10% wegen Sanierung. Museum Aargau gesamt (10 Standorte): 2023 303'220 / 2024 302'019 / 2025 ~293'600. Schätzung Lenzburg: ~50'000–60'000/Jahr.
 
@@ -303,7 +305,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | id     | name                        | city         | dist_km | price_eur | price_basis                               | website                        |
 |--------|-----------------------------|--------------|---------|-----------|-------------------------------------------|-------------------------------|
-| FR-011 | Parc Zoologique & Botanique de Mulhouse | Mulhouse | 35 | 66 | Tribu-Ticket (2 Erw. + 2 Ki. unter 16); Hochsaison Einzelpreise: Erw. 20,50 €, Kind 4–16 J. 14,50 € (Nebensaison alle 14,50 €) | zoo-mulhouse.com |
+| FR-011 | Parc Zoologique & Botanique de Mulhouse ✓ besucht 08.08.2026 | Mulhouse | 35 | 66 | Tribu-Ticket (2 Erw. + 2 Ki. unter 16); Hochsaison Einzelpreise: Erw. 20,50 €, Kind 4–16 J. 14,50 € (Nebensaison alle 14,50 €) | zoo-mulhouse.com |
 | FR-002 | Cité de l'Automobile (Schlumpf) | Mulhouse | 35      | ~48       | Familienticket 2 Erw. + 2 Ki.            | citedelautomobile.com         |
 | FR-003 | Cité du Train               | Mulhouse     | 35      | ~46       | 2×13 + 2×10 = 46€                        | citedutrain.com               |
 | FR-004 | Saline Royale               | Arc-et-Senans| 120     | ~38       | 2×12 + 2×7 = 38€                         | salineroyale.com              |
@@ -311,6 +313,8 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 | FR-006 | Centre Pompidou-Metz        | Metz         | 200     | ~24       | 2×12€, Kinder unter 18 frei              | centrepompidou-metz.fr        |
 
 **Zoo Mulhouse — Pass-Mitgliedschaft bestätigt** via museumspass.com (2026-07-19): `/fr/musee/parc-zoologique-botanique-de-mulhouse` (nur auf der FR-Seite gelistet, deutsche Detailseite existiert nicht). 111 Avenue de la 1ère Division Blindée, 68100 Mulhouse. 25 ha, 2.200+ Tiere. Preise recherchiert via NotebookLM 2026-07-19 (zoo-mulhouse.com, Stand 2026).
+
+**Zoo Mulhouse — Besuchsrecherche via NotebookLM (2026-08-08):** 326.560 Besucher im Jahr 2025 laut offiziellem Kommuniqué der Mulhouse Alsace Agglomération. Der Park nennt je nach offizieller Unterseite unterschiedliche Bestandszahlen; für den Besuchseintrag wird die konservative Angabe von rund 1.200 Tieren aus etwa 170 Arten verwendet. Die 2,7 ha große Anlage „Horizon Afrique“ wurde im August 2025 eröffnet.
 
 ### Frankreich — Weitere (Distanz sortiert, Preise ausstehend)
 
@@ -368,13 +372,13 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | field                  | value    | unit |
 |------------------------|----------|------|
-| total_savings          | 259.00   | EUR  |
+| total_savings          | 325.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
 | break_even_remaining   | 0.00 — erreicht 2026-07-19 | EUR  |
-| visits_count           | 7        |      |
-| avg_savings_per_visit  | 37.00    | EUR  |
-| thermometer_pct        | 10.36    | %    |
-| break_even_pct         | 100.39   | %    |
+| visits_count           | 8        |      |
+| avg_savings_per_visit  | 40.63    | EUR  |
+| thermometer_pct        | 13.00    | %    |
+| break_even_pct         | 125.97   | %    |
 | thermometer_scale_max  | 2500.00  | EUR  |
 | break_even_marker_pct  | 10.32    | %    |
 
@@ -400,7 +404,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 - Aktualisierung nötig: für alle Museen ohne Preis
 
 ### Distanz-Berechnung
-- Von: Rheinfelden (Baden), Eggbergstr. 52 (47.5551°N, 7.7677°E)
+- Von: Rheinfelden (Baden), Eggbergstr. 30 — ausschließlich als Dummy-Adresse und rechnerischer Referenzpunkt
 - Straßendistanz (nicht Luftlinie)
 - Werte gerundet auf ~5 km
 
@@ -411,5 +415,5 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ---
 
-*Zuletzt aktualisiert: 2026-07-17*
-*Datenstand Besuche: 5 (Stand 2026-06-21)*
+*Zuletzt aktualisiert: 2026-08-08*
+*Datenstand Besuche: 8 (Stand 2026-08-08)*

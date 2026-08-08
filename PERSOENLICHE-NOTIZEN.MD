@@ -74,3 +74,11 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - Die Kinder waren begeistert von den modernen Kunstinstallationen.
 - Das Kunstmuseum selbst: wunderschöne hohe, ästhetische, ganz auf die Kunst ausgelegte Räume.
 - 🏆 **Mit diesem Besuch war der Break-Even geschafft — ab jetzt ist jeder Museumsbesuch reiner Gewinn!**
+
+---
+
+## Besuch 8: Parc Zoologique & Botanique de Mulhouse
+**Datum:** 08.08.2026
+
+- **Highlights:** Werden noch nachgetragen.
+- **Gesamteindruck:** Wird noch nachgetragen.

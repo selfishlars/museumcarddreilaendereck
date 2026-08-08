@@ -14,7 +14,7 @@ Betriebsdokumentation für Deployment, Hosting und externe Dienste.
 
 ## AKTUELLER STAND
 
-Stand: 2026-04-12 (migriert aus infra-doku.md)
+Stand: 2026-08-08 (migriert aus infra-doku.md)
 
 ---
 
@@ -45,7 +45,7 @@ git push
 
 | Eigenschaft | Detail |
 |-------------|--------|
-| Implementierung | `jacob-bd/notebooklm-mcp-cli` v0.5.11 |
+| Implementierung | `jacob-bd/notebooklm-mcp-cli` v0.9.6 |
 | Installiert | via pipx |
 | Status | ✅ Vollständig eingerichtet |
 

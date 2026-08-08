@@ -14,7 +14,7 @@ Technische Referenz für die Implementierung der `index.html`. Enthält Aufbau, 
 
 ## AKTUELLER STAND
 
-Stand: 2026-07-19 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
+Stand: 2026-08-08 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
 
 ---
 
@@ -89,7 +89,7 @@ Kommentar-Separatoren im CSS:
 
 - `.visited` = goldener Rahmen (bereits besucht)
 - `.museum-price` = Preis für 2 Erw. + 2 Kinder; `~` + `*` = ca.-Wert
-- `.museum-dist` = Straßendistanz von Rheinfelden (Baden), 47.555°N, 7.767°E
+- `.museum-dist` = gerundete Straßendistanz von der ausdrücklich als Dummy markierten Referenzadresse in Rheinfelden (Baden); private Koordinaten werden nicht dokumentiert
 
 ---
 
@@ -117,7 +117,7 @@ Kommentar-Separatoren im CSS:
 
 | Funktion/Block | Zweck | Datei-Position |
 |----------------|-------|----------------|
-| `buildTop20()` | Alle `.museum-item:not(.visited)` aus DOM lesen, sortieren | inline `<script>` |
+| `buildTop20()` | Alle `.museum-item:not(.visited):not(.uninteressant)` aus DOM lesen, sortieren | inline `<script>` |
 | `renderTop20()` | Top-20-Liste ins DOM schreiben | inline `<script>` |
 | `updateThermometer()` | Füllhöhe + Farbverlauf dynamisch berechnen | inline `<script>` |
 | `updateCountdown()` | Verbleibende Tage bis Pass-Ablauf anzeigen | inline `<script>` |
@@ -125,7 +125,7 @@ Kommentar-Separatoren im CSS:
 
 **Thermometer-Konstante (nach jedem Besuch anpassen):**
 ```javascript
-const savings = 259;  // Gesamtersparnis in EUR — Stand: 19.07.2026 (Break-Even erreicht)
+const savings = 325;  // Gesamtersparnis in EUR — Stand: 08.08.2026
 ```
 
 **Berechnungslogik:**
@@ -175,7 +175,8 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 | Schloss Lenzburg | 47.3856 | 8.1832 |
 | MUKS Riehen | 47.58518 | 7.65079 |
 | Fondation Beyeler | 47.5876 | 7.6512 |
-| Heimatbasis Rheinfelden (DE) | 47.5597 | 7.7959 |
+| Parc Zoologique & Botanique de Mulhouse | 47.7346522 | 7.3504869 |
+| Dummy-Heimatbasis Rheinfelden (DE) | 47.5597 | 7.7959 |
 
 **`scrollWheelZoom: false`** — verhindert, dass die Karte beim Seiten-Scrollen den Zoom übernimmt.
 

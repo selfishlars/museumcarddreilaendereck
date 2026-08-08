@@ -80,7 +80,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 
 | MCP-Server | Status | Hinweis |
 |------------|--------|---------|
-| notebooklm-mcp | ✅ Aktiv | v0.5.11, jacob-bd/notebooklm-mcp-cli via pipx |
+| notebooklm-mcp | ✅ Aktiv | v0.9.6, jacob-bd/notebooklm-mcp-cli via pipx |
 | context7 | ✅ Aktiv | Framework-Doku |
 | firecrawl | ✅ Aktiv | Web-Scraping |
 | github | ✅ Aktiv | GitHub-Operationen |
@@ -142,7 +142,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~259 € |
+| Bisher gespart | ~325 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
@@ -150,9 +150,10 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 | Schloss Lenzburg | 35 CHF ≈ 39 € (Familienticket A, 1 CHF = 1,10 EUR) |
 | MUKS Riehen | 28 CHF ≈ 31 € (2×14 CHF, Kinder bis 16 frei) |
 | Fondation Beyeler | 50 CHF ≈ 55 € (2×25 CHF, unter 25 J. frei) |
-| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (259 € > 258 €)** |
-| Besuche | 7 |
-| Ø Ersparnis/Besuch | ~37 € |
+| Zoo Mulhouse | 66 € (Tribu-Ticket für 2 Erw. + 2 Kinder unter 16) |
+| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (325 € > 258 €)** |
+| Besuche | 8 |
+| Ø Ersparnis/Besuch | ~41 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -165,8 +166,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 259/2500 = 10,36%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 259/258 = 100,4%)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 325/2500 = 13,00%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 325/258 = 125,97%)
 
 **Farbverlauf (dynamisch via JavaScript, Bulb + Quecksilber):**
 - Unter Break-Even: Bulb dunkelrot; Quecksilber dunkelrot (unten) → orange → hellrot (oben)
@@ -176,6 +177,17 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 ---
 
 ### Besuchsprotokoll
+
+#### Besuch 8: Parc Zoologique & Botanique de Mulhouse
+- **Datum:** 08.08.2026
+- **Ort:** 111 avenue de la 1ère Division Blindée, 68100 Mulhouse, Elsass, Frankreich
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt:** Tribu-Ticket für 2 Erwachsene + 2 Kinder unter 16 = 66 €
+- **Ersparnis:** **66 €**
+- **Besucherzahl:** 326.560 im Jahr 2025 (Mulhouse Alsace Agglomération)
+- **Highlight:** Wird noch nachgetragen
+- **Einschätzung:** Wird noch nachgetragen
+- **Homepage:** https://www.zoo-mulhouse.com
 
 #### Besuch 1: Château du Haut-Kœnigsbourg
 - **Datum:** 07.03.2026
@@ -245,17 +257,17 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-153 Museen gelistet + 7 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 38 gelistet (6 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler)
+151 Museen gelistet + 8 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 37 gelistet (6 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler)
 - 🇩🇪 Deutschland: 62 gelistet
-- 🇫🇷 Frankreich: 53 gelistet (1 besucht: Château HK) — Zoo Mulhouse am 19.07.2026 nachgetragen (Pass-Mitgliedschaft via museumspass.com bestätigt)
+- 🇫🇷 Frankreich: 52 gelistet (2 besucht: Château HK, Zoo Mulhouse)
 
 **Sortierung:** Top 5 je Land nach Preis (absteigend), Rest nach Distanz (aufsteigend).
 
-**Top 5 Preise (ca.-Werte, recherchiert 2026-03-28, FR aktualisiert 2026-07-19):**
+**Top 5 Preise der noch nicht besuchten Ziele (ca.-Werte, recherchiert 2026-03-28, FR aktualisiert 2026-08-08):**
 - 🇨🇭 CH: Ballenberg ~103€, Zentrum Paul Klee ~72€, KM Basel ~55€, Tinguely ~38€, Bern. HM ~34€
 - 🇩🇪 DE: Fabergé ~44€, Technoseum ~39€, Vogtsbauernhof ~34€, Frieder Burda ~28€, Bad. LM ~24€
-- 🇫🇷 FR: Zoo Mulhouse 66€ (Tribu-Ticket), Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€
+- 🇫🇷 FR: Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€, Centre Pompidou-Metz ~24€
 
 ---
 
