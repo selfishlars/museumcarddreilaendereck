@@ -52,7 +52,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 5  | CH-060    | 2026-06-21 | Anon1, Anon2, K1, K2 (+2 Gastkinder gratis) | 35.00 | CHF | 39.00 | Familienticket A; 35 CHF × 1,10 ≈ 39 €; Gastkinder nicht in Ersparnis |
 | 6  | CH-065    | 2026-07-19 | Anon1, Anon2, K1, K2  | 28.00         | CHF      | 31.00       | 2×14 CHF, Kinder bis 16 frei; 28 CHF × 1,10 ≈ 31 €; Preis vor Ort bestätigt |
 | 7  | CH-017    | 2026-07-19 | Anon1, Anon2, K1, K2  | 50.00         | CHF      | 55.00       | 2×25 CHF, unter 25 J. frei; 50 CHF × 1,10 = 55 €; 🏆 BREAK-EVEN erreicht |
-| 8  | FR-011    | 2026-08-08 | Anon1, Anon2, K1, K2  | 66.00         | EUR      | 66.00       | Tribu-Ticket für 2 Erw. + 2 Ki. unter 16; Highlights und Einschätzung folgen |
+| 8  | FR-011    | 2026-08-08 | Anon1, Anon2, K1, K2 | 66.00 | EUR | 66.00 | Begleitung: Oma + Opa, nicht in Ersparnis eingerechnet; Picknick, Streichelzoo und Wölfe aus nächster Nähe |
 
 **Gesamtersparnis:** ~325 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66)
 **Thermometer:** 325 / 2500 × 100 = 13,00%

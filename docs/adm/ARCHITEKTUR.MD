@@ -153,7 +153,7 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function () {
-  var map = L.map('expedition-map', { center: [47.95, 7.45], zoom: 9, scrollWheelZoom: false });
+  var map = L.map('expedition-map', { center: [47.95, 7.45], zoom: 8, scrollWheelZoom: false });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { ... }).addTo(map);
   // Pins via L.divIcon (custom HTML-Div) + L.marker(...).bindPopup(...)
 })();

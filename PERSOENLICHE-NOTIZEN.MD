@@ -80,5 +80,7 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 ## Besuch 8: Parc Zoologique & Botanique de Mulhouse
 **Datum:** 08.08.2026
 
-- **Highlights:** Werden noch nachgetragen.
-- **Gesamteindruck:** Wird noch nachgetragen.
+- Oma und Opa waren bei diesem gemeinsamen Ausflug mit dabei.
+- **Gemeinsames Highlight:** Das tolle Picknick.
+- **Highlight der Kinder:** Der Besuch im Streichelzoo.
+- **Highlight von Anon 1 und Anon 2:** Die beiden Wölfe aus nächster Nähe beobachten zu können.

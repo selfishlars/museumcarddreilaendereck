@@ -181,12 +181,11 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 #### Besuch 8: Parc Zoologique & Botanique de Mulhouse
 - **Datum:** 08.08.2026
 - **Ort:** 111 avenue de la 1ère Division Blindée, 68100 Mulhouse, Elsass, Frankreich
-- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
-- **Regulärer Eintritt:** Tribu-Ticket für 2 Erwachsene + 2 Kinder unter 16 = 66 €
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2; zusätzliche Begleitung: Oma und Opa
+- **Regulärer Eintritt:** Tribu-Ticket für 2 Erwachsene + 2 Kinder unter 16 = 66 €; Begleitung nicht in die Ersparnis eingerechnet
 - **Ersparnis:** **66 €**
 - **Besucherzahl:** 326.560 im Jahr 2025 (Mulhouse Alsace Agglomération)
-- **Highlight:** Wird noch nachgetragen
-- **Einschätzung:** Wird noch nachgetragen
+- **Highlights:** Tolles gemeinsames Picknick mit Oma und Opa; Streichelzoo für die Kinder; die beiden Wölfe aus nächster Nähe für Anon 1 und Anon 2
 - **Homepage:** https://www.zoo-mulhouse.com
 
 #### Besuch 1: Château du Haut-Kœnigsbourg
