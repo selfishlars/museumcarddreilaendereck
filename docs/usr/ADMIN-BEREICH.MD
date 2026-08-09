@@ -35,8 +35,8 @@ Vollständige Checkliste (auch in MEMORY.MD):
 2. Ersparnisbetrag berechnen (CHF × 1,10 = EUR)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail `<span class="detail-icon">📊</span>` eintragen (Pflichtfeld!)
 4. `const savings = XXX;` in `updateThermometer()` anpassen (aktueller Wert: 325)
-5. Alle 5 Stat-Cards im `.stats-grid` aktualisieren: Bisher gespart, Noch zu holen, Museen besucht, Ø Ersparnis/Besuch inkl. Sub-Text
-6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 4 variablen Zeilen:** 🏛️ Gespart, 📈 Noch nötig, 🗺️ **Besuche (!)**, ⏱️ Ø/Besuch — plus Fußzeile unter dem Thermometer (Break-Even-Prozent)
+5. Alle 6 Stat-Cards im `.stats-grid` aktualisieren: Bisher gespart, Break-Even, Netto-Ersparnis (`max(0, Gesamtersparnis − 258)`), Museen besucht, verbleibende Tage, Ø Ersparnis/Besuch inkl. Sub-Text
+6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 5 variablen Zeilen:** 🏛️ Gespart, 💰 Netto-Ersparnis, 📈 Noch nötig, 🗺️ **Besuche (!)**, ⏱️ Ø/Besuch — plus Fußzeile unter dem Thermometer (Break-Even-Prozent)
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 8. Museum in **„Bereits besucht"**-Sektion eintragen (Struktur wie bestehende Einträge)
 9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + Sektions-Zähler −1
@@ -44,7 +44,7 @@ Vollständige Checkliste (auch in MEMORY.MD):
 11. **Header:** `Letzte Expedition` auf das aktuelle Besuchsdatum setzen
 12. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
 13. **Leaflet-Karte:** Neuen Pin in der Leaflet-IIFE am Ende der HTML-Datei eintragen (lat/lng + Popup-Text)
-14. MEMORY.MD Bilanz + Besuchsprotokoll, DATABASE.MD visits-Tabelle **und** `savings_summary`-Tabelle (total_savings, break_even_remaining, visits_count, avg_savings_per_visit, thermometer_pct, break_even_pct), PERSOENLICHE-NOTIZEN.MD aktualisieren
+14. MEMORY.MD Bilanz + Besuchsprotokoll, DATABASE.MD visits-Tabelle **und** `savings_summary`-Tabelle (total_savings, net_savings, break_even_remaining, visits_count, avg_savings_per_visit, thermometer_pct, break_even_pct), PERSOENLICHE-NOTIZEN.MD aktualisieren
 15. GitHub Issue mit `ergebnis:erledigt` schließen
 
 ---

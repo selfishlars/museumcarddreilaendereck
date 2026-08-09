@@ -24,7 +24,7 @@ Stand: 2026-08-08 — Single-Page App (index.html), Leaflet-Karte seit 01.05.202
 |-----------|----------------|--------------|
 | Header | `.page-header` | Titel, Pass-Metadaten, Kompassrose-Deko |
 | Pass-Karten | `.pass-holders` | Anon 1 & Anon 2 |
-| Bilanz-Dashboard | `.stats-grid` | Gesamtersparnis, Besuche, Break-Even-% |
+| Bilanz-Dashboard | `.stats-grid` | Gesamtersparnis, Netto-Ersparnis, Besuche, Break-Even-% |
 | Karte | `.map-section` > `#expedition-map` | **Interaktive Leaflet/OSM-Karte** mit klickbaren Pins |
 | Thermometer | `.thermo-section` | Break-Even-Fortschritts-Anzeige (0–2500€) |
 | Besuchslogbuch | `.visit-log` | Karten je Besuch (Farbe nach Land, neueste oben) |

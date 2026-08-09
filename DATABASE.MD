@@ -374,6 +374,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 |------------------------|----------|------|
 | total_savings          | 325.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
+| net_savings            | 67.00    | EUR  |
 | break_even_remaining   | 0.00 — erreicht 2026-07-19 | EUR  |
 | visits_count           | 8        |      |
 | avg_savings_per_visit  | 40.63    | EUR  |
@@ -410,6 +411,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ### Ersparnis-Berechnung
 - Ersparnis = Regulärer Eintritt ohne Pass
+- Netto-Ersparnis = `max(0, Gesamtersparnis − Passkosten)`; vor dem Break-Even immer 0 €
 - CHF → EUR: Betrag × 1,10
 - Kinder-Freieintritte werden als 0 gerechnet (keine Ersparnis gelistet wenn Kinder ohnehin frei sind — außer wenn der Pass die Elterntickets ersetzt)
 

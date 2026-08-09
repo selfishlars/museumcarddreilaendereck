@@ -36,7 +36,7 @@ Stand: 2026-08-08 — Single-File App, kein Build-System, kein Framework. Leafle
 
 1. `<header class="page-header">` — Titel, Pass-Metadaten, Kompassrosen-SVG
 2. `.pass-holders` — Zwei Pass-Karten (Anon 1, Anon 2)
-3. `.stats-grid` — Expeditions-Bilanz Dashboard (5 Stat-Cards)
+3. `.stats-grid` — Expeditions-Bilanz Dashboard (6 Stat-Cards)
 4. `.map-section` — **Leaflet/OpenStreetMap-Karte** (interaktiv, klickbare Pins)
 5. `.thermo-section` — Break-Even Thermometer (0–2.500 €)
 6. `.visit-log` — Besuchs-Tagebuch (`.visit-card.swiss/.france/.germany`, neueste zuerst)
@@ -130,6 +130,7 @@ const savings = 325;  // Gesamtersparnis in EUR — Stand: 08.08.2026
 
 **Berechnungslogik:**
 - Füllhöhe: `savings / 2500 * 100` %
+- Netto-Ersparnis: `max(0, savings - 258)`
 - Farbverlauf: rot (unter 258€) / grün (über 258€) — `updateThermometer()` färbt **Quecksilber UND Bulb** dynamisch (Bulb ist seit 2026-07-19 nicht mehr statisch/dekorativ)
 - **Farbregel:** Quecksilber-Gradient bei 0% (unten) == Bulb-Grundton, damit Bulb + Säule als ein Flüssigkeitskörper wirken (Fix MUSEUM-ISSUE-0018)
 - Weicher Umschlag: `transition: background 0.6s ease` auf `.thermo-bulb` und `.thermo-mercury`

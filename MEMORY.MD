@@ -152,6 +152,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 | Fondation Beyeler | 50 CHF ≈ 55 € (2×25 CHF, unter 25 J. frei) |
 | Zoo Mulhouse | 66 € (Tribu-Ticket für 2 Erw. + 2 Kinder unter 16) |
 | Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (325 € > 258 €)** |
+| Netto-Ersparnis | ~67 € (325 € Gesamtersparnis − 258 € Passkosten) |
 | Besuche | 8 |
 | Ø Ersparnis/Besuch | ~41 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
@@ -168,6 +169,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 **Füllstandsberechnung:**
 - `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 325/2500 = 13,00%)
 - Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 325/258 = 125,97%)
+- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 325 - 258 = 67 €)
 
 **Farbverlauf (dynamisch via JavaScript, Bulb + Quecksilber):**
 - Unter Break-Even: Bulb dunkelrot; Quecksilber dunkelrot (unten) → orange → hellrot (oben)
@@ -276,8 +278,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 2. Ersparnisbetrag in Euro berechnen (CHF × 1,10 = EUR)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail eintragen (Pflichtfeld!)
 4. **JavaScript:** `const savings = XXX;` in `updateThermometer()` aktualisieren
-5. Gesamtersparnis im `.stats-grid` aktualisieren (Bisher gespart, Noch zu holen, Ø/Besuch, Besuche)
-6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 4 variablen Zeilen:** Gespart, Noch nötig, **Besuche (!)**, Ø/Besuch — plus Fußzeile unter dem Thermometer
+5. Alle 6 Kacheln im `.stats-grid` aktualisieren bzw. prüfen: Bisher gespart, Break-Even, Netto-Ersparnis, Museen besucht, verbleibende Tage, Ø Ersparnis/Besuch
+6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 5 variablen Zeilen:** Gespart, Netto-Ersparnis, Noch nötig, **Besuche (!)**, Ø/Besuch — plus Fußzeile unter dem Thermometer
 7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
 8. Museum in **„Bereits besucht"**-Sektion eintragen (NICHT in Ländersektion lassen!)
 9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1
