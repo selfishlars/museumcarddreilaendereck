@@ -29,23 +29,16 @@ Stand: 2026-09-20
 
 ## NEUEN BESUCH HINZUFÜGEN
 
-Vollständige Checkliste (auch in MEMORY.MD):
+Vollständige Checkliste (auch in MEMORY.MD). Seit MUSEUM-ISSUE-0023 werden alle Kennzahlen aus **einer** Datenquelle berechnet:
 
-1. Neues `<div class="visit-card swiss|france|germany">` als **erstes Kind** in `.visit-log` einfügen (neueste Einträge oben)
-2. Ersparnisbetrag berechnen (CHF × 1,10 = EUR)
-3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail `<span class="detail-icon">📊</span>` eintragen (Pflichtfeld!)
-4. `const savings = XXX;` in `updateThermometer()` anpassen (aktueller Wert: 375)
-5. Alle 6 Stat-Cards im `.stats-grid` aktualisieren: Bisher gespart, Break-Even, Netto-Ersparnis (`max(0, Gesamtersparnis − 258)`), Museen besucht, verbleibende Tage, Ø Ersparnis/Besuch inkl. Sub-Text
-6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 5 variablen Zeilen:** 🏛️ Gespart, 💰 Netto-Ersparnis, 📈 Noch nötig, 🗺️ **Besuche (!)**, ⏱️ Ø/Besuch — plus Fußzeile unter dem Thermometer (Break-Even-Prozent)
-7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
-8. Museum in **„Bereits besucht"**-Sektion eintragen (Struktur wie bestehende Einträge)
-9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + Sektions-Zähler −1
-10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
-11. **Header:** `Letzte Expedition` auf das aktuelle Besuchsdatum setzen
-12. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
-13. **Leaflet-Karte:** Neuen Pin in der Leaflet-IIFE am Ende der HTML-Datei eintragen (lat/lng + Popup-Text)
-14. MEMORY.MD Bilanz + Besuchsprotokoll, DATABASE.MD visits-Tabelle **und** `savings_summary`-Tabelle (total_savings, net_savings, break_even_remaining, visits_count, avg_savings_per_visit, thermometer_pct, break_even_pct), PERSOENLICHE-NOTIZEN.MD aktualisieren
-15. GitHub Issue mit `ergebnis:erledigt` schließen
+1. **`VISITS`-Eintrag** am **Ende** des Arrays in `index.html` ergänzen (Abschnitt „DATENQUELLE"): `date`, `flag`, `name`, `place`, `cityLabel`, `savings` (ganzzahlig in €; CHF × 1,10 gerundet), `priceLabel`, `dist`, `url`, `lat`/`lng` (offizielle Adresse/GPS prüfen). Daraus entstehen **automatisch**: alle 6 Stat-Karten, Thermometer (Füllhöhe, Bulb, Info-Panel, Prozent, Fußzeile), Header („Letzte Expedition", „Entdeckte Museen"), Footer-Datum, „Bereits besucht"-Eintrag, Leaflet-Pin, Break-Even-Datum.
+2. Neues `<div class="visit-card swiss|france|germany">` als **erstes Kind** in `.visit-log` (neueste oben); Datum, Ersparnis-Badge und **`📊 Besucher/Jahr`** (Pflichtfeld, recherchieren) eintragen
+3. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **vollständig entfernen** + `museum-count`-Zähler −1 (falls dort gelistet)
+4. Eintrittspreise: Familienticket vorziehen wenn verfügbar, Kinder-Freieintritte prüfen (siehe EINTRITTSPREISE-LOGIK)
+5. MEMORY.MD (Bilanz + Besuchsprotokoll + Museum-Liste-Zähler), DATABASE.MD (visits-Tabelle **und** `savings_summary`), PERSOENLICHE-NOTIZEN.MD aktualisieren
+6. **`node tools/check-consistency.mjs` ausführen — muss grün sein** (prüft Summe/Netto/Ø/Prozent, Kartenanzahl, Zähler, Doppelungen, Doku-Werte)
+7. Break-Even-Marker bleibt bei `bottom: 10,32%` (nie ändern!)
+8. GitHub Issue mit `ergebnis:erledigt` schließen
 
 ---
 
@@ -93,7 +86,7 @@ git push
 
 ---
 
-## WICHTIGE KONSTANTEN (nie ändern ohne Prüfung)
+## WICHTIGE KONSTANTEN (nie ändern ohne Prüfung; `258`/`2500` als `PASS_COST`/`THERMO_MAX` in `index.html`)
 
 | Wert | Bedeutung |
 |------|-----------|

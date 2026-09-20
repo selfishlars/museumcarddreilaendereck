@@ -59,6 +59,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 | `docs/usr/ADMIN-BEREICH.MD` | Admin-Aktionen und Pflegeanleitung |
 | `DATABASE.MD` | Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen) |
 | `PERSOENLICHE-NOTIZEN.MD` | Tagebuch-Gedächtnis: persönliche Erlebnisse, Highlights und Erinnerungen je Museumsbesuch |
+| `tools/check-consistency.mjs` | Konsistenzprüfung `index.html` ↔ Doku (`node tools/check-consistency.mjs`) — vor jedem Commit |
 
 ---
 
@@ -69,7 +70,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 3. **Secrets:** Keine Credentials in versionierten Dateien.
 4. **Dateiformat:** Standard-Dateinamen in GROSSSCHREIBUNG (R-BASE-002).
 5. **Single File:** Die gesamte App ist `index.html` — kein Build, kein Framework.
-6. **Thermometer:** Nach jedem Besuch `const savings = XXX;` in `updateThermometer()` anpassen.
+6. **Kennzahlen:** Einzige Quelle ist das `VISITS`-Array in `index.html` — Stat-Karten, Thermometer, Header, Pins werden daraus berechnet (nicht von Hand pflegen). Nach jeder Änderung `node tools/check-consistency.mjs` ausführen.
 7. **Break-Even-Marker:** `bottom: 10,32%` (fest, nie ändern!).
 
 ---
@@ -285,16 +286,12 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Neuen Besuch hinzufügen (Checkliste)
 
-1. Neues `<div class="visit-card swiss|france|germany">` als **erstes** Kind in `.visit-log` (neueste Einträge oben)
-2. Ersparnisbetrag in Euro berechnen (CHF × 1,10 = EUR)
+0. **Arbeitsstand prüfen:** `git fetch` und mit `origin/main` vergleichen (ggf. `git pull --ff-only`), bevor irgendetwas geändert wird
+1. **`VISITS`-Eintrag** am **Ende** des Arrays in `index.html` (Abschnitt „DATENQUELLE"): `date`, `flag`, `name`, `place`, `cityLabel`, `savings` (ganzzahlig €, CHF × 1,10 gerundet), `priceLabel`, `dist`, `url`, `lat`/`lng`. Daraus werden **automatisch** erzeugt: alle 6 Stat-Karten, Thermometer (Füllhöhe, Bulb-Label, Info-Panel inkl. Besuche, Prozent, Fußzeile), Header („Letzte Expedition", „Entdeckte Museen"), Footer-Datum, „Bereits besucht"-Eintrag, Leaflet-Pin
+2. Neues `<div class="visit-card swiss|france|germany">` als **erstes** Kind in `.visit-log` (neueste Einträge oben)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail eintragen (Pflichtfeld!)
-4. **JavaScript:** `const savings = XXX;` in `updateThermometer()` aktualisieren
-5. Alle 6 Kacheln im `.stats-grid` aktualisieren bzw. prüfen: Bisher gespart, Break-Even, Netto-Ersparnis, Museen besucht, verbleibende Tage, Ø Ersparnis/Besuch
-6. Thermometer-Bulb-Label und Info-Panel anpassen — **alle 5 variablen Zeilen:** Gespart, Netto-Ersparnis, Noch nötig, **Besuche (!)**, Ø/Besuch — plus Fußzeile unter dem Thermometer
-7. `thermo-pct` = `Gesamtersparnis / 258 * 100`
-8. Museum in **„Bereits besucht"**-Sektion eintragen (NICHT in Ländersektion lassen!)
-9. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1
-10. **Header:** `Entdeckte Museen/Ausflugsziele` Zähler erhöhen (`X von 350+`)
-11. **Header:** `Letzte Expedition` auf das Besuchsdatum setzen
-12. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
-13. MEMORY.MD, DATABASE.MD (visits-Tabelle **und** `savings_summary`-Tabelle!) und PERSOENLICHE-NOTIZEN.MD aktualisieren
+4. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1 (falls dort gelistet)
+5. **Break-Even-Marker** bleibt bei `bottom: 10,32%` (nie ändern!)
+6. MEMORY.MD (Bilanz-Tabelle, Besuchsprotokoll, Museum-Liste-Zähler), DATABASE.MD (visits-Tabelle **und** `savings_summary`-Tabelle!) und PERSOENLICHE-NOTIZEN.MD aktualisieren
+7. **`node tools/check-consistency.mjs` ausführen — muss grün sein**
+8. GitHub Issue mit `ergebnis:erledigt` schließen

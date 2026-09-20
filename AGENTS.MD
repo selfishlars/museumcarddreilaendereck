@@ -24,7 +24,7 @@ MEMORY.MD ist der Orchestrierungs-Hub dieses Projekts. Dort findest du: Kernrege
 
 ## Build / Lint / Test Commands
 
-**Es gibt KEIN Build-System, KEIN npm, KEINE Tests.**
+**Es gibt KEIN Build-System und KEIN npm.** Einzige Automatisierung: das abhängigkeitsfreie Prüfskript `tools/check-consistency.mjs`.
 
 ```bash
 # Lokal testen (einfach öffnen)
@@ -35,8 +35,8 @@ npx html-validate index.html   # via npm
 ```
 
 - Keine Linting-Regeln konfiguriert
-- Keine automatisierten Tests
-- Manuell im Browser testen
+- Konsistenzprüfung: `node tools/check-consistency.mjs` (vor jedem Commit, Exit-Code 1 bei Abweichung)
+- Darstellung manuell im Browser testen (lokal z. B. `python3 -m http.server`, `file://` ist im Playwright-MCP gesperrt)
 
 ---
 
@@ -165,11 +165,13 @@ function esc(s) {
 
 ### Neuen Besuch hinzufügen
 
-1. Neues `<div class="visit-card swiss|france|germany">` in `.visit-log`
-2. Gesamtersparnis in `.stats-grid` aktualisieren
-3. Thermometer: `height: X%` = `ersparnis/2500*100`
-4. Chronik-Eintrag hinzufügen (chronologisch!)
-5. Museum in `.museum-grid` als `.visited` markieren
+Vollständige Checkliste: [MEMORY.MD](./MEMORY.MD). Kurzform:
+
+1. Eintrag am **Ende** von `VISITS` (index.html, Abschnitt DATENQUELLE) — alle Kennzahlen, Pins, Header und die „Bereits besucht"-Liste werden daraus berechnet
+2. `<div class="visit-card …">` als erstes Kind in `.visit-log`
+3. Museum aus der Ländersektion entfernen (Zähler −1)
+4. Doku aktualisieren (MEMORY.MD, DATABASE.MD, PERSOENLICHE-NOTIZEN.MD)
+5. `node tools/check-consistency.mjs` muss grün sein
 
 ### Preise
 
@@ -187,7 +189,8 @@ function esc(s) {
 | `index.html` | Die gesamte App | ✅ |
 | `MEMORY.MD` | KI-Dokumentation | ✅ |
 | `DATABASE.MD` | Strukturierte Daten | ✅ |
-| `CLAUDE.MD` | Claude Code Regeln | ❌ (gitignored) |
+| `CLAUDE.MD` / `GEMINI.MD` | Pointer auf MEMORY.MD (KI-Einstieg) | ✅ (das `.gitignore`-Muster `CLAUDE.md` greift wegen der Großschreibung nicht) |
+| `tools/check-consistency.mjs` | Konsistenzprüfung index.html ↔ Doku | ✅ |
 | `.claude/` | Claude Code Config | ❌ (gitignored) |
 
 ---

@@ -42,6 +42,7 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 |-------|-----|-------|--------|
 | `index.html` | App | Gesamte Anwendung (CSS + JS inline) | ✅ |
 | `CNAME` | Config | Custom Domain für GitHub Pages | ✅ |
+| `tools/check-consistency.mjs` | Skript | Konsistenzprüfung index.html ↔ Doku (Node, ohne Abhängigkeiten) | ✅ |
 
 ### docs/adm/ (Administration)
 
@@ -68,6 +69,7 @@ MEMORY.MD (Zentrale)
 ├── ISSUE-TRACKING-VERFAHREN.MD → GitHub Issues Prozess
 ├── DOKU-PROTOKOLL.MD   → Wann was updaten
 ├── AGENTS.MD           → Wie Code schreiben
+├── tools/check-consistency.mjs → Prüft VISITS ↔ Doku (vor Commit)
 ├── docs/adm/
 │   ├── ARCHITEKTUR.MD  → Was ist wie gebaut
 │   ├── INFRASTRUKTUR.MD→ Wie deployen / MCP-Setup

@@ -44,7 +44,7 @@ Stand: 2026-09-20 — Single-File App, kein Build-System, kein Framework. Leafle
 8. `.museum-grid` — Alle Museums-PASS Museen (Besucht + Länder sortiert)
 9. `#top20-section` — Top 20 nächste Ziele (JS-generiert aus DOM)
 10. `<footer>`
-11. `<script>` (inline) — `buildTop20()`, `renderTop20()`, `updateThermometer()`, `updateCountdown()`
+11. `<script>` (inline) — Datenquelle `VISITS`, `computeStats()`, `renderStats()`, `renderVisitedList()`, `buildTop20()`, `renderTop20()`, `updateThermometer()`, `updateCountdown()`
 12. `<script src="leaflet.js">` + Leaflet-Init (IIFE, nach inline-script)
 
 ---
@@ -117,20 +117,26 @@ Kommentar-Separatoren im CSS:
 
 | Funktion/Block | Zweck | Datei-Position |
 |----------------|-------|----------------|
+| `VISITS` (+ `PASS_COST`, `THERMO_MAX`) | **Einzige Wahrheitsquelle** aller Kennzahlen; chronologisch aufsteigend, neuer Besuch = Eintrag am Ende | inline `<script>` (Abschnitt DATENQUELLE) |
+| `computeStats()` | Summe, Netto, Ø, Break-Even-Prozent/-Besuch aus `VISITS` berechnen | inline `<script>` |
+| `renderStats()` | Header, Stat-Karten, Thermometer-Beschriftung, Footer aus `computeStats()` füllen | inline `<script>` |
+| `renderVisitedList()` | „Bereits besucht"-Einträge aus `VISITS` erzeugen (neueste zuerst) | inline `<script>` |
 | `buildTop20()` | Alle `.museum-item:not(.visited):not(.uninteressant)` aus DOM lesen, sortieren | inline `<script>` |
 | `renderTop20()` | Top-20-Liste ins DOM schreiben | inline `<script>` |
 | `updateThermometer()` | Füllhöhe + Farbverlauf dynamisch berechnen | inline `<script>` |
 | `updateCountdown()` | Verbleibende Tage bis Pass-Ablauf anzeigen | inline `<script>` |
 | Leaflet-IIFE | Karte initialisieren, Pins setzen | externer `<script src="leaflet.js">` danach |
 
-**Thermometer-Konstante (nach jedem Besuch anpassen):**
+**Datenquelle (nach jedem Besuch einen Eintrag am Ende von `VISITS` ergänzen):**
 ```javascript
-const savings = 375;  // Gesamtersparnis in EUR — Stand: 20.09.2026
+{ date: 'YYYY-MM-DD', flag: '🇫🇷', name: '…', place: '…', cityLabel: '…', savings: 50,
+  priceLabel: '💶 50 €', dist: 42, url: 'https://…', lat: 47.85, lng: 7.28 }
 ```
+Alle Kennzahlen (Summe, Netto, Ø, Prozent, Zähler, Break-Even-Datum) werden zur Laufzeit daraus berechnet — **nirgends mehr von Hand pflegen**. Aktuelle Werte: siehe `DATABASE.MD` (`savings_summary`) bzw. die Seite selbst. Konsistenz mit der Doku prüft `node tools/check-consistency.mjs`.
 
-**Berechnungslogik:**
-- Füllhöhe: `savings / 2500 * 100` %
-- Netto-Ersparnis: `max(0, savings - 258)`
+**Berechnungslogik (`computeStats()`):**
+- Füllhöhe: `total / THERMO_MAX * 100` %
+- Netto-Ersparnis: `max(0, total - PASS_COST)`
 - Farbverlauf: rot (unter 258€) / grün (über 258€) — `updateThermometer()` färbt **Quecksilber UND Bulb** dynamisch (Bulb ist seit 2026-07-19 nicht mehr statisch/dekorativ)
 - **Farbregel:** Quecksilber-Gradient bei 0% (unten) == Bulb-Grundton, damit Bulb + Säule als ein Flüssigkeitskörper wirken (Fix MUSEUM-ISSUE-0018)
 - Weicher Umschlag: `transition: background 0.6s ease` auf `.thermo-bulb` und `.thermo-mercury`
@@ -145,18 +151,19 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 **Implementierung:**
 ```html
 <!-- Im <head> -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
 <!-- Im <body> (map-section) -->
 <div id="expedition-map" style="height:420px; border-radius:4px; border:2px solid var(--leather); overflow:hidden;"></div>
 
 <!-- Nach inline <script>, vor </body> -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function () {
+  if (typeof L === 'undefined') { /* Fallback-Hinweis in #expedition-map */ return; }
   var map = L.map('expedition-map', { center: [47.95, 7.45], zoom: 8, scrollWheelZoom: false });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { ... }).addTo(map);
-  // Pins via L.divIcon (custom HTML-Div) + L.marker(...).bindPopup(...)
+  // Pins: VISITS.forEach → L.marker([lat, lng], { icon: pinIcon }).bindPopup(...)
 })();
 </script>
 ```
@@ -166,19 +173,10 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 - Rote Kreise (`border-radius:50%`, `background:#c0392b`) = besuchte Museen
 - Goldene Raute (`transform:rotate(45deg)`, `background:#b8860b`) = Heimatbasis Rheinfelden
 
-**Koordinaten der Pins (WGS84):**
-| Museum | lat | lng |
-|--------|-----|-----|
-| Château du Haut-Kœnigsbourg | 48.2497 | 7.3430 |
-| Basler Papiermühle | 47.5502 | 7.6063 |
-| Museum.BL (Liestal) | 47.4842 | 7.7340 |
-| Antikenmuseum Basel | 47.5538 | 7.5917 |
-| Schloss Lenzburg | 47.3856 | 8.1832 |
-| MUKS Riehen | 47.58518 | 7.65079 |
-| Fondation Beyeler | 47.5876 | 7.6512 |
-| Parc Zoologique & Botanique de Mulhouse | 47.7346522 | 7.3504869 |
-| Écomusée d'Alsace (Ungersheim) | 47.8590 | 7.2800 |
-| Dummy-Heimatbasis Rheinfelden (DE) | 47.5597 | 7.7959 |
+**Sicherheit/Robustheit:** Leaflet-CSS/JS mit SRI-Hash (`integrity`, `crossorigin`). Lädt Leaflet nicht, zeigt `#expedition-map` einen Fallback-Hinweis statt einer leeren Fläche.
+
+**Koordinaten der Pins (WGS84):** stehen in `VISITS` (`lat`/`lng`, Quelle: offizielle Adresse/GPS-Angabe des Museums). Heimatbasis: Dummy-Pin Rheinfelden (DE) 47.5597 / 7.7959 (bewusst ungenau, Datenschutz).
+
 
 **`scrollWheelZoom: false`** — verhindert, dass die Karte beim Seiten-Scrollen den Zoom übernimmt.
 

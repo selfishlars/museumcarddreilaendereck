@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museums-PASS Expedition — Dreiländereck</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap');
 
@@ -1301,7 +1301,7 @@
       </div>
       <div class="header-meta-item">
         <span class="label">Letzte Expedition</span>
-        <span class="value">20. September 2026</span>
+        <span class="value" id="hdr-last">—</span>
       </div>
       <div class="header-meta-item">
         <span class="label">Gültig bis</span>
@@ -1313,7 +1313,7 @@
       </div>
       <div class="header-meta-item">
         <span class="label">Entdeckte Museen/Ausflugsziele</span>
-        <span class="value">9 von 350+</span>
+        <span class="value" id="hdr-count">—</span>
       </div>
     </div>
 
@@ -1381,28 +1381,28 @@
       <div class="stat-card highlight-green">
         <span class="stat-icon">🏛️</span>
         <div class="stat-label">Bisher gespart</div>
-        <div class="stat-value">~375 €</div>
-        <div class="stat-sub">62 € + 28 € + 18 € + 26 € + 39 € + 31 € + 55 € + 66 € + 50 €</div>
+        <div class="stat-value" id="stat-total">—</div>
+        <div class="stat-sub" id="stat-total-sub"></div>
       </div>
 
-      <div class="stat-card highlight-green">
+      <div class="stat-card highlight-green" id="stat-be-card">
         <span class="stat-icon">🎯</span>
         <div class="stat-label">Break-Even</div>
-        <div class="stat-value">✓ Erreicht!</div>
-        <div class="stat-sub">375 € von 258 € (erreicht 19.07.2026)</div>
+        <div class="stat-value" id="stat-be">—</div>
+        <div class="stat-sub" id="stat-be-sub"></div>
       </div>
 
       <div class="stat-card highlight-green">
         <span class="stat-icon">💰</span>
         <div class="stat-label">Netto-Ersparnis</div>
-        <div class="stat-value">~117 €</div>
-        <div class="stat-sub">375 € Ersparnis − 258 € Passkosten</div>
+        <div class="stat-value" id="stat-net">—</div>
+        <div class="stat-sub" id="stat-net-sub"></div>
       </div>
 
       <div class="stat-card highlight-gold">
         <span class="stat-icon">🗺️</span>
         <div class="stat-label">Museen besucht</div>
-        <div class="stat-value">9</div>
+        <div class="stat-value" id="stat-count">—</div>
         <div class="stat-sub">von 350+ möglich</div>
       </div>
 
@@ -1416,8 +1416,8 @@
       <div class="stat-card highlight-gold">
         <span class="stat-icon">⏱️</span>
         <div class="stat-label">Ø Ersparnis/Besuch</div>
-        <div class="stat-value">~42 €</div>
-        <div class="stat-sub">9 Besuche bisher</div>
+        <div class="stat-value" id="stat-avg">—</div>
+        <div class="stat-sub" id="stat-avg-sub"></div>
       </div>
     </div>
 
@@ -1431,7 +1431,7 @@
     <div class="thermo-section">
       <div class="thermo-header">
         <span class="thermo-title">Break-Even Thermometer</span>
-        <span class="thermo-pct">~145,3% 🎉</span>
+        <span class="thermo-pct" id="thermo-pct">—</span>
       </div>
       <div class="thermo-layout">
         <!-- Skala links: 0–2500€ -->
@@ -1457,23 +1457,23 @@
             <div class="thermo-tick" style="bottom: 80%"></div>
           </div>
           <div class="thermo-bulb">
-            <div class="thermo-bulb-label">~375€<br>gespart</div>
+            <div class="thermo-bulb-label" id="thermo-bulb-label">—</div>
           </div>
         </div>
         <!-- Info-Panel rechts -->
         <div class="thermo-info-panel">
-          <div class="thermo-info-row">🏛️ Gespart: <span class="thermo-info-val">~375 €</span></div>
-          <div class="thermo-info-row">🎯 Break-Even: <span class="thermo-info-val">258 € ✓</span></div>
-          <div class="thermo-info-row">💰 Netto-Ersparnis: <span class="thermo-info-val">~117 €</span></div>
-          <div class="thermo-info-row">📈 Noch nötig: <span class="thermo-info-val">0 € — geschafft! 🎉</span></div>
-          <div class="thermo-info-row">🗺️ Besuche: <span class="thermo-info-val">9</span></div>
-          <div class="thermo-info-row">⏱️ Ø/Besuch: <span class="thermo-info-val">~42 €</span></div>
+          <div class="thermo-info-row">🏛️ Gespart: <span class="thermo-info-val" id="ti-total">—</span></div>
+          <div class="thermo-info-row">🎯 Break-Even: <span class="thermo-info-val" id="ti-be">—</span></div>
+          <div class="thermo-info-row">💰 Netto-Ersparnis: <span class="thermo-info-val" id="ti-net">—</span></div>
+          <div class="thermo-info-row">📈 Noch nötig: <span class="thermo-info-val" id="ti-remaining">—</span></div>
+          <div class="thermo-info-row">🗺️ Besuche: <span class="thermo-info-val" id="ti-count">—</span></div>
+          <div class="thermo-info-row">⏱️ Ø/Besuch: <span class="thermo-info-val" id="ti-avg">—</span></div>
           <div class="thermo-info-row">🚀 Max. möglich: <span class="thermo-info-val">~2.500 €</span></div>
         </div>
       </div>
       <div class="thermo-legend">
         <span>0 €</span>
-        <span>Break-Even bei 258 € — am 19.07.2026 erreicht! 🎉 (145,3%)</span>
+        <span id="thermo-legend-mid">—</span>
         <span>Max. ~2.500 €</span>
       </div>
     </div>
@@ -2267,53 +2267,8 @@
     <div class="museum-grid">
 
       <!-- ══ BESUCHT ══ -->
-      <div class="museum-section-header">✓ Bereits besucht</div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Basler Papiermühle</div>
-        <div class="museum-city">Basel, Schweiz</div>
-        <div class="museum-meta"><span class="museum-price">CHF 56 · 62 €</span><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.papiermuseum.ch" target="_blank" rel="noopener">🌐 papiermuseum.ch</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Château du Haut-Kœnigsbourg</div>
-        <div class="museum-city">Orschwiller, Elsass</div>
-        <div class="museum-meta"><span class="museum-price">💶 28 €</span><span class="museum-dist">📍 75km</span><a class="museum-web" href="https://www.haut-koenigsbourg.fr" target="_blank" rel="noopener">🌐 haut-koenigsbourg.fr</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Museum.BL</div>
-        <div class="museum-city">Liestal, Schweiz</div>
-        <div class="museum-meta"><span class="museum-price">CHF 16 · 18 €</span><span class="museum-dist">📍 18km</span><a class="museum-web" href="https://museum.bl.ch" target="_blank" rel="noopener">🌐 museum.bl.ch</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Antikenmuseum Basel und Sammlung Ludwig</div>
-        <div class="museum-city">Basel, Schweiz</div>
-        <div class="museum-meta"><span class="museum-price">CHF 24 · 26 €</span><span class="museum-dist">📍 13km</span><a class="museum-web" href="https://www.antikenmuseumbasel.ch" target="_blank" rel="noopener">🌐 antikenmuseumbasel.ch</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Schloss Lenzburg</div>
-        <div class="museum-city">Lenzburg, Schweiz</div>
-        <div class="museum-meta"><span class="museum-price">CHF 35 · 39 €</span><span class="museum-dist">📍 65km</span><a class="museum-web" href="https://www.schloss-lenzburg.ch" target="_blank" rel="noopener">🌐 schloss-lenzburg.ch</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>MUKS — Museum Kultur &amp; Spiel Riehen</div>
-        <div class="museum-city">Riehen, Schweiz</div>
-        <div class="museum-meta"><span class="museum-price">CHF 28 · 31 €</span><span class="museum-dist">📍 17km</span><a class="museum-web" href="https://www.muks.ch" target="_blank" rel="noopener">🌐 muks.ch</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇨🇭</span>Fondation Beyeler</div>
-        <div class="museum-city">Riehen, Schweiz</div>
-        <div class="museum-meta"><span class="museum-price">CHF 50 · 55 €</span><span class="museum-dist">📍 17km</span><a class="museum-web" href="https://www.fondationbeyeler.ch" target="_blank" rel="noopener">🌐 fondationbeyeler.ch</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Parc Zoologique &amp; Botanique de Mulhouse</div>
-        <div class="museum-city">Mulhouse, Frankreich</div>
-        <div class="museum-meta"><span class="museum-price">💶 66 €</span><span class="museum-dist">📍 35km</span><a class="museum-web" href="https://www.zoo-mulhouse.com" target="_blank" rel="noopener">🌐 zoo-mulhouse.com</a></div>
-      </div>
-      <div class="museum-item visited">
-        <div class="museum-name"><span class="museum-flag">🇫🇷</span>Écomusée d'Alsace</div>
-        <div class="museum-city">Ungersheim, Frankreich</div>
-        <div class="museum-meta"><span class="museum-price">💶 50 €</span><span class="museum-dist">📍 42km</span><a class="museum-web" href="https://www.ecomusee.alsace" target="_blank" rel="noopener">🌐 ecomusee.alsace</a></div>
-      </div>
-
+      <div class="museum-section-header" id="visited-header">✓ Bereits besucht</div>
+      <!-- Einträge werden aus VISITS erzeugt (renderVisitedList) -->
       <!-- ══ SCHWEIZ ══ -->
       <div class="museum-section-header">🇨🇭 Schweiz <span class="museum-count">37 gelistet</span></div>
       <div class="museum-price-note">* Regelpreise ohne Museums-PASS · 2 Erw. + 2 Kinder (7 &amp; 9 J.) · Familienticket wo verfügbar · Angaben ca.<br>* CHF-Preise in € umgerechnet mit Kurs 1 CHF = 1.10 EUR</div>
@@ -3109,13 +3064,115 @@
     Unsere Museums-PASS Expedition · Dreiländereck<br>
     Schweiz · Deutschland · Frankreich · Gültig 07.03.2026 – 07.03.2027<br><br>
     <span style="font-size:15px; opacity:0.6;">
-      Zuletzt aktualisiert: August 2026 · museumspass.com/de
+      Zuletzt aktualisiert: <span id="footer-updated">—</span> · museumspass.com/de
     </span>
   </footer>
 
 </div>
 
 <script>
+  // ═══ DATENQUELLE ═════════════════════════════════════════════════════
+  // EINZIGE Wahrheitsquelle für alle Kennzahlen (Stat-Karten, Thermometer, Header,
+  // „Bereits besucht"-Liste, Karten-Pins, Footer). Chronologisch aufsteigend:
+  // neuer Besuch = neuer Eintrag AM ENDE. Ersparnis in € (CHF × 1,10, gerundet).
+  // Prüfung: node tools/check-consistency.mjs
+  const PASS_COST = 258;
+  const THERMO_MAX = 2500;
+  const VISITS = [
+    { date: '2026-03-07', flag: '🇫🇷', name: 'Château du Haut-Kœnigsbourg', place: 'Orschwiller', cityLabel: 'Orschwiller, Elsass', savings: 28, priceLabel: '💶 28 €', dist: 75, url: 'https://www.haut-koenigsbourg.fr', lat: 48.2497, lng: 7.3430 },
+    { date: '2026-03-22', flag: '🇨🇭', name: 'Basler Papiermühle', place: 'Basel', cityLabel: 'Basel, Schweiz', savings: 62, priceLabel: 'CHF 56 · 62 €', dist: 13, url: 'https://www.papiermuseum.ch', lat: 47.5502, lng: 7.6063 },
+    { date: '2026-04-12', flag: '🇨🇭', name: 'Museum.BL', place: 'Liestal', cityLabel: 'Liestal, Schweiz', savings: 18, priceLabel: 'CHF 16 · 18 €', dist: 18, url: 'https://museum.bl.ch', lat: 47.4842, lng: 7.7340 },
+    { date: '2026-04-26', flag: '🇨🇭', name: 'Antikenmuseum Basel und Sammlung Ludwig', mapName: 'Antikenmuseum Basel', place: 'Basel', cityLabel: 'Basel, Schweiz', savings: 26, priceLabel: 'CHF 24 · 26 €', dist: 13, url: 'https://www.antikenmuseumbasel.ch', lat: 47.5538, lng: 7.5917 },
+    { date: '2026-06-21', flag: '🇨🇭', name: 'Schloss Lenzburg', place: 'Lenzburg', cityLabel: 'Lenzburg, Schweiz', savings: 39, priceLabel: 'CHF 35 · 39 €', dist: 65, url: 'https://www.schloss-lenzburg.ch', lat: 47.3856, lng: 8.1832 },
+    { date: '2026-07-19', flag: '🇨🇭', name: 'MUKS — Museum Kultur & Spiel Riehen', mapName: 'MUKS — Museum Kultur & Spiel', place: 'Riehen', cityLabel: 'Riehen, Schweiz', savings: 31, priceLabel: 'CHF 28 · 31 €', dist: 17, url: 'https://www.muks.ch', lat: 47.58518, lng: 7.65079 },
+    { date: '2026-07-19', flag: '🇨🇭', name: 'Fondation Beyeler', place: 'Riehen', cityLabel: 'Riehen, Schweiz', savings: 55, priceLabel: 'CHF 50 · 55 €', dist: 17, url: 'https://www.fondationbeyeler.ch', lat: 47.5876, lng: 7.6512 },
+    { date: '2026-08-08', flag: '🇫🇷', name: 'Parc Zoologique & Botanique de Mulhouse', place: 'Mulhouse', cityLabel: 'Mulhouse, Frankreich', savings: 66, priceLabel: '💶 66 €', dist: 35, url: 'https://www.zoo-mulhouse.com', lat: 47.7346522, lng: 7.3504869 },
+    { date: '2026-09-20', flag: '🇫🇷', name: 'Écomusée d\'Alsace', place: 'Ungersheim', cityLabel: 'Ungersheim, Frankreich', savings: 50, priceLabel: '💶 50 €', dist: 42, url: 'https://www.ecomusee.alsace', lat: 47.8521, lng: 7.2850 }
+  ];
+
+  const MONTHS_DE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+
+  function escHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function fmtDate(iso) { const p = iso.split('-'); return p[2] + '.' + p[1] + '.' + p[0]; }
+  function fmtDateLong(iso) { const p = iso.split('-'); return parseInt(p[2], 10) + '. ' + MONTHS_DE[parseInt(p[1], 10) - 1] + ' ' + p[0]; }
+  function fmtPct(x) { return x.toFixed(1).replace('.', ','); }
+
+  function computeStats(visits) {
+    const total = visits.reduce((sum, v) => sum + v.savings, 0);
+    const count = visits.length;
+    let cum = 0;
+    let beVisit = null;
+    visits.forEach(v => { cum += v.savings; if (!beVisit && cum >= PASS_COST) beVisit = v; });
+    return {
+      total, count, beVisit,
+      net: Math.max(0, total - PASS_COST),
+      remaining: Math.max(0, PASS_COST - total),
+      avg: count ? total / count : 0,
+      beReached: total >= PASS_COST,
+      bePct: total / PASS_COST * 100,
+      last: count ? visits[count - 1] : null
+    };
+  }
+
+  function renderStats() {
+    const st = computeStats(VISITS);
+    const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+    const eur = n => '~' + Math.round(n) + ' €';
+
+    set('hdr-count', st.count + ' von 350+');
+    if (st.last) {
+      set('hdr-last', fmtDateLong(st.last.date));
+      const p = st.last.date.split('-');
+      set('footer-updated', MONTHS_DE[parseInt(p[1], 10) - 1] + ' ' + p[0]);
+    }
+
+    set('stat-total', eur(st.total));
+    set('stat-total-sub', VISITS.map(v => v.savings + ' €').join(' + '));
+    const beCard = document.getElementById('stat-be-card');
+    if (beCard) beCard.className = 'stat-card ' + (st.beReached ? 'highlight-green' : 'highlight-red');
+    set('stat-be', st.beReached ? '✓ Erreicht!' : 'Noch ~' + Math.round(st.remaining) + ' €');
+    set('stat-be-sub', st.total + ' € von ' + PASS_COST + ' €' + (st.beVisit ? ' (erreicht ' + fmtDate(st.beVisit.date) + ')' : ''));
+    set('stat-net', eur(st.net));
+    set('stat-net-sub', st.total + ' € Ersparnis − ' + PASS_COST + ' € Passkosten');
+    set('stat-count', String(st.count));
+    set('stat-avg', eur(st.avg));
+    set('stat-avg-sub', st.count + ' Besuche bisher');
+
+    set('thermo-pct', '~' + fmtPct(st.bePct) + '%' + (st.beReached ? ' 🎉' : ''));
+    const bulb = document.getElementById('thermo-bulb-label');
+    if (bulb) bulb.innerHTML = '~' + st.total + '€<br>gespart';
+    set('ti-total', eur(st.total));
+    set('ti-be', PASS_COST + ' €' + (st.beReached ? ' ✓' : ''));
+    set('ti-net', eur(st.net));
+    set('ti-remaining', st.beReached ? '0 € — geschafft! 🎉' : '~' + Math.round(st.remaining) + ' €');
+    set('ti-count', String(st.count));
+    set('ti-avg', eur(st.avg));
+    ['ti-be', 'ti-remaining'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('red', !st.beReached);
+    });
+    set('thermo-legend-mid', st.beReached
+      ? 'Break-Even bei ' + PASS_COST + ' € — am ' + fmtDate(st.beVisit.date) + ' erreicht! 🎉 (' + fmtPct(st.bePct) + '%)'
+      : 'Break-Even bei ' + PASS_COST + ' € (' + fmtPct(st.bePct) + '% erreicht)');
+  }
+
+  function renderVisitedList() {
+    const header = document.getElementById('visited-header');
+    if (!header) return;
+    const html = VISITS.slice().reverse().map(v => `
+      <div class="museum-item visited">
+        <div class="museum-name"><span class="museum-flag">${v.flag}</span>${escHtml(v.name)}</div>
+        <div class="museum-city">${escHtml(v.cityLabel)}</div>
+        <div class="museum-meta"><span class="museum-price">${escHtml(v.priceLabel)}</span><span class="museum-dist">📍 ${v.dist}km</span><a class="museum-web" href="${escHtml(v.url)}" target="_blank" rel="noopener">🌐 ${escHtml(v.url.replace(/^https?:\/\/(www\.)?/, ''))}</a></div>
+      </div>`).join('');
+    header.insertAdjacentHTML('afterend', html);
+  }
+
+  renderStats();
+  renderVisitedList();
+
   // ═══ TOP 20 NÄCHSTE ZIELE ════════════════════════════════════════════
   // Logik: alle weder besuchten noch uninteressanten museum-item aus DOM lesen,
   // nach Distanz sortieren, Ersparnis in EUR parsen,
@@ -3223,11 +3280,9 @@
   // ═══════════════════════════════════════════════════════════════════════
   // Thermometer Füllung und Farbverlauf dynamisch berechnen
   function updateThermometer() {
-    const savings = 375;
-    const breakEven = 258;
-    const maxSavings = 2500;
-    const tubeHeight = 500;
-    const fillPct = savings / maxSavings * 100;
+    const savings = computeStats(VISITS).total;
+    const breakEven = PASS_COST;
+    const fillPct = savings / THERMO_MAX * 100;
     const mercury = document.querySelector('.thermo-mercury');
     const bulb = document.querySelector('.thermo-bulb');
     if (!mercury) return;
@@ -3277,9 +3332,14 @@
   updateCountdown();
 </script>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function () {
+  if (typeof L === 'undefined') {
+    var box = document.getElementById('expedition-map');
+    if (box) box.innerHTML = '<p style="padding:20px;font-style:italic;color:var(--ink-light)">Karte konnte nicht geladen werden (Leaflet nicht erreichbar).</p>';
+    return;
+  }
   var map = L.map('expedition-map', {
     center: [47.95, 7.45],
     zoom: 8,
@@ -3307,21 +3367,11 @@
     popupAnchor: [0, -8]
   });
 
-  var visited = [
-    [48.2497, 7.3430, '&#127467;&#127479; Ch&acirc;teau du Haut-K&oelig;nigsbourg', 'Orschwiller &middot; 07.03.2026 &middot; 28 &euro; gespart'],
-    [47.5502, 7.6063, '&#127464;&#127469; Basler Papiermühle',                'Basel &middot; 22.03.2026 &middot; 62 &euro; gespart'],
-    [47.4842, 7.7340, '&#127464;&#127469; Museum.BL',                              'Liestal &middot; 12.04.2026 &middot; 18 &euro; gespart'],
-    [47.5538, 7.5917, '&#127464;&#127469; Antikenmuseum Basel',                    'Basel &middot; 26.04.2026 &middot; 26 &euro; gespart'],
-    [47.3856, 8.1832, '&#127464;&#127469; Schloss Lenzburg',                       'Lenzburg &middot; 21.06.2026 &middot; 39 &euro; gespart'],
-    [47.58518, 7.65079, '&#127464;&#127469; MUKS &mdash; Museum Kultur &amp; Spiel', 'Riehen &middot; 19.07.2026 &middot; 31 &euro; gespart'],
-    [47.5876, 7.6512, '&#127464;&#127469; Fondation Beyeler',                     'Riehen &middot; 19.07.2026 &middot; 55 &euro; gespart &middot; Break-Even erreicht!'],
-    [47.7346522, 7.3504869, '&#127467;&#127479; Parc Zoologique &amp; Botanique de Mulhouse', 'Mulhouse &middot; 08.08.2026 &middot; 66 &euro; gespart'],
-    [47.8590, 7.2800, '&#127467;&#127479; &Eacute;comus&eacute;e d\'Alsace', 'Ungersheim &middot; 20.09.2026 &middot; 50 &euro; gespart']
-  ];
-
-  visited.forEach(function(m) {
-    L.marker([m[0], m[1]], { icon: pinIcon }).addTo(map)
-      .bindPopup('<div style="font-family:Georgia,serif;font-size:13px;line-height:1.5"><strong>' + m[2] + '</strong><br><span style="color:#555;font-size:11px">' + m[3] + '</span></div>');
+  var stats = computeStats(VISITS);
+  VISITS.forEach(function (v) {
+    var beNote = stats.beVisit === v ? ' &middot; Break-Even erreicht!' : '';
+    L.marker([v.lat, v.lng], { icon: pinIcon }).addTo(map)
+      .bindPopup('<div style="font-family:Georgia,serif;font-size:13px;line-height:1.5"><strong>' + v.flag + ' ' + escHtml(v.mapName || v.name) + '</strong><br><span style="color:#555;font-size:11px">' + escHtml(v.place) + ' &middot; ' + fmtDate(v.date) + ' &middot; ' + v.savings + ' &euro; gespart' + beNote + '</span></div>');
   });
 
   L.marker([47.5597, 7.7959], { icon: homeIcon }).addTo(map)
