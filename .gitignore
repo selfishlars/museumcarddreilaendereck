@@ -15,3 +15,6 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Playwright-MCP Laufdaten (Logs/Snapshots)
+.playwright-mcp/
