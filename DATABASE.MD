@@ -52,11 +52,12 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 5  | CH-060    | 2026-06-21 | Anon1, Anon2, K1, K2 (+2 Gastkinder gratis) | 35.00 | CHF | 39.00 | Familienticket A; 35 CHF × 1,10 ≈ 39 €; Gastkinder nicht in Ersparnis |
 | 6  | CH-065    | 2026-07-19 | Anon1, Anon2, K1, K2  | 28.00         | CHF      | 31.00       | 2×14 CHF, Kinder bis 16 frei; 28 CHF × 1,10 ≈ 31 €; Preis vor Ort bestätigt |
 | 7  | CH-017    | 2026-07-19 | Anon1, Anon2, K1, K2  | 50.00         | CHF      | 55.00       | 2×25 CHF, unter 25 J. frei; 50 CHF × 1,10 = 55 €; 🏆 BREAK-EVEN erreicht |
+| 9  | FR-015    | 2026-09-20 | Anon1, Anon2, K1, K2  | 50.00         | EUR      | 50.00       | Familienticket 2 Erw. + 2 Ki. (einzeln 2×16,50 + 2×11 = 55 €); Picknick, Burgturm-Anekdote, botanische Gestaltung, Tierhaltung |
 | 8  | FR-011    | 2026-08-08 | Anon1, Anon2, K1, K2 | 66.00 | EUR | 66.00 | Begleitung: Oma + Opa, nicht in Ersparnis eingerechnet; Picknick, Streichelzoo und Wölfe aus nächster Nähe |
 
-**Gesamtersparnis:** ~325 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66)
-**Thermometer:** 325 / 2500 × 100 = 13,00%
-**Break-Even-Fortschritt:** 325 / 258 × 100 = 125,97% — **BREAK-EVEN ERREICHT am 19.07.2026**
+**Gesamtersparnis:** ~375 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66 + 50)
+**Thermometer:** 375 / 2500 × 100 = 15,00%
+**Break-Even-Fortschritt:** 375 / 258 × 100 = 145,35% — **BREAK-EVEN ERREICHT am 19.07.2026**
 
 **Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
 
@@ -76,6 +77,9 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-065 | MUKS — Museum Kultur & Spiel Riehen     | Riehen      | CH      | 47.58518 | 7.65079 | 17     | muks.ch                   | 31.00     | 2×14 CHF (Erw. ab 16), Kinder bis 16 frei; vor Ort bestätigt | 2026-07-19 |
 | CH-017 | Fondation Beyeler                       | Riehen      | CH      | 47.5876 | 7.6512 | 17      | fondationbeyeler.ch       | 55.00     | 2×25 CHF, unter 25 J. frei; 🏆 Break-Even-Besuch | 2026-07-19 |
 | FR-011 | Parc Zoologique & Botanique de Mulhouse | Mulhouse    | FR      | 47.7346522 | 7.3504869 | 35   | zoo-mulhouse.com          | 66.00     | Tribu-Ticket für 2 Erw. + 2 Ki. unter 16 | 2026-08-08 |
+| FR-015 | Écomusée d'Alsace                       | Ungersheim  | FR      | 47.8590 | 7.2800 | 42      | ecomusee.alsace           | 50.00     | Familienticket 2 Erw. + 2 Ki. 50 € (einzeln: Erw. 16,50 €, Kind 4–17 J. 11 €) | 2026-09-20 |
+
+**Écomusée d'Alsace — Recherche (2026-09-20):** Preise laut offizieller Ticketseite ecomusee.alsace (Saison 2026): Erw. 16,50 €, Kind 4–17 J. 11 €, Familienpass 50 €. Besucher: 190.858 im Jahr 2024 (L'Alsace, 07.02.2025). Koordinaten ca. (nicht auf Meter genau).
 
 **Besucherzahlen Schloss Lenzburg (Recherche 2026-07-16):** Keine aktuellen Einzelzahlen publiziert. Historisch: 2007 ~48'700, 2008 56'000 Museumseintritte (~61'000 inkl. Schlossanlage); 2018 ca. −10% wegen Sanierung. Museum Aargau gesamt (10 Standorte): 2023 303'220 / 2024 302'019 / 2025 ~293'600. Schätzung Lenzburg: ~50'000–60'000/Jahr.
 
@@ -327,7 +331,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 | FR-012 | Musée d'Unterlinden                     | Colmar            | 45      | musee-unterlinden.com                  |
 | FR-013 | Musée Bartholdi                         | Colmar            | 45      | musee-bartholdi.fr                     |
 | FR-014 | Musée du Jouet                          | Colmar            | 45      | —                                      |
-| FR-015 | Écomusée d'Alsace                       | Ungersheim        | 42      | ecomusee-alsace.fr                     |
+| FR-015 | Écomusée d'Alsace ✓ besucht 20.09.2026  | Ungersheim        | 42      | ecomusee.alsace                        |
 | FR-016 | Musée Würth                             | Erstein           | 55      | musee-wurth.fr                         |
 | FR-017 | Château de Fleckenstein                 | Lembach           | 80      | chateau-fleckenstein.fr                |
 | FR-018 | Château d'Andlau                        | Andlau            | 60      | —                                      |
@@ -372,14 +376,14 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | field                  | value    | unit |
 |------------------------|----------|------|
-| total_savings          | 325.00   | EUR  |
+| total_savings          | 375.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
-| net_savings            | 67.00    | EUR  |
+| net_savings            | 117.00   | EUR  |
 | break_even_remaining   | 0.00 — erreicht 2026-07-19 | EUR  |
-| visits_count           | 8        |      |
-| avg_savings_per_visit  | 40.63    | EUR  |
-| thermometer_pct        | 13.00    | %    |
-| break_even_pct         | 125.97   | %    |
+| visits_count           | 9        |      |
+| avg_savings_per_visit  | 41.67    | EUR  |
+| thermometer_pct        | 15.00    | %    |
+| break_even_pct         | 145.35   | %    |
 | thermometer_scale_max  | 2500.00  | EUR  |
 | break_even_marker_pct  | 10.32    | %    |
 
@@ -417,5 +421,5 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ---
 
-*Zuletzt aktualisiert: 2026-08-08*
-*Datenstand Besuche: 8 (Stand 2026-08-08)*
+*Zuletzt aktualisiert: 2026-09-20*
+*Datenstand Besuche: 9 (Stand 2026-09-20)*

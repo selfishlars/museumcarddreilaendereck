@@ -84,3 +84,13 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - **Gemeinsames Highlight:** Das tolle Picknick.
 - **Highlight der Kinder:** Der Besuch im Streichelzoo.
 - **Highlight von Anon 1 und Anon 2:** Die beiden Wölfe aus nächster Nähe beobachten zu können.
+
+---
+
+## Besuch 9: Écomusée d'Alsace
+**Datum:** 20.09.2026
+
+- **Gemeinsames Highlight:** Die leckere Picknick-Pause.
+- **Highlight Burgturm:** Kind 2 erzählte begeistert, wie man die Angreifer vom Plumpsklo im Turm aus „bekacken" kann.
+- Die botanische Gestaltung der Anlage (Felder, Gärten, Wald) war ein Highlight.
+- Ebenso die Tierhaltung im Dorf.

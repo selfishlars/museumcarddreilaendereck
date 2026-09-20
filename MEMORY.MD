@@ -142,7 +142,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~325 € |
+| Bisher gespart | ~375 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
@@ -151,10 +151,11 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 | MUKS Riehen | 28 CHF ≈ 31 € (2×14 CHF, Kinder bis 16 frei) |
 | Fondation Beyeler | 50 CHF ≈ 55 € (2×25 CHF, unter 25 J. frei) |
 | Zoo Mulhouse | 66 € (Tribu-Ticket für 2 Erw. + 2 Kinder unter 16) |
-| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (325 € > 258 €)** |
-| Netto-Ersparnis | ~67 € (325 € Gesamtersparnis − 258 € Passkosten) |
-| Besuche | 8 |
-| Ø Ersparnis/Besuch | ~41 € |
+| Écomusée d'Alsace | 50 € (Familienticket 2 Erw. + 2 Kinder) |
+| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (375 € > 258 €)** |
+| Netto-Ersparnis | ~117 € (375 € Gesamtersparnis − 258 € Passkosten) |
+| Besuche | 9 |
+| Ø Ersparnis/Besuch | ~42 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -167,9 +168,9 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 325/2500 = 13,00%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 325/258 = 125,97%)
-- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 325 - 258 = 67 €)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 375/2500 = 15,00%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 375/258 = 145,35%)
+- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 375 - 258 = 117 €)
 
 **Farbverlauf (dynamisch via JavaScript, Bulb + Quecksilber):**
 - Unter Break-Even: Bulb dunkelrot; Quecksilber dunkelrot (unten) → orange → hellrot (oben)
@@ -179,6 +180,16 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 ---
 
 ### Besuchsprotokoll
+
+#### Besuch 9: Écomusée d'Alsace
+- **Datum:** 20.09.2026
+- **Ort:** Écomusée d'Alsace, Chemin du Grosswald, 68190 Ungersheim, Haut-Rhin, Elsass, Frankreich
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt (Saison 2026):** Familienticket 2 Erw. + 2 Kinder = 50 € (einzeln: Erw. 16,50 €, Kind 4–17 J. 11 € = 55 €)
+- **Ersparnis:** **50 €** (günstigste reguläre Variante)
+- **Besucherzahl:** 190.858 im Jahr 2024 (L'Alsace)
+- **Highlights:** Leckere Picknick-Pause; Burgturm (Kind 2 und das Plumpsklo); botanische Gestaltung der Anlage; Tierhaltung
+- **Homepage:** https://www.ecomusee.alsace
 
 #### Besuch 8: Parc Zoologique & Botanique de Mulhouse
 - **Datum:** 08.08.2026
@@ -258,10 +269,10 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-151 Museen gelistet + 8 besucht (von 350+ im Pass):
+151 Museen gelistet + 9 besucht (von 350+ im Pass):
 - 🇨🇭 Schweiz: 37 gelistet (6 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler)
 - 🇩🇪 Deutschland: 62 gelistet
-- 🇫🇷 Frankreich: 52 gelistet (2 besucht: Château HK, Zoo Mulhouse)
+- 🇫🇷 Frankreich: 52 gelistet (3 besucht: Château HK, Zoo Mulhouse, Écomusée d'Alsace)
 
 **Sortierung:** Top 5 je Land nach Preis (absteigend), Rest nach Distanz (aufsteigend).
 

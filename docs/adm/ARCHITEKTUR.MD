@@ -14,7 +14,7 @@ Technische Referenz für die Implementierung der `index.html`. Enthält Aufbau, 
 
 ## AKTUELLER STAND
 
-Stand: 2026-08-08 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
+Stand: 2026-09-20 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
 
 ---
 
@@ -125,7 +125,7 @@ Kommentar-Separatoren im CSS:
 
 **Thermometer-Konstante (nach jedem Besuch anpassen):**
 ```javascript
-const savings = 325;  // Gesamtersparnis in EUR — Stand: 08.08.2026
+const savings = 375;  // Gesamtersparnis in EUR — Stand: 20.09.2026
 ```
 
 **Berechnungslogik:**
@@ -177,6 +177,7 @@ Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 | MUKS Riehen | 47.58518 | 7.65079 |
 | Fondation Beyeler | 47.5876 | 7.6512 |
 | Parc Zoologique & Botanique de Mulhouse | 47.7346522 | 7.3504869 |
+| Écomusée d'Alsace (Ungersheim) | 47.8590 | 7.2800 |
 | Dummy-Heimatbasis Rheinfelden (DE) | 47.5597 | 7.7959 |
 
 **`scrollWheelZoom: false`** — verhindert, dass die Karte beim Seiten-Scrollen den Zoom übernimmt.
