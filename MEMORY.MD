@@ -7,7 +7,7 @@ beschreibung: Zentrale Orchestrierungs- und Routing-Datei der gesamten Projektdo
 # MEMORY.MD — Museums-PASS Dreiländereck Logbuch
 
 > **PFLICHTLEKTÜRE:** Bei Initialisierung, vor/nach größeren Änderungen, vor Commit/Push und wiederholt während längerer Umsetzungsphasen.
-> **Konsolidierte Regel:** Vor jedem Commit/Push `DOKU-PROTOKOLL.MD` und `ISSUE-TRACKING-VERFAHREN.MD` lesen und beachten.
+> **Konsolidierte Regel:** Vor jedem Commit/Push `~/Projects/werkzeugkiste/REGELWERK.MD` und `~/Projects/werkzeugkiste/REGELWERK.MD` lesen und beachten.
 
 ---
 
@@ -26,7 +26,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 
 ## AKTIVES ISSUE-TRACKING-VERFAHREN
 
-**B: GitHub Issues** — Details in [ISSUE-TRACKING-VERFAHREN.MD](./ISSUE-TRACKING-VERFAHREN.MD)
+**B: GitHub Issues** — Details in [`~/Projects/werkzeugkiste/REGELWERK.MD`](./`~/Projects/werkzeugkiste/REGELWERK.MD`)
 
 ---
 
@@ -48,9 +48,7 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 |-------|-------|
 | `MEMORY.MD` | Diese Datei — Orchestrierung, Routing, Kernregeln |
 | `DOKU-ARCHITEKTUR.MD` | Übersicht aller Doku-Dateien und deren Zusammenspiel |
-| `DOKU-PROTOKOLL.MD` | Wann und wie Doku aktualisieren — vor Commit/Push lesen |
-| `ISSUE-TRACKING-VERFAHREN.MD` | Issue-Tracking B (GitHub Issues) — Prozessregeln |
-| `AGENTS.MD` | Coding-Conventions und Agent-Ausführungsregeln |
+| `AGENTS.md` | Coding-Conventions und Agent-Ausführungsregeln |
 | `docs/adm/ARCHITEKTUR.MD` | Technische Architektur der index.html |
 | `docs/adm/INFRASTRUKTUR.MD` | Infrastruktur, Deployment, MCP-Setup |
 | `docs/adm/MCP-INFOS.MD` | MCP-Fähigkeitskatalog und Status |
@@ -295,3 +293,8 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 6. MEMORY.MD (Bilanz-Tabelle, Besuchsprotokoll, Museum-Liste-Zähler), DATABASE.MD (visits-Tabelle **und** `savings_summary`-Tabelle!) und PERSOENLICHE-NOTIZEN.MD aktualisieren
 7. **`node tools/check-consistency.mjs` ausführen — muss grün sein**
 8. GitHub Issue mit `ergebnis:erledigt` schließen
+
+## WERKZEUGE UND NEXTCLOUD
+
+- Regelwerk und Werkzeuge: `~/Projects/werkzeugkiste/README.MD` (Regelwerk `REGELWERK.MD`; Befehle `nc-task`, `nc-wiki`, `nc-deck`)
+- Nextcloud-Zugriff der KI (Spiegel `~/Nextcloud` nur auf aihomelab1 als `aiuser`, Regeln, temporäre Dateien in `LKLS/temp`): `~/Projects/werkzeugkiste/docs/NEXTCLOUD-ZUGRIFF.MD`

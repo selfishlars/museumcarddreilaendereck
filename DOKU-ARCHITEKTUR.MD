@@ -28,11 +28,9 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 |-------|-----|-------|--------|
 | `MEMORY.MD` | Routing-Hub | Orchestrierung, Routing, Kernregeln, Projektdaten | ✅ |
 | `DOKU-ARCHITEKTUR.MD` | Doku | Diese Datei — Doku-Überblick | ✅ |
-| `DOKU-PROTOKOLL.MD` | Doku | Update-Protokoll für KI-Agenten | ✅ |
-| `ISSUE-TRACKING-VERFAHREN.MD` | Doku | Issue-Tracking B Prozessregeln | ✅ |
-| `AGENTS.MD` | Doku | Coding-Conventions, Agent-Regeln | ✅ |
-| `CLAUDE.MD` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
-| `GEMINI.MD` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
+| `AGENTS.md` | Doku | Coding-Conventions, Agent-Regeln | ✅ |
+| `CLAUDE.md` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
+| `GEMINI.md` | Pointer | Verweist auf MEMORY.MD etc. | ✅ |
 | `DATABASE.MD` | Daten | Strukturierte Museen/Preise/Distanzen | ✅ |
 | `PERSOENLICHE-NOTIZEN.MD` | Tagebuch | Persönliche Erlebnisse/Highlights je Besuch | ✅ |
 
@@ -66,9 +64,9 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 
 ```
 MEMORY.MD (Zentrale)
-├── ISSUE-TRACKING-VERFAHREN.MD → GitHub Issues Prozess
-├── DOKU-PROTOKOLL.MD   → Wann was updaten
-├── AGENTS.MD           → Wie Code schreiben
+├── `~/Projects/werkzeugkiste/REGELWERK.MD` → GitHub Issues Prozess
+├── `~/Projects/werkzeugkiste/REGELWERK.MD`   → Wann was updaten
+├── AGENTS.md           → Wie Code schreiben
 ├── tools/check-consistency.mjs → Prüft VISITS ↔ Doku (vor Commit)
 ├── docs/adm/
 │   ├── ARCHITEKTUR.MD  → Was ist wie gebaut
@@ -86,5 +84,5 @@ MEMORY.MD (Zentrale)
 
 - `SECRETS.MD` niemals committen (in `.gitignore` eingetragen)
 - Keine echten Namen in versionierten Dateien
-- Bei jeder größeren Änderung: `DOKU-PROTOKOLL.MD` lesen
+- Bei jeder größeren Änderung: `~/Projects/werkzeugkiste/REGELWERK.MD` lesen
 - Querverweise statt Inhaltsduplizierung

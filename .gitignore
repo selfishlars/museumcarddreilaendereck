@@ -18,3 +18,6 @@ Thumbs.db
 
 # Playwright-MCP Laufdaten (Logs/Snapshots)
 .playwright-mcp/
+
+# Codeman: eingefuegte Bilder
+.claude-images/

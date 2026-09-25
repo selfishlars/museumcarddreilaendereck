@@ -1,10 +1,10 @@
 ---
-name: AGENTS.MD
+name: AGENTS.md
 description: Project execution rules for AI agents, including coding standards, validation gates, operational constraints, and project-specific implementation behavior.
 beschreibung: Verbindliche Ausführungsregeln für KI-Agenten im Projekt, inklusive Coding-Standards, Validierungsgates, operativer Einschränkungen und projektspezifischem Umsetzungsverhalten.
 ---
 
-# AGENTS.MD
+# AGENTS.md
 
 **WICHTIG: LIES ZUERST [MEMORY.MD](./MEMORY.MD)!**
 
@@ -189,7 +189,7 @@ Vollständige Checkliste: [MEMORY.MD](./MEMORY.MD). Kurzform:
 | `index.html` | Die gesamte App | ✅ |
 | `MEMORY.MD` | KI-Dokumentation | ✅ |
 | `DATABASE.MD` | Strukturierte Daten | ✅ |
-| `CLAUDE.MD` / `GEMINI.MD` | Pointer auf MEMORY.MD (KI-Einstieg) | ✅ (das `.gitignore`-Muster `CLAUDE.md` greift wegen der Großschreibung nicht) |
+| `CLAUDE.md` / `GEMINI.md` | Pointer auf MEMORY.MD (KI-Einstieg) | ✅ (das `.gitignore`-Muster `CLAUDE.md` greift wegen der Großschreibung nicht) |
 | `tools/check-consistency.mjs` | Konsistenzprüfung index.html ↔ Doku | ✅ |
 | `.claude/` | Claude Code Config | ❌ (gitignored) |
 
@@ -204,3 +204,72 @@ Vollständige Checkliste: [MEMORY.MD](./MEMORY.MD). Kurzform:
 - **Break-Even Marker**: `258/2500*100` = 10.32% (CSS `bottom`-Wert, nie ändern)
 - **CHF-Wechselkurs**: 1 CHF = 1,10 EUR (einheitlich, in MEMORY.MD und DATABASE.MD dokumentiert)
 - **Neue Besuche in Leaflet-Karte**: Koordinaten (WGS84) als neues Array-Element in der IIFE eintragen (Koordinaten aus DATABASE.MD)
+
+## PFLEGE-REGELN DES PROJEKTS (übernommen aus dem früheren Doku-Protokoll, 2026-09-25)
+
+Allgemeine Regeln (Pflichtlektüre, Vor-Commit-Prüfung) stehen im Regelwerk `~/Projects/werkzeugkiste/REGELWERK.MD`; hier bleibt das Projektspezifische (Update-Matrix, Inventar, Besonderheiten).
+
+Erstellt: 2026-04-12 (INIT_V4_0 repair); Reconcile: 2026-04-12 (INIT_V5_0)
+
+---
+
+## DATEI-INVENTAR MIT UPDATEPFLICHTEN
+
+| Datei | Update-Pflicht | Trigger |
+|-------|---------------|---------|
+| `MEMORY.MD` | IMMER bei größeren Änderungen | Neuer Besuch, Bilanz-Update, Issue-Tracking-Änderung |
+| `AGENTS.md` | Bei Änderung von Coding-Konventionen | Tech-Stack-Änderung, neue Regeln |
+| `docs/adm/ARCHITEKTUR.MD` | Bei Architektur-Änderungen | Neue Sektionen in index.html, JS-Änderungen |
+| `docs/adm/INFRASTRUKTUR.MD` | Bei Infra-/MCP-Änderungen | Neuer MCP-Server, Deploy-Änderung |
+| `docs/adm/MCP-INFOS.MD` | Bei MCP-Status-Änderungen | Install/Remove/Update eines MCP |
+| `docs/usr/APP-NAVIGATION.MD` | Bei UI-Änderungen | Neue Sektion, Layout-Änderung |
+| `docs/usr/ADMIN-BEREICH.MD` | Bei Pflege-Prozess-Änderungen | Neue Checklisten-Schritte |
+| `DATABASE.MD` | Bei neuen Museen/Preisen | Recherche, neue Einträge |
+| `DOKU-ARCHITEKTUR.MD` | Bei Struktur-Änderungen | Neue Dateien hinzugefügt |
+| `tools/check-consistency.mjs` | Bei neuen Kennzahlen/Doku-Feldern | Neue Tabelle/Kennzahl, die mit `VISITS` übereinstimmen muss |
+
+---
+
+## UPDATE-MATRIX
+
+| Wenn X geändert wird… | …dann diese Dateien aktualisieren |
+|-----------------------|----------------------------------|
+| Neuer Museum-Besuch | MEMORY.MD (Bilanz, Protokoll), index.html, DATABASE.MD (visits + `savings_summary`), PERSOENLICHE-NOTIZEN.MD |
+| Neues Museum zur Liste | index.html, DATABASE.MD |
+| Kennzahlen/Thermometer | `VISITS` in index.html (einzige Quelle), MEMORY.MD (Bilanz), DATABASE.MD (`savings_summary`) — Abgleich per `tools/check-consistency.mjs` |
+| MCP-Server | docs/adm/INFRASTRUKTUR.MD, docs/adm/MCP-INFOS.MD, MEMORY.MD (MCP-Status) |
+| Neue Doku-Datei | DOKU-ARCHITEKTUR.MD, MEMORY.MD (Routing-Tabelle) |
+| Issue-Tracking-Wechsel | MEMORY.MD, `~/Projects/werkzeugkiste/REGELWERK.MD`, DOKU-ARCHITEKTUR.MD |
+
+---
+
+## PRE-COMMIT/PRE-PUSH CHECKLISTE
+
+Vor jedem `git commit` bzw. `git push`:
+
+- [ ] `git fetch` — Arbeitsstand ist nicht hinter `origin/main`
+- [ ] `node tools/check-consistency.mjs` läuft grün
+- [ ] MEMORY.MD ist aktuell (Bilanz, Routing, Kernregeln)
+- [ ] Keine echten Namen in geänderten Dateien
+- [ ] Keine Secrets / Credentials in versionierten Dateien
+- [ ] `docs/adm/SECRETS.MD` ist in `.gitignore` (nie committen)
+- [ ] Geänderte Doku-Dateien sind in DOKU-ARCHITEKTUR.MD referenziert
+- [ ] Issue in GitHub mit `ergebnis:erledigt` geschlossen (bei Verfahren B)
+
+---
+
+## GROSSE vs. KLEINE ÄNDERUNG
+
+**Groß** (Issue-Tracking-Verfahren, Pflichtstruktur, Sicherheitsregeln, Infra-Prozess ändern sich):
+→ MEMORY.MD + `~/Projects/werkzeugkiste/REGELWERK.MD` lesen, danach alle betroffenen Dateien updaten.
+
+**Klein** (einzelner Besuch, Preis, Museum):
+→ Index-Checkliste in MEMORY.MD abarbeiten reicht.
+
+
+## HINWEISE AUS CLAUDE.md (übernommen, 2026-09-25)
+
+**Schritt 0:** `git fetch` und den lokalen Stand mit `origin/main` vergleichen (`git status -sb`); bei Rückstand zuerst `git pull --ff-only`. Der Arbeitsstand war schon einmal veraltet.
+4. [AGENTS.md](./AGENTS.md) — Coding-Standards und Agent-Ausführungsregeln
+ISSUE_PREFIX: `MUSEUM` → `MUSEUM-ISSUE-0001`
+Vor jedem Commit: `node tools/check-consistency.mjs` (muss grün sein).
