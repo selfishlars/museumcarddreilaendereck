@@ -54,10 +54,11 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 7  | CH-017    | 2026-07-19 | Anon1, Anon2, K1, K2  | 50.00         | CHF      | 55.00       | 2×25 CHF, unter 25 J. frei; 50 CHF × 1,10 = 55 €; 🏆 BREAK-EVEN erreicht |
 | 9  | FR-015    | 2026-09-20 | Anon1, Anon2, K1, K2  | 50.00         | EUR      | 50.00       | Familienticket 2 Erw. + 2 Ki. (einzeln 2×16,50 + 2×11 = 55 €); Picknick, Burgturm-Anekdote, botanische Gestaltung, Tierhaltung |
 | 8  | FR-011    | 2026-08-08 | Anon1, Anon2, K1, K2 | 66.00 | EUR | 66.00 | Begleitung: Oma + Opa, nicht in Ersparnis eingerechnet; Picknick, Streichelzoo und Wölfe aus nächster Nähe |
+| 10 | CH-005    | 2026-09-27 | Anon1, Anon2, K1, K2  | 36.00         | CHF      | 40.00       | 2×18 CHF, Kinder unter 16 frei; 36 CHF × 1,10 ≈ 40 € |
 
-**Gesamtersparnis:** ~375 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66 + 50)
-**Thermometer:** 375 / 2500 × 100 = 15,00%
-**Break-Even-Fortschritt:** 375 / 258 × 100 = 145,35% — **BREAK-EVEN ERREICHT am 19.07.2026**
+**Gesamtersparnis:** ~415 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66 + 50 + 40)
+**Thermometer:** 415 / 2500 × 100 = 16,60%
+**Break-Even-Fortschritt:** 415 / 258 × 100 = 160,85% — **BREAK-EVEN ERREICHT am 19.07.2026**
 
 **Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
 
@@ -78,6 +79,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-017 | Fondation Beyeler                       | Riehen      | CH      | 47.5876 | 7.6512 | 17      | fondationbeyeler.ch       | 55.00     | 2×25 CHF, unter 25 J. frei; 🏆 Break-Even-Besuch | 2026-07-19 |
 | FR-011 | Parc Zoologique & Botanique de Mulhouse | Mulhouse    | FR      | 47.7346522 | 7.3504869 | 35   | zoo-mulhouse.com          | 66.00     | Tribu-Ticket für 2 Erw. + 2 Ki. unter 16 | 2026-08-08 |
 | FR-015 | Écomusée d'Alsace                       | Ungersheim  | FR      | 47.8521 | 7.2850 | 42      | ecomusee.alsace           | 50.00     | Familienticket 2 Erw. + 2 Ki. 50 € (einzeln: Erw. 16,50 €, Kind 4–17 J. 11 €) | 2026-09-20 |
+| CH-005 | Museum Tinguely                         | Basel       | CH      | 47.5614 | 7.6008 | 13      | tinguely.ch               | 40.00     | 2×18 CHF, Kinder unter 16 frei; 36 CHF × 1,10 ≈ 40 €                           | 2026-09-27 |
 
 **Écomusée d'Alsace — Recherche (2026-09-20):** Preise laut offizieller Ticketseite ecomusee.alsace (Saison 2026): Erw. 16,50 €, Kind 4–17 J. 11 €, Familienpass 50 €. Besucher: 190.858 im Jahr 2024 (L'Alsace, 07.02.2025). Koordinaten laut offizieller Zufahrtsseite (47°51'7,4"N 7°17'6"E).
 
@@ -92,7 +94,7 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | CH-002 | Ballenberg Freilichtmuseum| Hofstetten | 85      | ~98       | ~103      | 2×32 + 2×17 CHF (Kinder 6–15)             | ballenberg.ch                |
 | CH-003 | Zentrum Paul Klee          | Bern       | 105     | ~68       | ~72       | 2×20 + 2×14 CHF (Kinder bis 16 frei/red.) | zpk.org                      |
 | CH-004 | Kunstmuseum Basel          | Basel      | 13      | ~52       | ~55       | 2×26 CHF, Kinder unter 16 frei (Sonntag)  | kunstmuseumbasel.ch          |
-| CH-005 | Museum Tinguely            | Basel      | 13      | ~36       | ~38       | 2×18 CHF, Kinder unter 16 frei            | tinguely.ch                  |
+| CH-005 | Museum Tinguely ✓ besucht 27.09.2026 | Basel | 13 | 36 | 40 | 2×18 CHF, Kinder unter 16 frei            | tinguely.ch                  |
 | CH-006 | Bernisches Historisches M. | Bern       | 105     | ~32       | ~34       | 2×13 + Kinder (Familienkarte ~32 CHF)     | bhm.ch                       |
 
 ### Schweiz — Weitere (Distanz sortiert, Preise ausstehend)
@@ -376,14 +378,14 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | field                  | value    | unit |
 |------------------------|----------|------|
-| total_savings          | 375.00   | EUR  |
+| total_savings          | 415.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
-| net_savings            | 117.00   | EUR  |
+| net_savings            | 157.00   | EUR  |
 | break_even_remaining   | 0.00 — erreicht 2026-07-19 | EUR  |
-| visits_count           | 9        |      |
-| avg_savings_per_visit  | 41.67    | EUR  |
-| thermometer_pct        | 15.00    | %    |
-| break_even_pct         | 145.35   | %    |
+| visits_count           | 10       |      |
+| avg_savings_per_visit  | 41.50    | EUR  |
+| thermometer_pct        | 16.60    | %    |
+| break_even_pct         | 160.85   | %    |
 | thermometer_scale_max  | 2500.00  | EUR  |
 | break_even_marker_pct  | 10.32    | %    |
 
@@ -421,5 +423,5 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ---
 
-*Zuletzt aktualisiert: 2026-09-20*
-*Datenstand Besuche: 9 (Stand 2026-09-20)*
+*Zuletzt aktualisiert: 2026-09-27*
+*Datenstand Besuche: 10 (Stand 2026-09-27)*

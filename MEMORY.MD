@@ -141,7 +141,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~375 € |
+| Bisher gespart | ~415 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
@@ -151,9 +151,10 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 | Fondation Beyeler | 50 CHF ≈ 55 € (2×25 CHF, unter 25 J. frei) |
 | Zoo Mulhouse | 66 € (Tribu-Ticket für 2 Erw. + 2 Kinder unter 16) |
 | Écomusée d'Alsace | 50 € (Familienticket 2 Erw. + 2 Kinder) |
-| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (375 € > 258 €)** |
-| Netto-Ersparnis | ~117 € (375 € Gesamtersparnis − 258 € Passkosten) |
-| Besuche | 9 |
+| Museum Tinguely | 36 CHF ≈ 40 € (2×18 CHF, Kinder unter 16 frei) |
+| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (415 € > 258 €)** |
+| Netto-Ersparnis | ~157 € (415 € Gesamtersparnis − 258 € Passkosten) |
+| Besuche | 10 |
 | Ø Ersparnis/Besuch | ~42 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
@@ -167,9 +168,9 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 375/2500 = 15,00%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 375/258 = 145,35%)
-- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 375 - 258 = 117 €)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 415/2500 = 16,60%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 415/258 = 160,85%)
+- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 415 - 258 = 157 €)
 
 **Farbverlauf (dynamisch via JavaScript, Bulb + Quecksilber):**
 - Unter Break-Even: Bulb dunkelrot; Quecksilber dunkelrot (unten) → orange → hellrot (oben)
@@ -179,6 +180,15 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 ---
 
 ### Besuchsprotokoll
+
+#### Besuch 10: Museum Tinguely
+- **Datum:** 27.09.2026
+- **Ort:** Museum Tinguely, Paul Sacher-Anlage 2, 4002 Basel, Kanton Basel-Stadt, Schweiz
+- **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
+- **Regulärer Eintritt:** 2 Erw. = 36 CHF (2×18 CHF), Kinder unter 16 frei
+- **Ersparnis:** **36 CHF ≈ 40 €**
+- **Highlights:** *(werden noch ergänzt)*
+- **Homepage:** https://www.tinguely.ch
 
 #### Besuch 9: Écomusée d'Alsace
 - **Datum:** 20.09.2026
@@ -268,15 +278,15 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-151 Museen gelistet + 9 besucht (von 350+ im Pass):
-- 🇨🇭 Schweiz: 37 gelistet (6 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler)
+150 Museen gelistet + 10 besucht (von 350+ im Pass):
+- 🇨🇭 Schweiz: 36 gelistet (7 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler, Museum Tinguely)
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 52 gelistet (3 besucht: Château HK, Zoo Mulhouse, Écomusée d'Alsace)
 
 **Sortierung:** Top 5 je Land nach Preis (absteigend), Rest nach Distanz (aufsteigend).
 
 **Top 5 Preise der noch nicht besuchten Ziele (ca.-Werte, recherchiert 2026-03-28, FR aktualisiert 2026-08-08):**
-- 🇨🇭 CH: Ballenberg ~103€, Zentrum Paul Klee ~72€, KM Basel ~55€, Tinguely ~38€, Bern. HM ~34€
+- 🇨🇭 CH: Ballenberg ~103€, Zentrum Paul Klee ~72€, KM Basel ~55€, Bern. HM ~34€ *(Top-5 nach Tinguely-Besuch, 5. Platz ausstehend)*
 - 🇩🇪 DE: Fabergé ~44€, Technoseum ~39€, Vogtsbauernhof ~34€, Frieder Burda ~28€, Bad. LM ~24€
 - 🇫🇷 FR: Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€, Centre Pompidou-Metz ~24€
 

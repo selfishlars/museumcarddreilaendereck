@@ -94,3 +94,12 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - **Highlight Burgturm:** Kind 2 erzählte begeistert, wie man die Angreifer vom Plumpsklo im Turm aus „bekacken" kann.
 - Die botanische Gestaltung der Anlage (Felder, Gärten, Wald) war ein Highlight.
 - Ebenso die Tierhaltung im Dorf.
+
+---
+
+## Besuch 10: Museum Tinguely
+**Datum:** 27.09.2026
+
+- **Platzhalter Highlight 1:** Es werde Licht — und es ward Licht.
+- **Platzhalter Highlight 2:** Die Maschinen erwachen, rattern und klackern.
+- **Platzhalter Highlight 3:** Irgendwas mit Jean Tinguely und schwarzem Humor.
