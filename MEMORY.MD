@@ -187,7 +187,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - **Besucher:** Anon 1, Anon 2, Kind 1, Kind 2
 - **Regulärer Eintritt:** 2 Erw. = 36 CHF (2×18 CHF), Kinder unter 16 frei
 - **Ersparnis:** **36 CHF ≈ 40 €**
-- **Highlights:** *(werden noch ergänzt)*
+- **Highlights:** Brunnen vor dem Museum; Kind 2: große begehbare Maschine mit Treppen und Leitern; Anon 1: sonniges Rheinufer (Füße ins Wasser)
 - **Homepage:** https://www.tinguely.ch
 
 #### Besuch 9: Écomusée d'Alsace

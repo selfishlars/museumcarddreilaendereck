@@ -100,6 +100,6 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 ## Besuch 10: Museum Tinguely
 **Datum:** 27.09.2026
 
-- **Platzhalter Highlight 1:** Es werde Licht — und es ward Licht.
-- **Platzhalter Highlight 2:** Die Maschinen erwachen, rattern und klackern.
-- **Platzhalter Highlight 3:** Irgendwas mit Jean Tinguely und schwarzem Humor.
+- **Highlight:** Der Brunnen vor dem Museum.
+- **Highlight Kind 2:** Die große Maschine mit Besichtigungs-Treppen und -Leitern — vollständig begehbar.
+- **Highlight Anon 1:** Kurzer Stopp am sonnigen Rheinufer — Füße ins Wasser.
