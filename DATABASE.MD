@@ -32,9 +32,9 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | field          | value                                           |
 |----------------|-------------------------------------------------|
 | name           | Heimatbasis (Dummy)                             |
-| street         | Eggbergstr. 30 (Dummy-Adresse)                  |
-| city           | Rheinfelden (Baden)                             |
-| postal_code    | 79618                                           |
+| street         | —                                               |
+| city           | —                                               |
+| postal_code    | —                                               |
 | country        | Deutschland                                     |
 | lat            | — (aus Datenschutzgründen nicht gespeichert)   |
 | lon            | — (aus Datenschutzgründen nicht gespeichert)   |
@@ -411,7 +411,7 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 - Aktualisierung nötig: für alle Museen ohne Preis
 
 ### Distanz-Berechnung
-- Von: Rheinfelden (Baden), Eggbergstr. 30 — ausschließlich als Dummy-Adresse und rechnerischer Referenzpunkt
+- Von: Heimatbasis — ausschließlich als rechnerischer Referenzpunkt
 - Straßendistanz (nicht Luftlinie)
 - Werte gerundet auf ~5 km
 
