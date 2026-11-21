@@ -141,8 +141,9 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 | | Wert |
 |--|------|
-| Bisher gespart | ~415 € |
+| Bisher gespart | ~429 € |
 | Château HK | 28 € (2×14€, Kinder unter 18 frei) |
+| Château HK (erneut, 15.11.2026) | 14 € (1×14€, nur Anon 2) |
 | Papiermühle Basel | 56 CHF ≈ 62 € (1 CHF = 1,10 EUR) |
 | Museum.BL Liestal | 16 CHF ≈ 18 € (1 CHF = 1,10 EUR) |
 | Antikenmuseum Basel | 24 CHF ≈ 26 € (1 CHF = 1,10 EUR) |
@@ -152,10 +153,10 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 | Zoo Mulhouse | 66 € (Tribu-Ticket für 2 Erw. + 2 Kinder unter 16) |
 | Écomusée d'Alsace | 50 € (Familienticket 2 Erw. + 2 Kinder) |
 | Museum Tinguely | 36 CHF ≈ 40 € (2×18 CHF, Kinder unter 16 frei) |
-| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (415 € > 258 €)** |
-| Netto-Ersparnis | ~157 € (415 € Gesamtersparnis − 258 € Passkosten) |
-| Besuche | 10 |
-| Ø Ersparnis/Besuch | ~42 € |
+| Noch bis Break-Even | **0 € — BREAK-EVEN ERREICHT am 19.07.2026! (429 € > 258 €)** |
+| Netto-Ersparnis | ~171 € (429 € Gesamtersparnis − 258 € Passkosten) |
+| Besuche | 11 |
+| Ø Ersparnis/Besuch | ~39 € |
 | Thermometer-Skala | 0–2.500 € (theoretisches Maximum) |
 
 **⚠️ WICHTIG: Thermometer-Berechnung nach JEDEM Besuch überprüfen!**
@@ -168,9 +169,9 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
 **Füllstandsberechnung:**
-- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 415/2500 = 16,60%)
-- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 415/258 = 160,85%)
-- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 415 - 258 = 157 €)
+- `mercury height %` = `Gesamtersparnis / 2500 * 100` (z.B. 429/2500 = 17,16%)
+- Break-Even-Fortschritt (Header) = `Gesamtersparnis / 258 * 100` (z.B. 429/258 = 166,28%)
+- Netto-Ersparnis = `max(0, Gesamtersparnis - 258)` (z.B. 429 - 258 = 171 €)
 
 **Farbverlauf (dynamisch via JavaScript, Bulb + Quecksilber):**
 - Unter Break-Even: Bulb dunkelrot; Quecksilber dunkelrot (unten) → orange → hellrot (oben)
@@ -180,6 +181,15 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 ---
 
 ### Besuchsprotokoll
+
+#### Besuch 11: Château du Haut-Kœnigsbourg (Wiederholungsbesuch)
+- **Datum:** 15.11.2026
+- **Ort:** Château du Haut-Kœnigsbourg, 67600 Orschwiller, Elsass, Frankreich
+- **Besucher:** Anon 2
+- **Regulärer Eintritt:** 14 € / Erw. (unverändert)
+- **Ersparnis:** **14 €**
+- **Highlights:** Wunderschönes Wetter, dazu passend tolle, weite Aussicht über das Elsass
+- **Homepage:** https://www.haut-koenigsbourg.fr
 
 #### Besuch 10: Museum Tinguely
 - **Datum:** 27.09.2026
@@ -278,7 +288,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 ### Museum-Liste (Übersicht)
 
-150 Museen gelistet + 10 besucht (von 350+ im Pass):
+150 Museen gelistet + 10 besucht (von 350+ im Pass; 11 Besuche inkl. Wiederholungsbesuch):
 - 🇨🇭 Schweiz: 36 gelistet (7 besucht: Basler Papiermühle, Museum.BL, Antikenmuseum Basel, Schloss Lenzburg, MUKS Riehen, Fondation Beyeler, Museum Tinguely)
 - 🇩🇪 Deutschland: 62 gelistet
 - 🇫🇷 Frankreich: 52 gelistet (3 besucht: Château HK, Zoo Mulhouse, Écomusée d'Alsace)
@@ -295,7 +305,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 ### Neuen Besuch hinzufügen (Checkliste)
 
 0. **Arbeitsstand prüfen:** `git fetch` und mit `origin/main` vergleichen (ggf. `git pull --ff-only`), bevor irgendetwas geändert wird
-1. **`VISITS`-Eintrag** am **Ende** des Arrays in `index.html` (Abschnitt „DATENQUELLE"): `date`, `flag`, `name`, `place`, `cityLabel`, `savings` (ganzzahlig €, CHF × 1,10 gerundet), `priceLabel`, `dist`, `url`, `lat`/`lng`. Daraus werden **automatisch** erzeugt: alle 6 Stat-Karten, Thermometer (Füllhöhe, Bulb-Label, Info-Panel inkl. Besuche, Prozent, Fußzeile), Header („Letzte Expedition", „Entdeckte Museen"), Footer-Datum, „Bereits besucht"-Eintrag, Leaflet-Pin
+1. **`VISITS`-Eintrag** am **Ende** des Arrays in `index.html` (Abschnitt „DATENQUELLE"): `date`, `flag`, `name`, `place`, `cityLabel`, `savings` (ganzzahlig €, CHF × 1,10 gerundet), `priceLabel`, `dist`, `url`, `lat`/`lng`. **Wiederholungsbesuch** eines schon besuchten Museums: gleicher `name` und gleiche `lat`/`lng` wie beim Erstbesuch plus `repeat: true` — zählt in Ersparnis und Besuche, aber nicht in „Entdeckte Museen“, „Bereits besucht“ und Karten-Pins (Popup des Erstbesuchs zeigt ihn mit); Schritte 4 und die DATABASE.MD-Tabelle „Besucht“ entfallen. Daraus werden **automatisch** erzeugt: alle 6 Stat-Karten, Thermometer (Füllhöhe, Bulb-Label, Info-Panel inkl. Besuche, Prozent, Fußzeile), Header („Letzte Expedition", „Entdeckte Museen"), Footer-Datum, „Bereits besucht"-Eintrag, Leaflet-Pin
 2. Neues `<div class="visit-card swiss|france|germany">` als **erstes** Kind in `.visit-log` (neueste Einträge oben)
 3. **`📊 Besucher/Jahr` recherchieren** und im visit-detail eintragen (Pflichtfeld!)
 4. Museum aus der Ländersektion (🇨🇭/🇩🇪/🇫🇷) **entfernen** + Sektions-Zähler −1 (falls dort gelistet)

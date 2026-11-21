@@ -103,3 +103,11 @@ Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
 - **Highlight:** Der Brunnen vor dem Museum.
 - **Highlight Kind 2:** Die große Maschine mit Besichtigungs-Treppen und -Leitern — vollständig begehbar.
 - **Highlight Anon 1:** Kurzer Stopp am sonnigen Rheinufer — Füße ins Wasser.
+
+---
+
+## Besuch 11: Château du Haut-Kœnigsbourg (Wiederholungsbesuch)
+**Datum:** 15.11.2026 — Anon 2
+
+- **Highlight:** Wunderschönes Wetter.
+- **Highlight:** Dazu passend eine tolle, weite Aussicht über das Elsass.

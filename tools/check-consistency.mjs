@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Konsistenzprüfung: index.html (VISITS = Wahrheitsquelle) gegen Doku und Seitenstruktur.
 // Aufruf: node tools/check-consistency.mjs   (Exit-Code 1 bei Abweichungen)
-// Keine Abhängigkeiten. Siehe DOKU-PROTOKOLL.MD (Pre-Commit-Checkliste).
+// Keine Abhängigkeiten. Siehe AGENTS.md (Pre-Commit-Checkliste).
 
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -39,11 +39,19 @@ check(
   'VISITS chronologisch aufsteigend',
   'VISITS nicht chronologisch aufsteigend sortiert (neuer Besuch gehört ans ENDE)',
 );
+const firstVisits = VISITS.filter((v) => !v.repeat);
+const museums = firstVisits.length;
 check(
-  new Set(VISITS.map((v) => norm(v.name))).size === n,
-  'VISITS: Namen eindeutig',
-  'VISITS enthält doppelte Museumsnamen',
+  new Set(firstVisits.map((v) => norm(v.name))).size === museums,
+  'VISITS: Namen eindeutig (Wiederholungsbesuche mit repeat: true)',
+  'VISITS enthält doppelte Museumsnamen ohne `repeat: true`',
 );
+check(
+  VISITS.every((v, i) => !v.repeat || VISITS.slice(0, i).some((p) => !p.repeat && norm(p.name) === norm(v.name) && p.lat === v.lat && p.lng === v.lng)),
+  'VISITS: Wiederholungsbesuche verweisen auf früheren Erstbesuch',
+  'VISITS: Eintrag mit `repeat: true` ohne früheren Erstbesuch (gleicher Name und Koordinaten)',
+);
+check(st.museums === museums, `computeStats: ${museums} verschiedene Museen`, `computeStats: museums ${st.museums} ≠ ${museums}`);
 check(
   VISITS.every((v) => v.lat > 46 && v.lat < 49.5 && v.lng > 6 && v.lng < 9),
   'VISITS: Koordinaten plausibel (Dreiländereck, lat/lng nicht vertauscht)',
@@ -82,7 +90,7 @@ cardChunks.forEach((chunk, i) => {
 
 // Ländersektionen: Zähler = Einträge; besuchte Museen nicht doppelt
 const sections = html.split('<div class="museum-section-header"').slice(1);
-const visitedNames = VISITS.map((v) => norm(v.name));
+const visitedNames = firstVisits.map((v) => norm(v.name));
 for (const sec of sections) {
   const title = sec.slice(0, 120).replace(/<[^>]+>/g, ' ').replace(/^[^>]*>/, '').replace(/\s+/g, ' ').trim();
   const label = title.replace(/[^\p{L}\s]/gu, '').trim().split(/\s+/)[0];
@@ -126,7 +134,7 @@ for (const [key, want] of Object.entries(expectSummary)) {
 // Besucht-Tabelle (museums): Koordinaten, Preis und Datum je Besuch = VISITS
 const dbMuseums = db.slice(db.indexOf('### Besucht'), db.indexOf('\n---\n', db.indexOf('### Besucht')))
   .split('\n').filter((l) => /^\|\s*[A-Z]{2}-\d+/.test(l)).map((l) => l.split('|').map((c) => c.trim()));
-for (const v of VISITS) {
+for (const v of firstVisits) {
   const row = dbMuseums.find((r) => norm(r[2]) === norm(v.name));
   if (!row) { errors.push(`DATABASE.MD „Besucht“-Tabelle: „${v.name}“ fehlt`); continue; }
   const same = Number(row[5]) === v.lat && Number(row[6]) === v.lng && Number(row[9]) === v.savings && row[11] === v.date;
@@ -143,7 +151,7 @@ check(memCell('Besuche') === String(n), 'MEMORY.MD: Besuche', `MEMORY.MD: Besuch
 check(memCell('Ø Ersparnis/Besuch') === `~${Math.round(st.avg)} €`, 'MEMORY.MD: Ø/Besuch', `MEMORY.MD: Ø/Besuch „${memCell('Ø Ersparnis/Besuch')}“ ≠ ~${Math.round(st.avg)} €`);
 const memHeads = (mem.match(/^#### Besuch \d+:/gm) || []).length;
 check(memHeads === n, `MEMORY.MD: ${n} Besuchsprotokolle`, `MEMORY.MD: ${memHeads} Besuchsprotokolle ≠ ${n}`);
-check(new RegExp(`\\+ ${n} besucht`).test(mem), 'MEMORY.MD: Museum-Liste „+ N besucht“', `MEMORY.MD: „+ ${n} besucht“ in der Museum-Liste fehlt`);
+check(new RegExp(`\\+ ${museums} besucht`).test(mem), 'MEMORY.MD: Museum-Liste „+ N besucht“ (verschiedene Museen)', `MEMORY.MD: „+ ${museums} besucht“ in der Museum-Liste fehlt`);
 
 // ── 5. PERSOENLICHE-NOTIZEN.MD ───────────────────────────────────────────────
 const notes = read('PERSOENLICHE-NOTIZEN.MD');

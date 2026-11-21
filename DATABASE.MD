@@ -55,12 +55,15 @@ Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Pro
 | 9  | FR-015    | 2026-09-20 | Anon1, Anon2, K1, K2  | 50.00         | EUR      | 50.00       | Familienticket 2 Erw. + 2 Ki. (einzeln 2×16,50 + 2×11 = 55 €); Picknick, Burgturm-Anekdote, botanische Gestaltung, Tierhaltung |
 | 8  | FR-011    | 2026-08-08 | Anon1, Anon2, K1, K2 | 66.00 | EUR | 66.00 | Begleitung: Oma + Opa, nicht in Ersparnis eingerechnet; Picknick, Streichelzoo und Wölfe aus nächster Nähe |
 | 10 | CH-005    | 2026-09-27 | Anon1, Anon2, K1, K2  | 36.00         | CHF      | 40.00       | 2×18 CHF, Kinder unter 16 frei; 36 CHF × 1,10 ≈ 40 € |
+| 11 | FR-001    | 2026-11-15 | Anon2                 | 14.00         | EUR      | 14.00       | Wiederholungsbesuch (repeat); 1×14 €; schönes Wetter, weite Aussicht über das Elsass |
 
-**Gesamtersparnis:** ~415 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66 + 50 + 40)
-**Thermometer:** 415 / 2500 × 100 = 16,60%
-**Break-Even-Fortschritt:** 415 / 258 × 100 = 160,85% — **BREAK-EVEN ERREICHT am 19.07.2026**
+**Gesamtersparnis:** ~429 € (28 + 62 + 18 + 26 + 39 + 31 + 55 + 66 + 50 + 40 + 14)
+**Thermometer:** 429 / 2500 × 100 = 17,16%
+**Break-Even-Fortschritt:** 429 / 258 × 100 = 166,28% — **BREAK-EVEN ERREICHT am 19.07.2026**
 
 **Währungskurs:** 1 CHF = 1,10 EUR (einheitlich im gesamten Projekt)
+
+**Wiederholungsbesuche:** eigene Zeile in `visits` mit derselben `museum_id`; in der Tabelle „Besucht“ bleibt je Museum eine Zeile mit dem Erstbesuch.
 
 ---
 
@@ -378,14 +381,14 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 | field                  | value    | unit |
 |------------------------|----------|------|
-| total_savings          | 415.00   | EUR  |
+| total_savings          | 429.00   | EUR  |
 | pass_cost              | 258.00   | EUR  |
-| net_savings            | 157.00   | EUR  |
+| net_savings            | 171.00   | EUR  |
 | break_even_remaining   | 0.00 — erreicht 2026-07-19 | EUR  |
-| visits_count           | 10       |      |
-| avg_savings_per_visit  | 41.50    | EUR  |
-| thermometer_pct        | 16.60    | %    |
-| break_even_pct         | 160.85   | %    |
+| visits_count           | 11       |      |
+| avg_savings_per_visit  | 39.00    | EUR  |
+| thermometer_pct        | 17.16    | %    |
+| break_even_pct         | 166.28   | %    |
 | thermometer_scale_max  | 2500.00  | EUR  |
 | break_even_marker_pct  | 10.32    | %    |
 
@@ -423,5 +426,5 @@ Basis: 2 Erwachsene + 2 Kinder (~7 und ~9 J., beide Schüler).
 
 ---
 
-*Zuletzt aktualisiert: 2026-09-27*
-*Datenstand Besuche: 10 (Stand 2026-09-27)*
+*Zuletzt aktualisiert: 2026-11-21*
+*Datenstand Besuche: 11 (Stand 2026-11-15)*

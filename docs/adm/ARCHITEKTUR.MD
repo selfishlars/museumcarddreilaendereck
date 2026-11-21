@@ -117,8 +117,8 @@ Kommentar-Separatoren im CSS:
 
 | Funktion/Block | Zweck | Datei-Position |
 |----------------|-------|----------------|
-| `VISITS` (+ `PASS_COST`, `THERMO_MAX`) | **Einzige Wahrheitsquelle** aller Kennzahlen; chronologisch aufsteigend, neuer Besuch = Eintrag am Ende | inline `<script>` (Abschnitt DATENQUELLE) |
-| `computeStats()` | Summe, Netto, Ø, Break-Even-Prozent/-Besuch aus `VISITS` berechnen | inline `<script>` |
+| `VISITS` (+ `PASS_COST`, `THERMO_MAX`) | **Einzige Wahrheitsquelle** aller Kennzahlen; chronologisch aufsteigend, neuer Besuch = Eintrag am Ende; Wiederholungsbesuch mit `repeat: true` (kein eigener Pin, kein „Bereits besucht"-Eintrag, nicht in „Entdeckte Museen") | inline `<script>` (Abschnitt DATENQUELLE) |
+| `computeStats()` | Summe, Netto, Ø, Break-Even-Prozent/-Besuch, Anzahl verschiedener Museen (`museums`) aus `VISITS` berechnen | inline `<script>` |
 | `renderStats()` | Header, Stat-Karten, Thermometer-Beschriftung, Footer aus `computeStats()` füllen | inline `<script>` |
 | `renderVisitedList()` | „Bereits besucht"-Einträge aus `VISITS` erzeugen (neueste zuerst) | inline `<script>` |
 | `buildTop20()` | Alle `.museum-item:not(.visited):not(.uninteressant)` aus DOM lesen, sortieren | inline `<script>` |

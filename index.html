@@ -1489,6 +1489,78 @@
     <h2 class="section-title"><span class="icon">📖</span> Expeditions-Tagebuch</h2>
     <div class="visit-log">
 
+      <!-- EINTRAG: Château du Haut-Kœnigsbourg (Wiederholungsbesuch) -->
+      <div class="visit-card france">
+        <div class="visit-card-header">
+          <div>
+            <div class="visit-museum-name">
+              🏰🔁 Château du Haut-Kœnigsbourg — erneuter Besuch
+            </div>
+            <div style="font-size:17px; color:var(--leather); margin-top:4px; font-style:italic;">
+              67600 Orschwiller, Bas-Rhin, Grand Est — Frankreich
+            </div>
+          </div>
+          <div class="visit-badge france-badge">
+            🇫🇷 &nbsp;14 € gespart
+          </div>
+        </div>
+
+        <div class="visit-details">
+          <div class="visit-detail">
+            <span class="detail-icon">📅</span>
+            <span>15. November 2026 · Wiederholungsbesuch</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">👥</span>
+            <span>Anon 2</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">🗺️</span>
+            <span>Elsass · Département Bas-Rhin (67)</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">📍</span>
+            <span>~75 km von Rheinfelden</span>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-icon">📊</span>
+            <span>~500.000 Besucher/Jahr</span>
+          </div>
+        </div>
+
+        <div class="visit-info">
+          <div class="vi-row">
+            <span class="vi-label">Über die Burg</span>
+          </div>
+          <div class="vi-row">
+            <span class="vi-desc">Zweiter Besuch der Burg, auf der die Expedition am 7. März 2026 begann. Der Museums-PASS gilt beliebig oft — auch für bereits besuchte Häuser.</span>
+          </div>
+          <div class="vi-row" style="margin-top:8px;">
+            <span class="vi-label">Web</span>
+            <a href="https://www.haut-koenigsbourg.fr" target="_blank" rel="noopener">www.haut-koenigsbourg.fr</a>
+          </div>
+        </div>
+
+        <div class="personal-highlights">
+          <div class="ph-title">✦ Persönliche Highlights</div>
+          <ul>
+            <li><strong>Highlight:</strong> Wunderschönes Wetter</li>
+            <li><strong>Highlight:</strong> Dazu passend eine tolle, weite Aussicht über das Elsass</li>
+          </ul>
+        </div>
+
+        <div class="visit-savings-row">
+          <span class="savings-item">Regulärer Eintritt: 14 € / Erw.</span>
+          <span class="savings-item">Ersparnis mit Pass:</span>
+          <span class="savings-highlight">1 × 14 € = 14 €</span>
+        </div>
+
+        <!-- decorative stamp -->
+        <div class="visit-stamp">
+          <div class="visit-stamp-text">ERNEUT<br>ELSASS<br>🇫🇷</div>
+        </div>
+      </div>
+
       <!-- EINTRAG 1: Museum Tinguely -->
       <div class="visit-card swiss">
         <div class="visit-card-header">
@@ -3156,7 +3228,8 @@
     { date: '2026-07-19', flag: '🇨🇭', name: 'Fondation Beyeler', place: 'Riehen', cityLabel: 'Riehen, Schweiz', savings: 55, priceLabel: 'CHF 50 · 55 €', dist: 17, url: 'https://www.fondationbeyeler.ch', lat: 47.5876, lng: 7.6512 },
     { date: '2026-08-08', flag: '🇫🇷', name: 'Parc Zoologique & Botanique de Mulhouse', place: 'Mulhouse', cityLabel: 'Mulhouse, Frankreich', savings: 66, priceLabel: '💶 66 €', dist: 35, url: 'https://www.zoo-mulhouse.com', lat: 47.7346522, lng: 7.3504869 },
     { date: '2026-09-20', flag: '🇫🇷', name: 'Écomusée d\'Alsace', place: 'Ungersheim', cityLabel: 'Ungersheim, Frankreich', savings: 50, priceLabel: '💶 50 €', dist: 42, url: 'https://www.ecomusee.alsace', lat: 47.8521, lng: 7.2850 },
-    { date: '2026-09-27', flag: '🇨🇭', name: 'Museum Tinguely', place: 'Basel', cityLabel: 'Basel, Schweiz', savings: 40, priceLabel: 'CHF 36 · 40 €', dist: 13, url: 'https://www.tinguely.ch', lat: 47.5614, lng: 7.6008 }
+    { date: '2026-09-27', flag: '🇨🇭', name: 'Museum Tinguely', place: 'Basel', cityLabel: 'Basel, Schweiz', savings: 40, priceLabel: 'CHF 36 · 40 €', dist: 13, url: 'https://www.tinguely.ch', lat: 47.5614, lng: 7.6008 },
+    { date: '2026-11-15', flag: '🇫🇷', name: 'Château du Haut-Kœnigsbourg', repeat: true, place: 'Orschwiller', cityLabel: 'Orschwiller, Elsass', savings: 14, priceLabel: '💶 14 €', dist: 75, url: 'https://www.haut-koenigsbourg.fr', lat: 48.2497, lng: 7.3430 }
   ];
 
   const MONTHS_DE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
@@ -3174,8 +3247,9 @@
     let cum = 0;
     let beVisit = null;
     visits.forEach(v => { cum += v.savings; if (!beVisit && cum >= PASS_COST) beVisit = v; });
+    const museums = visits.filter(v => !v.repeat).length;
     return {
-      total, count, beVisit,
+      total, count, museums, beVisit,
       net: Math.max(0, total - PASS_COST),
       remaining: Math.max(0, PASS_COST - total),
       avg: count ? total / count : 0,
@@ -3190,7 +3264,7 @@
     const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
     const eur = n => '~' + Math.round(n) + ' €';
 
-    set('hdr-count', st.count + ' von 350+');
+    set('hdr-count', st.museums + ' von 350+');
     if (st.last) {
       set('hdr-last', fmtDateLong(st.last.date));
       const p = st.last.date.split('-');
@@ -3230,7 +3304,7 @@
   function renderVisitedList() {
     const header = document.getElementById('visited-header');
     if (!header) return;
-    const html = VISITS.slice().reverse().map(v => `
+    const html = VISITS.filter(v => !v.repeat).reverse().map(v => `
       <div class="museum-item visited">
         <div class="museum-name"><span class="museum-flag">${v.flag}</span>${escHtml(v.name)}</div>
         <div class="museum-city">${escHtml(v.cityLabel)}</div>
@@ -3438,9 +3512,13 @@
 
   var stats = computeStats(VISITS);
   VISITS.forEach(function (v) {
+    if (v.repeat) return;
     var beNote = stats.beVisit === v ? ' &middot; Break-Even erreicht!' : '';
+    var againNote = VISITS.filter(function (r) { return r.repeat && r.name === v.name; }).map(function (r) {
+      return '<br>erneut ' + fmtDate(r.date) + ' &middot; ' + r.savings + ' &euro; gespart';
+    }).join('');
     L.marker([v.lat, v.lng], { icon: pinIcon }).addTo(map)
-      .bindPopup('<div style="font-family:Georgia,serif;font-size:13px;line-height:1.5"><strong>' + v.flag + ' ' + escHtml(v.mapName || v.name) + '</strong><br><span style="color:#555;font-size:11px">' + escHtml(v.place) + ' &middot; ' + fmtDate(v.date) + ' &middot; ' + v.savings + ' &euro; gespart' + beNote + '</span></div>');
+      .bindPopup('<div style="font-family:Georgia,serif;font-size:13px;line-height:1.5"><strong>' + v.flag + ' ' + escHtml(v.mapName || v.name) + '</strong><br><span style="color:#555;font-size:11px">' + escHtml(v.place) + ' &middot; ' + fmtDate(v.date) + ' &middot; ' + v.savings + ' &euro; gespart' + beNote + againNote + '</span></div>');
   });
 
   L.marker([47.5597, 7.7959], { icon: homeIcon }).addTo(map)
