@@ -14,7 +14,7 @@ Technische Referenz für die Implementierung der `index.html`. Enthält Aufbau, 
 
 ## AKTUELLER STAND
 
-Stand: 2026-09-20 — Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
+Single-File App, kein Build-System, kein Framework. Leaflet.js via CDN für interaktive Karte.
 
 ---
 
@@ -137,14 +137,14 @@ Alle Kennzahlen (Summe, Netto, Ø, Prozent, Zähler, Break-Even-Datum) werden zu
 **Berechnungslogik (`computeStats()`):**
 - Füllhöhe: `total / THERMO_MAX * 100` %
 - Netto-Ersparnis: `max(0, total - PASS_COST)`
-- Farbverlauf: rot (unter 258€) / grün (über 258€) — `updateThermometer()` färbt **Quecksilber UND Bulb** dynamisch (Bulb ist seit 2026-07-19 nicht mehr statisch/dekorativ)
+- Farbverlauf: rot (unter 258€) / grün (über 258€) — `updateThermometer()` färbt **Quecksilber UND Bulb** dynamisch (Bulb ist nicht mehr statisch/dekorativ)
 - **Farbregel:** Quecksilber-Gradient bei 0% (unten) == Bulb-Grundton, damit Bulb + Säule als ein Flüssigkeitskörper wirken (Fix MUSEUM-ISSUE-0018)
 - Weicher Umschlag: `transition: background 0.6s ease` auf `.thermo-bulb` und `.thermo-mercury`
 - Break-Even-Marker: `bottom: 10,32%` (fest, 258/2500*100)
 
 ---
 
-## LEAFLET-KARTE (seit 2026-05-01)
+## LEAFLET-KARTE
 
 Die SVG-Schematikkarte wurde durch eine interaktive Leaflet-Karte ersetzt.
 

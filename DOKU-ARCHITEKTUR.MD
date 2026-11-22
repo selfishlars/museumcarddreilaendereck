@@ -14,7 +14,7 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 
 ## ARCHITEKTURPRINZIP
 
-- **Verfahren B (GitHub Issues):** Aktives Issue-Tracking via GitHub Issues. `MEMORY.MD` ist die kanonische Routing-Zentrale.
+- **GitHub Issues:** Aktives Issue-Tracking via GitHub Issues. `MEMORY.MD` ist die kanonische Routing-Zentrale.
 - **Routing:** Jedes Thema hat genau eine zuständige Datei. Querverweise statt Duplizierung.
 - **Sicherheit:** Secrets niemals in git-versionierten Dateien.
 
@@ -49,7 +49,6 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 | `ARCHITEKTUR.MD` | Doku | Technische Architektur der App | ✅ |
 | `INFRASTRUKTUR.MD` | Doku | Deployment, Hosting, MCP-Setup | ✅ |
 | `MCP-INFOS.MD` | Doku | MCP-Katalog und Betriebsstatus | ✅ |
-| `SECRETS.MD` | Secrets | Lokale Zugangsdaten — **NIE committen!** | ❌ |
 
 ### docs/usr/ (Nutzer)
 
@@ -64,15 +63,15 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 
 ```
 MEMORY.MD (Zentrale)
-├── `~/Projects/werkzeugkiste/REGELWERK.MD` → GitHub Issues Prozess
-├── `~/Projects/werkzeugkiste/REGELWERK.MD`   → Wann was updaten
+├── ~/Projects/werkzeugkiste/REGELWERK.MD → Regeln, Issues, Commit-Checkliste
 ├── AGENTS.md           → Wie Code schreiben
+├── DATABASE.MD         → Datenbasis Besuche, Museen, Preise
+├── PERSOENLICHE-NOTIZEN.MD → Erlebnisse je Besuch
 ├── tools/check-consistency.mjs → Prüft VISITS ↔ Doku (vor Commit)
 ├── docs/adm/
 │   ├── ARCHITEKTUR.MD  → Was ist wie gebaut
 │   ├── INFRASTRUKTUR.MD→ Wie deployen / MCP-Setup
-│   ├── MCP-INFOS.MD    → MCP-Katalog
-│   └── SECRETS.MD      → Lokale Secrets (nicht in git)
+│   └── MCP-INFOS.MD    → MCP-Katalog
 └── docs/usr/
     ├── APP-NAVIGATION.MD → Wie die Seite aufgebaut ist
     └── ADMIN-BEREICH.MD  → Wie Daten pflegen
@@ -82,7 +81,7 @@ MEMORY.MD (Zentrale)
 
 ## SICHERHEITS- UND PFLEGEGRUNDSÄTZE
 
-- `SECRETS.MD` niemals committen (in `.gitignore` eingetragen)
+- Zugangsdaten nur in 1Password, nie im Repo
 - Keine echten Namen in versionierten Dateien
 - Bei jeder größeren Änderung: `~/Projects/werkzeugkiste/REGELWERK.MD` lesen
 - Querverweise statt Inhaltsduplizierung

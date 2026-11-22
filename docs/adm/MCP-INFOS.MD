@@ -57,7 +57,7 @@ MCP-Katalog und Betriebsstatus. Referenz für alle MCP-Server im Projekt.
   ```bash
   FIRECRAWL_API_KEY=<KEY> claude mcp add firecrawl -s user -- npx -y firecrawl-mcp
   ```
-- **Secret:** API-Key in `docs/adm/SECRETS.MD`
+- **Secret:** API-Key in 1Password
 
 ### github
 - **Kurzbeschreibung:** GitHub-Operationen (Issues, PRs, Repos, Dateien) direkt per MCP.
@@ -66,7 +66,7 @@ MCP-Katalog und Betriebsstatus. Referenz für alle MCP-Server im Projekt.
   GITHUB_PERSONAL_ACCESS_TOKEN=<TOKEN> claude mcp add github -s user -- npx -y @modelcontextprotocol/server-github
   ```
 - **Token-Scope:** `repo`, `read:org`, `workflow`
-- **Secret:** Token in `docs/adm/SECRETS.MD`
+- **Secret:** Token in 1Password
 
 ### playwright
 - **Kurzbeschreibung:** Browser-Automation für UI-Checks, Navigation, Formtests und Screenshots.
@@ -102,7 +102,7 @@ MCP-Katalog und Betriebsstatus. Referenz für alle MCP-Server im Projekt.
   ```bash
   TAVILY_API_KEY=<KEY> claude mcp add tavily -s user -- npx -y tavily-mcp
   ```
-- **Secret:** API-Key in `docs/adm/SECRETS.MD`
+- **Secret:** API-Key in 1Password
 
 ---
 

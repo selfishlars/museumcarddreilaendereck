@@ -14,7 +14,7 @@ Pflegeanleitung für den Betrieb der Seite. Wer darf was, wie werden Daten aktua
 
 ## AKTUELLER STAND
 
-Stand: 2026-09-20
+Pflege erfolgt direkt in `index.html` (`VISITS`-Array und Ländersektionen) plus Doku-Abgleich per `tools/check-consistency.mjs`.
 
 ---
 

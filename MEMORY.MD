@@ -7,14 +7,7 @@ beschreibung: Zentrale Orchestrierungs- und Routing-Datei der gesamten Projektdo
 # MEMORY.MD — Museums-PASS Dreiländereck Logbuch
 
 > **PFLICHTLEKTÜRE:** Bei Initialisierung, vor/nach größeren Änderungen, vor Commit/Push und wiederholt während längerer Umsetzungsphasen.
-> **Konsolidierte Regel:** Vor jedem Commit/Push `~/Projects/werkzeugkiste/REGELWERK.MD` und `~/Projects/werkzeugkiste/REGELWERK.MD` lesen und beachten.
-
----
-
-## INIT-MODUS
-
-`repair` — angewendet: 2026-04-12 (INIT_V4_0)
-`reconcile` — angewendet: 2026-04-12 (INIT_V5_0)
+> **Konsolidierte Regel:** Vor jedem Commit/Push die Checkliste in `~/Projects/werkzeugkiste/REGELWERK.MD` (Abschnitt 5) abarbeiten.
 
 ---
 
@@ -24,17 +17,11 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 
 ---
 
-## AKTIVES ISSUE-TRACKING-VERFAHREN
-
-**B: GitHub Issues** — Details in [`~/Projects/werkzeugkiste/REGELWERK.MD`](./`~/Projects/werkzeugkiste/REGELWERK.MD`)
-
----
-
 ## ISSUE-TRACKING
 
 | Feld | Wert |
 |------|------|
-| Verfahren | GitHub Issues (Verfahren B) |
+| Verfahren | GitHub Issues — Regeln: `~/Projects/werkzeugkiste/REGELWERK.MD` (Abschnitt 4) |
 | ISSUE_PREFIX | `MUSEUM` |
 | Tracking-ID-Schema | `MUSEUM-ISSUE-0001`, `MUSEUM-ISSUE-0002`, … |
 | GitHub Repo | https://github.com/selfishlars/museumcarddreilaendereck |
@@ -52,7 +39,6 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 | `docs/adm/ARCHITEKTUR.MD` | Technische Architektur der index.html |
 | `docs/adm/INFRASTRUKTUR.MD` | Infrastruktur, Deployment, MCP-Setup |
 | `docs/adm/MCP-INFOS.MD` | MCP-Fähigkeitskatalog und Status |
-| `docs/adm/SECRETS.MD` | Lokale Secrets — **NICHT in git!** |
 | `docs/usr/APP-NAVIGATION.MD` | Nutzerorientierte Navigation und Seitenaufbau |
 | `docs/usr/ADMIN-BEREICH.MD` | Admin-Aktionen und Pflegeanleitung |
 | `DATABASE.MD` | Strukturierte Datenbasis (Besuche, Museen, Preise, Distanzen) |
@@ -65,53 +51,18 @@ Persönliches Logbuch zur Verfolgung der Museums-PASS Musées Nutzung. Zwei anon
 
 1. **Sprache:** IMMER Deutsch für Ausgaben und Erklärungen. Code-Bezeichner bleiben englisch.
 2. **Datenschutz:** Keine echten Namen. Nur: Anon 1, Anon 2, Kind 1, Kind 2.
-3. **Secrets:** Keine Credentials in versionierten Dateien.
-4. **Dateiformat:** Standard-Dateinamen in GROSSSCHREIBUNG (R-BASE-002).
+3. **Secrets:** Keine Credentials in versionierten Dateien. Zugangsdaten aus 1Password (`~/Projects/werkzeugkiste/docs/1PASSWORD-ZUGRIFF.MD`).
+4. **Dateiformat:** Standard-Dateinamen in GROSSSCHREIBUNG (`DOKU-FORMAT.MD` der Werkzeugkiste).
 5. **Single File:** Die gesamte App ist `index.html` — kein Build, kein Framework.
 6. **Kennzahlen:** Einzige Quelle ist das `VISITS`-Array in `index.html` — Stat-Karten, Thermometer, Header, Pins werden daraus berechnet (nicht von Hand pflegen). Nach jeder Änderung `node tools/check-consistency.mjs` ausführen.
 7. **Break-Even-Marker:** `bottom: 10,32%` (fest, nie ändern!).
 
 ---
 
-## MCP-STATUS
+## MCP UND ZUGÄNGE
 
-→ Details in [docs/adm/MCP-INFOS.MD](./docs/adm/MCP-INFOS.MD)
-
-| MCP-Server | Status | Hinweis |
-|------------|--------|---------|
-| notebooklm-mcp | ✅ Aktiv | v0.9.6, jacob-bd/notebooklm-mcp-cli via pipx |
-| context7 | ✅ Aktiv | Framework-Doku |
-| firecrawl | ✅ Aktiv | Web-Scraping |
-| github | ✅ Aktiv | GitHub-Operationen |
-| playwright | ✅ Aktiv | Browser-Automation |
-| postgres | ✅ Aktiv | Datenbank-Zugriff |
-| sequential-thinking | ✅ Aktiv | Strukturierte Analyse |
-| sharp | ✅ Aktiv | Bildverarbeitung |
-| tavily | ✅ Aktiv | Websuche/Extraktion |
-
----
-
-## SKILLS/AGENTS-STATUS
-
-- Skill-Initialchecks: **nicht durchgeführt** (User-Entscheidung 2026-04-12)
-- Standard-Agents verfügbar unter `~/.claude/agents/`
-- Geprüfte Pfade: `~/.claude`, `<projekt>/.claude`
-
----
-
-## SSH
-
-→ Details in `docs/adm/SECRETS.MD` (lokal, nicht in git)
-Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI / GitHub MCP.
-
----
-
-## TOKEN-EFFIZIENZ
-
-- **Antworttiefe:** moderat (Standard) — kurz, entscheidungsrelevant
-- **Kontext-Baseline:** ausstehend
-
----
+- MCP-Server und Status: [docs/adm/MCP-INFOS.MD](./docs/adm/MCP-INFOS.MD)
+- Keine projektspezifischen SSH-Verbindungen. GitHub-Zugriff über `gh`.
 
 ---
 
@@ -164,7 +115,7 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 **Währungsumrechnung:** 1 CHF = 1,10 EUR / 1 EUR = ~0,91 CHF
 
 **Thermometer-Aufbau:**
-- Kugel (Bulb) = Basis (0 €) — wird seit 19.07.2026 via JS dynamisch mit eingefärbt (rot/grün, passend zum Quecksilber)
+- Kugel (Bulb) = Basis (0 €) — wird via JS dynamisch mit eingefärbt (rot/grün, passend zum Quecksilber)
 - Röhrchen (Tube) = 500px Höhe, Skala 0€ (unten) bis 2500€ (oben)
 - Break-Even-Marker = 258€ = 10,32% der Röhrchenhöhe (fest)
 
@@ -295,10 +246,10 @@ Keine projektspezifischen SSH-Verbindungen bekannt. GitHub-Zugriff via `gh` CLI 
 
 **Sortierung:** Top 5 je Land nach Preis (absteigend), Rest nach Distanz (aufsteigend).
 
-**Top 5 Preise der noch nicht besuchten Ziele (ca.-Werte, recherchiert 2026-03-28, FR aktualisiert 2026-08-08):**
-- 🇨🇭 CH: Ballenberg ~103€, Zentrum Paul Klee ~72€, KM Basel ~55€, Bern. HM ~34€ *(Top-5 nach Tinguely-Besuch, 5. Platz ausstehend)*
-- 🇩🇪 DE: Fabergé ~44€, Technoseum ~39€, Vogtsbauernhof ~34€, Frieder Burda ~28€, Bad. LM ~24€
-- 🇫🇷 FR: Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Citadelle Besançon ~36€, Centre Pompidou-Metz ~24€
+**Top 5 Preise der noch nicht besuchten Ziele (ca.-Werte laut `index.html`, Familie 2 Erw. + 2 Kinder):**
+- 🇨🇭 CH: Ballenberg ~108€, Zentrum Paul Klee ~75€, KM Basel ~57€, KM Bern ~53€, Museum für Kommunikation ~53€
+- 🇩🇪 DE: Technoseum ~42€, Fabergé ~38€, Vogtsbauernhof ~34€, Frieder Burda ~28€, Kunsthalle Mannheim ~28€
+- 🇫🇷 FR: Cité Automobile ~48€, Cité du Train ~46€, Saline Royale ~38€, Château de Lichtenberg ~38€, Citadelle Besançon ~36€
 
 ---
 

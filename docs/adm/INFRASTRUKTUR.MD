@@ -14,7 +14,7 @@ Betriebsdokumentation für Deployment, Hosting und externe Dienste.
 
 ## AKTUELLER STAND
 
-Stand: 2026-08-08 (migriert aus infra-doku.md)
+Statische Seite auf GitHub Pages mit eigener Domain (`CNAME`); Deploy per `git push`.
 
 ---
 
@@ -68,7 +68,7 @@ claude mcp remove notebooklm
 ## GOOGLE-KONTO FÜR AUTOMATION
 
 Zweck: Dediziertes Konto für KI-Automation & MCP-Dienste (NotebookLM).
-→ Account-Details in `docs/adm/SECRETS.MD` (lokal, nicht in git).
+→ Zugangsdaten in 1Password (`~/Projects/werkzeugkiste/docs/1PASSWORD-ZUGRIFF.MD`).
 
 ---
 

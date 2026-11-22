@@ -14,7 +14,7 @@ Nutzerorientierter Überblick: Wie ist die Seite aufgebaut, was sieht der Nutzer
 
 ## AKTUELLER STAND
 
-Stand: 2026-08-08 — Single-Page App (index.html), Leaflet-Karte seit 01.05.2026
+Single-Page App (`index.html`) mit Leaflet-Karte.
 
 ---
 
@@ -29,7 +29,7 @@ Stand: 2026-08-08 — Single-Page App (index.html), Leaflet-Karte seit 01.05.202
 | Thermometer | `.thermo-section` | Break-Even-Fortschritts-Anzeige (0–2500€) |
 | Besuchslogbuch | `.visit-log` | Karten je Besuch (Farbe nach Land, neueste oben) |
 | Pass-Infos | `.info-grid` | 4 Info-Karten zum Museums-PASS |
-| Museum-Liste | `.museum-grid` | 151 gelistete Ziele plus 8 besuchte Orte |
+| Museum-Liste | `.museum-grid` | Ländersektionen (gelistete Ziele) plus „Bereits besucht“ aus `VISITS` |
 | Top 20 | `#top20-section` | JS-generiert: nächste Ziele nach Distanz |
 | Footer | `<footer>` | Impressum-ähnlich, Links |
 
