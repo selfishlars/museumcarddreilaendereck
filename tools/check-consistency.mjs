@@ -142,6 +142,37 @@ for (const v of firstVisits) {
 }
 check(new RegExp(`Datenstand Besuche: ${n} `).test(db), 'DATABASE.MD: Datenstand-Zähler', `DATABASE.MD: „Datenstand Besuche“ ≠ ${n}`);
 
+// ── 3b. Ländersektionen: Zähler und Sortierung ──────────────────────────────
+// Regel: Top 5 je Land nach Preis (absteigend), Rest nach Distanz (aufsteigend).
+const euro = (block) => {
+  const p = (block.match(/museum-price">([^<]*)/) || [])[1] || '';
+  const all = [...p.matchAll(/(\d+(?:,\d+)?)\s*€/g)];
+  return all.length ? Number(all[all.length - 1][1].replace(',', '.')) : 0;
+};
+const km = (block) => {
+  const m = block.match(/museum-dist">📍 ?([\d.,]+)\s*km/);
+  return m ? Number(m[1].replace(',', '.')) : Infinity;
+};
+const countrySections = [
+  ['🇨🇭', '<!-- ══ SCHWEIZ ══ -->', '<!-- ══ DEUTSCHLAND ══ -->'],
+  ['🇩🇪', '<!-- ══ DEUTSCHLAND ══ -->', '<!-- ══ FRANKREICH ══ -->'],
+  ['🇫🇷', '<!-- ══ FRANKREICH ══ -->', '</section>'],
+];
+for (const [flag, from, to] of countrySections) {
+  const a = html.indexOf(from);
+  const seg = html.slice(a, html.indexOf(to, a));
+  const items = seg.split(/<div class="museum-item[^"]*">/).slice(1);
+  const count = Number((seg.match(/museum-count">(\d+) gelistet/) || [])[1]);
+  check(count === items.length, `${flag} Zähler „${count} gelistet“ = Einträge`, `${flag} Zähler „${count} gelistet“ ≠ ${items.length} Einträge`);
+  const prices = items.map(euro);
+  const top = prices.slice(0, 5);
+  const restMax = Math.max(0, ...prices.slice(5));
+  const topOk = top.every((p, i) => i === 0 || top[i - 1] >= p) && Math.min(...top) >= restMax;
+  check(topOk, `${flag} Top 5 nach Preis sortiert`, `${flag} Top 5 nicht die 5 teuersten Einträge in absteigender Reihenfolge`);
+  const dists = items.slice(5).map(km);
+  check(dists.every((d, i) => i === 0 || dists[i - 1] <= d), `${flag} Rest nach Distanz sortiert`, `${flag} Einträge ab Platz 6 nicht nach Distanz aufsteigend`);
+}
+
 // ── 4. MEMORY.MD ─────────────────────────────────────────────────────────────
 const mem = read('MEMORY.MD');
 const memCell = (label) => (mem.match(new RegExp(`\\|\\s*${label}\\s*\\|\\s*([^|]+?)\\s*\\|`)) || [])[1] || '';

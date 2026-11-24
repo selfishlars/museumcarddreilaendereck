@@ -1,0 +1,10 @@
+# Ausnahmen für doku-check (siehe doku-check --help)
+# Schweizer Schreibweise, Eigennamen und Domains
+wort: Baselstrasse
+wort: museumcarddreilaendereck
+wort: dreilaendermuseum
+wort: fuerstenberg-sammlungen
+wort: ueberlingen
+wort: Schoenenbourg
+# Datentabellen mit technischen ISO-Daten
+ohne: datum DATABASE.MD

@@ -40,7 +40,8 @@ beschreibung: Menschenlesbare Gesamtübersicht der Dokumentationsarchitektur, Zu
 |-------|-----|-------|--------|
 | `index.html` | App | Gesamte Anwendung (CSS + JS inline) | ✅ |
 | `CNAME` | Config | Custom Domain für GitHub Pages | ✅ |
-| `tools/check-consistency.mjs` | Skript | Konsistenzprüfung index.html ↔ Doku (Node, ohne Abhängigkeiten) | ✅ |
+| `tools/check-consistency.mjs` | Skript | Konsistenzprüfung index.html ↔ Doku, Zähler und Sortierung der Ländersektionen (Node, ohne Abhängigkeiten) | ✅ |
+| `.doku-check` | Config | Ausnahmen für `doku-check` (Eigennamen, Datentabellen) | ✅ |
 
 ### docs/adm/ (Administration)
 

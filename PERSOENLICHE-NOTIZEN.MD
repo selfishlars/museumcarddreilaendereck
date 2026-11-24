@@ -1,3 +1,9 @@
+---
+name: PERSOENLICHE-NOTIZEN.MD
+description: Diary memory of the project with personal experiences, highlights and memories for each museum visit.
+beschreibung: Tagebuch-Gedächtnis des Projekts mit persönlichen Erlebnissen, Highlights und Erinnerungen je Museumsbesuch.
+---
+
 # PERSOENLICHE-NOTIZEN.MD — Museums-PASS Besuche
 
 Erlebnisse, Highlights und Erinnerungen zu jedem besuchten Museum.
