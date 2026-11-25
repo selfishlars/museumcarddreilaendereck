@@ -1,3 +1,9 @@
+---
+name: DATABASE.MD
+description: Structured data base of the project with passes, visits, museums, prices, distances and savings summary.
+beschreibung: Strukturierte Datenbasis des Projekts mit Pässen, Besuchen, Museen, Preisen, Distanzen und Ersparnis-Übersicht.
+---
+
 # DATABASE.MD — Museums-PASS Dreiländereck
 
 Strukturierte Datenbasis für alle relevanten Informationen des Museums-PASS Projekts.
